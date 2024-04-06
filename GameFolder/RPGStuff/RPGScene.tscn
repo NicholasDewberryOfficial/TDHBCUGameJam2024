@@ -36,6 +36,33 @@ tracks/1/keys = {
 "values": [Color(0.556863, 0.294118, 0.0941176, 1), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_bras8"]
+resource_name = "DefendedDamage"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("emydmgpopup/emydmgtext:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("emydmgpopup/emydmgtext:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.47451, 0.623529, 1, 1), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_uejgp"]
 resource_name = "NormDamage"
 tracks/0/type = "value"
@@ -50,9 +77,6 @@ tracks/0/keys = {
 "update": 1,
 "values": [true, false]
 }
-
-[sub_resource type="Animation" id="Animation_bras8"]
-resource_name = "DefendedDamage"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ueyvf"]
 _data = {
@@ -101,7 +125,7 @@ libraries = {
 }
 
 [node name="emydmgtext" type="RichTextLabel" parent="bgpanel/EnemyPanel/emydmgpopup"]
-visible = false
+self_modulate = Color(0.556863, 0.294118, 0.0941176, 1)
 offset_left = 8.0
 offset_top = 80.0
 offset_right = 104.0

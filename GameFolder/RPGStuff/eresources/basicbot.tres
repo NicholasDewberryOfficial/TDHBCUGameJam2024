@@ -6,4 +6,4 @@
 script = ExtResource("1_ypg0y")
 damage = 2
 health = 10
-defences = Array[int]([1, 0, 0])
+defences = Array[int]([1, 2, 0])

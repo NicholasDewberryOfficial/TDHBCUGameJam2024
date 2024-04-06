@@ -21,6 +21,8 @@ func _process(delta):
 	updateCounters()
 	if (Input.is_action_just_pressed("Q")):
 		_on_bash_button_pressed()
+	if(Input.is_action_just_pressed("A")):
+		_on_poke_button_pressed()
 	pass
 
 func deathLogic():
@@ -69,8 +71,10 @@ func gimmieDamage(index, dmgval):
 			return dmgval
 		1:
 			
-			$bgpanel/EnemyPanel/emydmgpopup/emydmgtext.text = "[wave amp=30.0 freq=3.0 connected=1] CRIT! " + str(dmgval*2) + " [/wave]"
+			$bgpanel/EnemyPanel/emydmgpopup/emydmgtext.text = "[wave amp=60.0 freq=9.0 connected=1] CRIT! " + str(dmgval*2) + " [/wave]"
 			$bgpanel/EnemyPanel/emydmgpopup.play("CritDamage")
 			return dmgval *2
 		2:
+			$bgpanel/EnemyPanel/emydmgpopup/emydmgtext.text = "[shake rate = 20.0 level=5 connected=1] Resists: " + str(dmgval/2) + " [/shake]"
+			$bgpanel/EnemyPanel/emydmgpopup.play("DefendedDamage")
 			return dmgval/2 
