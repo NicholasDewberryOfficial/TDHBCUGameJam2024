@@ -1,0 +1,185 @@
+[gd_scene load_steps=10 format=3 uid="uid://gtgyi7vell0"]
+
+[ext_resource type="Script" path="res://RPGStuff/RPGSceneController.gd" id="1_gwgac"]
+
+[sub_resource type="Gradient" id="Gradient_2arcy"]
+colors = PackedColorArray(0.297976, 0.106681, 0.762877, 1, 0.182229, 0.251072, 0.0291064, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rdonl"]
+gradient = SubResource("Gradient_2arcy")
+fill_from = Vector2(0.0137615, 0)
+
+[sub_resource type="Animation" id="Animation_jf5fl"]
+resource_name = "CritDamage"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("emydmgpopup/emydmgtext:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("emydmgpopup/emydmgtext:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.941),
+"transitions": PackedFloat32Array(1, 0.00164238),
+"update": 0,
+"values": [Color(0.556863, 0.294118, 0.0941176, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_uejgp"]
+resource_name = "NormDamage"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("emydmgpopup/emydmgtext:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_bras8"]
+resource_name = "DefendedDamage"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ueyvf"]
+_data = {
+"CritDamage": SubResource("Animation_jf5fl"),
+"DefendedDamage": SubResource("Animation_bras8"),
+"NormDamage": SubResource("Animation_uejgp")
+}
+
+[sub_resource type="Gradient" id="Gradient_r1tc5"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_257db"]
+gradient = SubResource("Gradient_r1tc5")
+width = 5
+height = 5
+
+[node name="RPGBattle" type="Node2D"]
+script = ExtResource("1_gwgac")
+
+[node name="bgpanel" type="Panel" parent="."]
+offset_right = 192.0
+offset_bottom = 648.0
+
+[node name="EnemyPanel" type="Panel" parent="bgpanel"]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 312.0
+
+[node name="EnemyHP" type="RichTextLabel" parent="bgpanel/EnemyPanel"]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 8.0
+text = "Enemy HP:
+"
+fit_content = true
+
+[node name="EnemySprite" type="TextureRect" parent="bgpanel/EnemyPanel"]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 192.0
+offset_bottom = 312.0
+texture = SubResource("GradientTexture2D_rdonl")
+
+[node name="emydmgpopup" type="AnimationPlayer" parent="bgpanel/EnemyPanel"]
+libraries = {
+"": SubResource("AnimationLibrary_ueyvf")
+}
+
+[node name="emydmgtext" type="RichTextLabel" parent="bgpanel/EnemyPanel/emydmgpopup"]
+visible = false
+offset_left = 8.0
+offset_top = 80.0
+offset_right = 104.0
+offset_bottom = 160.0
+bbcode_enabled = true
+text = "Takes: "
+
+[node name="Divider" type="TextureRect" parent="bgpanel"]
+layout_mode = 0
+offset_top = 312.0
+offset_right = 192.0
+offset_bottom = 320.0
+texture = SubResource("GradientTexture2D_257db")
+
+[node name="PlayerPanel" type="Panel" parent="bgpanel"]
+layout_mode = 0
+offset_top = 320.0
+offset_right = 192.0
+offset_bottom = 648.0
+
+[node name="PlayerHP" type="RichTextLabel" parent="bgpanel/PlayerPanel"]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 8.0
+text = "Player HP: "
+fit_content = true
+
+[node name="Movement" type="Panel" parent="bgpanel/PlayerPanel"]
+visible = false
+layout_mode = 0
+offset_top = 24.0
+offset_right = 192.0
+offset_bottom = 104.0
+
+[node name="OverallContainer" type="HBoxContainer" parent="bgpanel/PlayerPanel"]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 192.0
+offset_bottom = 328.0
+
+[node name="LeftSideContainer" type="VBoxContainer" parent="bgpanel/PlayerPanel/OverallContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BashButton" type="Button" parent="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer"]
+layout_mode = 2
+text = "Bash
+"
+
+[node name="PokeButton" type="Button" parent="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer"]
+layout_mode = 2
+text = "Poke"
+
+[node name="LeftSideContainer2" type="VBoxContainer" parent="bgpanel/PlayerPanel/OverallContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BashButton" type="Button" parent="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer2"]
+layout_mode = 2
+text = "Bash
+"
+
+[node name="PokeButton" type="Button" parent="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer2"]
+layout_mode = 2
+text = "Poke"
+
+[node name="LeftSideContainer3" type="VBoxContainer" parent="bgpanel/PlayerPanel/OverallContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BashButton" type="Button" parent="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer3"]
+layout_mode = 2
+text = "Bash
+"
+
+[node name="PokeButton" type="Button" parent="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer3"]
+layout_mode = 2
+text = "Poke"
+
+[connection signal="pressed" from="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer/BashButton" to="." method="_on_bash_button_pressed"]
+[connection signal="pressed" from="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer/PokeButton" to="." method="_on_poke_button_pressed"]
