@@ -3,7 +3,8 @@ extends Resource
 class_name emyres
 
 #@export var name 
-@export var texture: Texture2D
+@export var name: String
+@export var picture: Texture2D
 @export var damage: int
 @export var health: int 
 #defences [0] = bash attack

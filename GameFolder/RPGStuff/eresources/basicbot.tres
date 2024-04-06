@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="emyres" load_steps=2 format=3 uid="uid://b2hpe4eih0xqf"]
-
-[ext_resource type="Script" path="res://RPGStuff/emyres.gd" id="1_ypg0y"]
-
-[resource]
-script = ExtResource("1_ypg0y")
-damage = 2
-health = 10
-defences = Array[int]([1, 2, 0])
