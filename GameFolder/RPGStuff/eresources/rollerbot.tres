@@ -7,6 +7,6 @@
 script = ExtResource("1_5many")
 name = "rollerbot"
 picture = ExtResource("2_wxd7w")
-damage = 2
-health = 10
-defences = Array[int]([1, 2, 0])
+damage = 1
+health = 5
+defences = Array[int]([1, 2, 1])

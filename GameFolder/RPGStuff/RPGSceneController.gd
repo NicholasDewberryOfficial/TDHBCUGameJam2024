@@ -74,7 +74,7 @@ func InitializeEnemy():
 	
 func updateCounters(): 
 	
-	$bgpanel/PlayerPanel/PlayerHP.text = "Player HP: " + str(pchealth)
+	$bgpanel/PlayerPanel/PlayerHP.text = "Myrtle HP: " + str(pchealth)
 	$bgpanel/EnemyPanel/EnemyHP.text = "Enemy HP: "+ str(ehealth)
 	
 

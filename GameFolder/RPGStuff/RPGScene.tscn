@@ -231,6 +231,7 @@ offset_right = 88.0
 offset_bottom = 72.0
 
 [node name="emydmgtext" type="RichTextLabel" parent="bgpanel/EnemyPanel/emydmgpopup/textbg"]
+layout_mode = 0
 offset_right = 96.0
 offset_bottom = 80.0
 bbcode_enabled = true

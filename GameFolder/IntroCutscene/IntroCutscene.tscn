@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://cimvgvor1meow"]
+
+[ext_resource type="Texture2D" uid="uid://qj1ho33xbufm" path="res://IntroCutscene/bgimgs/startbg.png" id="1_elgby"]
+[ext_resource type="Script" path="res://IntroCutscene/IntroCutscene.gd" id="1_v1rg6"]
+[ext_resource type="Texture2D" uid="uid://bs3i3cyoap4t4" path="res://Assets/Propeller.png" id="2_1isdk"]
+
+[node name="IntroCutscene" type="Node2D"]
+script = ExtResource("1_v1rg6")
+
+[node name="bg" type="TextureRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_elgby")
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Speaker1" type="TextureRect" parent="."]
+visible = false
+offset_left = 112.0
+offset_top = 240.0
+offset_right = 359.0
+offset_bottom = 636.0
+texture = ExtResource("2_1isdk")
+expand_mode = 1
+
+[node name="Panel2" type="Panel" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="maintext" type="RichTextLabel" parent="."]
+offset_right = 1152.0
+offset_bottom = 544.0
+bbcode_enabled = true
+text = "The sun shined hard on the land of the cactusfolk. Like it always does. The air is dry, the sand on the ground is prickly and smooth. Just another day in paradise for the people of this land. However, some creations are making this peace.... difficult. "
+
+[node name="nextbutton" type="Button" parent="."]
+offset_left = 752.0
+offset_top = 568.0
+offset_right = 1040.0
+offset_bottom = 632.0
+text = "Next"
+
+[node name="startgamebutton" type="Button" parent="."]
+visible = false
+offset_left = 80.0
+offset_top = 584.0
+offset_right = 400.0
+offset_bottom = 632.0
+text = "START GAME"
+
+[connection signal="pressed" from="nextbutton" to="." method="_on_nextbutton_pressed"]
+[connection signal="pressed" from="startgamebutton" to="." method="_on_startgamebutton_pressed"]
