@@ -184,10 +184,10 @@ _data = {
 "NormDamage": SubResource("Animation_uejgp")
 }
 
-[sub_resource type="Gradient" id="Gradient_r1tc5"]
+[sub_resource type="Gradient" id="Gradient_3q6qv"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_257db"]
-gradient = SubResource("Gradient_r1tc5")
+gradient = SubResource("Gradient_3q6qv")
 width = 5
 height = 5
 
