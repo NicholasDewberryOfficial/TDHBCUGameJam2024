@@ -8,5 +8,5 @@ script = ExtResource("1_nhsuy")
 name = "propeller"
 picture = ExtResource("2_mokru")
 damage = 2
-health = 10
-defences = Array[int]([0, 2, 2, 2])
+health = 5
+defences = Array[int]([2, 1, 1, 2])
