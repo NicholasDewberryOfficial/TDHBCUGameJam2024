@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5b4uopxo6tv"]
+
+[ext_resource type="PackedScene" uid="uid://oeeufsqaicd5" path="res://Gamestuff/main_character.tscn" id="1_x0cln"]
+
+[sub_resource type="Curve2D" id="Curve2D_8qte7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 144, 146, 0, 0, 0, 0, 260, 182, 0, 0, 0, 0, 292, 289, 0, 0, 0, 0, 305, 406, 0, 0, 0, 0, 332, 496, 0, 0, 0, 0, 413, 626, 0, 0, 0, 0, 436, 689, 0, 0, 0, 0, 539, 783, 0, 0, 0, 0, 647, 819, 0, 0, 0, 0, 763, 837, 0, 0, 0, 0, 912, 833, 0, 0, 0, 0, 1028, 819, 0, 0, 0, 0, 1185, 801, 0, 0, 0, 0, 1302, 774, 0, 0, 0, 0, 1401, 725, 0, 0, 0, 0, 1464, 806)
+}
+point_count = 16
+
+[node name="Path2D" type="Path2D"]
+curve = SubResource("Curve2D_8qte7")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(144, 146)
+rotation = 0.30092
+loop = false
+
+[node name="Main Character" parent="PathFollow2D" instance=ExtResource("1_x0cln")]
+position = Vector2(-180.804, -96.7579)
+rotation = -0.30092
+scale = Vector2(1, 1)
