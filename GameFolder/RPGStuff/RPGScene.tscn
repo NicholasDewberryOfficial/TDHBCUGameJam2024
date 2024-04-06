@@ -231,6 +231,7 @@ offset_right = 88.0
 offset_bottom = 72.0
 
 [node name="emydmgtext" type="RichTextLabel" parent="bgpanel/EnemyPanel/emydmgpopup/textbg"]
+layout_mode = 0
 offset_right = 96.0
 offset_bottom = 80.0
 bbcode_enabled = true
@@ -291,16 +292,19 @@ size_flags_horizontal = 3
 
 [node name="BashButton" type="Button" parent="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer"]
 layout_mode = 2
+tooltip_text = "Punches the enemy."
 text = "Bash
 "
 
 [node name="PokeButton" type="Button" parent="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer"]
 layout_mode = 2
+tooltip_text = "Shoots a thorn at an enemy like a bullet. Strong against flying enemies.."
 text = "Shoot
 "
 
 [node name="megaBash" type="Button" parent="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer"]
 layout_mode = 2
+tooltip_text = "A stronger version of [Bash] that punches the enemy with a giant spiked fist. Consumes 10 PP."
 theme_override_font_sizes/font_size = 11
 text = "MegaBash[10 PP]"
 alignment = 0
@@ -311,14 +315,17 @@ size_flags_horizontal = 3
 
 [node name="Disperse" type="Button" parent="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer2"]
 layout_mode = 2
+tooltip_text = "Shoot out thorns from your body to hit the enemy, dealing a small amount of damage to yourself as well."
 text = "Disperse"
 
 [node name="Sunbathe" type="Button" parent="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer2"]
 layout_mode = 2
+tooltip_text = "Soak up energy from the sun. Gain PP, but leaves yourself vulnerable."
 text = "Sunbathe"
 
 [node name="Pierce" type="Button" parent="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer2"]
 layout_mode = 2
+tooltip_text = "A stronger version of [Shoot] that shoots a harpoon-like needle at the enemy. Consumes 10 PP."
 theme_override_font_sizes/font_size = 11
 text = "Sting [10 PP]"
 
