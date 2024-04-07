@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://gtgyi7vell0"]
 
 [ext_resource type="Script" path="res://RPGStuff/RPGSceneController.gd" id="1_gwgac"]
-[ext_resource type="Texture2D" uid="uid://484vs5nlws8k" path="res://Assets/Roller.png" id="2_vewef"]
+[ext_resource type="Texture2D" path="res://Assets/Roller.png" id="2_vewef"]
 
 [sub_resource type="Animation" id="Animation_jf5fl"]
 resource_name = "CritDamage"

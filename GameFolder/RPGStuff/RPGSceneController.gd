@@ -82,6 +82,13 @@ func updateCounters():
 	$bgpanel/EnemyPanel/EnemyHP.text = "Enemy HP: "+ str(ehealth)
 	$bgpanel/PlayerPanel/PlayerPP.text = "Myrtle PP: " + str(ppAMT)
 	
+	if(ppAMT - 10 < 0):
+		disable_item(1)
+		disable_item(2)
+		
+	if (ppAMT - 10 > 0):
+		enable_item(1)
+		enable_item(2)
 
 
 func _on_bash_button_pressed():
@@ -182,13 +189,6 @@ func add_items():
 
 func _on_skill_list_item_selected(index):
 	print(index)
-	if(ppAMT - 10 < 0):
-		disable_item(1)
-		disable_item(2)
-		
-	if (ppAMT - 10 > 0):
-		enable_item(1)
-		enable_item(2)
 	match (index):
 		0:
 			_on_disperse_pressed()
