@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cimvgvor1meow"]
+[gd_scene load_steps=4 format=3 uid="uid://cimvgvor1meow"]
 
 [ext_resource type="Texture2D" uid="uid://qj1ho33xbufm" path="res://IntroCutscene/bgimgs/startbg.png" id="1_elgby"]
 [ext_resource type="Script" path="res://IntroCutscene/IntroCutscene.gd" id="1_v1rg6"]
+[ext_resource type="AudioStream" uid="uid://bmkhr4fpr64ll" path="res://Assets/music/everyday80s.mp3" id="3_x5nk7"]
 
 [node name="IntroCutscene" type="Node2D"]
 script = ExtResource("1_v1rg6")
@@ -111,6 +112,10 @@ offset_top = 595.0
 offset_right = 495.0
 offset_bottom = 646.0
 theme_override_font_sizes/normal_font_size = 30
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_x5nk7")
+autoplay = true
 
 [connection signal="pressed" from="nextbutton" to="." method="_on_nextbutton_pressed"]
 [connection signal="pressed" from="startgamebutton" to="." method="_on_startgamebutton_pressed"]
