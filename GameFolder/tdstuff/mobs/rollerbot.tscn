@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cy8386lvm2sey"]
+
+[ext_resource type="Texture2D" uid="uid://bmkaayd0mnkbm" path="res://kenney_tower-defense-top-down/PNG/Default size/towerDefense_tile245.png" id="1_bhe44"]
+[ext_resource type="Script" path="res://tdstuff/mobs/rollerbot.gd" id="1_x7wmc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lrc6y"]
+
+[node name="Rollerbot" type="CharacterBody2D"]
+script = ExtResource("1_x7wmc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_lrc6y")
+
+[node name="TowerDefenseTile245" type="Sprite2D" parent="."]
+texture = ExtResource("1_bhe44")
