@@ -59,7 +59,7 @@ func _on_nextbutton_pressed():
 	pass # Replace with function body.
 
 func _on_startgamebutton_pressed():
-	get_tree().change_scene_to_file("res://RPGStuff/RPGScene.tscn")
+	get_tree().change_scene_to_file("res://combined/localizedcombinedgame.tscn")
 	pass # Replace with function body.
 	
 func current_speaker(state):

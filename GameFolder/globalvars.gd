@@ -26,6 +26,8 @@ func _ready():
 func enemykilled(points):
 	pp += points 
 	enemiesdefeated +=1 
+	get_tree().get_root().get_node("localized/DesertTDscene/beep").play()
+	
 	
 func enemypassed():
 	print("enemypassed")

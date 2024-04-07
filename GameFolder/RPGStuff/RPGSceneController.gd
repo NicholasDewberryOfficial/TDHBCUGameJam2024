@@ -38,6 +38,7 @@ func _process(delta):
 		deathLogic()
 	updateCounters()
 	if(ehealth <= 0):
+		$mechanicexplosion.play()
 		Globalvars.pp += givethesepoints
 		progress += givethesepoints
 		$bgpanel/EnemyPanel/emydmgpopup.play("EmyChange")
@@ -65,6 +66,7 @@ func _process(delta):
 
 func deathLogic():
 	$bgpanel/EnemyPanel/emydmgpopup.play("deathanim")
+	$yelp.play()
 	Globalvars.pp -= 100
 	pchealth = 30
 	pass
