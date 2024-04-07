@@ -111,5 +111,4 @@ func current_speaker(state):
 			$SpeakerName.text = "Myrtle"
 			$Speaker3.texture =  ResourceLoader.load("res://Assets/Talk_Sprites/Cactus_Player_Happy.png")
 			
-# func speaker_position():
 	
