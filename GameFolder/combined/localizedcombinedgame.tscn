@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://pyoq5xdq7how"]
+[gd_scene load_steps=44 format=3 uid="uid://pyoq5xdq7how"]
 
 [ext_resource type="Script" path="res://globalvars.gd" id="1_kians"]
 [ext_resource type="Texture2D" uid="uid://7ovcgq4il4ma" path="res://kenney_tower-defense-top-down/Tilesheet/towerDefense_tilesheet.png" id="1_masly"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://t3oo138lmo5u" path="res://kenney_tower-defense-top-down/cactus_rock.png" id="13_nbsai"]
 [ext_resource type="Texture2D" uid="uid://bxqf7yd0ewru" path="res://kenney_tower-defense-top-down/cactus (1).png" id="14_2fxy7"]
 [ext_resource type="Texture2D" uid="uid://ch75tkudr3b3i" path="res://Assets/Towers/11.png" id="15_fbwmd"]
+[ext_resource type="Texture2D" uid="uid://b6walsqpbowdw" path="res://kenney_tower-defense-top-down/crystalrock.png" id="21_poqgp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5arw8"]
 texture = ExtResource("1_masly")
@@ -1057,6 +1058,11 @@ texture = ExtResource("12_4fcey")
 position = Vector2(464, 915)
 scale = Vector2(0.431697, 0.409601)
 texture = ExtResource("15_fbwmd")
+
+[node name="Crystalrock" type="Sprite2D" parent="."]
+position = Vector2(1472, 784)
+scale = Vector2(1.49688, 1.35)
+texture = ExtResource("21_poqgp")
 
 [connection signal="pressed" from="DesertTDscene/upsncounters/upgradespanel/Increase Tower Damage" to="DesertTDscene/upsncounters" method="_on_increase_tower_damage_pressed"]
 [connection signal="pressed" from="DesertTDscene/upsncounters/upgradespanel/MyrtleDmgUp" to="DesertTDscene/upsncounters" method="_on_myrtle_dmg_up_pressed"]
