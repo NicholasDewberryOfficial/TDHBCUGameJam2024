@@ -1,7 +1,7 @@
 extends Panel
 
 
-@onready var tower = preload("res://tdstuff/towers/winder.tscn")
+@onready var tower = preload("res://tdstuff/towers/red_bullet_tower.tscn")
 
 var currTile 
 var movy

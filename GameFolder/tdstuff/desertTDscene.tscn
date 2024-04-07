@@ -4483,14 +4483,17 @@ offset_bottom = 112.0
 text = "Core HP: 
 "
 
-[node name="towerbuys" type="FlowContainer" parent="upsncounters"]
-layout_mode = 0
+[node name="towerbuys" type="Control" parent="upsncounters"]
+anchors_preset = 0
 offset_top = 96.0
 offset_right = 192.0
 offset_bottom = 590.0
 
 [node name="RedTowerPanel" parent="upsncounters/towerbuys" instance=ExtResource("2_6n6cd")]
 layout_mode = 2
+offset_top = 48.0
+offset_right = 192.0
+offset_bottom = 160.0
 
 [node name="upgradespanel" type="Panel" parent="upsncounters"]
 layout_mode = 0

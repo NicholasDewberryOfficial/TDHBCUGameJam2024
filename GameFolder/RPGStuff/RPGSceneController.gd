@@ -13,8 +13,6 @@ var trackenemyToFight: int
 var dontdoathing: bool = false
 var initializing:bool = false
 
-var ppAMT: int = 20
-
 @onready var Skill_List = $"bgpanel/PlayerPanel/OverallContainer/LeftSideContainer/SkillList"
 
 # Called when the node enters the scene tree for the first time.
@@ -52,6 +50,8 @@ func _process(delta):
 			_on_bash_button_pressed()
 		if(Input.is_action_just_pressed("A")):
 			_on_poke_button_pressed()
+		if(Input.is_action_just_pressed("Z")):
+			_on_sunbathe_pressed()
 		pass
 
 func deathLogic():
@@ -80,13 +80,13 @@ func updateCounters():
 	
 	$bgpanel/PlayerPanel/PlayerHP.text = "Myrtle HP: " + str(pchealth)
 	$bgpanel/EnemyPanel/EnemyHP.text = "Enemy HP: "+ str(ehealth)
-	$bgpanel/PlayerPanel/PlayerPP.text = "Myrtle PP: " + str(ppAMT)
+	$bgpanel/PlayerPanel/PlayerPP.text = "Myrtle PP: " + str(Globalvars.pp)
 	
-	if(ppAMT - 10 < 0):
+	if(Globalvars.pp - 10 < 0):
 		disable_item(1)
 		disable_item(2)
 		
-	if (ppAMT - 10 > 0):
+	if (Globalvars.pp - 10 > 0):
 		enable_item(1)
 		enable_item(2)
 
@@ -148,7 +148,7 @@ func _on_mega_bash_pressed():
 	## if(ppAMT - 10 < 0):
 	##	pass
 	## else:
-	ppAMT -= 10
+	Globalvars.pp -= 10
 	var dmg = gimmieDamage(0,6)
 	ehealth -= dmg
 	emyTurn()
@@ -167,7 +167,7 @@ func _on_disperse_pressed():
 func _on_sunbathe_pressed():
 	var currhp = 0
 	emyTurn()
-	ppAMT += (currhp - pchealth)
+	Globalvars.pp += (currhp - pchealth)
 	pass # Replace with function body.
 	
 
@@ -175,7 +175,7 @@ func _on_pierce_pressed():
 	## if(ppAMT - 10 < 0):
 		##pass
 	## else:
-	ppAMT -= 10
+	Globalvars.pp -= 10
 	var dmg = gimmieDamage(1,6)
 	ehealth -= dmg
 	emyTurn()

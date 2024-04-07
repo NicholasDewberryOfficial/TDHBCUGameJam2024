@@ -1,10 +1,15 @@
 extends StaticBody2D
 
-var Bullet = preload("res://tdstuff/towers/redbullet.tscn")
+var Bullet = preload("res://tdstuff/towers/winderbullet.tscn")
 var bulletdamage = 5
 var pathName 
 var currTargets = []
 var curr
+
+var windup: bool = false
+@export var myanim: AnimationPlayer 
+
+
 
 func _physics_process(delta):
 	if is_instance_valid(curr):
@@ -30,12 +35,17 @@ func _on_tower_body_entered(body):
 					
 		curr = currTarget
 		pathName = currTarget.get_parent().name
+	
+		$myanim.play("attack")
+		await get_tree().create_timer(1.5).timeout
+		if(currTarget != null):
+			currTarget.get_child(0).Health -= bulletdamage * 3
 		
-		var tempBullet = Bullet.instantiate()
-		tempBullet.pathName = pathName
-		tempBullet.bulletDamage = bulletdamage
-		get_node("BulletContainer").call_deferred("add_child",tempBullet)
-		tempBullet.global_position = $Aim.global_position
+		#var tempBullet = Bullet.instantiate()
+		#tempBullet.pathName = pathName
+		#tempBullet.bulletDamage = bulletdamage
+		#get_node("BulletContainer").call_deferred("add_child",tempBullet)
+		#tempBullet.global_position = $Aim.global_position
 		
 func _on_tower_body_exited(body):
 	currTargets = get_node("Tower").get_overlapping_bodies()
