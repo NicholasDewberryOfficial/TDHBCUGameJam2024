@@ -1,55 +1,116 @@
-[gd_scene load_steps=4 format=3 uid="uid://cimvgvor1meow"]
+[gd_scene load_steps=3 format=3 uid="uid://cimvgvor1meow"]
 
 [ext_resource type="Texture2D" uid="uid://qj1ho33xbufm" path="res://IntroCutscene/bgimgs/startbg.png" id="1_elgby"]
 [ext_resource type="Script" path="res://IntroCutscene/IntroCutscene.gd" id="1_v1rg6"]
-[ext_resource type="Texture2D" uid="uid://bs3i3cyoap4t4" path="res://Assets/Propeller.png" id="2_1isdk"]
 
 [node name="IntroCutscene" type="Node2D"]
 script = ExtResource("1_v1rg6")
 
 [node name="bg" type="TextureRect" parent="."]
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_right = 1918.0
+offset_bottom = 1079.0
 texture = ExtResource("1_elgby")
 expand_mode = 1
 
 [node name="Panel" type="Panel" parent="."]
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_right = 1919.0
+offset_bottom = 1080.0
 
 [node name="Speaker1" type="TextureRect" parent="."]
-visible = false
-offset_left = 112.0
-offset_top = 240.0
-offset_right = 359.0
-offset_bottom = 636.0
-texture = ExtResource("2_1isdk")
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 82.0
+offset_top = 411.0
+offset_right = 468.0
+offset_bottom = 966.0
+grow_vertical = 0
 expand_mode = 1
+stretch_mode = 5
+
+[node name="Speaker2" type="TextureRect" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 1251.0
+offset_top = 116.0
+offset_right = 1749.0
+offset_bottom = 981.0
+grow_vertical = 0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Speaker3" type="TextureRect" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 1295.0
+offset_top = 325.0
+offset_right = 1814.0
+offset_bottom = 956.0
+grow_vertical = 0
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Speaker4" type="TextureRect" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 140.0
+offset_top = 106.0
+offset_right = 648.0
+offset_bottom = 962.0
+grow_vertical = 0
+expand_mode = 1
+stretch_mode = 4
 
 [node name="Panel2" type="Panel" parent="."]
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_left = 28.0
+offset_top = 676.0
+offset_right = 1899.0
+offset_bottom = 1025.0
 
 [node name="maintext" type="RichTextLabel" parent="."]
-offset_right = 1152.0
-offset_bottom = 544.0
+offset_left = 59.0
+offset_top = 703.0
+offset_right = 1876.0
+offset_bottom = 1011.0
+theme_override_font_sizes/normal_font_size = 34
+theme_override_font_sizes/bold_font_size = 34
 bbcode_enabled = true
 text = "The sun shined hard on the land of the cactusfolk. Like it always does. The air is dry, the sand on the ground is prickly and smooth. Just another day in paradise for the people of this land. However, some creations are making this peace.... difficult. "
 
 [node name="nextbutton" type="Button" parent="."]
-offset_left = 752.0
-offset_top = 568.0
-offset_right = 1040.0
-offset_bottom = 632.0
+offset_left = 1539.0
+offset_top = 939.0
+offset_right = 1870.0
+offset_bottom = 1010.0
+theme_override_font_sizes/font_size = 30
 text = "Next"
 
 [node name="startgamebutton" type="Button" parent="."]
 visible = false
-offset_left = 80.0
-offset_top = 584.0
-offset_right = 400.0
-offset_bottom = 632.0
+offset_left = 779.0
+offset_top = 239.0
+offset_right = 1088.0
+offset_bottom = 332.0
+theme_override_font_sizes/font_size = 34
 text = "START GAME"
+
+[node name="Panel3" type="Panel" parent="."]
+visible = false
+offset_left = 28.0
+offset_top = 581.0
+offset_right = 330.0
+offset_bottom = 656.0
+
+[node name="SpeakerName" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 49.0
+offset_top = 595.0
+offset_right = 495.0
+offset_bottom = 646.0
+theme_override_font_sizes/normal_font_size = 30
 
 [connection signal="pressed" from="nextbutton" to="." method="_on_nextbutton_pressed"]
 [connection signal="pressed" from="startgamebutton" to="." method="_on_startgamebutton_pressed"]
