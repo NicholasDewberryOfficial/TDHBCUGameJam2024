@@ -29,7 +29,7 @@ func _on_gui_input(event):
 	elif event is InputEventMouseButton and event.button_mask == 0:
 		if get_child_count() > 1:
 			get_child(1).queue_free()
-		var path = get_tree().get_root().get_node("tdscene/towers")
+		var path = get_tree().get_root().get_node("localized/DesertTDscene/towers")
 		path.add_child(tempTower)
 		tempTower.global_position = event.global_position
 		tempTower.global_position = movy# (tempTower.global_position))
