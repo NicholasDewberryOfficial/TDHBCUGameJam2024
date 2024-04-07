@@ -2,6 +2,7 @@ extends Node2D
 
 @export var pchealth: int
 @export var currenemy: emyres
+@export_node_path() var SkillList_path
 
 var ehealth: int 
 var edamage: int 
@@ -14,12 +15,15 @@ var initializing:bool = false
 
 var ppAMT: int = 20
 
+@onready var Skill_List = $"bgpanel/PlayerPanel/OverallContainer/LeftSideContainer/SkillList"
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	rng = RandomNumberGenerator.new()
 	currenemy = ResourceLoader.load("res://RPGStuff/eresources/rollerbot.tres")
 	ehealth = currenemy.health
 	edamage = currenemy.damage
+	add_items()
 	pass # Replace with function body.
 
 
@@ -76,6 +80,7 @@ func updateCounters():
 	
 	$bgpanel/PlayerPanel/PlayerHP.text = "Myrtle HP: " + str(pchealth)
 	$bgpanel/EnemyPanel/EnemyHP.text = "Enemy HP: "+ str(ehealth)
+	$bgpanel/PlayerPanel/PlayerPP.text = "Myrtle PP: " + str(ppAMT)
 	
 
 
@@ -133,13 +138,13 @@ func givepointsToPlayer():
 
 
 func _on_mega_bash_pressed():
-	if(ppAMT - 10 < 0):
-		pass
-	else:
-		ppAMT -= 10
-		var dmg = gimmieDamage(0,6)
-		ehealth -= dmg
-		emyTurn()
+	## if(ppAMT - 10 < 0):
+	##	pass
+	## else:
+	ppAMT -= 10
+	var dmg = gimmieDamage(0,6)
+	ehealth -= dmg
+	emyTurn()
 	pass # Replace with function body.
 
 
@@ -152,8 +157,6 @@ func _on_disperse_pressed():
 	pass # Replace with function body.
 
 
-
-
 func _on_sunbathe_pressed():
 	var currhp = 0
 	emyTurn()
@@ -161,14 +164,44 @@ func _on_sunbathe_pressed():
 	pass # Replace with function body.
 	
 
-
-
 func _on_pierce_pressed():
-	if(ppAMT - 10 < 0):
-		pass
-	else:
-		ppAMT -= 10
-		var dmg = gimmieDamage(1,6)
-		ehealth -= dmg
-		emyTurn()
+	## if(ppAMT - 10 < 0):
+		##pass
+	## else:
+	ppAMT -= 10
+	var dmg = gimmieDamage(1,6)
+	ehealth -= dmg
+	emyTurn()
 	pass # Replace with function body.
+
+func add_items():
+	Skill_List.add_item("Disperse")
+	Skill_List.add_item("Mega Bash")
+	Skill_List.add_item("Pierce")
+	
+
+func _on_skill_list_item_selected(index):
+	print(index)
+	if(ppAMT - 10 < 0):
+		disable_item(1)
+		disable_item(2)
+		
+	if (ppAMT - 10 > 0):
+		enable_item(1)
+		enable_item(2)
+	match (index):
+		0:
+			_on_disperse_pressed()
+		1:
+			_on_mega_bash_pressed()
+		2:
+			_on_pierce_pressed()
+	
+	pass # Replace with function body.
+
+func disable_item(index):
+	Skill_List.set_item_disabled(index, true)
+	
+func enable_item(index):
+	Skill_List.set_item_disabled(index, false)
+	
