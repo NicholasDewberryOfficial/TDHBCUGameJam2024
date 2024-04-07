@@ -1,7 +1,7 @@
 extends Panel
 
 
-@onready var tower = preload("res://tdstuff/towers/winder.tscn")
+@onready var tower = preload("res://tdstuff/towers/bombertower.tscn")
 
 var currTile 
 var movy
@@ -34,5 +34,5 @@ func _on_gui_input(event):
 		tempTower.global_position = event.global_position
 		tempTower.global_position = movy# (tempTower.global_position))
 		tempTower.get_node("Area").hide()
-		Globalvars.pp -= 40
+		Globalvars.pp -= 20
 	pass # Replace with function body.

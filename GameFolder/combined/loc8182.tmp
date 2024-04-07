@@ -1,6 +1,5 @@
-[gd_scene load_steps=40 format=3 uid="uid://pyoq5xdq7how"]
+[gd_scene load_steps=26 format=3 uid="uid://pyoq5xdq7how"]
 
-[ext_resource type="Script" path="res://globalvars.gd" id="1_kians"]
 [ext_resource type="Texture2D" uid="uid://7ovcgq4il4ma" path="res://kenney_tower-defense-top-down/Tilesheet/towerDefense_tilesheet.png" id="1_masly"]
 [ext_resource type="PackedScene" uid="uid://dc602t0mynotg" path="res://tdstuff/towers/red_tower_panel.tscn" id="2_g1s27"]
 [ext_resource type="Script" path="res://combined/upsncounters.gd" id="2_vdiye"]
@@ -10,14 +9,7 @@
 [ext_resource type="Script" path="res://tdstuff/towers/bomberpanel.gd" id="5_nxbtx"]
 [ext_resource type="Script" path="res://RPGStuff/RPGSceneController.gd" id="6_bgwqp"]
 [ext_resource type="Texture2D" uid="uid://484vs5nlws8k" path="res://Assets/Roller.png" id="7_gyedf"]
-[ext_resource type="Script" path="res://LeftSideTypingSTuff/leftsidetyping.gd" id="10_qocwh"]
-[ext_resource type="Texture2D" uid="uid://vl8l74rsy6pf" path="res://Assets/Chomper.png" id="11_176s2"]
-[ext_resource type="Texture2D" uid="uid://b5lefuosu0h22" path="res://kenney_tower-defense-top-down/palmtree.png" id="11_0456q"]
 [ext_resource type="AudioStream" uid="uid://fh1ry7t52dro" path="res://Assets/music/rpgtheme.mp3" id="11_nfokh"]
-[ext_resource type="Texture2D" uid="uid://bdj22vthm64t5" path="res://kenney_tower-defense-top-down/cactus.png" id="12_4fcey"]
-[ext_resource type="Texture2D" uid="uid://t3oo138lmo5u" path="res://kenney_tower-defense-top-down/cactus_rock.png" id="13_nbsai"]
-[ext_resource type="Texture2D" uid="uid://bxqf7yd0ewru" path="res://kenney_tower-defense-top-down/cactus (1).png" id="14_2fxy7"]
-[ext_resource type="Texture2D" uid="uid://ch75tkudr3b3i" path="res://Assets/Towers/11.png" id="15_fbwmd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5arw8"]
 texture = ExtResource("1_masly")
@@ -568,45 +560,12 @@ tracks/2/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_dnbd2"]
-resource_name = "deathanim"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../..:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(0.415686, 0, 0.105882, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_6mklk"]
-resource_name = "transferphase"
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../..:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ueyvf"]
 _data = {
 "CritDamage": SubResource("Animation_jf5fl"),
 "DefendedDamage": SubResource("Animation_bras8"),
 "EmyChange": SubResource("Animation_34b6g"),
-"NormDamage": SubResource("Animation_uejgp"),
-"deathanim": SubResource("Animation_dnbd2"),
-"transferphase": SubResource("Animation_6mklk")
+"NormDamage": SubResource("Animation_uejgp")
 }
 
 [sub_resource type="Gradient" id="Gradient_3q6qv"]
@@ -616,20 +575,7 @@ gradient = SubResource("Gradient_3q6qv")
 width = 5
 height = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5gbdc"]
-
-[sub_resource type="Gradient" id="Gradient_r1tc5"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ydit8"]
-gradient = SubResource("Gradient_r1tc5")
-width = 5
-height = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5p3i5"]
-bg_color = Color(0.14902, 0.12549, 0.0313726, 1)
-
 [node name="localized" type="Node2D"]
-script = ExtResource("1_kians")
 
 [node name="bgpanel" type="Panel" parent="."]
 offset_right = 1920.0
@@ -690,14 +636,14 @@ offset_bottom = 622.0
 layout_mode = 0
 offset_right = 194.0
 
-[node name="rtcost" type="RichTextLabel" parent="DesertTDscene/upsncounters/towerbuys"]
+[node name="RichTextLabel" type="RichTextLabel" parent="DesertTDscene/upsncounters/towerbuys/RedTowerPanel"]
 layout_mode = 0
-offset_left = 11.0
 offset_top = 128.0
-offset_right = 163.0
-offset_bottom = 192.0
+offset_right = 192.0
+offset_bottom = 208.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "Cost: 40 pp "
+bbcode_enabled = true
+text = "Cost: 80 PP"
 
 [node name="bomberpanel" parent="DesertTDscene/upsncounters/towerbuys" instance=ExtResource("4_fin7g")]
 layout_mode = 0
@@ -706,20 +652,19 @@ offset_right = 192.0
 offset_bottom = 376.0
 script = ExtResource("5_nxbtx")
 
-[node name="bombcost" type="RichTextLabel" parent="DesertTDscene/upsncounters/towerbuys"]
+[node name="RichTextLabel" type="RichTextLabel" parent="DesertTDscene/upsncounters/towerbuys/bomberpanel"]
 layout_mode = 0
-offset_left = 11.0
-offset_top = 376.0
-offset_right = 163.0
-offset_bottom = 440.0
+offset_top = 160.0
+offset_right = 194.0
+offset_bottom = 232.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "Cost: 20 pp "
+text = "Cost: 20 PP "
 
 [node name="upgradespanel" type="Panel" parent="DesertTDscene/upsncounters"]
 layout_mode = 0
 offset_top = 736.0
 offset_right = 192.0
-offset_bottom = 992.0
+offset_bottom = 1088.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_aotlq")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="DesertTDscene/upsncounters/upgradespanel"]
@@ -742,26 +687,18 @@ offset_right = 194.0
 offset_bottom = 176.0
 text = "Myrtle DMG up"
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="DesertTDscene/upsncounters/upgradespanel"]
-layout_mode = 0
-offset_top = 272.0
-offset_right = 192.0
-offset_bottom = 368.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "+20 HP COSTS 60 PP "
-
 [node name="MyrtleHpUp" type="Button" parent="DesertTDscene/upsncounters/upgradespanel"]
-layout_mode = 0
-offset_top = 304.0
-offset_right = 194.0
-offset_bottom = 352.0
-text = "Myrtle HP up"
-
-[node name="IncreaseCoreHP" type="Button" parent="DesertTDscene/upsncounters/upgradespanel"]
 layout_mode = 0
 offset_top = 192.0
 offset_right = 194.0
 offset_bottom = 240.0
+text = "Myrtle HP up"
+
+[node name="MyrtleHpUp2" type="Button" parent="DesertTDscene/upsncounters/upgradespanel"]
+layout_mode = 0
+offset_top = 256.0
+offset_right = 194.0
+offset_bottom = 304.0
 text = "Increase Core HP"
 
 [node name="Path2D" parent="DesertTDscene" instance=ExtResource("3_g1s6t")]
@@ -785,7 +722,7 @@ offset_bottom = 648.0
 [node name="EnemyPanel" type="Panel" parent="RPGBattle/bgpanel"]
 self_modulate = Color(1, 0.109804, 0.0901961, 1)
 layout_mode = 0
-offset_right = 224.0
+offset_right = 192.0
 offset_bottom = 312.0
 
 [node name="EnemyHP" type="RichTextLabel" parent="RPGBattle/bgpanel/EnemyPanel"]
@@ -798,8 +735,8 @@ fit_content = true
 
 [node name="EnemySprite" type="TextureRect" parent="RPGBattle/bgpanel/EnemyPanel"]
 layout_mode = 0
-offset_top = 32.0
-offset_right = 224.0
+offset_top = 24.0
+offset_right = 192.0
 offset_bottom = 312.0
 texture = ExtResource("7_gyedf")
 expand_mode = 4
@@ -810,16 +747,18 @@ libraries = {
 }
 
 [node name="textbg" type="Panel" parent="RPGBattle/bgpanel/EnemyPanel/emydmgpopup"]
+visible = false
 offset_top = 32.0
 offset_right = 88.0
 offset_bottom = 72.0
 
 [node name="emydmgtext" type="RichTextLabel" parent="RPGBattle/bgpanel/EnemyPanel/emydmgpopup/textbg"]
-self_modulate = Color(0.745098, 0.203922, 0.258824, 1)
+visible = false
 layout_mode = 0
 offset_right = 96.0
 offset_bottom = 80.0
 bbcode_enabled = true
+text = "AAAAAAAAAA"
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="RPGBattle/bgpanel/EnemyPanel/emydmgpopup/textbg"]
 position = Vector2(80, 96)
@@ -863,6 +802,13 @@ offset_top = 23.0
 offset_right = 191.0
 offset_bottom = 49.0
 
+[node name="Movement" type="Panel" parent="RPGBattle/bgpanel/PlayerPanel"]
+visible = false
+layout_mode = 0
+offset_top = 24.0
+offset_right = 192.0
+offset_bottom = 104.0
+
 [node name="OverallContainer" type="HBoxContainer" parent="RPGBattle/bgpanel/PlayerPanel"]
 layout_mode = 0
 offset_top = 49.0
@@ -894,163 +840,14 @@ text = "Sunbathe (Z)"
 layout_mode = 2
 allow_reselect = true
 
-[node name="Panel" type="Panel" parent="RPGBattle/bgpanel/PlayerPanel"]
-layout_mode = 0
-offset_top = 328.0
-offset_right = 191.0
-offset_bottom = 431.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_5gbdc")
-
-[node name="ProgressBar" type="ProgressBar" parent="RPGBattle/bgpanel/PlayerPanel/Panel"]
-layout_mode = 0
-offset_right = 191.0
-offset_bottom = 103.0
-max_value = 300.0
-
-[node name="Leftsidetyping" type="Node2D" parent="."]
-visible = false
-script = ExtResource("10_qocwh")
-
-[node name="bgpanel" type="Panel" parent="Leftsidetyping"]
-offset_right = 192.0
-offset_bottom = 648.0
-scale = Vector2(1.65252, 1.59464)
-metadata/_edit_use_anchors_ = true
-
-[node name="EnemySprite" type="TextureRect" parent="Leftsidetyping/bgpanel"]
-layout_mode = 0
-offset_right = 192.0
-offset_bottom = 288.0
-texture = ExtResource("11_176s2")
-expand_mode = 4
-metadata/_edit_use_anchors_ = true
-
-[node name="EnemyPanel" type="Panel" parent="Leftsidetyping/bgpanel"]
-self_modulate = Color(0.721569, 0.482353, 0.0196078, 1)
-layout_mode = 0
-offset_right = 192.0
-offset_bottom = 312.0
-metadata/_edit_use_anchors_ = true
-
-[node name="Divider" type="TextureRect" parent="Leftsidetyping/bgpanel"]
-layout_mode = 0
-offset_top = 304.0
-offset_right = 192.0
-offset_bottom = 312.0
-texture = SubResource("GradientTexture2D_ydit8")
-metadata/_edit_use_anchors_ = true
-
-[node name="TypingChallengeLabel" type="RichTextLabel" parent="Leftsidetyping/bgpanel"]
-layout_mode = 0
-offset_right = 192.0
-offset_bottom = 64.0
-text = "Typing challenge! Type as fast as you can! "
-metadata/_edit_use_anchors_ = true
-
-[node name="StringtoType" type="RichTextLabel" parent="Leftsidetyping/bgpanel"]
-layout_mode = 0
-offset_top = 64.0
-offset_right = 192.0
-offset_bottom = 152.0
-text = "qaqaqq"
-metadata/_edit_use_anchors_ = true
-
-[node name="playerInput" type="RichTextLabel" parent="Leftsidetyping/bgpanel"]
-layout_mode = 0
-offset_top = 320.0
-offset_right = 192.0
-offset_bottom = 400.0
-metadata/_edit_use_anchors_ = true
-
-[node name="ProgressBar" type="ProgressBar" parent="Leftsidetyping"]
-offset_top = 320.0
-offset_right = 192.0
-offset_bottom = 392.0
-max_value = 4.0
-metadata/_edit_use_anchors_ = true
-
-[node name="reset" type="Button" parent="Leftsidetyping"]
-offset_top = 408.0
-offset_right = 192.0
-offset_bottom = 496.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_5p3i5")
-text = "MANUAL RESET"
-metadata/_edit_use_anchors_ = true
-
 [node name="trackerandsetter" type="Node" parent="."]
 
 [node name="musicplayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_nfokh")
 
-[node name="Palmtree" type="Sprite2D" parent="."]
-position = Vector2(864, 848)
-texture = ExtResource("11_0456q")
-
-[node name="Palmtree2" type="Sprite2D" parent="."]
-position = Vector2(1456, 568)
-texture = ExtResource("11_0456q")
-
-[node name="Palmtree3" type="Sprite2D" parent="."]
-position = Vector2(896, 512)
-texture = ExtResource("11_0456q")
-
-[node name="Cactus" type="Sprite2D" parent="."]
-position = Vector2(272, 224)
-texture = ExtResource("12_4fcey")
-
-[node name="Cactus2" type="Sprite2D" parent="."]
-position = Vector2(1648, 64)
-texture = ExtResource("12_4fcey")
-
-[node name="Palmtree4" type="Sprite2D" parent="."]
-position = Vector2(1616, 160)
-texture = ExtResource("11_0456q")
-
-[node name="CactusRock" type="Sprite2D" parent="."]
-position = Vector2(656, 560)
-texture = ExtResource("13_nbsai")
-
-[node name="CactusRock2" type="Sprite2D" parent="."]
-position = Vector2(1616, 352)
-texture = ExtResource("13_nbsai")
-
-[node name="CactusRock3" type="Sprite2D" parent="."]
-position = Vector2(240, 864)
-texture = ExtResource("13_nbsai")
-
-[node name="Cactus(1)" type="Sprite2D" parent="."]
-position = Vector2(544, 496)
-texture = ExtResource("14_2fxy7")
-
-[node name="Cactus(1)2" type="Sprite2D" parent="."]
-position = Vector2(1024, 928)
-texture = ExtResource("14_2fxy7")
-
-[node name="Cactus(1)3" type="Sprite2D" parent="."]
-position = Vector2(578, 176)
-texture = ExtResource("14_2fxy7")
-
-[node name="Palmtree5" type="Sprite2D" parent="."]
-position = Vector2(928, 192)
-texture = ExtResource("11_0456q")
-
-[node name="Cactus3" type="Sprite2D" parent="."]
-position = Vector2(1184, 208)
-texture = ExtResource("12_4fcey")
-
-[node name="11" type="Sprite2D" parent="."]
-position = Vector2(464, 915)
-scale = Vector2(0.431697, 0.409601)
-texture = ExtResource("15_fbwmd")
-
-[connection signal="pressed" from="DesertTDscene/upsncounters/upgradespanel/Increase Tower Damage" to="DesertTDscene/upsncounters" method="_on_increase_tower_damage_pressed"]
-[connection signal="pressed" from="DesertTDscene/upsncounters/upgradespanel/MyrtleDmgUp" to="DesertTDscene/upsncounters" method="_on_myrtle_dmg_up_pressed"]
-[connection signal="pressed" from="DesertTDscene/upsncounters/upgradespanel/MyrtleHpUp" to="RPGBattle" method="_on_myrtle_hp_up_pressed"]
-[connection signal="pressed" from="DesertTDscene/upsncounters/upgradespanel/IncreaseCoreHP" to="DesertTDscene/upsncounters" method="_on_increase_core_hp_pressed"]
 [connection signal="timeout" from="DesertTDscene/PathSpawner/Timer" to="DesertTDscene/PathSpawner" method="_on_timer_timeout"]
 [connection signal="pressed" from="RPGBattle/bgpanel/PlayerPanel/OverallContainer/LeftSideContainer/BashButton" to="RPGBattle" method="_on_bash_button_pressed"]
 [connection signal="pressed" from="RPGBattle/bgpanel/PlayerPanel/OverallContainer/LeftSideContainer/PokeButton" to="RPGBattle" method="_on_poke_button_pressed"]
 [connection signal="pressed" from="RPGBattle/bgpanel/PlayerPanel/OverallContainer/LeftSideContainer/Sunbathe" to="RPGBattle" method="_on_sunbathe_pressed"]
 [connection signal="item_selected" from="RPGBattle/bgpanel/PlayerPanel/OverallContainer/LeftSideContainer/SkillList" to="RPGBattle" method="_on_skill_list_item_selected"]
 [connection signal="pressed" from="RPGBattle/bgpanel/PlayerPanel/OverallContainer/LeftSideContainer/SkillList" to="RPGBattle" method="_on_skill_list_pressed"]
-[connection signal="pressed" from="Leftsidetyping/reset" to="Leftsidetyping" method="_on_reset_pressed"]

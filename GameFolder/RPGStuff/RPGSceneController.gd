@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var pchealth: int
+@export var pchealth: int = 30
 @export var currenemy: emyres
 @export_node_path() var SkillList_path
 
@@ -12,6 +12,13 @@ var trackenemyToFight: int
 
 var dontdoathing: bool = false
 var initializing:bool = false
+
+var givethesepoints: int = 10
+
+var progress = 0
+
+var nextstage = 300 
+
 
 @onready var Skill_List = $"bgpanel/PlayerPanel/OverallContainer/LeftSideContainer/SkillList"
 
@@ -31,6 +38,8 @@ func _process(delta):
 		deathLogic()
 	updateCounters()
 	if(ehealth <= 0):
+		Globalvars.pp += givethesepoints
+		progress += givethesepoints
 		$bgpanel/EnemyPanel/emydmgpopup.play("EmyChange")
 		$bgpanel/PlayerPanel/OverallContainer.visible = false
 		dontdoathing = true
@@ -55,6 +64,9 @@ func _process(delta):
 		pass
 
 func deathLogic():
+	$bgpanel/EnemyPanel/emydmgpopup.play("deathanim")
+	Globalvars.pp -= 100
+	pchealth = 30
 	pass
 
 
@@ -66,10 +78,13 @@ func InitializeEnemy():
 		match newEM:
 			0:
 				currenemy = ResourceLoader.load("res://RPGStuff/eresources/rollerbot.tres")
+				givethesepoints= 10
 			1:
 				currenemy = ResourceLoader.load("res://RPGStuff/eresources/propeller.tres")
+				givethesepoints=10
 			2:
 				currenemy = ResourceLoader.load("res://RPGStuff/eresources/Chomper.tres")
+				givethesepoints=100
 		$bgpanel/EnemyPanel/EnemySprite.texture = (currenemy.picture)
 		ehealth = currenemy.health
 		edamage = currenemy.damage
@@ -81,6 +96,11 @@ func updateCounters():
 	$bgpanel/PlayerPanel/PlayerHP.text = "Myrtle HP: " + str(pchealth)
 	$bgpanel/EnemyPanel/EnemyHP.text = "Enemy HP: "+ str(ehealth)
 	$bgpanel/PlayerPanel/PlayerPP.text = "Myrtle PP: " + str(Globalvars.pp)
+	$bgpanel/PlayerPanel/Panel/ProgressBar.value = progress
+	if(progress >= 300):
+		#$bgpanel/EnemyPanel/emydmgpopup.play("transferphase")
+		Globalvars.goNext()
+		pass #NEXT PHASE
 	
 	if(Globalvars.pp - 10 < 0):
 		disable_item(1)
@@ -114,6 +134,7 @@ func _on_poke_button_pressed():
 	pass # Replace with function body.
 
 func gimmieDamage(index, dmgval):
+	dmgval = (dmgval * Globalvars.mdmg)
 	match(currenemy.defences[index]):
 		0:
 			$bgpanel/EnemyPanel/emydmgpopup/textbg/emydmgtext.text = "Takes: " + str(dmgval)
@@ -128,10 +149,6 @@ func gimmieDamage(index, dmgval):
 			$bgpanel/EnemyPanel/emydmgpopup/textbg/emydmgtext.text = "[shake rate = 20.0 level=5 connected=1] Resists: " + str(dmgval/2) + " [/shake]"
 			$bgpanel/EnemyPanel/emydmgpopup.play("DefendedDamage")
 			return dmgval/2 
-
-
-func _on_fireball_pressed():
-	pass # Replace with function body.
 
 func givepointsToPlayer():
 	match str(currenemy.name):
@@ -205,3 +222,12 @@ func disable_item(index):
 func enable_item(index):
 	Skill_List.set_item_disabled(index, false)
 	
+
+
+func _on_myrtle_hp_up_pressed():
+	if(Globalvars.pp - 60 < 0):
+		pass
+	else:
+		Globalvars.pp -=60 
+		pchealth += 20 
+	pass # Replace with function body.

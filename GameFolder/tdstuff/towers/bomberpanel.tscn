@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtnv14mft2jqd"]
+
+[ext_resource type="Script" path="res://tdstuff/towers/red_tower_panel.gd" id="1_7j3k5"]
+[ext_resource type="Texture2D" uid="uid://bwwu7co4jxsrg" path="res://Assets/Towers/Bomber Cactus Idle.png" id="2_jiyx8"]
+
+[node name="bomberpanel" type="Panel"]
+custom_minimum_size = Vector2(80, 80)
+offset_right = 256.0
+offset_bottom = 160.0
+script = ExtResource("1_7j3k5")
+
+[node name="HammerCactusIdle" type="Sprite2D" parent="."]
+position = Vector2(128, 80)
+scale = Vector2(0.4, 0.290134)
+texture = ExtResource("2_jiyx8")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
