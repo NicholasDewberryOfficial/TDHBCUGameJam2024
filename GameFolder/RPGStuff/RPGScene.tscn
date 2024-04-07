@@ -193,6 +193,7 @@ height = 5
 
 [node name="RPGBattle" type="Node2D"]
 script = ExtResource("1_gwgac")
+SkillList_path = NodePath("bgpanel/PlayerPanel/OverallContainer/LeftSideContainer/SkillList")
 
 [node name="bgpanel" type="Panel" parent="."]
 offset_right = 192.0
@@ -273,6 +274,12 @@ offset_bottom = 8.0
 text = "Player HP: "
 fit_content = true
 
+[node name="PlayerPP" type="RichTextLabel" parent="bgpanel/PlayerPanel"]
+layout_mode = 0
+offset_top = 23.0
+offset_right = 191.0
+offset_bottom = 49.0
+
 [node name="Movement" type="Panel" parent="bgpanel/PlayerPanel"]
 visible = false
 layout_mode = 0
@@ -282,7 +289,7 @@ offset_bottom = 104.0
 
 [node name="OverallContainer" type="HBoxContainer" parent="bgpanel/PlayerPanel"]
 layout_mode = 0
-offset_top = 24.0
+offset_top = 49.0
 offset_right = 192.0
 offset_bottom = 328.0
 
@@ -302,36 +309,17 @@ tooltip_text = "Shoots a thorn at an enemy like a bullet. Strong against flying 
 text = "Shoot
 "
 
-[node name="megaBash" type="Button" parent="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer"]
-layout_mode = 2
-tooltip_text = "A stronger version of [Bash] that punches the enemy with a giant spiked fist. Consumes 10 PP."
-theme_override_font_sizes/font_size = 11
-text = "MegaBash[10 PP]"
-alignment = 0
-
-[node name="LeftSideContainer2" type="VBoxContainer" parent="bgpanel/PlayerPanel/OverallContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Disperse" type="Button" parent="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer2"]
-layout_mode = 2
-tooltip_text = "Shoot out thorns from your body to hit the enemy, dealing a small amount of damage to yourself as well."
-text = "Disperse"
-
-[node name="Sunbathe" type="Button" parent="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer2"]
+[node name="Sunbathe" type="Button" parent="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer"]
 layout_mode = 2
 tooltip_text = "Soak up energy from the sun. Gain PP, but leaves yourself vulnerable."
 text = "Sunbathe"
 
-[node name="Pierce" type="Button" parent="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer2"]
+[node name="SkillList" type="OptionButton" parent="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer"]
 layout_mode = 2
-tooltip_text = "A stronger version of [Shoot] that shoots a harpoon-like needle at the enemy. Consumes 10 PP."
-theme_override_font_sizes/font_size = 11
-text = "Sting [10 PP]"
+allow_reselect = true
 
 [connection signal="pressed" from="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer/BashButton" to="." method="_on_bash_button_pressed"]
 [connection signal="pressed" from="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer/PokeButton" to="." method="_on_poke_button_pressed"]
-[connection signal="pressed" from="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer/megaBash" to="." method="_on_mega_bash_pressed"]
-[connection signal="pressed" from="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer2/Disperse" to="." method="_on_disperse_pressed"]
-[connection signal="pressed" from="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer2/Sunbathe" to="." method="_on_sunbathe_pressed"]
-[connection signal="pressed" from="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer2/Pierce" to="." method="_on_pierce_pressed"]
+[connection signal="pressed" from="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer/Sunbathe" to="." method="_on_sunbathe_pressed"]
+[connection signal="item_selected" from="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer/SkillList" to="." method="_on_skill_list_item_selected"]
+[connection signal="pressed" from="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer/SkillList" to="." method="_on_skill_list_pressed"]
