@@ -1,8 +1,15 @@
 extends Node2D
 
 
-@onready var path = preload("res://tdstuff/stage1.tscn")
+@onready var rollerpath = preload("res://combined/stage2.tscn")
+var rng = RandomNumberGenerator
+
+func _ready():
+	rng = RandomNumberGenerator.new()
 
 func _on_timer_timeout():
-	var tempPath = path.instantiate()
-	add_child(tempPath)
+	var val = rng.randi_range(0,Globalvars.tddifficulty)
+	match val:
+		0:
+			var tempPath = rollerpath.instantiate()
+			add_child(tempPath)
