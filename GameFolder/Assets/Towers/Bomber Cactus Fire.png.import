@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://day2lc0vljef2"
+=======
+uid="uid://cfxaothh7nb2u"
+>>>>>>> 5c352889a2b8f596dc2654b9ecf79da221b058e7
 path="res://.godot/imported/Bomber Cactus Fire.png-b5c3d9029a8791520a73c28c8fff461e.ctex"
 metadata={
 "vram_texture": false

@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://d3cruih5srk5u"
-=======
-uid="uid://dtjs1tv2qone2"
->>>>>>> 5c352889a2b8f596dc2654b9ecf79da221b058e7
-path="res://.godot/imported/Longarm Cactus Fire.png-93ca019de765cb4d525fa89801c7fb51.ctex"
+uid="uid://btnof6a5ossac"
+path="res://.godot/imported/Cactus_Commander_Ponder.png-781193907b41db92d70f37a521ca8866.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Towers/Longarm Cactus Fire.png"
-dest_files=["res://.godot/imported/Longarm Cactus Fire.png-93ca019de765cb4d525fa89801c7fb51.ctex"]
+source_file="res://Assets/Talk_Sprites/Cactus_Commander_Ponder.png"
+dest_files=["res://.godot/imported/Cactus_Commander_Ponder.png-781193907b41db92d70f37a521ca8866.ctex"]
 
 [params]
 
