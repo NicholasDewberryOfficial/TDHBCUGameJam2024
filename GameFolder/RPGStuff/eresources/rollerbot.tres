@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="emyres" load_steps=3 format=3 uid="uid://b2hpe4eih0xqf"]
 
 [ext_resource type="Script" path="res://RPGStuff/emyres.gd" id="1_5many"]
-[ext_resource type="Texture2D" uid="uid://484vs5nlws8k" path="res://Assets/Roller.png" id="2_wxd7w"]
+[ext_resource type="Texture2D" path="res://Assets/Roller.png" id="2_wxd7w"]
 
 [resource]
 script = ExtResource("1_5many")
