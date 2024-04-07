@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://pyoq5xdq7how"]
+[gd_scene load_steps=22 format=3 uid="uid://pyoq5xdq7how"]
 
 [ext_resource type="Texture2D" uid="uid://7ovcgq4il4ma" path="res://kenney_tower-defense-top-down/Tilesheet/towerDefense_tilesheet.png" id="1_masly"]
 [ext_resource type="PackedScene" uid="uid://dc602t0mynotg" path="res://tdstuff/towers/red_tower_panel.tscn" id="2_g1s27"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://tdstuff/PathSpawner.gd" id="4_e6rws"]
 [ext_resource type="PackedScene" uid="uid://dhstl7vg6sqb6" path="res://tdstuff/towers/ui.tscn" id="5_7v3m1"]
 [ext_resource type="Script" path="res://RPGStuff/RPGSceneController.gd" id="6_bgwqp"]
-[ext_resource type="Texture2D" uid="uid://484vs5nlws8k" path="res://Assets/Roller.png" id="7_c181s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5arw8"]
 texture = ExtResource("1_masly")
@@ -4745,7 +4744,6 @@ visible = false
 
 [node name="RPGBattle" type="Node2D" parent="."]
 script = ExtResource("6_bgwqp")
-SkillList_path = NodePath("bgpanel/PlayerPanel/OverallContainer/LeftSideContainer/SkillList")
 
 [node name="bgpanel" type="Panel" parent="RPGBattle"]
 offset_right = 192.0
@@ -4770,7 +4768,6 @@ layout_mode = 0
 offset_top = 24.0
 offset_right = 192.0
 offset_bottom = 312.0
-texture = ExtResource("7_c181s")
 expand_mode = 4
 
 [node name="emydmgpopup" type="AnimationPlayer" parent="RPGBattle/bgpanel/EnemyPanel"]
