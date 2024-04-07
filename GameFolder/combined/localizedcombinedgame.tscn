@@ -1,0 +1,1056 @@
+[gd_scene load_steps=40 format=3 uid="uid://pyoq5xdq7how"]
+
+[ext_resource type="Script" path="res://globalvars.gd" id="1_kians"]
+[ext_resource type="Texture2D" uid="uid://7ovcgq4il4ma" path="res://kenney_tower-defense-top-down/Tilesheet/towerDefense_tilesheet.png" id="1_masly"]
+[ext_resource type="PackedScene" uid="uid://dc602t0mynotg" path="res://tdstuff/towers/red_tower_panel.tscn" id="2_g1s27"]
+[ext_resource type="Script" path="res://combined/upsncounters.gd" id="2_vdiye"]
+[ext_resource type="PackedScene" uid="uid://darebda60160h" path="res://combined/stage2.tscn" id="3_g1s6t"]
+[ext_resource type="Script" path="res://tdstuff/PathSpawner.gd" id="4_e6rws"]
+[ext_resource type="PackedScene" path="res://tdstuff/towers/bomberpanel.tscn" id="4_fin7g"]
+[ext_resource type="Script" path="res://tdstuff/towers/bomberpanel.gd" id="5_nxbtx"]
+[ext_resource type="Script" path="res://RPGStuff/RPGSceneController.gd" id="6_bgwqp"]
+[ext_resource type="Texture2D" uid="uid://484vs5nlws8k" path="res://Assets/Roller.png" id="7_gyedf"]
+[ext_resource type="Script" path="res://LeftSideTypingSTuff/leftsidetyping.gd" id="10_qocwh"]
+[ext_resource type="Texture2D" uid="uid://vl8l74rsy6pf" path="res://Assets/Chomper.png" id="11_176s2"]
+[ext_resource type="Texture2D" uid="uid://b5lefuosu0h22" path="res://kenney_tower-defense-top-down/palmtree.png" id="11_0456q"]
+[ext_resource type="AudioStream" uid="uid://fh1ry7t52dro" path="res://Assets/music/rpgtheme.mp3" id="11_nfokh"]
+[ext_resource type="Texture2D" uid="uid://bdj22vthm64t5" path="res://kenney_tower-defense-top-down/cactus.png" id="12_4fcey"]
+[ext_resource type="Texture2D" uid="uid://t3oo138lmo5u" path="res://kenney_tower-defense-top-down/cactus_rock.png" id="13_nbsai"]
+[ext_resource type="Texture2D" uid="uid://bxqf7yd0ewru" path="res://kenney_tower-defense-top-down/cactus (1).png" id="14_2fxy7"]
+[ext_resource type="Texture2D" uid="uid://ch75tkudr3b3i" path="res://Assets/Towers/11.png" id="15_fbwmd"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5arw8"]
+texture = ExtResource("1_masly")
+texture_region_size = Vector2i(64, 64)
+use_texture_padding = false
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+20:0/0 = 0
+21:0/0 = 0
+22:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+20:1/0 = 0
+21:1/0 = 0
+22:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+20:2/0 = 0
+21:2/0 = 0
+22:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+19:3/0 = 0
+20:3/0 = 0
+21:3/0 = 0
+22:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+13:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+20:4/0 = 0
+21:4/0 = 0
+22:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+20:5/0 = 0
+21:5/0 = 0
+22:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+5:6/0/terrain_set = 0
+5:6/0/terrains_peering_bit/bottom_right_corner = 0
+6:6/0 = 0
+6:6/0/terrain_set = 0
+6:6/0/terrains_peering_bit/bottom_right_corner = 0
+6:6/0/terrains_peering_bit/bottom_side = 0
+6:6/0/terrains_peering_bit/bottom_left_corner = 0
+7:6/0 = 0
+7:6/0/terrain_set = 0
+7:6/0/terrains_peering_bit/bottom_left_corner = 0
+8:6/0 = 0
+8:6/0/terrain_set = 0
+8:6/0/terrains_peering_bit/right_side = 0
+8:6/0/terrains_peering_bit/bottom_right_corner = 0
+8:6/0/terrains_peering_bit/bottom_side = 0
+9:6/0 = 0
+9:6/0/terrain_set = 0
+9:6/0/terrains_peering_bit/bottom_side = 0
+9:6/0/terrains_peering_bit/bottom_left_corner = 0
+9:6/0/terrains_peering_bit/left_side = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+16:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+20:6/0 = 0
+21:6/0 = 0
+22:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+5:7/0/terrain_set = 0
+5:7/0/terrains_peering_bit/right_side = 0
+5:7/0/terrains_peering_bit/bottom_right_corner = 0
+5:7/0/terrains_peering_bit/top_right_corner = 0
+6:7/0 = 0
+6:7/0/terrain_set = 0
+6:7/0/terrain = 0
+6:7/0/terrains_peering_bit/right_side = 0
+6:7/0/terrains_peering_bit/bottom_right_corner = 0
+6:7/0/terrains_peering_bit/bottom_side = 0
+6:7/0/terrains_peering_bit/bottom_left_corner = 0
+6:7/0/terrains_peering_bit/left_side = 0
+6:7/0/terrains_peering_bit/top_left_corner = 0
+6:7/0/terrains_peering_bit/top_side = 0
+6:7/0/terrains_peering_bit/top_right_corner = 0
+7:7/0 = 0
+7:7/0/terrain_set = 0
+7:7/0/terrains_peering_bit/bottom_left_corner = 0
+7:7/0/terrains_peering_bit/left_side = 0
+7:7/0/terrains_peering_bit/top_left_corner = 0
+8:7/0 = 0
+8:7/0/terrain_set = 0
+8:7/0/terrains_peering_bit/right_side = 0
+8:7/0/terrains_peering_bit/top_side = 0
+8:7/0/terrains_peering_bit/top_right_corner = 0
+9:7/0 = 0
+9:7/0/terrain_set = 0
+9:7/0/terrains_peering_bit/left_side = 0
+9:7/0/terrains_peering_bit/top_left_corner = 0
+9:7/0/terrains_peering_bit/top_side = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+16:7/0 = 0
+17:7/0 = 0
+18:7/0 = 0
+19:7/0 = 0
+20:7/0 = 0
+21:7/0 = 0
+22:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+5:8/0/terrain_set = 0
+5:8/0/terrains_peering_bit/top_right_corner = 0
+6:8/0 = 0
+6:8/0/terrain_set = 0
+6:8/0/terrains_peering_bit/top_left_corner = 0
+6:8/0/terrains_peering_bit/top_side = 0
+6:8/0/terrains_peering_bit/top_right_corner = 0
+7:8/0 = 0
+7:8/0/terrain_set = 0
+7:8/0/terrains_peering_bit/top_left_corner = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+16:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+19:8/0 = 0
+20:8/0 = 0
+21:8/0 = 0
+22:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+16:9/0 = 0
+17:9/0 = 0
+18:9/0 = 0
+19:9/0 = 0
+20:9/0 = 0
+21:9/0 = 0
+22:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+12:10/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+15:10/0 = 0
+16:10/0 = 0
+17:10/0 = 0
+18:10/0 = 0
+19:10/0 = 0
+20:10/0 = 0
+21:10/0 = 0
+22:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+12:11/0 = 0
+13:11/0 = 0
+14:11/0 = 0
+15:11/0 = 0
+16:11/0 = 0
+17:11/0 = 0
+18:11/0 = 0
+19:11/0 = 0
+20:11/0 = 0
+21:11/0 = 0
+22:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+8:12/0 = 0
+9:12/0 = 0
+10:12/0 = 0
+11:12/0 = 0
+12:12/0 = 0
+13:12/0 = 0
+14:12/0 = 0
+15:12/0 = 0
+16:12/0 = 0
+17:12/0 = 0
+18:12/0 = 0
+19:12/0 = 0
+20:12/0 = 0
+21:12/0 = 0
+22:12/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_f8xv6"]
+tile_size = Vector2i(64, 64)
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Terrain 0"
+terrain_set_0/terrain_0/color = Color(0.92549, 0.862745, 0.721569, 1)
+sources/0 = SubResource("TileSetAtlasSource_5arw8")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b0yuo"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_bl5mt"]
+offsets = PackedFloat32Array(0, 0.983607)
+colors = PackedColorArray(0.701961, 0.117647, 0.137255, 1, 0.937255, 0.835294, 0.537255, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tphhn"]
+gradient = SubResource("Gradient_bl5mt")
+fill_from = Vector2(0.827957, 0.150538)
+fill_to = Vector2(0.317204, 0.752688)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aotlq"]
+texture = SubResource("GradientTexture2D_tphhn")
+
+[sub_resource type="Animation" id="Animation_jf5fl"]
+resource_name = "CritDamage"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("emydmgpopup/textbg/emydmgtext:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("emydmgpopup/textbg/emydmgtext:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.941),
+"transitions": PackedFloat32Array(1, 0.00164238),
+"update": 0,
+"values": [Color(0.745098, 0.203922, 0.258824, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("emydmgpopup/textbg:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_bras8"]
+resource_name = "DefendedDamage"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("emydmgpopup/textbg/emydmgtext:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("emydmgpopup/textbg/emydmgtext:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.686275, 0.780392, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("emydmgpopup/textbg:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Gradient" id="Gradient_ewups"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kphuu"]
+gradient = SubResource("Gradient_ewups")
+
+[sub_resource type="Animation" id="Animation_34b6g"]
+resource_name = "EmyChange"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("EnemySprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(0.116629),
+"update": 1,
+"values": [SubResource("GradientTexture2D_kphuu")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EnemySprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EnemySprite:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("emydmgpopup/textbg/CPUParticles2D:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_uejgp"]
+resource_name = "NormDamage"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("emydmgpopup/textbg/emydmgtext:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("emydmgpopup/textbg:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("emydmgpopup/textbg/emydmgtext:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_dnbd2"]
+resource_name = "deathanim"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.415686, 0, 0.105882, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6mklk"]
+resource_name = "transferphase"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ueyvf"]
+_data = {
+"CritDamage": SubResource("Animation_jf5fl"),
+"DefendedDamage": SubResource("Animation_bras8"),
+"EmyChange": SubResource("Animation_34b6g"),
+"NormDamage": SubResource("Animation_uejgp"),
+"deathanim": SubResource("Animation_dnbd2"),
+"transferphase": SubResource("Animation_6mklk")
+}
+
+[sub_resource type="Gradient" id="Gradient_3q6qv"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_257db"]
+gradient = SubResource("Gradient_3q6qv")
+width = 5
+height = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5gbdc"]
+
+[sub_resource type="Gradient" id="Gradient_r1tc5"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ydit8"]
+gradient = SubResource("Gradient_r1tc5")
+width = 5
+height = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5p3i5"]
+bg_color = Color(0.14902, 0.12549, 0.0313726, 1)
+
+[node name="localized" type="Node2D"]
+script = ExtResource("1_kians")
+
+[node name="bgpanel" type="Panel" parent="."]
+offset_right = 1920.0
+offset_bottom = 1088.0
+
+[node name="DesertTDscene" type="Node2D" parent="."]
+
+[node name="TileMap" type="TileMap" parent="DesertTDscene"]
+position = Vector2(-384, 0)
+tile_set = SubResource("TileSet_f8xv6")
+rendering_quadrant_size = 64
+format = 2
+layer_0/tile_data = PackedInt32Array(65549, 393216, 7, 65550, 393216, 7, 131086, 393216, 8, 131085, 393216, 8, 131084, 327680, 8, 65548, 327680, 7, 12, 327680, 6, 13, 393216, 6, 14, 393216, 6, 65551, 393216, 7, 131087, 393216, 8, 15, 393216, 6, 65552, 393216, 7, 131088, 393216, 8, 16, 393216, 6, 65553, 393216, 7, 131089, 393216, 8, 17, 393216, 6, 65554, 393216, 7, 131090, 393216, 8, 18, 393216, 6, 65555, 393216, 7, 131091, 393216, 8, 19, 393216, 6, 65556, 393216, 7, 131092, 393216, 8, 20, 393216, 6, 65557, 393216, 7, 131093, 393216, 8, 21, 393216, 6, 65558, 393216, 7, 131094, 393216, 8, 22, 393216, 6, 65559, 393216, 7, 131095, 393216, 8, 23, 393216, 6, 65560, 393216, 7, 131096, 393216, 8, 24, 393216, 6, 65561, 393216, 7, 131097, 393216, 8, 25, 393216, 6, 65562, 393216, 7, 131098, 393216, 8, 26, 393216, 6, 65563, 393216, 7, 131099, 393216, 8, 27, 393216, 6, 65564, 393216, 7, 131100, 393216, 7, 28, 393216, 6, 65565, 458752, 7, 131101, 458752, 7, 29, 458752, 6, 196637, 458752, 7, 196636, 393216, 7, 196635, 327680, 7, 262173, 458752, 7, 262172, 393216, 7, 262171, 327680, 7, 327709, 458752, 7, 327708, 393216, 7, 327707, 393216, 7, 393245, 458752, 8, 393244, 393216, 8, 393243, 393216, 7, 393242, 393216, 7, 327706, 327680, 7, 262170, 327680, 6, 458779, 393216, 7, 458778, 393216, 7, 458780, 458752, 7, 524316, 458752, 8, 524315, 393216, 8, 524314, 393216, 8, 524313, 393216, 8, 458777, 393216, 7, 393241, 393216, 7, 524312, 393216, 8, 458776, 393216, 7, 393240, 393216, 7, 524311, 393216, 8, 458775, 393216, 7, 393239, 393216, 7, 524310, 327680, 8, 458774, 393216, 8, 393238, 393216, 7, 327702, 393216, 7, 327703, 458752, 7, 327704, 393216, 6, 458773, 327680, 8, 393237, 393216, 8, 327701, 393216, 7, 262165, 393216, 6, 262166, 393216, 6, 262167, 458752, 6, 393236, 393216, 8, 327700, 393216, 7, 262164, 393216, 6, 393235, 393216, 8, 327699, 393216, 7, 262163, 458752, 7, 393234, 393216, 8, 327698, 393216, 7, 262162, 393216, 7, 327697, 393216, 7, 262161, 393216, 7, 196625, 393216, 6, 196626, 393216, 6, 196627, 458752, 6, 327696, 393216, 7, 262160, 393216, 7, 196624, 393216, 6, 327695, 393216, 7, 262159, 393216, 7, 196623, 393216, 6, 393232, 393216, 8, 393231, 393216, 8, 393230, 393216, 8, 327694, 393216, 7, 262158, 393216, 7, 393229, 393216, 8, 327693, 393216, 7, 262157, 393216, 7, 393228, 393216, 7, 327692, 393216, 7, 262156, 393216, 7, 393227, 393216, 7, 327691, 393216, 7, 262155, 327680, 7, 458764, 393216, 7, 458763, 393216, 7, 458765, 458752, 7, 524301, 458752, 7, 524300, 393216, 7, 524299, 393216, 7, 524298, 393216, 7, 458762, 393216, 7, 393226, 327680, 7, 589835, 393216, 7, 589834, 393216, 8, 589836, 393216, 7, 655372, 393216, 7, 655371, 393216, 8, 655370, 327680, 8, 589837, 458752, 7, 655373, 393216, 7, 720909, 393216, 7, 720908, 393216, 8, 720907, 327680, 8, 655374, 458752, 7, 720910, 393216, 7, 786446, 393216, 8, 786445, 393216, 8, 786444, 327680, 8, 720911, 393216, 7, 786447, 393216, 8, 655375, 393216, 6, 720912, 393216, 7, 786448, 393216, 8, 655376, 393216, 6, 720913, 393216, 7, 786449, 393216, 8, 655377, 393216, 6, 720914, 393216, 7, 786450, 393216, 7, 655378, 393216, 6, 720915, 393216, 7, 786451, 393216, 7, 655379, 327680, 8, 851987, 393216, 8, 851986, 393216, 8, 851985, 327680, 8, 786452, 393216, 7, 851988, 393216, 8, 720916, 393216, 7, 786453, 393216, 7, 851989, 393216, 8, 720917, 393216, 7, 786454, 393216, 7, 851990, 393216, 8, 720918, 393216, 7, 786455, 393216, 7, 851991, 393216, 8, 720919, 393216, 7, 786456, 393216, 7, 851992, 393216, 8, 720920, 393216, 7, 786457, 458752, 7, 851993, 458752, 8, 720921, 393216, 7, 655384, 458752, 7, 655385, 393216, 6, 720922, 393216, 7, 655386, 393216, 6, 786458, 393216, 7, 720923, 393216, 7, 786459, 393216, 7, 655387, 393216, 6, 720924, 393216, 7, 786460, 393216, 7, 655388, 393216, 6, 851995, 393216, 7, 851996, 393216, 7, 917532, 393216, 7, 917531, 393216, 7, 917530, 393216, 8, 851994, 393216, 7, 983068, 393216, 7, 983067, 393216, 7, 983066, 327680, 7, 917533, 393216, 7, 983069, 393216, 7, 1048605, 393216, 8, 1048604, 393216, 8, 1048603, 393216, 8, 983070, 393216, 7, 1048606, 393216, 8, 917534, 393216, 7, 983071, 393216, 7, 1048607, 393216, 8, 917535, 393216, 7, 983072, 458752, 7, 1048608, 458752, 8, 917536, 458752, 7, 851999, 393216, 7, 852000, 458752, 7, 851998, 393216, 7, 851997, 393216, 7, 786461, 393216, 7, 720925, 393216, 7, 786462, 393216, 7, 720926, 393216, 7, 786463, 393216, 7, 720927, 393216, 7, 655390, 393216, 6, 655391, 393216, 6, 786464, 458752, 7, 720928, 458752, 7, 655392, 458752, 6, 655389, 393216, 6, 1048602, 327680, 8, 917529, 327680, 8, 655383, 393216, 7, 655382, 393216, 7, 589846, 393216, 6, 589847, 393216, 6, 655381, 393216, 7, 589845, 393216, 6, 655380, 393216, 7, 589844, 393216, 6, 589843, 327680, 6, 196622, 393216, 6, 196621, 393216, 6, 196619, 327680, 6, 196620, 393216, 6, 327690, 327680, 7, 262154, 327680, 6, 524297, 327680, 7, 458761, 327680, 7, 393225, 327680, 6, 589833, 327680, 8, 393233, 393216, 8, 327705, 393216, 6, 917520, 393216, 4, 851984, 393216, 4, 851983, 393216, 4, 851982, 393216, 4, 851981, 393216, 4, 851980, 393216, 4, 851979, 393216, 4, 786443, 393216, 4, 786442, 393216, 4, 720906, 393216, 4, 720905, 393216, 4, 655369, 393216, 4, 786441, 393216, 4, 851977, 393216, 4, 917513, 393216, 4, 983049, 393216, 4, 1048585, 393216, 4, 1048586, 393216, 4, 983050, 393216, 4, 917514, 393216, 4, 851978, 393216, 4, 917515, 393216, 4, 983051, 393216, 4, 1048587, 393216, 4, 1048588, 393216, 4, 983052, 393216, 4, 917516, 393216, 4, 917517, 393216, 4, 983053, 393216, 4, 1048589, 393216, 4, 1048590, 393216, 4, 983054, 393216, 4, 917518, 393216, 4, 917519, 393216, 4, 983055, 393216, 4, 1048591, 393216, 4, 1048592, 393216, 4, 983056, 393216, 4, 983057, 393216, 4, 917521, 393216, 4, 917522, 393216, 4, 983058, 393216, 4, 1048594, 393216, 4, 1048593, 393216, 4, 1048595, 393216, 4, 983059, 393216, 4, 917523, 393216, 4, 917524, 393216, 4, 983060, 393216, 4, 1048596, 393216, 4, 1048597, 393216, 4, 983061, 393216, 4, 917525, 393216, 4, 917526, 393216, 4, 983062, 393216, 4, 1048598, 393216, 4, 1048599, 393216, 4, 983063, 393216, 4, 917527, 393216, 4, 917528, 393216, 4, 983064, 393216, 4, 1048600, 393216, 4, 1048601, 393216, 4, 983065, 393216, 4, 589855, 393216, 4, 524319, 393216, 4, 458783, 393216, 4, 393247, 393216, 4, 327711, 393216, 4, 262175, 393216, 4, 196639, 393216, 4, 131103, 393216, 4, 65567, 393216, 4, 31, 393216, 4, 30, 393216, 4, 65566, 393216, 4, 131102, 393216, 4, 196638, 393216, 4, 262174, 393216, 4, 327710, 393216, 4, 393246, 393216, 4, 458782, 393216, 4, 458781, 393216, 4, 524317, 393216, 4, 589853, 393216, 4, 589852, 393216, 4, 589851, 393216, 4, 589850, 393216, 4, 589849, 393216, 4, 589848, 393216, 4, 589854, 393216, 4, 524318, 393216, 4, 32, 393216, 4, 65568, 393216, 4, 131104, 393216, 4, 196640, 393216, 4, 262176, 393216, 4, 327712, 393216, 4, 393248, 393216, 4, 458784, 393216, 4, 524320, 393216, 4, 589856, 393216, 4, 524307, 393216, 4, 458771, 393216, 4, 458770, 393216, 4, 458769, 393216, 4, 458768, 393216, 4, 458767, 393216, 4, 458766, 393216, 4, 524302, 393216, 4, 589838, 393216, 4, 589839, 393216, 4, 524303, 393216, 4, 524304, 393216, 4, 589840, 393216, 4, 589841, 393216, 4, 524305, 393216, 4, 524306, 393216, 4, 589842, 393216, 4, 458772, 393216, 4, 524308, 393216, 4, 524309, 393216, 4, 196630, 393216, 4, 196629, 393216, 4, 196628, 393216, 4, 196631, 393216, 4, 196632, 393216, 4, 262168, 393216, 4, 262169, 393216, 4, 196633, 393216, 4, 196634, 393216, 4, 131081, 393216, 4, 65545, 393216, 4, 9, 393216, 4, 10, 393216, 4, 65546, 393216, 4, 131082, 393216, 4, 196618, 393216, 4, 196617, 393216, 4, 262153, 393216, 4, 327689, 393216, 4, 131083, 393216, 4, 65547, 393216, 4, 11, 393216, 4)
+
+[node name="upsncounters" type="Panel" parent="DesertTDscene"]
+offset_left = 1728.0
+offset_right = 1920.0
+offset_bottom = 1088.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_b0yuo")
+script = ExtResource("2_vdiye")
+
+[node name="statspanel" type="Panel" parent="DesertTDscene/upsncounters"]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 112.0
+
+[node name="pplabel" type="RichTextLabel" parent="DesertTDscene/upsncounters/statspanel"]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 40.0
+text = "PP: 
+"
+
+[node name="enemiesdefeatedlabel" type="RichTextLabel" parent="DesertTDscene/upsncounters/statspanel"]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 192.0
+offset_bottom = 88.0
+text = "Enemies Defeated: 
+ 
+"
+
+[node name="corehp" type="RichTextLabel" parent="DesertTDscene/upsncounters/statspanel"]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 192.0
+offset_bottom = 112.0
+text = "Core HP: 
+"
+
+[node name="towerbuys" type="Control" parent="DesertTDscene/upsncounters"]
+anchors_preset = 0
+offset_top = 128.0
+offset_right = 192.0
+offset_bottom = 622.0
+
+[node name="RedTowerPanel" parent="DesertTDscene/upsncounters/towerbuys" instance=ExtResource("2_g1s27")]
+layout_mode = 0
+offset_right = 194.0
+
+[node name="rtcost" type="RichTextLabel" parent="DesertTDscene/upsncounters/towerbuys"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 128.0
+offset_right = 163.0
+offset_bottom = 192.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Cost: 40 pp "
+
+[node name="bomberpanel" parent="DesertTDscene/upsncounters/towerbuys" instance=ExtResource("4_fin7g")]
+layout_mode = 0
+offset_top = 216.0
+offset_right = 192.0
+offset_bottom = 376.0
+script = ExtResource("5_nxbtx")
+
+[node name="bombcost" type="RichTextLabel" parent="DesertTDscene/upsncounters/towerbuys"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 376.0
+offset_right = 163.0
+offset_bottom = 440.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Cost: 20 pp "
+
+[node name="upgradespanel" type="Panel" parent="DesertTDscene/upsncounters"]
+layout_mode = 0
+offset_top = 736.0
+offset_right = 192.0
+offset_bottom = 992.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_aotlq")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DesertTDscene/upsncounters/upgradespanel"]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 96.0
+text = "COST: 150 PER UPGRADE "
+
+[node name="Increase Tower Damage" type="Button" parent="DesertTDscene/upsncounters/upgradespanel"]
+layout_mode = 0
+offset_top = 64.0
+offset_right = 194.0
+offset_bottom = 112.0
+text = "Increase Tower Damage"
+
+[node name="MyrtleDmgUp" type="Button" parent="DesertTDscene/upsncounters/upgradespanel"]
+layout_mode = 0
+offset_top = 128.0
+offset_right = 194.0
+offset_bottom = 176.0
+text = "Myrtle DMG up"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="DesertTDscene/upsncounters/upgradespanel"]
+layout_mode = 0
+offset_top = 272.0
+offset_right = 192.0
+offset_bottom = 368.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "+20 HP COSTS 60 PP "
+
+[node name="MyrtleHpUp" type="Button" parent="DesertTDscene/upsncounters/upgradespanel"]
+layout_mode = 0
+offset_top = 304.0
+offset_right = 194.0
+offset_bottom = 352.0
+text = "Myrtle HP up"
+
+[node name="IncreaseCoreHP" type="Button" parent="DesertTDscene/upsncounters/upgradespanel"]
+layout_mode = 0
+offset_top = 192.0
+offset_right = 194.0
+offset_bottom = 240.0
+text = "Increase Core HP"
+
+[node name="Path2D" parent="DesertTDscene" instance=ExtResource("3_g1s6t")]
+
+[node name="PathSpawner" type="Node2D" parent="DesertTDscene"]
+script = ExtResource("4_e6rws")
+
+[node name="Timer" type="Timer" parent="DesertTDscene/PathSpawner"]
+wait_time = 2.0
+autostart = true
+
+[node name="towers" type="Node2D" parent="DesertTDscene"]
+
+[node name="RPGBattle" type="Node2D" parent="."]
+script = ExtResource("6_bgwqp")
+
+[node name="bgpanel" type="Panel" parent="RPGBattle"]
+offset_right = 192.0
+offset_bottom = 648.0
+
+[node name="EnemyPanel" type="Panel" parent="RPGBattle/bgpanel"]
+self_modulate = Color(1, 0.109804, 0.0901961, 1)
+layout_mode = 0
+offset_right = 224.0
+offset_bottom = 312.0
+
+[node name="EnemyHP" type="RichTextLabel" parent="RPGBattle/bgpanel/EnemyPanel"]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 8.0
+text = "Enemy HP:
+"
+fit_content = true
+
+[node name="EnemySprite" type="TextureRect" parent="RPGBattle/bgpanel/EnemyPanel"]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 224.0
+offset_bottom = 312.0
+texture = ExtResource("7_gyedf")
+expand_mode = 4
+
+[node name="emydmgpopup" type="AnimationPlayer" parent="RPGBattle/bgpanel/EnemyPanel"]
+libraries = {
+"": SubResource("AnimationLibrary_ueyvf")
+}
+
+[node name="textbg" type="Panel" parent="RPGBattle/bgpanel/EnemyPanel/emydmgpopup"]
+offset_top = 32.0
+offset_right = 88.0
+offset_bottom = 72.0
+
+[node name="emydmgtext" type="RichTextLabel" parent="RPGBattle/bgpanel/EnemyPanel/emydmgpopup/textbg"]
+self_modulate = Color(0.745098, 0.203922, 0.258824, 1)
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 80.0
+bbcode_enabled = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="RPGBattle/bgpanel/EnemyPanel/emydmgpopup/textbg"]
+position = Vector2(80, 96)
+emitting = false
+amount = 300
+one_shot = true
+preprocess = 1.0
+explosiveness = 0.42
+orbit_velocity_min = -927.72
+orbit_velocity_max = 566.27
+scale_amount_max = 4.0
+color = Color(0.682353, 0.235294, 0.027451, 1)
+
+[node name="TextureRect" type="TextureRect" parent="RPGBattle/bgpanel/EnemyPanel/emydmgpopup"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Divider" type="TextureRect" parent="RPGBattle/bgpanel"]
+layout_mode = 0
+offset_top = 312.0
+offset_right = 192.0
+offset_bottom = 320.0
+texture = SubResource("GradientTexture2D_257db")
+
+[node name="PlayerPanel" type="Panel" parent="RPGBattle/bgpanel"]
+layout_mode = 0
+offset_top = 320.0
+offset_right = 192.0
+offset_bottom = 648.0
+
+[node name="PlayerHP" type="RichTextLabel" parent="RPGBattle/bgpanel/PlayerPanel"]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 8.0
+text = "Player HP: "
+fit_content = true
+
+[node name="PlayerPP" type="RichTextLabel" parent="RPGBattle/bgpanel/PlayerPanel"]
+layout_mode = 0
+offset_top = 23.0
+offset_right = 191.0
+offset_bottom = 49.0
+
+[node name="OverallContainer" type="HBoxContainer" parent="RPGBattle/bgpanel/PlayerPanel"]
+layout_mode = 0
+offset_top = 49.0
+offset_right = 192.0
+offset_bottom = 328.0
+
+[node name="LeftSideContainer" type="VBoxContainer" parent="RPGBattle/bgpanel/PlayerPanel/OverallContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BashButton" type="Button" parent="RPGBattle/bgpanel/PlayerPanel/OverallContainer/LeftSideContainer"]
+layout_mode = 2
+tooltip_text = "Punches the enemy."
+text = "Bash (Q)
+"
+
+[node name="PokeButton" type="Button" parent="RPGBattle/bgpanel/PlayerPanel/OverallContainer/LeftSideContainer"]
+layout_mode = 2
+tooltip_text = "Shoots a thorn at an enemy like a bullet. Strong against flying enemies.."
+text = "Shoot (A)
+"
+
+[node name="Sunbathe" type="Button" parent="RPGBattle/bgpanel/PlayerPanel/OverallContainer/LeftSideContainer"]
+layout_mode = 2
+tooltip_text = "Soak up energy from the sun. Gain PP, but leaves yourself vulnerable."
+text = "Sunbathe (Z)"
+
+[node name="SkillList" type="OptionButton" parent="RPGBattle/bgpanel/PlayerPanel/OverallContainer/LeftSideContainer"]
+layout_mode = 2
+allow_reselect = true
+
+[node name="Panel" type="Panel" parent="RPGBattle/bgpanel/PlayerPanel"]
+layout_mode = 0
+offset_top = 328.0
+offset_right = 191.0
+offset_bottom = 431.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5gbdc")
+
+[node name="ProgressBar" type="ProgressBar" parent="RPGBattle/bgpanel/PlayerPanel/Panel"]
+layout_mode = 0
+offset_right = 191.0
+offset_bottom = 103.0
+max_value = 300.0
+
+[node name="Leftsidetyping" type="Node2D" parent="."]
+visible = false
+script = ExtResource("10_qocwh")
+
+[node name="bgpanel" type="Panel" parent="Leftsidetyping"]
+offset_right = 192.0
+offset_bottom = 648.0
+scale = Vector2(1.65252, 1.59464)
+metadata/_edit_use_anchors_ = true
+
+[node name="EnemySprite" type="TextureRect" parent="Leftsidetyping/bgpanel"]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 288.0
+texture = ExtResource("11_176s2")
+expand_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="EnemyPanel" type="Panel" parent="Leftsidetyping/bgpanel"]
+self_modulate = Color(0.721569, 0.482353, 0.0196078, 1)
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 312.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Divider" type="TextureRect" parent="Leftsidetyping/bgpanel"]
+layout_mode = 0
+offset_top = 304.0
+offset_right = 192.0
+offset_bottom = 312.0
+texture = SubResource("GradientTexture2D_ydit8")
+metadata/_edit_use_anchors_ = true
+
+[node name="TypingChallengeLabel" type="RichTextLabel" parent="Leftsidetyping/bgpanel"]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 64.0
+text = "Typing challenge! Type as fast as you can! "
+metadata/_edit_use_anchors_ = true
+
+[node name="StringtoType" type="RichTextLabel" parent="Leftsidetyping/bgpanel"]
+layout_mode = 0
+offset_top = 64.0
+offset_right = 192.0
+offset_bottom = 152.0
+text = "qaqaqq"
+metadata/_edit_use_anchors_ = true
+
+[node name="playerInput" type="RichTextLabel" parent="Leftsidetyping/bgpanel"]
+layout_mode = 0
+offset_top = 320.0
+offset_right = 192.0
+offset_bottom = 400.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ProgressBar" type="ProgressBar" parent="Leftsidetyping"]
+offset_top = 320.0
+offset_right = 192.0
+offset_bottom = 392.0
+max_value = 4.0
+metadata/_edit_use_anchors_ = true
+
+[node name="reset" type="Button" parent="Leftsidetyping"]
+offset_top = 408.0
+offset_right = 192.0
+offset_bottom = 496.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_5p3i5")
+text = "MANUAL RESET"
+metadata/_edit_use_anchors_ = true
+
+[node name="trackerandsetter" type="Node" parent="."]
+
+[node name="musicplayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_nfokh")
+
+[node name="Palmtree" type="Sprite2D" parent="."]
+position = Vector2(864, 848)
+texture = ExtResource("11_0456q")
+
+[node name="Palmtree2" type="Sprite2D" parent="."]
+position = Vector2(1456, 568)
+texture = ExtResource("11_0456q")
+
+[node name="Palmtree3" type="Sprite2D" parent="."]
+position = Vector2(896, 512)
+texture = ExtResource("11_0456q")
+
+[node name="Cactus" type="Sprite2D" parent="."]
+position = Vector2(272, 224)
+texture = ExtResource("12_4fcey")
+
+[node name="Cactus2" type="Sprite2D" parent="."]
+position = Vector2(1648, 64)
+texture = ExtResource("12_4fcey")
+
+[node name="Palmtree4" type="Sprite2D" parent="."]
+position = Vector2(1616, 160)
+texture = ExtResource("11_0456q")
+
+[node name="CactusRock" type="Sprite2D" parent="."]
+position = Vector2(656, 560)
+texture = ExtResource("13_nbsai")
+
+[node name="CactusRock2" type="Sprite2D" parent="."]
+position = Vector2(1616, 352)
+texture = ExtResource("13_nbsai")
+
+[node name="CactusRock3" type="Sprite2D" parent="."]
+position = Vector2(240, 864)
+texture = ExtResource("13_nbsai")
+
+[node name="Cactus(1)" type="Sprite2D" parent="."]
+position = Vector2(544, 496)
+texture = ExtResource("14_2fxy7")
+
+[node name="Cactus(1)2" type="Sprite2D" parent="."]
+position = Vector2(1024, 928)
+texture = ExtResource("14_2fxy7")
+
+[node name="Cactus(1)3" type="Sprite2D" parent="."]
+position = Vector2(578, 176)
+texture = ExtResource("14_2fxy7")
+
+[node name="Palmtree5" type="Sprite2D" parent="."]
+position = Vector2(928, 192)
+texture = ExtResource("11_0456q")
+
+[node name="Cactus3" type="Sprite2D" parent="."]
+position = Vector2(1184, 208)
+texture = ExtResource("12_4fcey")
+
+[node name="11" type="Sprite2D" parent="."]
+position = Vector2(464, 915)
+scale = Vector2(0.431697, 0.409601)
+texture = ExtResource("15_fbwmd")
+
+[connection signal="pressed" from="DesertTDscene/upsncounters/upgradespanel/Increase Tower Damage" to="DesertTDscene/upsncounters" method="_on_increase_tower_damage_pressed"]
+[connection signal="pressed" from="DesertTDscene/upsncounters/upgradespanel/MyrtleDmgUp" to="DesertTDscene/upsncounters" method="_on_myrtle_dmg_up_pressed"]
+[connection signal="pressed" from="DesertTDscene/upsncounters/upgradespanel/MyrtleHpUp" to="RPGBattle" method="_on_myrtle_hp_up_pressed"]
+[connection signal="pressed" from="DesertTDscene/upsncounters/upgradespanel/IncreaseCoreHP" to="DesertTDscene/upsncounters" method="_on_increase_core_hp_pressed"]
+[connection signal="timeout" from="DesertTDscene/PathSpawner/Timer" to="DesertTDscene/PathSpawner" method="_on_timer_timeout"]
+[connection signal="pressed" from="RPGBattle/bgpanel/PlayerPanel/OverallContainer/LeftSideContainer/BashButton" to="RPGBattle" method="_on_bash_button_pressed"]
+[connection signal="pressed" from="RPGBattle/bgpanel/PlayerPanel/OverallContainer/LeftSideContainer/PokeButton" to="RPGBattle" method="_on_poke_button_pressed"]
+[connection signal="pressed" from="RPGBattle/bgpanel/PlayerPanel/OverallContainer/LeftSideContainer/Sunbathe" to="RPGBattle" method="_on_sunbathe_pressed"]
+[connection signal="item_selected" from="RPGBattle/bgpanel/PlayerPanel/OverallContainer/LeftSideContainer/SkillList" to="RPGBattle" method="_on_skill_list_item_selected"]
+[connection signal="pressed" from="RPGBattle/bgpanel/PlayerPanel/OverallContainer/LeftSideContainer/SkillList" to="RPGBattle" method="_on_skill_list_pressed"]
+[connection signal="pressed" from="Leftsidetyping/reset" to="Leftsidetyping" method="_on_reset_pressed"]
