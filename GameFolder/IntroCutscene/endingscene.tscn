@@ -1,20 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://dl2lwq4gfugvx"]
 
 [ext_resource type="Script" path="res://IntroCutscene/endingscene.gd" id="1_jkyue"]
-[ext_resource type="Texture2D" uid="uid://qj1ho33xbufm" path="res://IntroCutscene/bgimgs/startbg.png" id="2_84v1f"]
+[ext_resource type="Texture2D" uid="uid://cn1o0o07dtpih" path="res://Assets/Cactus_End_Screen.png" id="2_4hfua"]
 
 [node name="Endingscene" type="Node2D"]
 script = ExtResource("1_jkyue")
 
 [node name="bg" type="TextureRect" parent="."]
-offset_right = 1918.0
-offset_bottom = 1079.0
-texture = ExtResource("2_84v1f")
+offset_right = 2026.0
+offset_bottom = 1131.0
+texture = ExtResource("2_4hfua")
 expand_mode = 1
-
-[node name="Panel" type="Panel" parent="."]
-offset_right = 1919.0
-offset_bottom = 1080.0
 
 [node name="Speaker1" type="TextureRect" parent="."]
 anchors_preset = 2
@@ -65,10 +61,12 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="Panel2" type="Panel" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 24.0
+offset_top = 679.0
+offset_right = 1895.0
+offset_bottom = 1034.0
 
-[node name="maintext" type="RichTextLabel" parent="."]
+[node name="endingtext" type="RichTextLabel" parent="."]
 offset_left = 59.0
 offset_top = 703.0
 offset_right = 1876.0
@@ -76,7 +74,7 @@ offset_bottom = 1011.0
 theme_override_font_sizes/normal_font_size = 34
 theme_override_font_sizes/bold_font_size = 34
 bbcode_enabled = true
-text = "The sun shined hard on the land of the cactusfolk. Like it always does. The air is dry, the sand on the ground is prickly and smooth. Just another day in paradise for the people of this land. However, some creations are making this peace.... difficult. "
+text = "With the mechanized reign of terror ended, the cactusfolk live to see the sunrise on their desert oasis once again."
 
 [node name="nextbutton" type="Button" parent="."]
 offset_left = 1539.0
@@ -100,3 +98,50 @@ offset_top = 595.0
 offset_right = 495.0
 offset_bottom = 646.0
 theme_override_font_sizes/normal_font_size = 30
+
+[node name="Confetti_M" type="CPUParticles2D" parent="."]
+position = Vector2(269, -162)
+rotation = 1.01525
+amount = 75
+lifetime = 10.0
+spread = 45.45
+gravity = Vector2(0, 0)
+initial_velocity_min = 70.71
+initial_velocity_max = 242.42
+linear_accel_min = 32.32
+linear_accel_max = 32.32
+scale_amount_min = 3.0
+scale_amount_max = 20.0
+color = Color(1, 0.188235, 1, 1)
+
+[node name="Confetti_C" type="CPUParticles2D" parent="."]
+position = Vector2(892, -172)
+rotation = 1.79601
+amount = 75
+lifetime = 10.0
+spread = 45.45
+gravity = Vector2(0, 0)
+initial_velocity_min = 70.71
+initial_velocity_max = 242.42
+linear_accel_min = 32.32
+linear_accel_max = 32.32
+scale_amount_min = 3.0
+scale_amount_max = 20.0
+color = Color(0, 0.713726, 0.831373, 1)
+
+[node name="Confetti_Y" type="CPUParticles2D" parent="."]
+position = Vector2(1472, -184)
+rotation = 2.23455
+amount = 75
+lifetime = 10.0
+spread = 45.45
+gravity = Vector2(0, 0)
+initial_velocity_min = 70.71
+initial_velocity_max = 242.42
+linear_accel_min = 32.32
+linear_accel_max = 32.32
+scale_amount_min = 3.0
+scale_amount_max = 20.0
+color = Color(0.772549, 0.619608, 0, 1)
+
+[connection signal="pressed" from="nextbutton" to="." method="_on_nextbutton_pressed"]

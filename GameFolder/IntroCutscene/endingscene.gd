@@ -12,15 +12,20 @@ func _ready():
 func _process(delta):
 	match state:
 		0:
-			pass
+			$endingtext.text = "With the mechanized reign of terror ended, the cactusfolk live to see the sunrise on their desert oasis once again."
 		1:
-			$maintext.text = "With the mechanized reign of terror ended, the cactusfolk live to see the sunrise on their desert oasis once again."
+			appendText("\n \nAnd it was all thanks to their combined resistance and the bravery of one small yet skilled cactus.")
 		2:
-			$maintext.text = "And it was all thanks to their combined resistance and the bravery of one small yet skilled cactus."
+			$Panel2.hide()
+			$Panel3.hide()	
+			$endingtext.hide()
+			$nextbutton.text = "Return to Title Screen"
+		3:
+			get_tree().change_scene_to_file("res://Main Menu/main_menu.tscn")
 			
 func appendText(text):
-	if(! text in $maintext.text):
-		$maintext.text += text
+	if(! text in $endingtext.text):
+		$endingtext.text += text
 	
 func _on_nextbutton_pressed():
 	state +=1 
