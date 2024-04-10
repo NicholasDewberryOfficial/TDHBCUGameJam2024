@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdajg34am2lnw"
-path="res://.godot/imported/Bomber Cactus Aim.png-5c6f3e10e938c1cb6f102c47ad778cc2.ctex"
+uid="uid://cn1o0o07dtpih"
+path="res://.godot/imported/Cactus_End_Screen.png-53c1537827803f06eca6a6e26a124bb5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Towers/Bomber Cactus Aim.png"
-dest_files=["res://.godot/imported/Bomber Cactus Aim.png-5c6f3e10e938c1cb6f102c47ad778cc2.ctex"]
+source_file="res://Assets/Cactus_End_Screen.png"
+dest_files=["res://.godot/imported/Cactus_End_Screen.png-53c1537827803f06eca6a6e26a124bb5.ctex"]
 
 [params]
 

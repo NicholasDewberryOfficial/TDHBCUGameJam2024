@@ -8,13 +8,13 @@
 script = ExtResource("1_v1rg6")
 
 [node name="bg" type="TextureRect" parent="."]
-offset_right = 1918.0
+offset_right = 2001.0
 offset_bottom = 1079.0
 texture = ExtResource("1_elgby")
 expand_mode = 1
 
 [node name="Panel" type="Panel" parent="."]
-offset_right = 1919.0
+offset_right = 2000.0
 offset_bottom = 1080.0
 
 [node name="Speaker1" type="TextureRect" parent="."]
