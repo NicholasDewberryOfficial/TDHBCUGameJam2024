@@ -39,7 +39,8 @@ func _on_tower_body_entered(body):
 		$myanim.play("attack")
 		await get_tree().create_timer(1.5).timeout
 		if(currTarget != null):
-			currTarget.get_child(0).Health -= bulletdamage * 3
+			if(currTarget.get_child(0).Health >0):
+				currTarget.get_child(0).Health -= bulletdamage * 3
 		
 		var tempBullet = Bullet.instantiate()
 		tempBullet.pathName = pathName

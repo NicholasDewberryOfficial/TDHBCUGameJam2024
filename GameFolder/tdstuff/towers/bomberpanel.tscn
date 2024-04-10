@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dtnv14mft2jqd"]
 
 [ext_resource type="Script" path="res://tdstuff/towers/red_tower_panel.gd" id="1_7j3k5"]
-[ext_resource type="Texture2D" uid="uid://bwwu7co4jxsrg" path="res://Assets/Towers/Bomber Cactus Idle.png" id="2_jiyx8"]
+[ext_resource type="Texture2D" uid="uid://bkcu1x7mcfjag" path="res://Assets/Towers/Bomber Cactus Idle.png" id="2_jiyx8"]
 
 [node name="bomberpanel" type="Panel"]
 custom_minimum_size = Vector2(80, 80)
