@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dprbetjnryren"]
+[gd_scene load_steps=3 format=3 uid="uid://dprbetjnryren"]
 
 [ext_resource type="Script" path="res://Main Menu/main_menu.gd" id="1_6ffg3"]
+[ext_resource type="Texture2D" uid="uid://dx4f3v5bd3r5y" path="res://Assets/oasisbackground.jpg" id="2_r0m7j"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -10,6 +11,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6ffg3")
+
+[node name="Oasisbackground" type="Sprite2D" parent="."]
+position = Vector2(960, 544)
+scale = Vector2(1.875, 1.41667)
+texture = ExtResource("2_r0m7j")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
