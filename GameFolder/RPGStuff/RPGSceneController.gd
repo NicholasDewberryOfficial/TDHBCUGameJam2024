@@ -101,6 +101,7 @@ func updateCounters():
 	$bgpanel/PlayerPanel/Panel/ProgressBar.value = progress
 	if(progress >= 300):
 		#$bgpanel/EnemyPanel/emydmgpopup.play("transferphase")
+		progress= 0
 		Globalvars.goNext()
 		pass #NEXT PHASE
 	

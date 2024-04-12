@@ -13,8 +13,8 @@ grow_vertical = 2
 script = ExtResource("1_6ffg3")
 
 [node name="OasisStockArt" type="Sprite2D" parent="."]
-position = Vector2(1118.06, 607.843)
-scale = Vector2(1.5663, 1.22958)
+position = Vector2(960.003, 540.001)
+scale = Vector2(1.87501, 1.40625)
 texture = ExtResource("2_43j1l")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="OasisStockArt"]
