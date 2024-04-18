@@ -4,6 +4,7 @@ extends Node2D
 @onready var rollerpath = preload("res://combined/stage2.tscn")
 @onready var propellerpath = preload("res://combined/stage3.tscn")
 @onready var crusherpath = preload("res://combined/stage4.tscn")
+
 var rng = RandomNumberGenerator
 
 func _ready():
@@ -22,3 +23,4 @@ func _on_timer_timeout():
 		2: 
 			var tempPath = crusherpath.instantiate()
 			add_child(tempPath)
+

@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://b8vs4w732uinb"]
+
+[ext_resource type="Texture2D" uid="uid://buesgfl8w42w0" path="res://Assets/Propeller_Overhead.png" id="1_85cnr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fv8rr"]
+atlas = ExtResource("1_85cnr")
+region = Rect2(30, 0, 151, 149)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqsta"]
+atlas = ExtResource("1_85cnr")
+region = Rect2(181, 0, 151, 149)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvuhr"]
+atlas = ExtResource("1_85cnr")
+region = Rect2(332, 0, 151, 149)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ad80y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fv8rr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqsta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvuhr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7krbn"]
+radius = 63.3482
+
+[node name="Propeller_Overhead" type="PathFollow2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_ad80y")
+frame_progress = 0.691675
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_7krbn")

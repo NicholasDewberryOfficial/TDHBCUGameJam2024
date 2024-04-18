@@ -719,7 +719,7 @@ offset_top = 376.0
 offset_right = 163.0
 offset_bottom = 440.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "Cost: 20 pp "
+text = "Cost: 20 PP"
 
 [node name="upgradespanel" type="Panel" parent="DesertTDscene/upsncounters"]
 layout_mode = 0
