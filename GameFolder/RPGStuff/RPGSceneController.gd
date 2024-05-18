@@ -98,7 +98,7 @@ func updateCounters():
 	$bgpanel/PlayerPanel/PlayerHP.text = "Myrtle HP: " + str(pchealth)
 	$bgpanel/EnemyPanel/EnemyHP.text = "Enemy HP: "+ str(ehealth)
 	$bgpanel/PlayerPanel/PlayerPP.text = "Myrtle PP: " + str(Globalvars.pp)
-	$bgpanel/PlayerPanel/Panel/ProgressBar.value = progress
+	#$bgpanel/PlayerPanel/Panel/ProgressBar.value = progress
 	if(progress >= 300):
 		#$bgpanel/EnemyPanel/emydmgpopup.play("transferphase")
 		Globalvars.goNext()
