@@ -115,7 +115,7 @@ scale_amount_max = 20.0
 color = Color(1, 0.188235, 1, 1)
 
 [node name="Confetti_C" type="CPUParticles2D" parent="."]
-position = Vector2(892, -172)
+position = Vector2(1112, -172)
 rotation = 1.79601
 amount = 75
 lifetime = 10.0
@@ -130,7 +130,7 @@ scale_amount_max = 20.0
 color = Color(0, 0.713726, 0.831373, 1)
 
 [node name="Confetti_Y" type="CPUParticles2D" parent="."]
-position = Vector2(1472, -184)
+position = Vector2(1856, -100)
 rotation = 2.23455
 amount = 75
 lifetime = 10.0

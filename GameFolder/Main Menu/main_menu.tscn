@@ -1,7 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://dprbetjnryren"]
 
 [ext_resource type="Script" path="res://Main Menu/main_menu.gd" id="1_6ffg3"]
-[ext_resource type="Texture2D" uid="uid://dx4f3v5bd3r5y" path="res://Assets/oasisbackground.jpg" id="2_43j1l"]
+
+[ext_resource type="Texture2D" uid="uid://b4giwjay1mrwg" path="res://Assets/Oasis Stock Art.png" id="2_3l0cc"]
+
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3

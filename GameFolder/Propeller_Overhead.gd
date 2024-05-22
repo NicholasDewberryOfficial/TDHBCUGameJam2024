@@ -1,6 +1,6 @@
-extends Node2D
+extends CharacterBody2D
 
-@export var speed = 300
+@export var speed = 500
 var Health = 10
 var points: int =10
 
@@ -18,3 +18,4 @@ func _physics_process(delta):
 	 
 	pass
 	
+
