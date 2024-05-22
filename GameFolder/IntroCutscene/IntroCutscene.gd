@@ -47,8 +47,37 @@ func _process(delta):
 		16:
 			$maintext.text = "He jumps out the window - forgetting his necklace. Domino realizes this and throws it down, and Myrtle gets bumped on the head as he falls. No worries though."
 		17:
-			appendText("\n \n 'It's go time! ' ")
+			$maintext.text="Wait, before we start: Commander.... Do you want to go over the basics real fast??" 
 			$startgamebutton.visible = true
+			$NoDoTutorial.show()
+		18: 
+			$maintext.text = "Alrighty. So Let's take a look at the main game screen."
+		19: 
+			$Speaker1.hide()
+			$Speaker2.hide()
+			$Speaker3.hide()
+			$Speaker4.hide()
+			$Panel.hide()
+			$bg.texture = ResourceLoader.load("res://IntroCutscene/bgimgs/GameScreen1.png")
+			$maintext.text = "This game is a hybrid tower defense/RPG, lets break down what that means."
+		20:
+			$bg.texture	 = ResourceLoader.load("res://IntroCutscene/bgimgs/gamescreen2.png")
+			$maintext.text = "On the left side of the screen, we have an RPG section featuring everyone's favorite: Myrtle the cactus."
+		21:
+			$maintext.text = "Use the keyboard to control his actions in RPG combat. Some enemies are weak to some things, while resisting other things. Make sure to experiment with attacks!"
+		22:
+			$maintext.text= "Make sure Myrtle doesn't get hurt here. If he does, he spends 150 PP to get back into the fight."
+		23:
+			$maintext.text = "Protip: The big robots resist everything except 'Disperse'. Plan accordingly. "
+		24:
+			$bg.texture = ResourceLoader.load("res://IntroCutscene/bgimgs/gamescreen3.png")
+			$maintext.text = "Now, let's go to the tower defense portion."
+		25:
+			$maintext.text = "Click and drag from the right side to place towers onto the map. Spend PP on towers and upgrades. Make sure to keep Mrytle healed up! He has no health cap! "
+		26:
+			$maintext.text = "That's all my advice. Good luck!"
+			$startgamebutton.show()
+		
 			
 func appendText(text):
 	if(! text in $maintext.text):
@@ -110,5 +139,16 @@ func current_speaker(state):
 		15:
 			$SpeakerName.text = "Myrtle"
 			$Speaker3.texture =  ResourceLoader.load("res://Assets/Talk_Sprites/Cactus_Player_Happy.png")
-			
+		17: 
+			$Panel3.show()
+			$SpeakerName.show()
+			$SpeakerName.text = "Domino"
+			$Speaker1.texture =  ResourceLoader.load("res://Assets/Talk_Sprites/Cactus_Secretary_Idle.png")	
 	
+
+
+func _on_no_do_tutorial_pressed():
+	$NoDoTutorial.hide()
+	$startgamebutton.hide()
+	
+	pass # Replace with function body.

@@ -1,7 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://dprbetjnryren"]
 
 [ext_resource type="Script" path="res://Main Menu/main_menu.gd" id="1_6ffg3"]
+
 [ext_resource type="Texture2D" uid="uid://b4giwjay1mrwg" path="res://Assets/Oasis Stock Art.png" id="2_3l0cc"]
+
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -13,9 +15,9 @@ grow_vertical = 2
 script = ExtResource("1_6ffg3")
 
 [node name="OasisStockArt" type="Sprite2D" parent="."]
-position = Vector2(994, 556)
-scale = Vector2(1.324, 1.09457)
-texture = ExtResource("2_3l0cc")
+position = Vector2(960.003, 540.001)
+scale = Vector2(1.87501, 1.40625)
+texture = ExtResource("2_43j1l")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="OasisStockArt"]
 offset_left = -56.4263

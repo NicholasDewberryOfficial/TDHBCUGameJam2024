@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://bhuwfj7pqrxo"]
 
 [ext_resource type="Script" path="res://tdstuff/towers/bombertower.gd" id="1_hn2wd"]
-[ext_resource type="Texture2D" uid="uid://bkcu1x7mcfjag" path="res://Assets/Towers/Bomber Cactus Idle.png" id="2_ax30t"]
-[ext_resource type="Texture2D" uid="uid://1nfeibupqpyc" path="res://Assets/Towers/Bomber Cactus Aim.png" id="2_denv5"]
-[ext_resource type="Texture2D" uid="uid://blxweawp2j1oe" path="res://Assets/Towers/Bomber Cactus Fire.png" id="3_wlssd"]
+[ext_resource type="Texture2D" uid="uid://cbsw78fmf262h" path="res://Assets/Towers/Bomber Cactus Idle.png" id="2_ax30t"]
+[ext_resource type="Texture2D" uid="uid://cdajg34am2lnw" path="res://Assets/Towers/Bomber Cactus Aim.png" id="2_denv5"]
+[ext_resource type="Texture2D" uid="uid://cpy6me3l3p8p1" path="res://Assets/Towers/Bomber Cactus Fire.png" id="3_wlssd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_btkcv"]
 size = Vector2(128, 128)

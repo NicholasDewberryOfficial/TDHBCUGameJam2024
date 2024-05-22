@@ -91,12 +91,21 @@ text = "Next"
 
 [node name="startgamebutton" type="Button" parent="."]
 visible = false
-offset_left = 779.0
-offset_top = 239.0
-offset_right = 1088.0
-offset_bottom = 332.0
+offset_left = 712.0
+offset_top = 64.0
+offset_right = 1231.0
+offset_bottom = 244.0
 theme_override_font_sizes/font_size = 34
-text = "START GAME"
+text = "Yes. Let me Start the game! "
+
+[node name="NoDoTutorial" type="Button" parent="."]
+visible = false
+offset_left = 712.0
+offset_top = 325.0
+offset_right = 1459.0
+offset_bottom = 505.0
+theme_override_font_sizes/font_size = 34
+text = "I'd like a refresher [start tutorial, 50 seconds]"
 
 [node name="Panel3" type="Panel" parent="."]
 visible = false
@@ -119,3 +128,4 @@ autoplay = true
 
 [connection signal="pressed" from="nextbutton" to="." method="_on_nextbutton_pressed"]
 [connection signal="pressed" from="startgamebutton" to="." method="_on_startgamebutton_pressed"]
+[connection signal="pressed" from="NoDoTutorial" to="." method="_on_no_do_tutorial_pressed"]

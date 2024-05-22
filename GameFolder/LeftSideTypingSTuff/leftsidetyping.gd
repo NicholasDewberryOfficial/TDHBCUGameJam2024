@@ -21,6 +21,7 @@ func _process(delta):
 	$ProgressBar.value = progress
 	
 	if(progress == 4):
+		progress = 0 
 		get_tree().change_scene_to_file("res://IntroCutscene/endingscene.tscn")
 	pass
 
