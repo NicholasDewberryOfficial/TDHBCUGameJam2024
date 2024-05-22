@@ -49,6 +49,11 @@ lclick={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="placeable"
+2d_physics/layer_2="unplaceable"
+
 [rendering]
 
 textures/light_projectors/filter=0

@@ -15,9 +15,12 @@ height = 200
 
 [node name="placetowergirl" type="Node2D"]
 modulate = Color(1, 1, 1, 0.345098)
+scale = Vector2(0.3, 0.3)
 script = ExtResource("1_nmp1n")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 130
+collision_mask = 130
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_gsg4h")
@@ -27,3 +30,9 @@ texture = ExtResource("1_fhtct")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Area2D"]
 texture = SubResource("GradientTexture2D_1slwg")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
