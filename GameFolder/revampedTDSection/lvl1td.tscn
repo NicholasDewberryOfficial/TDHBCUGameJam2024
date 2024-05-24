@@ -149,10 +149,8 @@ stream = ExtResource("7_83poq")
 autoplay = true
 
 [node name="AudioListener2D" type="AudioListener2D" parent="tdstuff/utilityorganizer"]
-current = true
 
 [node name="RPGBattle" parent="." instance=ExtResource("4_nf1a1")]
-visible = false
 
 [node name="Leftsidetyping" parent="." instance=ExtResource("9_s4qsx")]
 visible = false
