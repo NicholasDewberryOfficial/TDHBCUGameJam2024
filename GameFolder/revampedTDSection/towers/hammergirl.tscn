@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://bgrritp410nyc"]
+[gd_scene load_steps=13 format=3 uid="uid://bgrritp410nyc"]
 
 [ext_resource type="Texture2D" uid="uid://ce4w3w10hhvxd" path="res://Assets/Towers/Hammer Cactus Idle.png" id="1_6kqy5"]
 [ext_resource type="Texture2D" uid="uid://chp8pv6ljm3x8" path="res://Assets/Towers/Hammer Cactus Slam.png" id="1_eq3o6"]
 [ext_resource type="Texture2D" uid="uid://bkk70peuabmjh" path="res://Assets/Towers/Hammer Cactus Wind-Up.png" id="1_yiq2i"]
 [ext_resource type="Script" path="res://revampedTDSection/towers/hammergirlattack.gd" id="2_3pybe"]
+[ext_resource type="PackedScene" uid="uid://cpjlcyrseb7ye" path="res://revampedTDSection/towers/hammerdmghitbox.tscn" id="5_y6tel"]
 
 [sub_resource type="Animation" id="Animation_n34m8"]
 resource_name = "idle"
@@ -91,6 +92,7 @@ shape = SubResource("RectangleShape2D_b7edo")
 [node name="towerattack" type="Area2D" parent="." node_paths=PackedStringArray("atktimer")]
 script = ExtResource("2_3pybe")
 atktimer = NodePath("../Timer")
+dmghitbox = ExtResource("5_y6tel")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="towerattack"]
 shape = SubResource("CircleShape2D_1nouk")

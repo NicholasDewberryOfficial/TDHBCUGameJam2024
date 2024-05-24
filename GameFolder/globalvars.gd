@@ -26,7 +26,7 @@ func _ready():
 func enemykilled(points):
 	pp += points 
 	enemiesdefeated +=1 
-	get_tree().get_root().get_node("localized/DesertTDscene/beep").play()
+	get_tree().get_root().get_node("Lvl1Td/tdstuff/utilityorganizer/beepplayer").play()
 	
 	
 func enemypassed():
@@ -37,5 +37,6 @@ func goNext():
 	if(!checkbool):
 		checkbool=true
 		#await get_tree().create_timer(1.0).timeout
-		get_tree().get_root().get_node("localized/RPGBattle").visible = false
-		get_tree().get_root().get_node("localized/Leftsidetyping").visible = true
+		get_tree().get_root().get_node("Lvl1Td/RPGBattle").visible = false
+		
+		get_tree().get_root().get_node("Lvl1Td/Leftsidetyping").visible = true
