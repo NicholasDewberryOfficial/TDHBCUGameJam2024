@@ -1,14 +1,14 @@
 [gd_scene load_steps=6 format=3 uid="uid://8oejuu2mtiwc"]
 
 [ext_resource type="Texture2D" uid="uid://cjot2ap8wg0ey" path="res://Assets/Towers/spiked-ball.png" id="1_2v47d"]
-[ext_resource type="Script" path="res://tdstuff/mobs/rollerbot.gd" id="2_posu1"]
+[ext_resource type="Script" path="res://revampedTDSection/mobs/baseenemymovement.gd" id="2_8wt0d"]
 [ext_resource type="Script" path="res://revampedTDSection/mobs/baseenemyhealth.gd" id="3_3vgsw"]
 
 [sub_resource type="Curve2D" id="Curve2D_mvfwh"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -112, 16, 0, 0, 0, 0, 640, 16, 0, 0, 0, 0, 640, 16, 0, 0, 0, 0, 1280, 16, 0, 0, 0, 0, 1280, 48, 0, 0, 0, 0, 1280, 144, 0, 0, 0, 0, -112, 144)
+"points": PackedVector2Array(0, 0, 0, 0, -112, 16, 0, 0, 0, 0, 640, 16, 0, 0, 0, 0, 640, 16, 0, 0, 0, 0, 1280, 16, 0, 0, 0, 0, 1280, 48, 0, 0, 0, 0, 1280, 144, 0, 0, 0, 0, 1290, 272, 0, 0, 0, 0, -110, 272, 0, 0, 0, 0, -110, 528, 0, 0, 0, 0, 1350, 528, 0, 0, 0, 0, 1350, 656, 0, 0, 0, 0, -90, 656, 0, 0, 0, 0, -110, 688, 0, 0, 0, 0, -110, 736, 0, 0, 0, 0, -110, 768, 0, 0, 0, 0, -90, 784, 0, 0, 0, 0, 1170, 784)
 }
-point_count = 7
+point_count = 17
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bt4vu"]
 radius = 64.0
@@ -24,8 +24,7 @@ position = Vector2(-112, 16)
 texture = ExtResource("1_2v47d")
 
 [node name="baseenemyscript" type="Node2D" parent="PathFollow2D"]
-script = ExtResource("2_posu1")
-speed = 200
+script = ExtResource("2_8wt0d")
 
 [node name="_Timer_38184" type="Timer" parent="PathFollow2D"]
 wait_time = 0.2
@@ -33,6 +32,8 @@ one_shot = true
 
 [node name="baseenemyhitbox" type="Area2D" parent="PathFollow2D" groups=["enemyhitboxgroup"]]
 script = ExtResource("3_3vgsw")
+health = 1.0
+points = 213
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/baseenemyhitbox"]
 shape = SubResource("CircleShape2D_bt4vu")
