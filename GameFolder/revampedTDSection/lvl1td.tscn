@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://2crcixuke4eg"]
 
 [ext_resource type="Texture2D" uid="uid://7ovcgq4il4ma" path="res://kenney_tower-defense-top-down/Tilesheet/towerDefense_tilesheet.png" id="1_pkvm2"]
-[ext_resource type="PackedScene" uid="uid://8oejuu2mtiwc" path="res://revampedTDSection/mobs/basenemy.tscn" id="2_7vu4u"]
-[ext_resource type="PackedScene" uid="uid://bgrritp410nyc" path="res://revampedTDSection/towers/hammergirl.tscn" id="3_nfqxn"]
+[ext_resource type="PackedScene" uid="uid://8oejuu2mtiwc" path="res://revampedTDSection/mobs/baseenemyrollerbot/basenemy.tscn" id="2_7vu4u"]
+[ext_resource type="PackedScene" uid="uid://bgrritp410nyc" path="res://revampedTDSection/towers/hammergirl/hammergirl.tscn" id="3_nfqxn"]
 [ext_resource type="Texture2D" uid="uid://ce4w3w10hhvxd" path="res://Assets/Towers/Hammer Cactus Idle.png" id="4_d0uiv"]
 [ext_resource type="Script" path="res://revampedTDSection/towerplacement.gd" id="4_lnnio"]
 [ext_resource type="PackedScene" uid="uid://gtgyi7vell0" path="res://RPGStuff/RPGScene.tscn" id="4_nf1a1"]
