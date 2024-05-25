@@ -3,7 +3,8 @@ extends Node2D
 @export var pchealth: int = 30
 @export var currenemy: emyres
 @export_node_path() var SkillList_path
-
+@export var explosionsound: AudioStreamPlayer2D = null
+@export var playeryelp: AudioStreamPlayer2D = null
 var ehealth: int 
 var edamage: int 
 var rng: RandomNumberGenerator
@@ -17,8 +18,8 @@ var givethesepoints: int = 10
 
 var progress = 0
 
-var nextstage = 300 
-
+#var nextstage = 300 
+var nextstage = 10
 
 @onready var Skill_List = $"bgpanel/PlayerPanel/OverallContainer/LeftSideContainer/SkillList"
 
@@ -38,7 +39,7 @@ func _process(delta):
 		deathLogic()
 	updateCounters()
 	if(ehealth <= 0):
-		$mechanicexplosion.play()
+		explosionsound.play()
 		Globalvars.pp += givethesepoints
 		progress += givethesepoints
 		$bgpanel/EnemyPanel/emydmgpopup.play("EmyChange")
@@ -66,7 +67,7 @@ func _process(delta):
 
 func deathLogic():
 	$bgpanel/EnemyPanel/emydmgpopup.play("deathanim")
-	$yelp.play()
+	playeryelp.play()
 	Globalvars.pp -= 100
 	pchealth = 30
 	pass
@@ -99,8 +100,11 @@ func updateCounters():
 	$bgpanel/EnemyPanel/EnemyHP.text = "Enemy HP: "+ str(ehealth)
 	$bgpanel/PlayerPanel/PlayerPP.text = "Myrtle PP: " + str(Globalvars.pp)
 	#$bgpanel/PlayerPanel/Panel/ProgressBar.value = progress
-	if(progress >= 300):
-		#$bgpanel/EnemyPanel/emydmgpopup.play("transferphase")
+	if(progress >= nextstage):
+		$bgpanel/EnemyPanel/emydmgpopup.play("transferphase")
+		dontdoathing = true
+		self.visible = false
+		
 		progress= 0
 		Globalvars.goNext()
 		pass #NEXT PHASE

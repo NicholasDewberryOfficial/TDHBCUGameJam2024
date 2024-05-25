@@ -16,8 +16,10 @@ func _process(delta):
 
 
 func _on_area_entered(area):
-	print(area.name)
-	print(area.get_script())
+	#print(area.name)
+	#print(area.get_script())
+	#if(area.is_in_group("enemyhitboxgroup") and area.has_method("takedamage")):
+		#area.takedamage(damage)
 	if(area.is_in_group("enemyhitboxgroup") and area.has_method("takedamage")):
 		area.takedamage(damage)
 	pass # Replace with function body.

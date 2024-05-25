@@ -5,7 +5,7 @@ extends Node2D
 
 
 var currTilemap
-var placable = false
+var placable = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -41,11 +41,11 @@ func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shap
 
 func _on_area_2d_body_entered(body):
 	placable = false 
-	print("COLLIDED BODY ENTER ")
+	#print("COLLIDED BODY ENTER ")
 	pass # Replace with function body.
 
 
 func _on_area_2d_body_exited(body):
 	placable = true
-	print("COLLIDED BODY EXIT")
+	#print("COLLIDED BODY EXIT")
 	pass # Replace with function body.

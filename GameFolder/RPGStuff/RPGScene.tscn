@@ -1,7 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://gtgyi7vell0"]
+[gd_scene load_steps=16 format=3 uid="uid://gtgyi7vell0"]
 
 [ext_resource type="Script" path="res://RPGStuff/RPGSceneController.gd" id="1_gwgac"]
 [ext_resource type="Texture2D" uid="uid://484vs5nlws8k" path="res://Assets/Roller.png" id="2_vewef"]
+[ext_resource type="AudioStream" uid="uid://vl8p1x61woxv" path="res://Assets/music/mechanical_explosion.wav" id="3_y36oi"]
+[ext_resource type="AudioStream" uid="uid://biaur5hw87qt1" path="res://Assets/music/vine3.ogg" id="4_02beb"]
 
 [sub_resource type="Animation" id="Animation_jf5fl"]
 resource_name = "CritDamage"
@@ -176,12 +178,45 @@ tracks/2/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_dnbd2"]
+resource_name = "deathanim"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.415686, 0, 0.105882, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6mklk"]
+resource_name = "transferphase"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ueyvf"]
 _data = {
 "CritDamage": SubResource("Animation_jf5fl"),
 "DefendedDamage": SubResource("Animation_bras8"),
 "EmyChange": SubResource("Animation_34b6g"),
-"NormDamage": SubResource("Animation_uejgp")
+"NormDamage": SubResource("Animation_uejgp"),
+"deathanim": SubResource("Animation_dnbd2"),
+"transferphase": SubResource("Animation_6mklk")
 }
 
 [sub_resource type="Gradient" id="Gradient_3q6qv"]
@@ -191,9 +226,11 @@ gradient = SubResource("Gradient_3q6qv")
 width = 5
 height = 5
 
-[node name="RPGBattle" type="Node2D"]
+[node name="RPGBattle" type="Node2D" node_paths=PackedStringArray("explosionsound", "playeryelp")]
 script = ExtResource("1_gwgac")
 SkillList_path = NodePath("bgpanel/PlayerPanel/OverallContainer/LeftSideContainer/SkillList")
+explosionsound = NodePath("bgpanel/EnemyPanel/rpgemydeath")
+playeryelp = NodePath("bgpanel/EnemyPanel/playeryelp")
 
 [node name="bgpanel" type="Panel" parent="."]
 offset_right = 192.0
@@ -221,6 +258,13 @@ offset_bottom = 312.0
 texture = ExtResource("2_vewef")
 expand_mode = 4
 
+[node name="rpgemydeath" type="AudioStreamPlayer2D" parent="bgpanel/EnemyPanel"]
+position = Vector2(0, 24)
+stream = ExtResource("3_y36oi")
+
+[node name="playeryelp" type="AudioStreamPlayer2D" parent="bgpanel/EnemyPanel"]
+stream = ExtResource("4_02beb")
+
 [node name="emydmgpopup" type="AnimationPlayer" parent="bgpanel/EnemyPanel"]
 libraries = {
 "": SubResource("AnimationLibrary_ueyvf")
@@ -232,11 +276,11 @@ offset_right = 88.0
 offset_bottom = 72.0
 
 [node name="emydmgtext" type="RichTextLabel" parent="bgpanel/EnemyPanel/emydmgpopup/textbg"]
+self_modulate = Color(0.745098, 0.203922, 0.258824, 1)
 layout_mode = 0
 offset_right = 96.0
 offset_bottom = 80.0
 bbcode_enabled = true
-text = "AAAAAAAAAA"
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="bgpanel/EnemyPanel/emydmgpopup/textbg"]
 position = Vector2(80, 96)
