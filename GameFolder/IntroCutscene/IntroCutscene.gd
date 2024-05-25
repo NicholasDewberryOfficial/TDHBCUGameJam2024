@@ -53,10 +53,9 @@ func _process(delta):
 		18: 
 			$maintext.text = "Alrighty. So Let's take a look at the main game screen."
 		19: 
-			$Speaker1.hide()
-			$Speaker2.hide()
-			$Speaker3.hide()
-			$Speaker4.hide()
+			$Speaker_Left.hide() 
+			$Speaker_Right.hide() 
+			
 			$Panel.hide()
 			$bg.texture = ResourceLoader.load("res://IntroCutscene/bgimgs/GameScreen1.png")
 			$maintext.text = "This game is a hybrid tower defense/RPG, lets break down what that means."
@@ -97,32 +96,30 @@ func current_speaker(state):
 			$Panel3.show()
 			$SpeakerName.show()
 			$SpeakerName.text = "Domino"
-			$Speaker1.texture =  ResourceLoader.load("res://Assets/Talk_Sprites/Cactus_Secretary_Idle.png")
+			$Speaker_Right.texture =  ResourceLoader.load("res://Assets/Talk_Sprites/Cactus_Secretary_Idle(2).png")
 	
 		4:
 			$SpeakerName.text = "Wheel"
-			$Speaker2.texture =  ResourceLoader.load("res://Assets/Talk_Sprites/Cactus_Commander_Ponder.png")
+			$Speaker_Left.texture =  ResourceLoader.load("res://Assets/Talk_Sprites/Cactus_Commander_Ponder.png")
 		
 		5:
 			$SpeakerName.text = "Domino"
-			$Speaker1.texture =  ResourceLoader.load("res://Assets/Talk_Sprites/Cactus_Secretary_Idle.png")
+			$Speaker_Right.texture =  ResourceLoader.load("res://Assets/Talk_Sprites/Cactus_Secretary_Idle(2).png")
 	
 		6:
 			$SpeakerName.text = "Wheel"
-			$Speaker2.texture =  ResourceLoader.load("res://Assets/Talk_Sprites/Cactus_Commander_Idle.png")
+			$Speaker_Left.texture =  ResourceLoader.load("res://Assets/Talk_Sprites/Cactus_Commander_Idle.png")
 		7:
 			$SpeakerName.text = "Domino"
-			$Speaker1.texture =  ResourceLoader.load("res://Assets/Talk_Sprites/Cactus_Secretary_Worried.png")
+			$Speaker_Right.texture =  ResourceLoader.load("res://Assets/Talk_Sprites/Cactus_Secretary_Worried(2).png")
 		8:
-			$Speaker2.hide()
 			$SpeakerName.text = "Myrtle"
-			$Speaker3.texture =  ResourceLoader.load("res://Assets/Talk_Sprites/Cactus_Player_Happy.png")
+			$Speaker_Left.texture =  ResourceLoader.load("res://Assets/Talk_Sprites/Cactus_Player_Happy(2).png")
 		10:
-			$Speaker3.texture =  ResourceLoader.load("res://Assets/Talk_Sprites/Cactus_Player_Determined.png")
+			$Speaker_Left.texture =  ResourceLoader.load("res://Assets/Talk_Sprites/Cactus_Player_Determined(2).png")
 		11:
-			$Speaker1.hide()
 			$SpeakerName.text = "Wheel"
-			$Speaker4.texture =  ResourceLoader.load("res://Assets/Talk_Sprites/Cactus_Commander_Ponder.png")
+			$Speaker_Right.texture =  ResourceLoader.load("res://Assets/Talk_Sprites/Cactus_Commander_Ponder.png")
 			
 		12:
 			$Panel3.hide()
@@ -131,19 +128,19 @@ func current_speaker(state):
 		13:
 			$Panel3.show()
 			$SpeakerName.show()
-			$Speaker4.texture =  ResourceLoader.load("res://Assets/Talk_Sprites/Cactus_Commander_Ponder_Smile.png")
+			$Speaker_Right.texture =  ResourceLoader.load("res://Assets/Talk_Sprites/Cactus_Commander_Ponder_Smile.png")
 			
 		14:
-			$Speaker4.texture =  ResourceLoader.load("res://Assets/Talk_Sprites/Cactus_Commander_Idle_Smirk.png")
+			$Speaker_Right.texture =  ResourceLoader.load("res://Assets/Talk_Sprites/Cactus_Commander_Idle_Smirk.png")
 			
 		15:
 			$SpeakerName.text = "Myrtle"
-			$Speaker3.texture =  ResourceLoader.load("res://Assets/Talk_Sprites/Cactus_Player_Happy.png")
+			$Speaker_Left.texture =  ResourceLoader.load("res://Assets/Talk_Sprites/Cactus_Player_Happy(2).png")
 		17: 
 			$Panel3.show()
 			$SpeakerName.show()
 			$SpeakerName.text = "Domino"
-			$Speaker1.texture =  ResourceLoader.load("res://Assets/Talk_Sprites/Cactus_Secretary_Idle.png")	
+			$Speaker_Right.texture =  ResourceLoader.load("res://Assets/Talk_Sprites/Cactus_Secretary_Idle(2).png")	
 	
 
 
