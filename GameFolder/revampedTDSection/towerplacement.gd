@@ -3,8 +3,8 @@ extends Control
 
 var currtower = null 
 # 1= ham girl, 2=throwguy
-var transphammergirl = load("res://revampedTDSection/towers/placetowergirl.tscn")
-var hammgirlprefab = load("res://revampedTDSection/towers/hammergirl.tscn")
+var transphammergirl = load("res://revampedTDSection/towers/hammergirl/placetowergirl.tscn")
+var hammgirlprefab = load("res://revampedTDSection/towers/hammergirl/hammergirl.tscn")
 var placeme = null
 
 @export var totowerholder: Node

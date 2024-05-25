@@ -13,5 +13,5 @@ offset_bottom = 160.0
 
 [node name="HBoxContainer" type="VBoxContainer" parent="bgpanel/toppartlabels"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 192.0
+offset_bottom = 156.0

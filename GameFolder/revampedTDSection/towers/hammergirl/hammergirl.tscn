@@ -1,11 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://bgrritp410nyc"]
+[gd_scene load_steps=12 format=3 uid="uid://bgrritp410nyc"]
 
 [ext_resource type="Texture2D" uid="uid://ce4w3w10hhvxd" path="res://Assets/Towers/Hammer Cactus Idle.png" id="1_6kqy5"]
 [ext_resource type="Texture2D" uid="uid://chp8pv6ljm3x8" path="res://Assets/Towers/Hammer Cactus Slam.png" id="1_eq3o6"]
 [ext_resource type="Texture2D" uid="uid://bkk70peuabmjh" path="res://Assets/Towers/Hammer Cactus Wind-Up.png" id="1_yiq2i"]
 [ext_resource type="Script" path="res://revampedTDSection/towers/hammergirl/hammergirlattack.gd" id="2_3pybe"]
 [ext_resource type="PackedScene" uid="uid://cpjlcyrseb7ye" path="res://revampedTDSection/towers/hammergirl/hammerdmghitbox.tscn" id="5_y6tel"]
-
 
 [sub_resource type="Animation" id="Animation_n34m8"]
 resource_name = "idle"
@@ -65,8 +64,6 @@ size = Vector2(85, 76)
 [sub_resource type="CircleShape2D" id="CircleShape2D_1nouk"]
 radius = 138.0
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_eh4io"]
-
 [node name="hammergirl" type="Node2D"]
 top_level = true
 
@@ -100,13 +97,6 @@ shape = SubResource("CircleShape2D_1nouk")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
-one_shot = true
-
-[node name="GPUParticles2D" type="CPUParticles2D" parent="."]
-material = SubResource("CanvasItemMaterial_eh4io")
-emitting = false
-amount = 100000
-lifetime = 30.0
 one_shot = true
 
 [connection signal="area_entered" from="towerattack" to="towerattack" method="_on_area_entered"]

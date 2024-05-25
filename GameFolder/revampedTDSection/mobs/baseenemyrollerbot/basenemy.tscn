@@ -1,9 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://8oejuu2mtiwc"]
 
-[ext_resource type="Texture2D" uid="uid://cjot2ap8wg0ey" path="res://Assets/Towers/spiked-ball.png" id="1_2v47d"]
+[ext_resource type="Texture2D" uid="uid://biude6b6rkuyv" path="res://Assets/Roller_Overhead.png" id="1_05gct"]
 [ext_resource type="Script" path="res://revampedTDSection/mobs/baseenemyrollerbot/baseenemymovement.gd" id="2_8wt0d"]
 [ext_resource type="Script" path="res://revampedTDSection/mobs/baseenemyrollerbot/baseenemyhealth.gd" id="3_3vgsw"]
-
 
 [sub_resource type="Curve2D" id="Curve2D_mvfwh"]
 _data = {
@@ -22,12 +21,12 @@ curve = SubResource("Curve2D_mvfwh")
 position = Vector2(-112, 16)
 
 [node name="baseenemyart" type="Sprite2D" parent="PathFollow2D"]
-texture = ExtResource("1_2v47d")
+texture = ExtResource("1_05gct")
 
-[node name="baseenemyscript" type="Node2D" parent="PathFollow2D"]
+[node name="movementholder" type="Node2D" parent="PathFollow2D"]
 script = ExtResource("2_8wt0d")
 
-[node name="_Timer_38184" type="Timer" parent="PathFollow2D"]
+[node name="movementtimer" type="Timer" parent="PathFollow2D"]
 wait_time = 0.2
 one_shot = true
 

@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpjlcyrseb7ye"]
+[gd_scene load_steps=6 format=3 uid="uid://cpjlcyrseb7ye"]
 
 [ext_resource type="Script" path="res://revampedTDSection/towers/hammergirl/hammerdmghitbox.gd" id="1_wowbp"]
-
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xkd4b"]
 radius = 112.0
@@ -10,32 +9,51 @@ radius = 112.0
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_su56m"]
 gradient = SubResource("Gradient_xr0ox")
-width = 300
-height = 300
+width = 230
+height = 225
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ni8vx"]
 
 [node name="hammerdmghitbox" type="Area2D"]
 script = ExtResource("1_wowbp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(60, 0)
 shape = SubResource("CircleShape2D_xkd4b")
 debug_color = Color(0.930156, 0.202021, 0.255665, 0.42)
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-emitting = false
-amount = 800
-one_shot = true
-speed_scale = 5.85
-explosiveness = 0.62
-initial_velocity_min = 192.52
-initial_velocity_max = 192.52
-orbit_velocity_min = 40.4
-orbit_velocity_max = 101.01
 
 [node name="dmgtimer" type="Timer" parent="."]
 one_shot = true
 autostart = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.458824)
 texture = SubResource("GradientTexture2D_su56m")
+
+[node name="GPUParticles2D" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_ni8vx")
+position = Vector2(112, 0)
+amount = 100000
+lifetime = 30.0
+one_shot = true
+preprocess = 2.0
+explosiveness = 0.08
+randomness = 0.45
+lifetime_randomness = 0.4
+emission_shape = 1
+emission_sphere_radius = 44.04
+spread = 125.27
+gravity = Vector2(0, 0)
+initial_velocity_min = 67.57
+initial_velocity_max = 67.57
+angular_velocity_min = 97.3
+angular_velocity_max = 97.3
+orbit_velocity_min = 108.11
+orbit_velocity_max = 108.11
+linear_accel_max = 0.9
+radial_accel_max = 62.16
+tangential_accel_max = 48.65
+damping_max = 0.51
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

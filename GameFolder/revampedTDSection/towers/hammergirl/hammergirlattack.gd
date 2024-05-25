@@ -5,8 +5,6 @@ var currenemyarr = []
 @export var atktimer: Timer
 @export var dmgdealt: float 
 
-
-
 var curtarget: Node2D
 var ap: AnimationPlayer
 
@@ -21,7 +19,7 @@ var rotspeed= 5
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	ap = get_parent().get_child(1)
-	dmghitbox = load("res://revampedTDSection/towers/hammerdmghitbox.tscn")
+	#dmghitbox = load("res://revampedTDSection/towers/hammerdmghitbox.tscn")
 	pass # Replace with function body.
 
 
