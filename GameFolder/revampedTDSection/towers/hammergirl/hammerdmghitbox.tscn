@@ -1,6 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cpjlcyrseb7ye"]
 
-[ext_resource type="Script" path="res://revampedTDSection/towers/hammerdmghitbox.gd" id="1_wowbp"]
+[ext_resource type="Script" path="res://revampedTDSection/towers/hammergirl/hammerdmghitbox.gd" id="1_wowbp"]
+
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xkd4b"]
 radius = 112.0

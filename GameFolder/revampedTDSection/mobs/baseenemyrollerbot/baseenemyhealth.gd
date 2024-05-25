@@ -1,5 +1,7 @@
 extends Area2D
-
+#Script conttrols enemy taking damage and death
+#simple integers. 
+#note: base enemy = rollerbot
 @export var health: float = 10
 @export var points: int =10
 # Called when the node enters the scene tree for the first time.
