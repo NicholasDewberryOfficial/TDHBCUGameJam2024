@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://byq2qdsqifvkr"]
+
+[node name="Minigamefrogger" type="Node2D"]
+
+[node name="bgpanel" type="Panel" parent="."]
+offset_right = 192.0
+offset_bottom = 1072.0
+
+[node name="toppartlabels" type="Panel" parent="bgpanel"]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 160.0
+
+[node name="HBoxContainer" type="VBoxContainer" parent="bgpanel/toppartlabels"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
