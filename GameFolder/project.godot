@@ -23,9 +23,7 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={}
-directories/dtl_directory={
-"Introduction_TL": "res://Introduction_TL.dtl"
-}
+directories/dtl_directory={}
 
 [display]
 
