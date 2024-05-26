@@ -1,8 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhupx4nta8e5y"]
+[gd_scene load_steps=4 format=3 uid="uid://nvppu7du44if"]
 
 [ext_resource type="Script" path="res://Overworld_Stuff/level_select.gd" id="1_uvg21"]
-[ext_resource type="PackedScene" uid="uid://dyh4cpt11he60" path="res://Overworld_Stuff/level_icon.tscn" id="2_js67h"]
-[ext_resource type="PackedScene" uid="uid://cg0sp37s41uqp" path="res://Overworld_Stuff/PlayerIcon.tscn" id="3_33b1g"]
+[ext_resource type="PackedScene" uid="uid://d31v6hktvr3dj" path="res://Overworld_Stuff/level_icon.tscn" id="2_js67h"]
+[ext_resource type="PackedScene" uid="uid://cs1tkbqflyosk" path="res://Overworld_Stuff/PlayerIcon.tscn" id="3_33b1g"]
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
@@ -19,7 +19,6 @@ offset_top = 192.0
 offset_right = 256.0
 offset_bottom = 256.0
 level_name = "1-A"
-next_scene_path = ""
 next_level_down = NodePath("../1-B")
 next_level_right = NodePath("../1-B")
 
@@ -29,7 +28,6 @@ offset_top = 448.0
 offset_right = 448.0
 offset_bottom = 512.0
 level_name = "1-B"
-next_scene_path = ""
 next_level_up = NodePath("../1-A")
 next_level_left = NodePath("../1-A")
 next_level_right = NodePath("../1-C")
@@ -40,7 +38,6 @@ offset_top = 344.0
 offset_right = 904.0
 offset_bottom = 408.0
 level_name = "1-C"
-next_scene_path = ""
 next_level_up = NodePath("../1-BOSS")
 next_level_down = NodePath("../1-D")
 next_level_left = NodePath("../1-B")
@@ -52,7 +49,6 @@ offset_top = 640.0
 offset_right = 1024.0
 offset_bottom = 704.0
 level_name = "1-D"
-next_scene_path = ""
 next_level_up = NodePath("../1-C")
 next_level_down = NodePath("../1-E")
 next_level_left = NodePath("../1-C")
@@ -64,7 +60,6 @@ offset_top = 768.0
 offset_right = 1344.0
 offset_bottom = 832.0
 level_name = "1-E"
-next_scene_path = ""
 next_level_left = NodePath("../1-D")
 
 [node name="1-BOSS" parent="." node_paths=PackedStringArray("next_level_down", "next_level_left") instance=ExtResource("2_js67h")]
@@ -73,7 +68,6 @@ offset_top = 168.0
 offset_right = 1256.0
 offset_bottom = 232.0
 level_name = "1-BOSS"
-next_scene_path = ""
 next_level_down = NodePath("../1-C")
 next_level_left = NodePath("../1-C")
 

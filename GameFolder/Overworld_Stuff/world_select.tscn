@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b57kr6napdw5f"]
+[gd_scene load_steps=4 format=3 uid="uid://cbvqobl8a5wd"]
 
 [ext_resource type="Script" path="res://Overworld_Stuff/world_select.gd" id="1_iyor0"]
-[ext_resource type="PackedScene" uid="uid://ht7kmms4evt" path="res://Overworld_Stuff/world_icon.tscn" id="2_v5rxn"]
-[ext_resource type="PackedScene" uid="uid://cg0sp37s41uqp" path="res://Overworld_Stuff/PlayerIcon.tscn" id="3_lwfjo"]
-[ext_resource type="PackedScene" uid="uid://bhupx4nta8e5y" path="res://Overworld_Stuff/level_select.tscn" id="3_qrl1w"]
+[ext_resource type="PackedScene" uid="uid://do0xqe1swewjh" path="res://Overworld_Stuff/world_icon.tscn" id="2_v5rxn"]
+[ext_resource type="PackedScene" uid="uid://cs1tkbqflyosk" path="res://Overworld_Stuff/PlayerIcon.tscn" id="3_lwfjo"]
 
 [node name="WorldSelect" type="Control"]
 layout_mode = 3
@@ -19,7 +18,6 @@ offset_left = 128.0
 offset_top = 136.0
 offset_right = 192.0
 offset_bottom = 200.0
-level_select_packed = ExtResource("3_qrl1w")
 
 [node name="WorldIcon2" parent="." instance=ExtResource("2_v5rxn")]
 offset_left = 384.0
@@ -27,7 +25,6 @@ offset_top = 264.0
 offset_right = 448.0
 offset_bottom = 328.0
 world_index = 2
-level_select_packed = ExtResource("3_qrl1w")
 
 [node name="PlayerIcon" parent="." instance=ExtResource("3_lwfjo")]
 layout_mode = 0
