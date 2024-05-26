@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cg0sp37s41uqp"]
+
+[ext_resource type="Texture2D" uid="uid://dxvokdvxgrqst" path="res://icon.svg" id="1_6xyp2"]
+
+[node name="TextureRect" type="TextureRect"]
+offset_right = 64.0
+offset_bottom = 64.0
+pivot_offset = Vector2(32, 0)
+texture = ExtResource("1_6xyp2")
+expand_mode = 5
