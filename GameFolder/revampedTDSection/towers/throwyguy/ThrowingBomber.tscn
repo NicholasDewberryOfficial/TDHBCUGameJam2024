@@ -1,0 +1,110 @@
+[gd_scene load_steps=12 format=3 uid="uid://cjx6bvyfvupnl"]
+
+[ext_resource type="Texture2D" uid="uid://cpy6me3l3p8p1" path="res://Assets/Towers/Bomber Cactus Fire.png" id="2_0cr1v"]
+[ext_resource type="Texture2D" uid="uid://cdajg34am2lnw" path="res://Assets/Towers/Bomber Cactus Aim.png" id="4_b32pc"]
+[ext_resource type="Script" path="res://revampedTDSection/towers/throwyguy/throwingGuyAttack.gd" id="4_uwcca"]
+[ext_resource type="Texture2D" uid="uid://cbsw78fmf262h" path="res://Assets/Towers/Bomber Cactus Idle.png" id="4_v2mof"]
+[ext_resource type="PackedScene" uid="uid://dd2j0bh7imgx5" path="res://revampedTDSection/towers/throwyguy/BomberProjectile.tscn" id="5_3euwb"]
+
+[sub_resource type="Animation" id="Animation_n34m8"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("towersprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_v2mof")]
+}
+
+[sub_resource type="Animation" id="Animation_d7bsc"]
+resource_name = "slam"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("towersprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_0cr1v")]
+}
+
+[sub_resource type="Animation" id="Animation_4ig0k"]
+resource_name = "windup"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("towersprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_b32pc")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4otht"]
+_data = {
+"idle": SubResource("Animation_n34m8"),
+"slam": SubResource("Animation_d7bsc"),
+"windup": SubResource("Animation_4ig0k")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b7edo"]
+size = Vector2(85, 76)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1nouk"]
+radius = 400.0
+
+[node name="ThrowingBomber" type="Node2D"]
+top_level = true
+
+[node name="towerscript" type="Node2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4otht")
+}
+autoplay = "idle"
+
+[node name="towersprite" type="Sprite2D" parent="."]
+z_index = 1
+rotation = 1.57079
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("4_b32pc")
+flip_v = true
+
+[node name="towerplacementbase" type="Area2D" parent="."]
+position = Vector2(-16, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="towerplacementbase"]
+position = Vector2(16, 0)
+shape = SubResource("RectangleShape2D_b7edo")
+
+[node name="towerattack" type="Area2D" parent="." node_paths=PackedStringArray("atktimer", "shootfromehere", "ap")]
+script = ExtResource("4_uwcca")
+atktimer = NodePath("../atkTimer")
+dmgdealt = 3.0
+shootfromehere = NodePath("../shootfromheretransform")
+ap = NodePath("../AnimationPlayer")
+dmghitbox = ExtResource("5_3euwb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="towerattack"]
+shape = SubResource("CircleShape2D_1nouk")
+
+[node name="atkTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="shootfromheretransform" type="Node2D" parent="."]
+position = Vector2(112, 0)
+
+[connection signal="area_entered" from="towerattack" to="towerattack" method="_on_area_entered"]
+[connection signal="area_exited" from="towerattack" to="towerattack" method="_on_area_exited"]

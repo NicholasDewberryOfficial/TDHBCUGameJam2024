@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://dd2j0bh7imgx5"]
+
+[ext_resource type="Script" path="res://revampedTDSection/towers/throwyguy/ThrownObjectBaseBehavior.gd" id="1_hwr8i"]
+[ext_resource type="Texture2D" uid="uid://byjdihsfi0v37" path="res://Assets/Towers/se2.png" id="2_r4emu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xkd4b"]
+radius = 32.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ni8vx"]
+
+[node name="BomberProjectile" type="Area2D"]
+script = ExtResource("1_hwr8i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xkd4b")
+debug_color = Color(0.930156, 0.202021, 0.255665, 0.42)
+
+[node name="dmgtimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-9.53674e-07, 0)
+scale = Vector2(0.533333, 0.533333)
+texture = ExtResource("2_r4emu")
+
+[node name="GPUParticles2D" type="CPUParticles2D" parent="."]
+visible = false
+material = SubResource("CanvasItemMaterial_ni8vx")
+position = Vector2(112, 0)
+emitting = false
+amount = 100000
+lifetime = 30.0
+one_shot = true
+preprocess = 2.0
+explosiveness = 0.08
+randomness = 0.45
+lifetime_randomness = 0.4
+emission_shape = 1
+emission_sphere_radius = 44.04
+spread = 125.27
+gravity = Vector2(0, 0)
+initial_velocity_min = 67.57
+initial_velocity_max = 67.57
+angular_velocity_min = 97.3
+angular_velocity_max = 97.3
+orbit_velocity_min = 108.11
+orbit_velocity_max = 108.11
+linear_accel_max = 0.9
+radial_accel_max = 62.16
+tangential_accel_max = 48.65
+damping_max = 0.51
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

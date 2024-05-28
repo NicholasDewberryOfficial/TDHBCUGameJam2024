@@ -5,6 +5,9 @@ var currtower = null
 # 1= ham girl, 2=throwguy
 var transphammergirl = load("res://revampedTDSection/towers/hammergirl/placetowergirl.tscn")
 var hammgirlprefab = load("res://revampedTDSection/towers/hammergirl/hammergirl.tscn")
+
+@export var transpbomberguy: PackedScene
+@export var bomberprefab: PackedScene
 var placeme = null
 
 @export var totowerholder: Node
@@ -33,6 +36,9 @@ func _process(delta):
 			1:
 				placeme = transphammergirl.instantiate()
 				add_child(placeme)
+			2: 
+				placeme = transpbomberguy.instantiate()
+				add_child(placeme)
 	pass
 
 func _input(event):
@@ -45,12 +51,22 @@ func _input(event):
 				Globalvars.pp -=100 
 				var thisham = hammgirlprefab.instantiate()
 				thisham.position = get_viewport().get_mouse_position()
-				
 				totowerholder.add_child(thisham)
 				currtower=null
 				placeme.queue_free()
 				placeme=null
-		
+			2:
+				if(Globalvars.pp < 150):
+					#logic saying youre poor and cant afford this 
+					return 
+				Globalvars.pp -=150
+				var thisham = bomberprefab.instantiate()
+				thisham.position = get_viewport().get_mouse_position()
+				totowerholder.add_child(thisham)
+			#	print("PLACED BOMBERMAN")
+				currtower=null
+				placeme.queue_free()
+				placeme=null
 
 
 func _on_hammergirlpanel_pressed():
@@ -63,3 +79,8 @@ func checkifpositionworks() -> bool:
 	return true #or return false
 	
 	
+
+
+func _on_bomberpanel_pressed():
+	currtower = 2
+	pass # Replace with function body.
