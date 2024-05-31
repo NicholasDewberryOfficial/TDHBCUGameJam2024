@@ -89,15 +89,16 @@ layer_0/tile_data = PackedInt32Array(0, 720897, 10, 1048605, 720897, 10, 1048576
 layer_1/name = "Unplacable"
 layer_1/tile_data = PackedInt32Array()
 
-[node name="mobholder" type="Node2D" parent="tdstuff" node_paths=PackedStringArray("mytimer")]
+[node name="mobholder" type="Node2D" parent="tdstuff" node_paths=PackedStringArray("mytimer", "wavetext")]
 script = ExtResource("2_0xv6w")
 mytimer = NodePath("mobspawnmobtimer")
 Rollerbot = ExtResource("2_7vu4u")
+wavetext = NodePath("../../gameui/Panel/wavestufftext")
 
 [node name="basePathlevel1" parent="tdstuff/mobholder" instance=ExtResource("2_7vu4u")]
 
 [node name="mobspawnmobtimer" type="Timer" parent="tdstuff/mobholder"]
-wait_time = 0.1
+wait_time = 10.0
 autostart = true
 
 [node name="towerholder" type="Node2D" parent="tdstuff"]
@@ -108,71 +109,6 @@ position = Vector2(768, 736)
 [node name="ThrowingBomber" parent="tdstuff/towerholder" instance=ExtResource("6_owe0m")]
 z_index = 1
 position = Vector2(1264, 239)
-
-[node name="gameui" type="Node2D" parent="tdstuff"]
-position = Vector2(2030, 0)
-
-[node name="uipanel" type="Panel" parent="tdstuff/gameui"]
-offset_left = -120.0
-offset_right = 140.0
-offset_bottom = 1072.0
-
-[node name="towerpart" type="Control" parent="tdstuff/gameui/uipanel" node_paths=PackedStringArray("totowerholder", "tmap", "pphpholder")]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("4_lnnio")
-transpbomberguy = ExtResource("5_l1pkv")
-bomberprefab = ExtResource("6_owe0m")
-totowerholder = NodePath("../../../towerholder")
-tmap = NodePath("../../../tmap")
-pphpholder = NodePath("ppandhptext")
-
-[node name="hammergirlpanel" type="Button" parent="tdstuff/gameui/uipanel/towerpart"]
-layout_mode = 0
-offset_left = -6.10348e-05
-offset_top = 96.0
-offset_right = 547.0
-offset_bottom = 328.0
-scale = Vector2(0.45, 0.45)
-icon = ExtResource("4_d0uiv")
-
-[node name="hammergirlcosttext" type="RichTextLabel" parent="tdstuff/gameui/uipanel/towerpart/hammergirlpanel"]
-layout_mode = 0
-offset_top = 232.0
-offset_right = 578.0
-offset_bottom = 356.0
-theme_override_font_sizes/normal_font_size = 50
-text = "Costs: 100 pp"
-
-[node name="bomberpanel" type="Button" parent="tdstuff/gameui/uipanel/towerpart"]
-layout_mode = 0
-offset_top = 233.0
-offset_right = 578.0
-offset_bottom = 462.0
-scale = Vector2(0.45, 0.45)
-icon = ExtResource("6_m1lt4")
-icon_alignment = 1
-expand_icon = true
-
-[node name="bombercosttext" type="RichTextLabel" parent="tdstuff/gameui/uipanel/towerpart/bomberpanel"]
-layout_mode = 0
-offset_top = 232.0
-offset_right = 578.0
-offset_bottom = 356.0
-theme_override_font_sizes/normal_font_size = 50
-text = "Costs: 150 pp"
-
-[node name="ppandhptext" type="RichTextLabel" parent="tdstuff/gameui/uipanel/towerpart"]
-layout_mode = 0
-offset_left = 20.0
-offset_right = 260.0
-offset_bottom = 96.0
-theme_override_font_sizes/normal_font_size = 21
-theme_override_font_sizes/bold_font_size = 21
-bbcode_enabled = true
-text = "PP: "
-fit_content = true
 
 [node name="utilityorganizer" type="Node2D" parent="tdstuff"]
 
@@ -190,6 +126,96 @@ autoplay = true
 [node name="Leftsidetyping" parent="." instance=ExtResource("9_s4qsx")]
 visible = false
 
+[node name="gameui" type="Node2D" parent="."]
+position = Vector2(1808, 0)
+scale = Vector2(0.8, 1)
+
+[node name="uipanel" type="Panel" parent="gameui"]
+offset_left = -120.0
+offset_right = 140.0
+offset_bottom = 1072.0
+
+[node name="towerpart" type="Control" parent="gameui/uipanel" node_paths=PackedStringArray("totowerholder", "tmap", "pphpholder")]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_lnnio")
+transpbomberguy = ExtResource("5_l1pkv")
+bomberprefab = ExtResource("6_owe0m")
+totowerholder = NodePath("../../../tdstuff/towerholder")
+tmap = NodePath("../../../tdstuff/tmap")
+pphpholder = NodePath("ppandhptext")
+
+[node name="hammergirlpanel" type="Button" parent="gameui/uipanel/towerpart"]
+layout_mode = 0
+offset_left = -6.10348e-05
+offset_top = 96.0
+offset_right = 547.0
+offset_bottom = 328.0
+scale = Vector2(0.45, 0.45)
+icon = ExtResource("4_d0uiv")
+
+[node name="hammergirlcosttext" type="RichTextLabel" parent="gameui/uipanel/towerpart/hammergirlpanel"]
+layout_mode = 0
+offset_top = 232.0
+offset_right = 578.0
+offset_bottom = 356.0
+theme_override_font_sizes/normal_font_size = 50
+text = "Costs: 100 pp"
+
+[node name="bomberpanel" type="Button" parent="gameui/uipanel/towerpart"]
+layout_mode = 0
+offset_top = 233.0
+offset_right = 578.0
+offset_bottom = 462.0
+scale = Vector2(0.45, 0.45)
+icon = ExtResource("6_m1lt4")
+icon_alignment = 1
+expand_icon = true
+
+[node name="bombercosttext" type="RichTextLabel" parent="gameui/uipanel/towerpart/bomberpanel"]
+layout_mode = 0
+offset_top = 232.0
+offset_right = 578.0
+offset_bottom = 356.0
+theme_override_font_sizes/normal_font_size = 50
+text = "Costs: 150 pp"
+
+[node name="ppandhptext" type="RichTextLabel" parent="gameui/uipanel/towerpart"]
+layout_mode = 0
+offset_left = 20.0
+offset_right = 260.0
+offset_bottom = 96.0
+theme_override_font_sizes/normal_font_size = 21
+theme_override_font_sizes/bold_font_size = 21
+bbcode_enabled = true
+text = "PP: "
+fit_content = true
+
+[node name="Panel" type="Panel" parent="gameui"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2020.0
+offset_right = -1720.0
+offset_bottom = 87.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="wavestufftext" type="RichTextLabel" parent="gameui/Panel"]
+offset_right = 120.0
+offset_bottom = 87.0
+text = "Enemies left:"
+
+[node name="nextwavebutton" type="Button" parent="gameui/Panel"]
+layout_mode = 0
+offset_left = 140.0
+offset_right = 300.0
+offset_bottom = 87.0
+text = "NEXT WAVE"
+
 [connection signal="timeout" from="tdstuff/mobholder/mobspawnmobtimer" to="tdstuff/mobholder" method="_on_mobspawnmobtimer_timeout"]
-[connection signal="pressed" from="tdstuff/gameui/uipanel/towerpart/hammergirlpanel" to="tdstuff/gameui/uipanel/towerpart" method="_on_hammergirlpanel_pressed"]
-[connection signal="pressed" from="tdstuff/gameui/uipanel/towerpart/bomberpanel" to="tdstuff/gameui/uipanel/towerpart" method="_on_bomberpanel_pressed"]
+[connection signal="pressed" from="gameui/uipanel/towerpart/hammergirlpanel" to="gameui/uipanel/towerpart" method="_on_hammergirlpanel_pressed"]
+[connection signal="pressed" from="gameui/uipanel/towerpart/bomberpanel" to="gameui/uipanel/towerpart" method="_on_bomberpanel_pressed"]
