@@ -17,11 +17,7 @@ extends Node
 
 
 func _ready():
-	tddifficulty = 0
-	await get_tree().create_timer(90.0).timeout
-	tddifficulty = 1
-	await get_tree().create_timer(90.0).timeout
-	tddifficulty = 2
+	pass
 	
 func enemykilled(points):
 	pp += points 

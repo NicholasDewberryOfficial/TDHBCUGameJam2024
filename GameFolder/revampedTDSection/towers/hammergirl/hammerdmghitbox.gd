@@ -4,22 +4,17 @@ extends Area2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	#see the local timer, if it expires then delete this node
 	if($dmgtimer.is_stopped()):
 		queue_free()
-	pass
 
 
 func _on_area_entered(area):
-	#print(area.name)
-	#print(area.get_script())
-	#if(area.is_in_group("enemyhitboxgroup") and area.has_method("takedamage")):
-		#area.takedamage(damage)
+	#This is on the hitbox itself. if it hits an enemy, have the enemy take damage.
 	if(area.is_in_group("enemyhitboxgroup") and area.has_method("takedamage")):
 		area.takedamage(damage)
-	pass # Replace with function body.

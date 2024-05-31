@@ -1,7 +1,8 @@
 extends Node
 
 var currenemyarr = []
-
+#See hammer girl
+#This is basically a direct copy. With the attacks changed
 @export var atktimer: Timer
 @export var dmgdealt: float 
 @export var shootfromehere: Node2D 

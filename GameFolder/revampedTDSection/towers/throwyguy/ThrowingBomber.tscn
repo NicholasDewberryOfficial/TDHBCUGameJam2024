@@ -82,6 +82,28 @@ scale = Vector2(0.13, 0.13)
 texture = ExtResource("4_b32pc")
 flip_v = true
 
+[node name="Panel" type="Panel" parent="towersprite"]
+top_level = true
+anchors_preset = -1
+offset_left = -144.0
+offset_top = -176.0
+offset_right = 144.0
+offset_bottom = -40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="towersprite/Panel"]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 32.0
+text = "Upgrades:"
+
+[node name="Button" type="Button" parent="towersprite/Panel"]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 128.0
+offset_bottom = 136.0
+text = "400 PP:
+Triple attacking speed"
+
 [node name="towerplacementbase" type="Area2D" parent="."]
 position = Vector2(-16, 0)
 

@@ -7,8 +7,8 @@ extends Node2D
 
 
 func _physics_process(delta):
+	#this oneliner bascially moves the enemy along the path every frame.
 	get_parent().set_progress(get_parent().get_progress() + (speed * delta))
-	#print("Im spawning!")
 	
 	if get_parent().get_progress_ratio() >= .97 :
 		#if the enemy goes past, then we take the nexus hp away, and delete this node.

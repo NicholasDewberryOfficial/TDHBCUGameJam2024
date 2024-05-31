@@ -1,5 +1,9 @@
 extends Node
 
+#Alright so whats happening here?
+#Baically, whenever an enemy enters the detection radius, they're added into an array. 
+#We only focus the enemy that's the first to enter the array.
+#once we find the enemy, start the tiimer and then attack.
 var currenemyarr = []
 
 @export var atktimer: Timer

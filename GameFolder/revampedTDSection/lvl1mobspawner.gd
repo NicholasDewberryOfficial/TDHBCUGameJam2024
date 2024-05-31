@@ -10,6 +10,10 @@ extends Node
 #Phase 2 = .3 second gap
 #Phase 3 = .1 second gap
 
+#So what's happening here?
+#1. we start in phase 0. this means that the timer isnt overriden. this gives the timer 10 seconds for gameplay to start.
+#2. Afterwards, we populate the "timestogo" variable, then 
+#*TODO update this code 
 @export var phase = 0
 
 var timestogo = 0
