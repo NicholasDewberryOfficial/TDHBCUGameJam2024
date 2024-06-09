@@ -7,6 +7,8 @@ extends Node2D
 #Check th tilemap, and check the physics layers. Then see how I set up each physics layer to correspond
 #with each tile in the tileset
 
+
+
 var currTilemap
 var placable = true
 # Called when the node enters the scene tree for the first time.

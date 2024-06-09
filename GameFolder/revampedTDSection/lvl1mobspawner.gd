@@ -5,6 +5,10 @@ extends Node
 @export var Rollerbot: PackedScene
 
 @export var wavetext: RichTextLabel
+
+@export var nextwavebuttonbutton: Button
+
+var nextexecuting: bool = false
 #It's gonna have 3 phases. 
 #Phase 1 = 1 second gap 
 #Phase 2 = .3 second gap
@@ -28,10 +32,12 @@ func _ready():
 func _process(delta):
 	if(midstagetimer or phase ==0):
 		wavetext.text = "Time until phase: " + str(phase) + " : " + str(round(mytimer.time_left))
+		nextwavebuttonbutton.text = "Begin the next wave early."
 		#return
 	else:
 		changetimerphase()
 		wavetext.text = "Enemies left to spawn: " + str(timestogo)
+		nextwavebuttonbutton.text = "Fast Forward wave spawns"
 	if(timestogo <=0 and !midstagetimer):
 		#timestogo = 20
 		phase += 1 
@@ -86,3 +92,25 @@ func changetimerphase():
 		_:
 			mytimer.wait_time = .005
 			pass	
+
+
+func _on_nextwavebutton_pressed():
+	if(nextexecuting):
+		return
+	else:
+		nextexecuting=true
+	if(midstagetimer == true):
+		midstagetimer = false
+		mytimer.stop()
+		mytimer.start(.1)
+	elif(midstagetimer == false):
+		while(timestogo != 1):
+			mytimer.autostart =false
+			mytimer.stop()
+			var mybot = Rollerbot.instantiate()
+			add_child(mybot)
+			timestogo -=1 
+			await get_tree().create_timer(.2).timeout
+		mytimer.autostart = true
+		mytimer.start(.1)
+	nextexecuting=false

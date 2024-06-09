@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://2crcixuke4eg"]
+[gd_scene load_steps=17 format=3 uid="uid://2crcixuke4eg"]
 
 [ext_resource type="Texture2D" uid="uid://7ovcgq4il4ma" path="res://kenney_tower-defense-top-down/Tilesheet/towerDefense_tilesheet.png" id="1_pkvm2"]
 [ext_resource type="Script" path="res://revampedTDSection/lvl1mobspawner.gd" id="2_0xv6w"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cjx6bvyfvupnl" path="res://revampedTDSection/towers/throwyguy/ThrowingBomber.tscn" id="6_owe0m"]
 [ext_resource type="AudioStream" uid="uid://fh1ry7t52dro" path="res://Assets/music/rpgtheme.mp3" id="7_83poq"]
 [ext_resource type="PackedScene" uid="uid://cb1u6bnhv8a7w" path="res://LeftSideTypingSTuff/leftsidetyping.tscn" id="9_s4qsx"]
+[ext_resource type="Script" path="res://revampedTDSection/currenttowerupgrades.gd" id="14_ckdg3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iri12"]
 resource_name = "updatedatlas"
@@ -89,13 +90,12 @@ layer_0/tile_data = PackedInt32Array(0, 720897, 10, 1048605, 720897, 10, 1048576
 layer_1/name = "Unplacable"
 layer_1/tile_data = PackedInt32Array()
 
-[node name="mobholder" type="Node2D" parent="tdstuff" node_paths=PackedStringArray("mytimer", "wavetext")]
+[node name="mobholder" type="Node2D" parent="tdstuff" node_paths=PackedStringArray("mytimer", "wavetext", "nextwavebuttonbutton")]
 script = ExtResource("2_0xv6w")
 mytimer = NodePath("mobspawnmobtimer")
 Rollerbot = ExtResource("2_7vu4u")
 wavetext = NodePath("../../gameui/Panel/wavestufftext")
-
-[node name="basePathlevel1" parent="tdstuff/mobholder" instance=ExtResource("2_7vu4u")]
+nextwavebuttonbutton = NodePath("../../gameui/Panel/nextwavebutton")
 
 [node name="mobspawnmobtimer" type="Timer" parent="tdstuff/mobholder"]
 wait_time = 10.0
@@ -194,6 +194,43 @@ bbcode_enabled = true
 text = "PP: "
 fit_content = true
 
+[node name="currenttowerupgrades" type="Control" parent="gameui/uipanel/towerpart" node_paths=PackedStringArray("artholder", "up1", "up2") groups=["towerupgradesnodegroup"]]
+anchors_preset = 0
+offset_left = 4.0
+offset_top = 640.0
+offset_right = 248.0
+offset_bottom = 1086.0
+script = ExtResource("14_ckdg3")
+artholder = NodePath("currenttowerbgpanel/currenttowerart")
+up1 = NodePath("currenttowerbgpanel/upgrade1")
+up2 = NodePath("currenttowerbgpanel/upgrade2")
+
+[node name="currenttowerbgpanel" type="Panel" parent="gameui/uipanel/towerpart/currenttowerupgrades"]
+layout_mode = 0
+offset_right = 255.0
+offset_bottom = 440.0
+
+[node name="currenttowerart" type="TextureRect" parent="gameui/uipanel/towerpart/currenttowerupgrades/currenttowerbgpanel"]
+layout_mode = 0
+offset_right = 252.0
+offset_bottom = 246.0
+
+[node name="upgrade1" type="Button" parent="gameui/uipanel/towerpart/currenttowerupgrades/currenttowerbgpanel"]
+layout_mode = 0
+offset_left = -5.0
+offset_top = 301.0
+offset_right = 240.0
+offset_bottom = 354.0
+text = "2X Damage ("
+
+[node name="upgrade2" type="Button" parent="gameui/uipanel/towerpart/currenttowerupgrades/currenttowerbgpanel"]
+layout_mode = 0
+offset_left = -0.499878
+offset_top = 359.0
+offset_right = 244.5
+offset_bottom = 412.0
+text = "2X Speed ("
+
 [node name="Panel" type="Panel" parent="gameui"]
 anchors_preset = 8
 anchor_left = 0.5
@@ -201,7 +238,7 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -2020.0
-offset_right = -1720.0
+offset_right = -1661.0
 offset_bottom = 87.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -215,10 +252,13 @@ text = "Enemies left:"
 [node name="nextwavebutton" type="Button" parent="gameui/Panel"]
 layout_mode = 0
 offset_left = 140.0
-offset_right = 300.0
+offset_right = 359.0
 offset_bottom = 87.0
 text = "NEXT WAVE"
 
 [connection signal="timeout" from="tdstuff/mobholder/mobspawnmobtimer" to="tdstuff/mobholder" method="_on_mobspawnmobtimer_timeout"]
 [connection signal="pressed" from="gameui/uipanel/towerpart/hammergirlpanel" to="gameui/uipanel/towerpart" method="_on_hammergirlpanel_pressed"]
 [connection signal="pressed" from="gameui/uipanel/towerpart/bomberpanel" to="gameui/uipanel/towerpart" method="_on_bomberpanel_pressed"]
+[connection signal="pressed" from="gameui/uipanel/towerpart/currenttowerupgrades/currenttowerbgpanel/upgrade1" to="gameui/uipanel/towerpart/currenttowerupgrades" method="_on_upgrade_1_pressed"]
+[connection signal="pressed" from="gameui/uipanel/towerpart/currenttowerupgrades/currenttowerbgpanel/upgrade2" to="gameui/uipanel/towerpart/currenttowerupgrades" method="_on_upgrade_2_pressed"]
+[connection signal="pressed" from="gameui/Panel/nextwavebutton" to="tdstuff/mobholder" method="_on_nextwavebutton_pressed"]

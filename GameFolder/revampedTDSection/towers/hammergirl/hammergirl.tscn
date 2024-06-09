@@ -81,9 +81,9 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_6kqy5")
 flip_v = true
 
-[node name="towerplacementbase" type="Area2D" parent="."]
+[node name="hammergirlbase" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="towerplacementbase"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hammergirlbase"]
 position = Vector2(16, 0)
 shape = SubResource("RectangleShape2D_b7edo")
 

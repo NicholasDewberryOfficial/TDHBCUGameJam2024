@@ -1,6 +1,6 @@
 extends Control
 
-
+#@export var thisnodepath: NodePath = null
 func _on_start_pressed():
 	get_tree().change_scene_to_file("res://IntroCutscene/IntroCutscene.tscn")
 

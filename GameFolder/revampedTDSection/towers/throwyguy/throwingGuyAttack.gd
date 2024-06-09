@@ -4,7 +4,8 @@ var currenemyarr = []
 #See hammer girl
 #This is basically a direct copy. With the attacks changed
 @export var atktimer: Timer
-@export var dmgdealt: float 
+var atktime: float = 1
+@export var dmgdealt: float =3
 @export var shootfromehere: Node2D 
 var curtarget: Node2D
 @export var ap: AnimationPlayer
@@ -13,9 +14,19 @@ var rotvector = 0.0
 
 var rotspeed= 5
 
- 
+var upgrade1: bool = false
+var upgrade2: bool= false
+
 
 @export var dmghitbox: PackedScene
+
+func checkupgrades():
+	if(upgrade1 == true):
+		dmgdealt = 3
+		pass
+	if(upgrade2 ==true):
+		atktime = .5
+		pass
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -69,7 +80,7 @@ func _on_area_exited(area):
 func startattack():
 	if(atktimer.is_stopped()):
 		startslam()
-		atktimer.start()
+	#	atktimer.start(atktime)
 		
 		#attack logic goes here
 	else:
@@ -77,11 +88,12 @@ func startattack():
 		
 		
 func startslam():
-	atktimer.start(1)
+	atktimer.start(atktime)
 	ap.play("windup")
 	await get_tree().create_timer(.5).timeout
 	ap.play("slam")
 	var cdmg = dmghitbox.instantiate()
+	cdmg.damage = dmgdealt
 #	cdmg.global_position = shootfromehere.global_position
 	add_child(cdmg)
 	#var currdmg = add_child(ResourceLoader.load("res://revampedTDSection/towers/hammerdmghitbox.tscn"))
