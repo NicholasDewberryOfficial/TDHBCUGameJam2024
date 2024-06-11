@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://b68e52covf0"]
+
+[ext_resource type="Texture2D" uid="uid://biude6b6rkuyv" path="res://Assets/Roller_Overhead.png" id="1_jqs21"]
+[ext_resource type="Script" path="res://revampedTDSection/mobs/baseenemyrollerbot/baseenemyhealth.gd" id="2_4smif"]
+[ext_resource type="Script" path="res://revampedTDSection/mobs/baseenemyrollerbot/baseenemymovement.gd" id="3_hf6w6"]
+
+[sub_resource type="Curve2D" id="Curve2D_mvfwh"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -220, -14.1593, 0, 0, 0, 0, 1001, -9.43954, 0, 0, 0, 0, 1001, 241.653, 0, 0, 0, 0, 1001, 241.653, 0, 0, 0, 0, 311, 258.644, 0, 0, 0, 0, -109, 256.756, 0, 0, 0, 0, -108, 507.848, 0, 0, 0, 0, 1056, 512.568, 0, 0, 0, 0, 1050, 637.17, 0, 0, 0, 0, -105, 645.666, 0, 0, 0, 0, -109, 766.492, 0, 0, 0, 0, -106, 783.483, 0, 0, 0, 0, 1167, 765.548)
+}
+point_count = 13
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bt4vu"]
+radius = 64.0
+
+[node name="basePathlevel1" type="Path2D"]
+position = Vector2(421, 163)
+scale = Vector2(1.25, 1.05937)
+curve = SubResource("Curve2D_mvfwh")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(-220, -14.1593)
+rotation = 0.00386547
+
+[node name="baseenemyart" type="Sprite2D" parent="PathFollow2D"]
+scale = Vector2(0.719999, 0.640001)
+texture = ExtResource("1_jqs21")
+
+[node name="baseenemyhitbox" type="Area2D" parent="PathFollow2D/baseenemyart" groups=["enemyhitboxgroup"]]
+script = ExtResource("2_4smif")
+health = 1.0
+points = 213
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/baseenemyart/baseenemyhitbox"]
+shape = SubResource("CircleShape2D_bt4vu")
+
+[node name="movementholder" type="Node2D" parent="PathFollow2D"]
+script = ExtResource("3_hf6w6")
+
+[node name="movementtimer" type="Timer" parent="PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_51846" type="Timer" parent="PathFollow2D"]
+wait_time = 0.2
+one_shot = true

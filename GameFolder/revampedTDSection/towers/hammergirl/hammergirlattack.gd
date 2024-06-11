@@ -8,7 +8,7 @@ var currenemyarr = []
 
 @export var atktimer: Timer
 @export var dmgdealt: float 
-
+#var atktime: Float = 
 var curtarget: Node2D
 var ap: AnimationPlayer
 
@@ -16,6 +16,17 @@ var rotvector = 0.0
 
 var rotspeed= 5
 
+
+var upgrade1: bool = false
+var upgrade2: bool= false
+func checkupgrades():
+	if(upgrade1 == true):
+		dmgdealt = 3
+		pass
+	if(upgrade2 ==true):
+		#atktime = .5
+		#Lets have the AOE double in size
+		pass
  
 
 @export var dmghitbox: PackedScene

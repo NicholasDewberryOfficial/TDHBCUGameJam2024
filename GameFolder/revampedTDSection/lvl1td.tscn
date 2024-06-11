@@ -1,8 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://2crcixuke4eg"]
+[gd_scene load_steps=18 format=3 uid="uid://2crcixuke4eg"]
 
 [ext_resource type="Texture2D" uid="uid://7ovcgq4il4ma" path="res://kenney_tower-defense-top-down/Tilesheet/towerDefense_tilesheet.png" id="1_pkvm2"]
 [ext_resource type="Script" path="res://revampedTDSection/lvl1mobspawner.gd" id="2_0xv6w"]
-[ext_resource type="PackedScene" uid="uid://8oejuu2mtiwc" path="res://revampedTDSection/mobs/baseenemyrollerbot/basenemy.tscn" id="2_7vu4u"]
+[ext_resource type="Texture2D" uid="uid://crc3m42g6efga" path="res://Assets/CC_Level_1_Background.png" id="2_usdoy"]
 [ext_resource type="PackedScene" uid="uid://bgrritp410nyc" path="res://revampedTDSection/towers/hammergirl/hammergirl.tscn" id="3_nfqxn"]
 [ext_resource type="Texture2D" uid="uid://ce4w3w10hhvxd" path="res://Assets/Towers/Hammer Cactus Idle.png" id="4_d0uiv"]
 [ext_resource type="Script" path="res://revampedTDSection/towerplacement.gd" id="4_lnnio"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cbsw78fmf262h" path="res://Assets/Towers/Bomber Cactus Idle.png" id="6_m1lt4"]
 [ext_resource type="PackedScene" uid="uid://cjx6bvyfvupnl" path="res://revampedTDSection/towers/throwyguy/ThrowingBomber.tscn" id="6_owe0m"]
 [ext_resource type="AudioStream" uid="uid://fh1ry7t52dro" path="res://Assets/music/rpgtheme.mp3" id="7_83poq"]
+[ext_resource type="PackedScene" uid="uid://b68e52covf0" path="res://revampedTDSection/mobs/baseenemy.tscn" id="7_d6lsh"]
 [ext_resource type="PackedScene" uid="uid://cb1u6bnhv8a7w" path="res://LeftSideTypingSTuff/leftsidetyping.tscn" id="9_s4qsx"]
 [ext_resource type="Script" path="res://revampedTDSection/currenttowerupgrades.gd" id="14_ckdg3"]
 
@@ -90,10 +91,15 @@ layer_0/tile_data = PackedInt32Array(0, 720897, 10, 1048605, 720897, 10, 1048576
 layer_1/name = "Unplacable"
 layer_1/tile_data = PackedInt32Array()
 
+[node name="CcLevel1Background" type="Sprite2D" parent="tdstuff"]
+position = Vector2(936.563, 534.625)
+scale = Vector2(1.27128, 1.08415)
+texture = ExtResource("2_usdoy")
+
 [node name="mobholder" type="Node2D" parent="tdstuff" node_paths=PackedStringArray("mytimer", "wavetext", "nextwavebuttonbutton")]
 script = ExtResource("2_0xv6w")
 mytimer = NodePath("mobspawnmobtimer")
-Rollerbot = ExtResource("2_7vu4u")
+Rollerbot = ExtResource("7_d6lsh")
 wavetext = NodePath("../../gameui/Panel/wavestufftext")
 nextwavebuttonbutton = NodePath("../../gameui/Panel/nextwavebutton")
 
@@ -214,6 +220,7 @@ offset_bottom = 440.0
 layout_mode = 0
 offset_right = 252.0
 offset_bottom = 246.0
+expand_mode = 1
 
 [node name="upgrade1" type="Button" parent="gameui/uipanel/towerpart/currenttowerupgrades/currenttowerbgpanel"]
 layout_mode = 0

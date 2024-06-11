@@ -95,7 +95,8 @@ func startslam():
 	var cdmg = dmghitbox.instantiate()
 	cdmg.damage = dmgdealt
 #	cdmg.global_position = shootfromehere.global_position
-	add_child(cdmg)
+	owner.add_child(cdmg)
+	cdmg.transform = shootfromehere.global_transform
 	#var currdmg = add_child(ResourceLoader.load("res://revampedTDSection/towers/hammerdmghitbox.tscn"))
 	await get_tree().create_timer(.5).timeout
 	ap.play("idle")

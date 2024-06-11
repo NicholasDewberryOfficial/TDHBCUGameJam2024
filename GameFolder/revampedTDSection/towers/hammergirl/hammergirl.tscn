@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://bgrritp410nyc"]
+[gd_scene load_steps=13 format=3 uid="uid://bgrritp410nyc"]
 
 [ext_resource type="Texture2D" uid="uid://ce4w3w10hhvxd" path="res://Assets/Towers/Hammer Cactus Idle.png" id="1_6kqy5"]
 [ext_resource type="Texture2D" uid="uid://chp8pv6ljm3x8" path="res://Assets/Towers/Hammer Cactus Slam.png" id="1_eq3o6"]
 [ext_resource type="Texture2D" uid="uid://bkk70peuabmjh" path="res://Assets/Towers/Hammer Cactus Wind-Up.png" id="1_yiq2i"]
 [ext_resource type="Script" path="res://revampedTDSection/towers/hammergirl/hammergirlattack.gd" id="2_3pybe"]
+[ext_resource type="Script" path="res://revampedTDSection/towers/throwyguy/clickablebase.gd" id="4_5e5hc"]
 [ext_resource type="PackedScene" uid="uid://cpjlcyrseb7ye" path="res://revampedTDSection/towers/hammergirl/hammerdmghitbox.tscn" id="5_y6tel"]
 
 [sub_resource type="Animation" id="Animation_n34m8"]
@@ -81,7 +82,10 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_6kqy5")
 flip_v = true
 
-[node name="hammergirlbase" type="Area2D" parent="."]
+[node name="hammergirlbase" type="Area2D" parent="." node_paths=PackedStringArray("mytowerattackvariables")]
+script = ExtResource("4_5e5hc")
+type = 1
+mytowerattackvariables = NodePath("../towerattack")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hammergirlbase"]
 position = Vector2(16, 0)
@@ -99,5 +103,6 @@ shape = SubResource("CircleShape2D_1nouk")
 wait_time = 2.0
 one_shot = true
 
+[connection signal="input_event" from="hammergirlbase" to="hammergirlbase" method="_on_input_event"]
 [connection signal="area_entered" from="towerattack" to="towerattack" method="_on_area_entered"]
 [connection signal="area_exited" from="towerattack" to="towerattack" method="_on_area_exited"]

@@ -13,8 +13,8 @@ func _physics_process(delta):
 	velocity.z = movement_dir.z * speed
 
 	move_and_slide()
-	if is_on_floor() and Input.is_action_just_pressed("jump"):
-		velocity.y = jump_speed
+	#if is_on_floor() and Input.is_action_just_pressed("jump"):
+		#velocity.y = jump_speed
 		
 func _input(event):
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:

@@ -17,8 +17,13 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	changevalstoType()
-	pass
-	
+	if(currentattackscript ==null):
+		return
+	if(currentattackscript.upgrade1 == true):
+		up1.disabled = true
+		pass
+	if(currentattackscript.upgrade2 == true):
+		up2.disabled = true
 func changevalstoType():
 	match(currentlyselectedType):
 		0:
@@ -27,19 +32,25 @@ func changevalstoType():
 			#var img = Image.load_from_file("res://Assets/Towers/Hammer Cactus Idle.png")
 			var text = load("res://Assets/Towers/Hammer Cactus Idle.png")
 			artholder.texture = text
+			up1.text = "2X Damage: 200 PP"
+			up2.text = "Triple attack size: 400 PP"
 			#artholder.texture = load(throwerartreference)
 		2:
 			#var img = ResourceLoader.load("res://Assets/Towers/Bomber Cactus Idle.png")
 			var text = load("res://Assets/Towers/Bomber Cactus Idle.png")
 			artholder.texture = text
+			up1.text = "2X Damage: 200 PP"
+			up2.text = "2X atk Speed: 200PP"
 			pass
 
 
 func _on_upgrade_1_pressed():
 	match(currentlyselectedType):
 		1:
-			pass
+			currentattackscript.upgrade1 = true
+			currentattackscript.dmgdealt = 3
 		2:
+			currentattackscript.upgrade1=true
 			currentattackscript.dmgdealt = 6
 		
 	pass
@@ -51,4 +62,5 @@ func _on_upgrade_2_pressed():
 		1:
 			pass
 		2:
+			currentattackscript.upgrade2=true
 			currentattackscript.atktime = .5
