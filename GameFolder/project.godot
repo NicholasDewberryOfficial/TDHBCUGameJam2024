@@ -23,7 +23,9 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
-directories/dch_directory={}
+directories/dch_directory={
+"Commander_Wheel": "res://Commander_Wheel.dch"
+}
 directories/dtl_directory={}
 layout/style_list=[]
 layout/default_style="Default"
