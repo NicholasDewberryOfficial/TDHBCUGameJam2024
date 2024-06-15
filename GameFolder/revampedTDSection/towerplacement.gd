@@ -17,9 +17,24 @@ var tdata: TileSet
 @export var hgirlcost:int = 100 
 @export var pphpholder: RichTextLabel = null
 
+@export var hammergirl1button: Button
+
+@export var bomberguybutton: Button
+
+@export var longarmLadybutton: Button
+
+@export var page1holder: Control
+@export var page2holder: Control
+
+
 
 func _ready():
-	#totowerholder = get_node()
+	if(Globalvars.unlockedTowers[0] ==0):
+		hammergirl1button.disabled = true 
+		hammergirl1button.hide()
+	if(Globalvars.unlockedTowers[1] ==0):
+		bomberguybutton.disabled = true 
+		bomberguybutton.hide()
 	pass # Replace with function body.
 
 
@@ -83,4 +98,14 @@ func checkifpositionworks() -> bool:
 
 func _on_bomberpanel_pressed():
 	currtower = 2
+	pass # Replace with function body.
+
+
+func _on_menubutton_item_selected(index):
+	if(index == 0 ):
+		page1holder.show()
+		page2holder.hide()
+	if(index == 1):
+		page2holder.show()
+		page1holder.hide()
 	pass # Replace with function body.
