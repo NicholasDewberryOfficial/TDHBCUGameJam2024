@@ -34,6 +34,7 @@ texture = SubResource("GradientTexture2D_su56m")
 [node name="GPUParticles2D" type="CPUParticles2D" parent="."]
 material = SubResource("CanvasItemMaterial_ni8vx")
 position = Vector2(112, 0)
+emitting = false
 amount = 100000
 lifetime = 30.0
 one_shot = true

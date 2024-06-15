@@ -13,9 +13,9 @@
 [ext_resource type="AudioStream" uid="uid://fh1ry7t52dro" path="res://Assets/music/rpgtheme.mp3" id="7_83poq"]
 [ext_resource type="PackedScene" uid="uid://b68e52covf0" path="res://revampedTDSection/mobs/baseenemy.tscn" id="7_d6lsh"]
 [ext_resource type="PackedScene" uid="uid://cb1u6bnhv8a7w" path="res://LeftSideTypingSTuff/leftsidetyping.tscn" id="9_s4qsx"]
+[ext_resource type="PackedScene" uid="uid://bnkyoc5c8glxv" path="res://revampedTDSection/towers/LongarmLady/placeLongarmLady.tscn" id="12_5dcju"]
 [ext_resource type="Script" path="res://revampedTDSection/currenttowerupgrades.gd" id="14_ckdg3"]
 [ext_resource type="Texture2D" uid="uid://ck6dw1e0tdc7b" path="res://Assets/Towers/Longarm Cactus Idle.png" id="14_tnwrq"]
-[ext_resource type="PackedScene" uid="uid://cqsijahqbdake" path="res://revampedTDSection/towers/LongarmLady/longarmtower.tscn" id="15_kfvco"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iri12"]
 resource_name = "updatedatlas"
@@ -110,6 +110,9 @@ autostart = true
 
 [node name="towerholder" type="Node2D" parent="tdstuff"]
 
+[node name="ThrowingBomber" parent="tdstuff/towerholder" instance=ExtResource("6_owe0m")]
+position = Vector2(1674, 280)
+
 [node name="utilityorganizer" type="Node2D" parent="tdstuff"]
 
 [node name="beepplayer" type="AudioStreamPlayer2D" parent="tdstuff/utilityorganizer"]
@@ -142,6 +145,7 @@ offset_bottom = 40.0
 script = ExtResource("4_lnnio")
 transpbomberguy = ExtResource("5_l1pkv")
 bomberprefab = ExtResource("6_owe0m")
+transplongarmlady = ExtResource("12_5dcju")
 totowerholder = NodePath("../../../tdstuff/towerholder")
 tmap = NodePath("../../../tdstuff/tmap")
 pphpholder = NodePath("ppandhptext")
@@ -163,7 +167,6 @@ text = "PP: "
 fit_content = true
 
 [node name="page1holder" type="Control" parent="gameui/uipanel/towerpart"]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -222,6 +225,7 @@ theme_override_font_sizes/normal_font_size = 50
 text = "Costs: 300  pp"
 
 [node name="page2holdertest" type="Control" parent="gameui/uipanel/towerpart"]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -318,15 +322,10 @@ offset_right = 359.0
 offset_bottom = 87.0
 text = "NEXT WAVE"
 
-[node name="Longarmtower" parent="." instance=ExtResource("15_kfvco")]
-visible = false
-position = Vector2(1187, 291)
-
 [connection signal="timeout" from="tdstuff/mobholder/mobspawnmobtimer" to="tdstuff/mobholder" method="_on_mobspawnmobtimer_timeout"]
 [connection signal="pressed" from="gameui/uipanel/towerpart/page1holder/hammergirlpanel" to="gameui/uipanel/towerpart" method="_on_hammergirlpanel_pressed"]
 [connection signal="pressed" from="gameui/uipanel/towerpart/page1holder/bomberpanel" to="gameui/uipanel/towerpart" method="_on_bomberpanel_pressed"]
-[connection signal="pressed" from="gameui/uipanel/towerpart/page1holder/longarmLadyPanel" to="gameui/uipanel/towerpart" method="_on_bomberpanel_pressed"]
-[connection signal="pressed" from="gameui/uipanel/towerpart/page2holdertest/longarmLadyPanel" to="gameui/uipanel/towerpart" method="_on_bomberpanel_pressed"]
+[connection signal="pressed" from="gameui/uipanel/towerpart/page1holder/longarmLadyPanel" to="gameui/uipanel/towerpart" method="_on_longarm_lady_panel_pressed"]
 [connection signal="item_selected" from="gameui/uipanel/towerpart/menubutton" to="gameui/uipanel/towerpart" method="_on_menubutton_item_selected"]
 [connection signal="pressed" from="gameui/uipanel/towerpart/currenttowerupgrades/currenttowerbgpanel/upgrade1" to="gameui/uipanel/towerpart/currenttowerupgrades" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="gameui/uipanel/towerpart/currenttowerupgrades/currenttowerbgpanel/upgrade2" to="gameui/uipanel/towerpart/currenttowerupgrades" method="_on_upgrade_2_pressed"]

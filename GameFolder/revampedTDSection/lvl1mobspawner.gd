@@ -29,7 +29,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if(midstagetimer or phase ==0):
 		wavetext.text = "Time until phase: " + str(phase) + " : " + str(round(mytimer.time_left))
 		nextwavebuttonbutton.text = "Begin the next wave early."

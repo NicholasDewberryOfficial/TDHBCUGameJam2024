@@ -10,6 +10,13 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	#see the local timer, if it expires then delete this node
+	#if($dmgtimer.time_left == .8):
+		#monitorable = false
+		#monitoring = false
+		#monitorable = true
+		#monitoring = true
+		#print("pulsed")
+	
 	if($dmgtimer.is_stopped()):
 		queue_free()
 
@@ -18,3 +25,4 @@ func _on_area_entered(area):
 	#This is on the hitbox itself. if it hits an enemy, have the enemy take damage.
 	if(area.is_in_group("enemyhitboxgroup") and area.has_method("takedamage")):
 		area.takedamage(damage)
+	

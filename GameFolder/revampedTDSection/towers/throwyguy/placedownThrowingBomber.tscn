@@ -7,10 +7,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gsg4h"]
 size = Vector2(200, 200)
 
-[sub_resource type="Gradient" id="Gradient_ayhtm"]
+[sub_resource type="Gradient" id="Gradient_r3r8o"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_1slwg"]
-gradient = SubResource("Gradient_ayhtm")
+gradient = SubResource("Gradient_r3r8o")
 width = 200
 height = 200
 

@@ -16,6 +16,7 @@ var rotvector = 0.0
 
 var rotspeed= 5
 
+@export var dmghitbox: PackedScene
 
 var upgrade1: bool = false
 var upgrade2: bool= false
@@ -29,7 +30,7 @@ func checkupgrades():
 		pass
  
 
-@export var dmghitbox: PackedScene
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -97,6 +98,9 @@ func startslam():
 	await get_tree().create_timer(1).timeout
 	ap.play("slam")
 	var cdmg = dmghitbox.instantiate()
+	cdmg.damage = dmgdealt
+	if(upgrade2 == true):
+		cdmg.scale = Vector2(2,2)
 	add_child(cdmg)
 	#var currdmg = add_child(ResourceLoader.load("res://revampedTDSection/towers/hammerdmghitbox.tscn"))
 	await get_tree().create_timer(1).timeout

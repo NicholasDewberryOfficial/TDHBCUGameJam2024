@@ -1,10 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://bgrritp410nyc"]
+[gd_scene load_steps=13 format=3 uid="uid://bgrritp410nyc"]
 
 [ext_resource type="Texture2D" uid="uid://ce4w3w10hhvxd" path="res://Assets/Towers/Hammer Cactus Idle.png" id="1_6kqy5"]
-[ext_resource type="Texture2D" uid="uid://ck6dw1e0tdc7b" path="res://Assets/Towers/Longarm Cactus Idle.png" id="1_sjyeu"]
 [ext_resource type="Script" path="res://revampedTDSection/towers/hammergirl/hammergirlattack.gd" id="2_3pybe"]
-[ext_resource type="Texture2D" uid="uid://bs5nnynr3jtyw" path="res://Assets/Towers/Longarm Cactus Fire.png" id="2_y2vwd"]
-[ext_resource type="Texture2D" uid="uid://cvni0oqv45dso" path="res://Assets/Towers/Longarm Cactus Aim.png" id="3_gulh1"]
+[ext_resource type="Texture2D" uid="uid://chp8pv6ljm3x8" path="res://Assets/Towers/Hammer Cactus Slam.png" id="2_jb6f8"]
+[ext_resource type="Texture2D" uid="uid://bkk70peuabmjh" path="res://Assets/Towers/Hammer Cactus Wind-Up.png" id="3_8fd8h"]
 [ext_resource type="Script" path="res://revampedTDSection/towers/throwyguy/clickablebase.gd" id="4_5e5hc"]
 [ext_resource type="PackedScene" uid="uid://cpjlcyrseb7ye" path="res://revampedTDSection/towers/hammergirl/hammerdmghitbox.tscn" id="5_y6tel"]
 
@@ -20,7 +19,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("1_sjyeu")]
+"values": [ExtResource("1_6kqy5")]
 }
 
 [sub_resource type="Animation" id="Animation_d7bsc"]
@@ -35,7 +34,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_y2vwd")]
+"values": [ExtResource("2_jb6f8")]
 }
 
 [sub_resource type="Animation" id="Animation_4ig0k"]
@@ -50,7 +49,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_gulh1")]
+"values": [ExtResource("3_8fd8h")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4otht"]
@@ -94,6 +93,7 @@ shape = SubResource("RectangleShape2D_b7edo")
 [node name="towerattack" type="Area2D" parent="." node_paths=PackedStringArray("atktimer")]
 script = ExtResource("2_3pybe")
 atktimer = NodePath("../Timer")
+dmgdealt = 1.0
 dmghitbox = ExtResource("5_y6tel")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="towerattack"]

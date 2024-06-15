@@ -1,9 +1,6 @@
 extends Node
 
-#Alright so whats happening here?
-#Baically, whenever an enemy enters the detection radius, they're added into an array. 
-#We only focus the enemy that's the first to enter the array.
-#once we find the enemy, start the tiimer and then attack.
+#another direct copy. only changed upgrades & attack logic 
 var currenemyarr = []
 
 @export var atktimer: Timer
@@ -21,7 +18,7 @@ var upgrade1: bool = false
 var upgrade2: bool= false
 func checkupgrades():
 	if(upgrade1 == true):
-		dmgdealt = 3
+		dmgdealt = 40
 		pass
 	if(upgrade2 ==true):
 		#atktime = .5

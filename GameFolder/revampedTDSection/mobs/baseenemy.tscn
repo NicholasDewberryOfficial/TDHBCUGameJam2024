@@ -28,8 +28,7 @@ texture = ExtResource("1_jqs21")
 
 [node name="baseenemyhitbox" type="Area2D" parent="PathFollow2D/baseenemyart" groups=["enemyhitboxgroup"]]
 script = ExtResource("2_4smif")
-health = 1.0
-points = 213
+health = 7.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/baseenemyart/baseenemyhitbox"]
 shape = SubResource("CircleShape2D_bt4vu")

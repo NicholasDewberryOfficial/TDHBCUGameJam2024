@@ -94,19 +94,14 @@ func startslam():
 	ap.play("slam")
 	var cdmg = dmghitbox.instantiate()
 	cdmg.damage = dmgdealt
-#	cdmg.global_position = shootfromehere.global_position
-	owner.add_child(cdmg)
-	cdmg.transform = shootfromehere.global_transform
-	#var currdmg = add_child(ResourceLoader.load("res://revampedTDSection/towers/hammerdmghitbox.tscn"))
+	get_tree().get_root().add_child(cdmg)
+	cdmg.global_transform = shootfromehere.global_transform
 	await get_tree().create_timer(.5).timeout
 	ap.play("idle")
-	#start windupanimation logic here 
 
 func rotateTowards():
 	if(!currenemyarr.is_empty()):
 		rotvector = self.global_position.angle_to(currenemyarr[0].get_parent().position)
 	else:
 		rotvector = 0.0     
-	
-	#var rotatiton = Vector2.from_angle()
 
