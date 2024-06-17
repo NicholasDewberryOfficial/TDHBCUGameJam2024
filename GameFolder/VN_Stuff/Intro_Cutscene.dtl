@@ -14,4 +14,5 @@ leave Commander_Wheel
 Secretary_Domino: Aaaaaaand he's gone. Great.
 Secretary_Domino: *sighs* I really hope you know what you're doing, Commander...
 leave Secretary_Domino
+[background fade="0.0"]
 jump Intro_Part_2/

@@ -4,19 +4,12 @@ extends Area2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$CPUParticles2D.restart()
 	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	#see the local timer, if it expires then delete this node
-	#if($dmgtimer.time_left == .8):
-		#monitorable = false
-		#monitoring = false
-		#monitorable = true
-		#monitoring = true
-		#print("pulsed")
-	
 	if($dmgtimer.is_stopped()):
 		queue_free()
 

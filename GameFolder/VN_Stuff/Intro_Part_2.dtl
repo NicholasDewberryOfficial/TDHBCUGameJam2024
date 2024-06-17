@@ -1,3 +1,8 @@
+[background arg="res://VN_Stuff/blackbg.jpg" fade="1.5"]
+A few hours layter.
+[wait_input]
+[background fade="1.5"]
+[wait_input hide_text="false"]
 join Myrtle 1
 Myrtle (Happy): Yo! You said you wanted to speak with me, right?
 join Commander_Wheel 3
