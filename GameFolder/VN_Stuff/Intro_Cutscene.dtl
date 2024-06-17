@@ -1,0 +1,17 @@
+join Secretary_Domino 1
+Secretary_Domino (Default): Greetings, Commander. I apologize for calling you on such short notice, but I'm afraid I have bad news.
+join Commander_Wheel 3
+Commander_Wheel (Default): It's alright. I'm sure whatever it is must be important.
+Secretary_Domino: The robots are on the way. They were seen spliting into two groups, and while one is much larger than the other, the smaller group intends to attack from behind.
+Secretary_Domino: No matter what we do, we won't have enough plant power to defend against both sides, even if we focus on the larger group.
+Commander_Wheel (Ponder): Hmm. I see.
+Commander_Wheel: ...
+Secretary_Domino: Do you have an idea, Commander?
+Commander_Wheel (Default): Yea, I do. I'll be back in a little bit.
+Commander_Wheel: In the meantime, hit up Myrtle and tell him to get here A.S.A.P.
+Secretary_Domino (Worried): The kid?! Commander, I don't mean to question your judgment, but are you sure it's best to involve him of all people?
+leave Commander_Wheel
+Secretary_Domino: Aaaaaaand he's gone. Great.
+Secretary_Domino: *sighs* I really hope you know what you're doing, Commander...
+leave Secretary_Domino
+jump Intro_Part_2/

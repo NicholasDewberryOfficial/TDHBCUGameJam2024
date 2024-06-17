@@ -1,0 +1,18 @@
+join Myrtle 1
+Myrtle (Happy): Yo! You said you wanted to speak with me, right?
+join Commander_Wheel 3
+Commander_Wheel (Default): You heard right. We won't be able to protect this place unless we gather enough plant power, and the only way to get enough is by destroying those bots as they come.
+join Secretary_Domino 4
+Secretary_Domino: We need someone to handle the smaller squadron while the rest of us handles the bigger one.
+Commander_Wheel: I trust that you'll be able to handle this, Myrtle.
+Myrtle (Determined): You betcha! I'll turn those buckets o' bolts inta scrap heaps!
+Commander_Wheel (Smirk): That's the spirit. Now before you do that, take this.
+Myrtle (Happy): Oho, sparkly! What does it do?
+Commander_Wheel: This will allow you to absorb the plant power from the robots you defeat, and will be shared with the rest of us.
+Secretary_Domino: Commander, should we do a test run first? We still have time before the groups arrive.
+- Sure, we can practice a bit. [if {Tuto_Choice} == true]
+	Commander_Wheel (Default): We should do some practice for now, since we got a little bit.
+	Myrtle: Alright! I guess I can give y'all a glimpse at my greatness.
+- No, let's head to the field. [if {Tuto_Choice} == false]
+	Commander_Wheel (Default): We'll cover the important bits when the time comes. You ready, Myrtle?
+	Myrtle (Determined): Sir, yes, sir! Let's show these bots what we're made of!

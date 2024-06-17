@@ -21,7 +21,7 @@
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1,
+"scale": 0.85,
 "scene": ""
 },
 "Ponder": {
@@ -30,7 +30,7 @@
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1,
+"scale": 0.85,
 "scene": ""
 },
 "Ponder_Smirk": {
@@ -39,7 +39,7 @@
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1,
+"scale": 0.85,
 "scene": ""
 },
 "Smirk": {
@@ -48,7 +48,7 @@
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1,
+"scale": 0.85,
 "scene": ""
 }
 },
