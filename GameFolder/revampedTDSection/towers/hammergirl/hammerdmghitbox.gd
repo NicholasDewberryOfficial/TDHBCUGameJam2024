@@ -4,7 +4,9 @@ extends Area2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$CPUParticles2D.restart()
+	#$CPUParticles2D.restart()
+	#print(str($CPUParticles2D.emitting))
+	$CPUParticles2D.emitting = true
 	pass
 
 

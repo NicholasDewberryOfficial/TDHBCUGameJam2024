@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://2crcixuke4eg"]
+[gd_scene load_steps=20 format=3 uid="uid://2crcixuke4eg"]
 
 [ext_resource type="Texture2D" uid="uid://7ovcgq4il4ma" path="res://kenney_tower-defense-top-down/Tilesheet/towerDefense_tilesheet.png" id="1_pkvm2"]
 [ext_resource type="Script" path="res://revampedTDSection/lvl1mobspawner.gd" id="2_0xv6w"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bnkyoc5c8glxv" path="res://revampedTDSection/towers/LongarmLady/placeLongarmLady.tscn" id="12_5dcju"]
 [ext_resource type="Script" path="res://revampedTDSection/currenttowerupgrades.gd" id="14_ckdg3"]
 [ext_resource type="Texture2D" uid="uid://ck6dw1e0tdc7b" path="res://Assets/Towers/Longarm Cactus Idle.png" id="14_tnwrq"]
+[ext_resource type="PackedScene" uid="uid://cpjlcyrseb7ye" path="res://revampedTDSection/towers/hammergirl/hammerdmghitbox.tscn" id="17_6j5tp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iri12"]
 resource_name = "updatedatlas"
@@ -321,6 +322,9 @@ offset_left = 140.0
 offset_right = 359.0
 offset_bottom = 87.0
 text = "NEXT WAVE"
+
+[node name="hammerdmghitbox" parent="." instance=ExtResource("17_6j5tp")]
+position = Vector2(764, 509)
 
 [connection signal="timeout" from="tdstuff/mobholder/mobspawnmobtimer" to="tdstuff/mobholder" method="_on_mobspawnmobtimer_timeout"]
 [connection signal="pressed" from="gameui/uipanel/towerpart/page1holder/hammergirlpanel" to="gameui/uipanel/towerpart" method="_on_hammergirlpanel_pressed"]
