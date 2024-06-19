@@ -1,5 +1,5 @@
 [background arg="res://VN_Stuff/blackbg.jpg" fade="1.5"]
-A few hours layter.
+A couple of hours later...
 [wait_input]
 [background fade="1.5"]
 [wait_input hide_text="false"]
