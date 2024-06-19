@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://f8ovslaskeih"]
+
+[ext_resource type="Texture2D" uid="uid://biude6b6rkuyv" path="res://Assets/Roller_Overhead.png" id="1_716go"]
+[ext_resource type="Curve2D" uid="uid://bl2k40xculwhc" path="res://revampedTDSection/mobs/baseenemyrollerbot/left2leftcurve.tres" id="1_kimck"]
+[ext_resource type="Script" path="res://revampedTDSection/mobs/baseenemyrollerbot/baseenemyhealth.gd" id="2_m6igh"]
+[ext_resource type="Script" path="res://revampedTDSection/mobs/baseenemyrollerbot/baseenemymovement.gd" id="3_ivvtv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bt4vu"]
+radius = 64.0
+
+[node name="goleftlvl2path" type="Path2D"]
+position = Vector2(-15, -11)
+curve = ExtResource("1_kimck")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(911, 33.9999)
+rotation = 1.52166
+skew = 0.00128508
+
+[node name="baseenemyart" type="Sprite2D" parent="PathFollow2D"]
+scale = Vector2(0.719999, 0.640001)
+texture = ExtResource("1_716go")
+
+[node name="baseenemyhitbox" type="Area2D" parent="PathFollow2D/baseenemyart" groups=["enemyhitboxgroup"]]
+script = ExtResource("2_m6igh")
+health = 7.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/baseenemyart/baseenemyhitbox"]
+shape = SubResource("CircleShape2D_bt4vu")
+
+[node name="movementholder" type="Node2D" parent="PathFollow2D"]
+script = ExtResource("3_ivvtv")
+
+[node name="movementtimer" type="Timer" parent="PathFollow2D"]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_51846" type="Timer" parent="PathFollow2D"]
+wait_time = 0.2
+one_shot = true

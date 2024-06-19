@@ -1,7 +1,7 @@
 extends Node
 
 
-@export var pp: int = 100
+@export var pp: int = 800
 
 @export var tddifficulty: int = 0
 
@@ -17,7 +17,7 @@ extends Node
 
 #placements: 0=hammergirl, 1 =throwerguy, 2=sniperlady
 #values: 1 = unlocked. 0 means locked. 
-@export var unlockedTowers = [1,1,0]
+@export var unlockedTowers = [1,1,1]
 
 func _ready():
 	pass

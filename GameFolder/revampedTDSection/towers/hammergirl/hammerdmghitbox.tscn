@@ -19,7 +19,7 @@ width = 1
 colors = PackedColorArray(1, 1, 1, 1, 0.876519, 0.711276, 0.922903, 1)
 
 [node name="hammerdmghitbox" type="Area2D"]
-position = Vector2(32, 0)
+position = Vector2(80, 0)
 script = ExtResource("1_wowbp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -34,9 +34,7 @@ autostart = true
 material = SubResource("CanvasItemMaterial_ni8vx")
 emitting = false
 amount = 300
-lifetime = 2.0
 one_shot = true
-preprocess = 2.0
 local_coords = true
 texture = SubResource("GradientTexture1D_34jlh")
 emission_shape = 1

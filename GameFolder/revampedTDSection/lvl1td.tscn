@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://2crcixuke4eg"]
+[gd_scene load_steps=19 format=3 uid="uid://2crcixuke4eg"]
 
 [ext_resource type="Texture2D" uid="uid://7ovcgq4il4ma" path="res://kenney_tower-defense-top-down/Tilesheet/towerDefense_tilesheet.png" id="1_pkvm2"]
 [ext_resource type="Script" path="res://revampedTDSection/lvl1mobspawner.gd" id="2_0xv6w"]
@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://bnkyoc5c8glxv" path="res://revampedTDSection/towers/LongarmLady/placeLongarmLady.tscn" id="12_5dcju"]
 [ext_resource type="Script" path="res://revampedTDSection/currenttowerupgrades.gd" id="14_ckdg3"]
 [ext_resource type="Texture2D" uid="uid://ck6dw1e0tdc7b" path="res://Assets/Towers/Longarm Cactus Idle.png" id="14_tnwrq"]
-[ext_resource type="PackedScene" uid="uid://cpjlcyrseb7ye" path="res://revampedTDSection/towers/hammergirl/hammerdmghitbox.tscn" id="17_6j5tp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iri12"]
 resource_name = "updatedatlas"
@@ -102,8 +101,8 @@ texture = ExtResource("2_usdoy")
 script = ExtResource("2_0xv6w")
 mytimer = NodePath("mobspawnmobtimer")
 Rollerbot = ExtResource("7_d6lsh")
-wavetext = NodePath("../../gameui/Panel/wavestufftext")
-nextwavebuttonbutton = NodePath("../../gameui/Panel/nextwavebutton")
+wavetext = NodePath("../gameui/Panel/wavestufftext")
+nextwavebuttonbutton = NodePath("../gameui/Panel/nextwavebutton")
 
 [node name="mobspawnmobtimer" type="Timer" parent="tdstuff/mobholder"]
 wait_time = 10.0
@@ -125,21 +124,15 @@ autoplay = true
 
 [node name="AudioListener2D" type="AudioListener2D" parent="tdstuff/utilityorganizer"]
 
-[node name="RPGBattle" parent="." instance=ExtResource("4_nf1a1")]
+[node name="gameui" type="Node2D" parent="tdstuff"]
+position = Vector2(2030, 0)
 
-[node name="Leftsidetyping" parent="." instance=ExtResource("9_s4qsx")]
-visible = false
-
-[node name="gameui" type="Node2D" parent="."]
-position = Vector2(1808, 0)
-scale = Vector2(0.8, 1)
-
-[node name="uipanel" type="Panel" parent="gameui"]
+[node name="uipanel" type="Panel" parent="tdstuff/gameui"]
 offset_left = -111.0
 offset_right = 149.0
 offset_bottom = 1088.0
 
-[node name="towerpart" type="Control" parent="gameui/uipanel" node_paths=PackedStringArray("totowerholder", "tmap", "pphpholder", "hammergirl1button", "bomberguybutton", "longarmLadybutton", "page1holder", "page2holder")]
+[node name="towerpart" type="Control" parent="tdstuff/gameui/uipanel" node_paths=PackedStringArray("totowerholder", "tmap", "pphpholder", "hammergirl1button", "bomberguybutton", "longarmLadybutton", "page1holder", "page2holder")]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -147,16 +140,17 @@ script = ExtResource("4_lnnio")
 transpbomberguy = ExtResource("5_l1pkv")
 bomberprefab = ExtResource("6_owe0m")
 transplongarmlady = ExtResource("12_5dcju")
-totowerholder = NodePath("../../../tdstuff/towerholder")
-tmap = NodePath("../../../tdstuff/tmap")
+totowerholder = NodePath("../../../towerholder")
+tmap = NodePath("../../../tmap")
 pphpholder = NodePath("ppandhptext")
 hammergirl1button = NodePath("page1holder/hammergirlpanel")
 bomberguybutton = NodePath("page1holder/bomberpanel")
 longarmLadybutton = NodePath("page1holder/longarmLadyPanel")
 page1holder = NodePath("page1holder")
 page2holder = NodePath("page2holdertest")
+metadata/_edit_use_anchors_ = true
 
-[node name="ppandhptext" type="RichTextLabel" parent="gameui/uipanel/towerpart"]
+[node name="ppandhptext" type="RichTextLabel" parent="tdstuff/gameui/uipanel/towerpart"]
 layout_mode = 0
 offset_left = 20.0
 offset_right = 260.0
@@ -167,12 +161,12 @@ bbcode_enabled = true
 text = "PP: "
 fit_content = true
 
-[node name="page1holder" type="Control" parent="gameui/uipanel/towerpart"]
+[node name="page1holder" type="Control" parent="tdstuff/gameui/uipanel/towerpart"]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="hammergirlpanel" type="Button" parent="gameui/uipanel/towerpart/page1holder"]
+[node name="hammergirlpanel" type="Button" parent="tdstuff/gameui/uipanel/towerpart/page1holder"]
 layout_mode = 0
 offset_top = 96.0
 offset_right = 547.0
@@ -180,7 +174,7 @@ offset_bottom = 328.0
 scale = Vector2(0.45, 0.45)
 icon = ExtResource("4_d0uiv")
 
-[node name="hammergirlcosttext" type="RichTextLabel" parent="gameui/uipanel/towerpart/page1holder/hammergirlpanel"]
+[node name="hammergirlcosttext" type="RichTextLabel" parent="tdstuff/gameui/uipanel/towerpart/page1holder/hammergirlpanel"]
 layout_mode = 0
 offset_top = 232.0
 offset_right = 578.0
@@ -188,7 +182,7 @@ offset_bottom = 356.0
 theme_override_font_sizes/normal_font_size = 50
 text = "Costs: 100 pp"
 
-[node name="bomberpanel" type="Button" parent="gameui/uipanel/towerpart/page1holder"]
+[node name="bomberpanel" type="Button" parent="tdstuff/gameui/uipanel/towerpart/page1holder"]
 layout_mode = 0
 offset_top = 233.0
 offset_right = 578.0
@@ -198,7 +192,7 @@ icon = ExtResource("6_m1lt4")
 icon_alignment = 1
 expand_icon = true
 
-[node name="bombercosttext" type="RichTextLabel" parent="gameui/uipanel/towerpart/page1holder/bomberpanel"]
+[node name="bombercosttext" type="RichTextLabel" parent="tdstuff/gameui/uipanel/towerpart/page1holder/bomberpanel"]
 layout_mode = 0
 offset_top = 232.0
 offset_right = 578.0
@@ -206,7 +200,7 @@ offset_bottom = 356.0
 theme_override_font_sizes/normal_font_size = 50
 text = "Costs: 150 pp"
 
-[node name="longarmLadyPanel" type="Button" parent="gameui/uipanel/towerpart/page1holder"]
+[node name="longarmLadyPanel" type="Button" parent="tdstuff/gameui/uipanel/towerpart/page1holder"]
 layout_mode = 0
 offset_left = -3.99994
 offset_top = 401.0
@@ -217,7 +211,7 @@ icon = ExtResource("14_tnwrq")
 icon_alignment = 1
 expand_icon = true
 
-[node name="longarmLadyText" type="RichTextLabel" parent="gameui/uipanel/towerpart/page1holder/longarmLadyPanel"]
+[node name="longarmLadyText" type="RichTextLabel" parent="tdstuff/gameui/uipanel/towerpart/page1holder/longarmLadyPanel"]
 layout_mode = 0
 offset_top = 232.0
 offset_right = 578.0
@@ -225,13 +219,13 @@ offset_bottom = 356.0
 theme_override_font_sizes/normal_font_size = 50
 text = "Costs: 300  pp"
 
-[node name="page2holdertest" type="Control" parent="gameui/uipanel/towerpart"]
+[node name="page2holdertest" type="Control" parent="tdstuff/gameui/uipanel/towerpart"]
 visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="longarmLadyPanel" type="Button" parent="gameui/uipanel/towerpart/page2holdertest"]
+[node name="longarmLadyPanel" type="Button" parent="tdstuff/gameui/uipanel/towerpart/page2holdertest"]
 layout_mode = 0
 offset_left = -3.99994
 offset_top = 401.0
@@ -242,7 +236,7 @@ icon = ExtResource("14_tnwrq")
 icon_alignment = 1
 expand_icon = true
 
-[node name="longarmLadyText" type="RichTextLabel" parent="gameui/uipanel/towerpart/page2holdertest/longarmLadyPanel"]
+[node name="longarmLadyText" type="RichTextLabel" parent="tdstuff/gameui/uipanel/towerpart/page2holdertest/longarmLadyPanel"]
 layout_mode = 0
 offset_top = 232.0
 offset_right = 578.0
@@ -250,7 +244,7 @@ offset_bottom = 356.0
 theme_override_font_sizes/normal_font_size = 50
 text = "Costs: 300  pp"
 
-[node name="menubutton" type="ItemList" parent="gameui/uipanel/towerpart"]
+[node name="menubutton" type="ItemList" parent="tdstuff/gameui/uipanel/towerpart"]
 layout_mode = 0
 offset_top = 537.0
 offset_right = 252.0
@@ -260,7 +254,7 @@ item_0/text = "Page1 "
 item_1/text = "Page 2 "
 item_2/text = "Page 3 "
 
-[node name="currenttowerupgrades" type="Control" parent="gameui/uipanel/towerpart" node_paths=PackedStringArray("artholder", "up1", "up2") groups=["towerupgradesnodegroup"]]
+[node name="currenttowerupgrades" type="Control" parent="tdstuff/gameui/uipanel/towerpart" node_paths=PackedStringArray("artholder", "up1", "up2") groups=["towerupgradesnodegroup"]]
 anchors_preset = 0
 offset_left = 4.0
 offset_top = 640.0
@@ -271,18 +265,18 @@ artholder = NodePath("currenttowerbgpanel/currenttowerart")
 up1 = NodePath("currenttowerbgpanel/upgrade1")
 up2 = NodePath("currenttowerbgpanel/upgrade2")
 
-[node name="currenttowerbgpanel" type="Panel" parent="gameui/uipanel/towerpart/currenttowerupgrades"]
+[node name="currenttowerbgpanel" type="Panel" parent="tdstuff/gameui/uipanel/towerpart/currenttowerupgrades"]
 layout_mode = 0
 offset_right = 255.0
 offset_bottom = 440.0
 
-[node name="currenttowerart" type="TextureRect" parent="gameui/uipanel/towerpart/currenttowerupgrades/currenttowerbgpanel"]
+[node name="currenttowerart" type="TextureRect" parent="tdstuff/gameui/uipanel/towerpart/currenttowerupgrades/currenttowerbgpanel"]
 layout_mode = 0
 offset_right = 252.0
 offset_bottom = 246.0
 expand_mode = 1
 
-[node name="upgrade1" type="Button" parent="gameui/uipanel/towerpart/currenttowerupgrades/currenttowerbgpanel"]
+[node name="upgrade1" type="Button" parent="tdstuff/gameui/uipanel/towerpart/currenttowerupgrades/currenttowerbgpanel"]
 layout_mode = 0
 offset_left = -5.0
 offset_top = 301.0
@@ -290,7 +284,7 @@ offset_right = 240.0
 offset_bottom = 354.0
 text = "2X Damage ("
 
-[node name="upgrade2" type="Button" parent="gameui/uipanel/towerpart/currenttowerupgrades/currenttowerbgpanel"]
+[node name="upgrade2" type="Button" parent="tdstuff/gameui/uipanel/towerpart/currenttowerupgrades/currenttowerbgpanel"]
 layout_mode = 0
 offset_left = -0.499878
 offset_top = 359.0
@@ -298,7 +292,7 @@ offset_right = 244.5
 offset_bottom = 412.0
 text = "2X Speed ("
 
-[node name="Panel" type="Panel" parent="gameui"]
+[node name="Panel" type="Panel" parent="tdstuff/gameui"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -310,27 +304,29 @@ offset_bottom = 87.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="wavestufftext" type="RichTextLabel" parent="gameui/Panel"]
+[node name="wavestufftext" type="RichTextLabel" parent="tdstuff/gameui/Panel"]
 layout_mode = 0
 offset_right = 120.0
 offset_bottom = 87.0
 text = "Enemies left:"
 
-[node name="nextwavebutton" type="Button" parent="gameui/Panel"]
+[node name="nextwavebutton" type="Button" parent="tdstuff/gameui/Panel"]
 layout_mode = 0
 offset_left = 140.0
 offset_right = 359.0
 offset_bottom = 87.0
 text = "NEXT WAVE"
 
-[node name="hammerdmghitbox" parent="." instance=ExtResource("17_6j5tp")]
-position = Vector2(764, 509)
+[node name="RPGBattle" parent="." instance=ExtResource("4_nf1a1")]
+
+[node name="Leftsidetyping" parent="." instance=ExtResource("9_s4qsx")]
+visible = false
 
 [connection signal="timeout" from="tdstuff/mobholder/mobspawnmobtimer" to="tdstuff/mobholder" method="_on_mobspawnmobtimer_timeout"]
-[connection signal="pressed" from="gameui/uipanel/towerpart/page1holder/hammergirlpanel" to="gameui/uipanel/towerpart" method="_on_hammergirlpanel_pressed"]
-[connection signal="pressed" from="gameui/uipanel/towerpart/page1holder/bomberpanel" to="gameui/uipanel/towerpart" method="_on_bomberpanel_pressed"]
-[connection signal="pressed" from="gameui/uipanel/towerpart/page1holder/longarmLadyPanel" to="gameui/uipanel/towerpart" method="_on_longarm_lady_panel_pressed"]
-[connection signal="item_selected" from="gameui/uipanel/towerpart/menubutton" to="gameui/uipanel/towerpart" method="_on_menubutton_item_selected"]
-[connection signal="pressed" from="gameui/uipanel/towerpart/currenttowerupgrades/currenttowerbgpanel/upgrade1" to="gameui/uipanel/towerpart/currenttowerupgrades" method="_on_upgrade_1_pressed"]
-[connection signal="pressed" from="gameui/uipanel/towerpart/currenttowerupgrades/currenttowerbgpanel/upgrade2" to="gameui/uipanel/towerpart/currenttowerupgrades" method="_on_upgrade_2_pressed"]
-[connection signal="pressed" from="gameui/Panel/nextwavebutton" to="tdstuff/mobholder" method="_on_nextwavebutton_pressed"]
+[connection signal="pressed" from="tdstuff/gameui/uipanel/towerpart/page1holder/hammergirlpanel" to="tdstuff/gameui/uipanel/towerpart" method="_on_hammergirlpanel_pressed"]
+[connection signal="pressed" from="tdstuff/gameui/uipanel/towerpart/page1holder/bomberpanel" to="tdstuff/gameui/uipanel/towerpart" method="_on_bomberpanel_pressed"]
+[connection signal="pressed" from="tdstuff/gameui/uipanel/towerpart/page1holder/longarmLadyPanel" to="tdstuff/gameui/uipanel/towerpart" method="_on_longarm_lady_panel_pressed"]
+[connection signal="item_selected" from="tdstuff/gameui/uipanel/towerpart/menubutton" to="tdstuff/gameui/uipanel/towerpart" method="_on_menubutton_item_selected"]
+[connection signal="pressed" from="tdstuff/gameui/uipanel/towerpart/currenttowerupgrades/currenttowerbgpanel/upgrade1" to="tdstuff/gameui/uipanel/towerpart/currenttowerupgrades" method="_on_upgrade_1_pressed"]
+[connection signal="pressed" from="tdstuff/gameui/uipanel/towerpart/currenttowerupgrades/currenttowerbgpanel/upgrade2" to="tdstuff/gameui/uipanel/towerpart/currenttowerupgrades" method="_on_upgrade_2_pressed"]
+[connection signal="pressed" from="tdstuff/gameui/Panel/nextwavebutton" to="tdstuff/mobholder" method="_on_nextwavebutton_pressed"]

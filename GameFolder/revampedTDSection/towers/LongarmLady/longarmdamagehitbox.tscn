@@ -5,7 +5,7 @@ size = Vector2(5, 5)
 
 [sub_resource type="Curve" id="Curve_hia4i"]
 max_value = 2.0
-_data = [Vector2(0, 1.20879), 0.0, 0.0, 0, 0, Vector2(0.413408, 0.351648), 0.0, 0.0, 0, 0, Vector2(0.96648, 0.0879121), 0.0, 0.0, 0, 0]
+_data = [Vector2(0.0391061, 2), 0.0, 0.0, 0, 0, Vector2(0.413408, 0.351648), 0.0, 0.0, 0, 0, Vector2(0.96648, 0.0879121), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [node name="Longarmdamagehitbox" type="Area2D"]

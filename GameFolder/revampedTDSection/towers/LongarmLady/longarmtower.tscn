@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cvni0oqv45dso" path="res://Assets/Towers/Longarm Cactus Aim.png" id="3_ig1px"]
 [ext_resource type="Script" path="res://revampedTDSection/towers/throwyguy/clickablebase.gd" id="4_kb78j"]
 [ext_resource type="Script" path="res://revampedTDSection/towers/LongarmLady/longarmAttack.gd" id="5_5dvym"]
-[ext_resource type="PackedScene" uid="uid://cpjlcyrseb7ye" path="res://revampedTDSection/towers/hammergirl/hammerdmghitbox.tscn" id="6_ykphy"]
+[ext_resource type="PackedScene" uid="uid://cads1bcjm43o8" path="res://revampedTDSection/towers/LongarmLady/longarmdamagehitbox.tscn" id="6_a2voo"]
 
 [sub_resource type="Animation" id="Animation_n34m8"]
 resource_name = "idle"
@@ -78,7 +78,7 @@ libraries = {
 z_index = 1
 rotation = 1.57079
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_4vxyp")
+texture = ExtResource("1_7mb3s")
 flip_v = true
 
 [node name="LongarmBase" type="Area2D" parent="." node_paths=PackedStringArray("mytowerattackvariables")]
@@ -93,7 +93,7 @@ shape = SubResource("RectangleShape2D_xc8aw")
 script = ExtResource("5_5dvym")
 atktimer = NodePath("../Timer")
 dmgdealt = 5.0
-dmghitbox = ExtResource("6_ykphy")
+dmghitbox = ExtResource("6_a2voo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="longarmAttack"]
 shape = SubResource("CircleShape2D_14rkq")
