@@ -34,6 +34,7 @@ shape = SubResource("CircleShape2D_bt4vu")
 
 [node name="movementholder" type="Node2D" parent="PathFollow2D"]
 script = ExtResource("3_ed2yi")
+speed = 100
 
 [node name="movementtimer" type="Timer" parent="PathFollow2D"]
 wait_time = 0.2

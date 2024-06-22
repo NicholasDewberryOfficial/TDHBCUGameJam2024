@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0ye1vm1fl1h4"]
+
+[ext_resource type="Texture2D" uid="uid://biude6b6rkuyv" path="res://Assets/Roller_Overhead.png" id="1_124hl"]
+[ext_resource type="Script" path="res://revampedTDSection/mobs/baseenemyrollerbot/baseenemyhealth.gd" id="2_60ap7"]
+[ext_resource type="Script" path="res://revampedTDSection/mobs/baseenemyrollerbot/baseenemymovement.gd" id="3_w3dcp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bt4vu"]
+radius = 64.0
+
+[node name="PathFollow2D" type="PathFollow2D"]
+position = Vector2(910, -26)
+rotation = 1.75001
+skew = 0.00128508
+
+[node name="baseenemyart" type="Sprite2D" parent="."]
+scale = Vector2(0.719999, 0.640001)
+texture = ExtResource("1_124hl")
+
+[node name="baseenemyhitbox" type="Area2D" parent="baseenemyart" groups=["enemyhitboxgroup"]]
+script = ExtResource("2_60ap7")
+health = 7.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="baseenemyart/baseenemyhitbox"]
+shape = SubResource("CircleShape2D_bt4vu")
+
+[node name="movementholder" type="Node2D" parent="."]
+script = ExtResource("3_w3dcp")
+speed = 100
+
+[node name="movementtimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_51846" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="_Timer_53583" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true

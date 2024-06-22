@@ -7,6 +7,7 @@ extends Node2D
 
 
 func _physics_process(delta):
+	print(str(owner.global_position))
 	#this oneliner bascially moves the enemy along the path every frame.
 	get_parent().set_progress(get_parent().get_progress() + (speed * delta))
 	

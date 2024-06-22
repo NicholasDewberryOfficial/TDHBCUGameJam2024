@@ -80,10 +80,11 @@ func _on_mobspawnmobtimer_timeout():
 	if(midstagetimer):
 		changetimerphase()
 		midstagetimer=false
-	var mybot = Rollerbotleft.instantiate()
+	var mybot 
 	if(timestogo %2 == 1):
 		mybot = Rollerbotleft.instantiate()
-		#mybot.global_position = leftspawnholder.global_position
+		mybot.position = Vector2(-230,0)
+		mybot.scale = Vector2(1.25,1)
 	else:
 		mybot = Rollerbotright.instantiate()
 		#mybot.global_position = rightspawnholder.global_position
@@ -122,10 +123,14 @@ func _on_nextwavebutton_pressed():
 			var mybot
 			if(timestogo %2 == 1):
 				mybot = Rollerbotleft.instantiate()
+				#print(str(mybot.global_position))
+				mybot.position = Vector2(-230,0)
+				mybot.scale = Vector2(1.25,1)
 				#mybot.global_position = leftspawnholder.global_position
 			else:
 				mybot = Rollerbotright.instantiate()
-			#	mybot.global_position = rightspawnholder.global_position
+				#mybot.position = Vector2(-230,0)
+				mybot.scale = Vector2(1.25,1)
 				pass
 			add_child(mybot)
 			timestogo -=1 

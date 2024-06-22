@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://omt5x6gaojsu"]
+[gd_scene load_steps=21 format=3 uid="uid://omt5x6gaojsu"]
 
 [ext_resource type="Texture2D" uid="uid://7ovcgq4il4ma" path="res://kenney_tower-defense-top-down/Tilesheet/towerDefense_tilesheet.png" id="1_2xasg"]
 [ext_resource type="Texture2D" uid="uid://crc3m42g6efga" path="res://Assets/CC_Level_1_Background.png" id="2_d4r3v"]
@@ -15,8 +15,9 @@
 [ext_resource type="Script" path="res://revampedTDSection/currenttowerupgrades.gd" id="14_7v6gp"]
 [ext_resource type="PackedScene" uid="uid://gtgyi7vell0" path="res://RPGStuff/RPGScene.tscn" id="15_e11vr"]
 [ext_resource type="PackedScene" uid="uid://cb1u6bnhv8a7w" path="res://LeftSideTypingSTuff/leftsidetyping.tscn" id="16_f0oty"]
-[ext_resource type="PackedScene" path="res://revampedTDSection/mobs/lvl2goleftrollerbot.tscn" id="17_rhamr"]
-[ext_resource type="PackedScene" path="res://revampedTDSection/mobs/lvl2gorightrollerbot.tscn" id="18_nxek2"]
+[ext_resource type="PackedScene" uid="uid://f8ovslaskeih" path="res://revampedTDSection/mobs/lvl2goleftrollerbot.tscn" id="17_rhamr"]
+[ext_resource type="PackedScene" uid="uid://dpopstfpu7h04" path="res://revampedTDSection/exportagainagain.tscn" id="18_e0hyp"]
+[ext_resource type="PackedScene" uid="uid://bufak2eilqpsb" path="res://revampedTDSection/mobs/lvl2gorightrollerbot.tscn" id="18_nxek2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iri12"]
 resource_name = "updatedatlas"
@@ -81,6 +82,8 @@ sources/1 = SubResource("TileSetAtlasSource_iri12")
 [node name="Lvl1Td" type="Node2D"]
 metadata/_edit_vertical_guides_ = [-176.0]
 
+[node name="goleftlvl2path2" parent="." instance=ExtResource("17_rhamr")]
+
 [node name="tdstuff" type="Node2D" parent="."]
 position = Vector2(184, 0)
 scale = Vector2(0.8, 1)
@@ -114,10 +117,16 @@ wait_time = 10.0
 autostart = true
 
 [node name="leftspawnholder" type="Node2D" parent="tdstuff/mobholder"]
-position = Vector2(-7, -6)
 
 [node name="rightspawnholder" type="Node2D" parent="tdstuff/mobholder"]
-position = Vector2(2, -6)
+
+[node name="goleftlvl2path" parent="tdstuff/mobholder" instance=ExtResource("18_e0hyp")]
+position = Vector2(-230, 0)
+scale = Vector2(1.25, 1)
+
+[node name="goleftlvl2path3" parent="tdstuff/mobholder" instance=ExtResource("17_rhamr")]
+position = Vector2(-230, 0)
+scale = Vector2(1.25, 1)
 
 [node name="towerholder" type="Node2D" parent="tdstuff"]
 
@@ -329,9 +338,6 @@ text = "NEXT WAVE"
 
 [node name="Leftsidetyping" parent="." instance=ExtResource("16_f0oty")]
 visible = false
-
-[node name="goleftlvl2path" parent="." instance=ExtResource("17_rhamr")]
-position = Vector2(-28, -10)
 
 [connection signal="timeout" from="tdstuff/mobholder/mobspawnmobtimer" to="tdstuff/mobholder" method="_on_mobspawnmobtimer_timeout"]
 [connection signal="pressed" from="tdstuff/gameui/uipanel/towerpart/page1holder/hammergirlpanel" to="tdstuff/gameui/uipanel/towerpart" method="_on_hammergirlpanel_pressed"]
