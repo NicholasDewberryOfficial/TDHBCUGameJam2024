@@ -1,24 +1,19 @@
 [gd_scene load_steps=6 format=3 uid="uid://bufak2eilqpsb"]
 
+[ext_resource type="Curve2D" uid="uid://dseo1dacwcdob" path="res://revampedTDSection/mobs/baseenemyrollerbot/right2rightcurve.tres" id="1_5ewb4"]
 [ext_resource type="Texture2D" uid="uid://biude6b6rkuyv" path="res://Assets/Roller_Overhead.png" id="1_uvjm2"]
 [ext_resource type="Script" path="res://revampedTDSection/mobs/baseenemyrollerbot/baseenemyhealth.gd" id="2_71gcr"]
 [ext_resource type="Script" path="res://revampedTDSection/mobs/baseenemyrollerbot/baseenemymovement.gd" id="3_ed2yi"]
-
-[sub_resource type="Curve2D" id="Curve2D_nmx3t"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 999, 10, 0, 0, 0, 0, 1002, 105, 0, 0, 0, 0, 1077, 108, 0, 0, 0, 0, 1108, 166, 0, 0, 0, 0, 1586, 173, 0, 0, 0, 0, 1590, 343, 0, 0, 0, 0, 1271, 674, 0, 0, 0, 0, 1087, 692, 0, 0, 0, 0, 1087, 785, 0, 0, 0, 0, 1184, 854, 0, 0, 0, 0, 1291, 915, 0, 0, 0, 0, 1431, 931, 0, 0, 0, 0, 1441, 1054, 0, 0, 0, 0, 937, 1052)
-}
-point_count = 14
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bt4vu"]
 radius = 64.0
 
 [node name="gorightlvl2path" type="Path2D"]
-curve = SubResource("Curve2D_nmx3t")
+curve = ExtResource("1_5ewb4")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(999, 10)
-rotation = 1.53923
+position = Vector2(1010, 0)
+rotation = 0.774163
 skew = 0.00128508
 
 [node name="baseenemyart" type="Sprite2D" parent="PathFollow2D"]
