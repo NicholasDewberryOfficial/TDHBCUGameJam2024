@@ -16,17 +16,19 @@ var rotspeed= 5
 
 var upgrade1: bool = false
 var upgrade2: bool= false
+@export var dmghitbox: PackedScene
+@export var dmghitbox2: PackedScene
 func checkupgrades():
 	if(upgrade1 == true):
 		dmgdealt = 40
 		pass
 	if(upgrade2 ==true):
-		#atktime = .5
+		dmghitbox = dmghitbox2
 		#Lets have the AOE double in size
 		pass
  
 
-@export var dmghitbox: PackedScene
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
