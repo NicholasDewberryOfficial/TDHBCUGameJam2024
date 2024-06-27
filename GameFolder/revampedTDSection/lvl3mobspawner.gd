@@ -2,17 +2,11 @@ extends Node
 
 @export var mytimer: Timer
 
-@export var Rollerbotleft: PackedScene
-
-@export var Rollerbotright: PackedScene
+@export var Rollerbot: PackedScene
 
 @export var wavetext: RichTextLabel
 
 @export var nextwavebuttonbutton: Button
-
-@export var leftspawnholder: Node2D
-
-@export var rightspawnholder: Node2D
 
 var nextexecuting: bool = false
 #It's gonna have 3 phases. 
@@ -80,16 +74,9 @@ func _on_mobspawnmobtimer_timeout():
 	if(midstagetimer):
 		changetimerphase()
 		midstagetimer=false
-	var mybot 
-	if(timestogo %2 == 1):
-		mybot = Rollerbotleft.instantiate()
-		mybot.position = Vector2(-230,0)
-		mybot.scale = Vector2(1.25,1)
-	else:
-		mybot = Rollerbotright.instantiate()
-		mybot.position = Vector2(-230,0)
-		mybot.scale = Vector2(1.25,1)
-		#mybot.global_position = rightspawnholder.global_position
+	var mybot = Rollerbot.instantiate()
+	mybot.position = Vector2(-231,0)
+	mybot.scale  = Vector2(1.25,1)
 	add_child(mybot)
 	timestogo -=1 
 	pass # Replace with function body.
@@ -122,18 +109,9 @@ func _on_nextwavebutton_pressed():
 		while(timestogo != 1):
 			mytimer.autostart =false
 			mytimer.stop()
-			var mybot
-			if(timestogo %2 == 1):
-				mybot = Rollerbotleft.instantiate()
-				#print(str(mybot.global_position))
-				mybot.position = Vector2(-230,0)
-				mybot.scale = Vector2(1.25,1)
-				#mybot.global_position = leftspawnholder.global_position
-			else:
-				mybot = Rollerbotright.instantiate()
-				mybot.position = Vector2(-230,0)
-				mybot.scale = Vector2(1.25,1)
-				pass
+			var mybot = Rollerbot.instantiate()
+			mybot.position = Vector2(-231,0)
+			mybot.scale  = Vector2(1.25,1)
 			add_child(mybot)
 			timestogo -=1 
 			await get_tree().create_timer(.2).timeout

@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://br2xehc6lw6df"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_58oyj"]
+size = Vector2(10, 10)
+
+[sub_resource type="Curve" id="Curve_hia4i"]
+max_value = 2.0
+_data = [Vector2(0.0391061, 2), 0.0, 0.0, 0, 0, Vector2(0.413408, 0.351648), 0.0, 0.0, 0, 0, Vector2(0.96648, 0.0879121), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="Longarmdamagehitbox" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_58oyj")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 5
+one_shot = true
+explosiveness = 1.0
+randomness = 0.8
+direction = Vector2(0, 0.1)
+spread = 8.29
+gravity = Vector2(0, -300)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_hia4i")
+hue_variation_min = -0.63
+hue_variation_max = 0.2

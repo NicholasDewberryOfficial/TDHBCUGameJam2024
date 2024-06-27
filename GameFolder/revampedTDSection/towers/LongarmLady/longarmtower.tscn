@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cqsijahqbdake"]
+[gd_scene load_steps=14 format=3 uid="uid://cqsijahqbdake"]
 
 [ext_resource type="Texture2D" uid="uid://ck6dw1e0tdc7b" path="res://Assets/Towers/Longarm Cactus Idle.png" id="1_7mb3s"]
 [ext_resource type="Texture2D" uid="uid://bs5nnynr3jtyw" path="res://Assets/Towers/Longarm Cactus Fire.png" id="2_4vxyp"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://revampedTDSection/towers/throwyguy/clickablebase.gd" id="4_kb78j"]
 [ext_resource type="Script" path="res://revampedTDSection/towers/LongarmLady/longarmAttack.gd" id="5_5dvym"]
 [ext_resource type="PackedScene" uid="uid://cads1bcjm43o8" path="res://revampedTDSection/towers/LongarmLady/longarmdamagehitbox.tscn" id="6_a2voo"]
+[ext_resource type="PackedScene" uid="uid://br2xehc6lw6df" path="res://revampedTDSection/towers/LongarmLady/up2longarmdamagehitboxup2.tscn" id="7_xenje"]
 
 [sub_resource type="Animation" id="Animation_n34m8"]
 resource_name = "idle"
@@ -94,6 +95,7 @@ script = ExtResource("5_5dvym")
 atktimer = NodePath("../Timer")
 dmgdealt = 5.0
 dmghitbox = ExtResource("6_a2voo")
+dmghitbox2 = ExtResource("7_xenje")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="longarmAttack"]
 shape = SubResource("CircleShape2D_14rkq")
@@ -101,6 +103,8 @@ shape = SubResource("CircleShape2D_14rkq")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
 one_shot = true
+
+[node name="longarmattacksound" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="input_event" from="LongarmBase" to="LongarmBase" method="_on_input_event"]
 [connection signal="area_entered" from="longarmAttack" to="longarmAttack" method="_on_area_entered"]
