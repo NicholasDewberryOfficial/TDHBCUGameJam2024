@@ -112,6 +112,9 @@ nextwavebuttonbutton = NodePath("../gameui/Panel/nextwavebutton")
 leftspawnholder = NodePath("leftspawnholder")
 rightspawnholder = NodePath("rightspawnholder")
 
+[node name="gorightlvl2path" parent="tdstuff/mobholder" instance=ExtResource("18_nxek2")]
+position = Vector2(2.49999, -24)
+
 [node name="mobspawnmobtimer" type="Timer" parent="tdstuff/mobholder"]
 wait_time = 10.0
 autostart = true
