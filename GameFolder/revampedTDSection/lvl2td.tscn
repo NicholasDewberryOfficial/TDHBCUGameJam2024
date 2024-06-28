@@ -82,8 +82,6 @@ sources/1 = SubResource("TileSetAtlasSource_iri12")
 [node name="Lvl1Td" type="Node2D"]
 metadata/_edit_vertical_guides_ = [-176.0]
 
-[node name="goleftlvl2path2" parent="." instance=ExtResource("17_rhamr")]
-
 [node name="tdstuff" type="Node2D" parent="."]
 position = Vector2(184, 0)
 scale = Vector2(0.8, 1)
@@ -123,7 +121,7 @@ autostart = true
 
 [node name="rightspawnholder" type="Node2D" parent="tdstuff/mobholder"]
 
-[node name="goleftlvl2path" parent="tdstuff/mobholder" instance=ExtResource("18_e0hyp")]
+[node name="gorightlvl2path2" parent="tdstuff/mobholder" instance=ExtResource("18_nxek2")]
 position = Vector2(-230, 0)
 scale = Vector2(1.25, 1)
 

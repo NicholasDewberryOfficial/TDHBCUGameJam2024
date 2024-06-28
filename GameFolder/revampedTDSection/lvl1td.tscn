@@ -98,7 +98,6 @@ scale = Vector2(1.27128, 1.08415)
 texture = ExtResource("2_usdoy")
 
 [node name="mobholder" type="Node2D" parent="tdstuff" node_paths=PackedStringArray("mytimer", "wavetext", "nextwavebuttonbutton")]
-visible = false
 script = ExtResource("2_0xv6w")
 mytimer = NodePath("mobspawnmobtimer")
 Rollerbot = ExtResource("7_d6lsh")
@@ -110,9 +109,6 @@ wait_time = 10.0
 autostart = true
 
 [node name="towerholder" type="Node2D" parent="tdstuff"]
-
-[node name="ThrowingBomber" parent="tdstuff/towerholder" instance=ExtResource("6_owe0m")]
-position = Vector2(1674, 280)
 
 [node name="utilityorganizer" type="Node2D" parent="tdstuff"]
 

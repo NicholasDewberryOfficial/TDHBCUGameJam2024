@@ -68,8 +68,6 @@ radius = 138.0
 [node name="hammergirl" type="Node2D"]
 top_level = true
 
-[node name="towerscript" type="Node2D" parent="."]
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_4otht")
