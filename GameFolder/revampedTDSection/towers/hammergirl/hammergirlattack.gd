@@ -34,7 +34,7 @@ func checkupgrades():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	ap = get_parent().get_child(1)
+	ap = get_parent().get_child(0)
 	#dmghitbox = load("res://revampedTDSection/towers/hammerdmghitbox.tscn")
 	pass # Replace with function body.
 

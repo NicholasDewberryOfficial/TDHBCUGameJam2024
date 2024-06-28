@@ -70,6 +70,7 @@ func _input(event):
 				if(Globalvars.pp < 100):
 					#logic saying youre poor and cant afford this 
 					return 
+				#logic that lets you buy
 				Globalvars.pp -=100 
 				var thisham = hammgirlprefab.instantiate()
 				thisham.position = get_viewport().get_mouse_position()
