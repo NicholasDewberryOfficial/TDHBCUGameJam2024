@@ -93,7 +93,6 @@ layer_1/name = "Unplacable"
 layer_1/tile_data = PackedInt32Array()
 
 [node name="CcLevel1Background" type="Sprite2D" parent="tdstuff"]
-visible = false
 position = Vector2(936.563, 534.625)
 scale = Vector2(1.27128, 1.08415)
 texture = ExtResource("2_usdoy")

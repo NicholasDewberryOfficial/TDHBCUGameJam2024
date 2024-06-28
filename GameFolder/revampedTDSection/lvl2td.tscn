@@ -15,9 +15,9 @@
 [ext_resource type="Script" path="res://revampedTDSection/currenttowerupgrades.gd" id="14_7v6gp"]
 [ext_resource type="PackedScene" uid="uid://gtgyi7vell0" path="res://RPGStuff/RPGScene.tscn" id="15_e11vr"]
 [ext_resource type="PackedScene" uid="uid://cb1u6bnhv8a7w" path="res://LeftSideTypingSTuff/leftsidetyping.tscn" id="16_f0oty"]
-[ext_resource type="PackedScene" path="res://revampedTDSection/mobs/lvl2goleftrollerbot.tscn" id="17_rhamr"]
-[ext_resource type="PackedScene" path="res://revampedTDSection/exportagainagain.tscn" id="18_e0hyp"]
-[ext_resource type="PackedScene" path="res://revampedTDSection/mobs/lvl2gorightrollerbot.tscn" id="18_nxek2"]
+[ext_resource type="PackedScene" uid="uid://f8ovslaskeih" path="res://revampedTDSection/mobs/lvl2goleftrollerbot.tscn" id="17_rhamr"]
+[ext_resource type="PackedScene" uid="uid://dpopstfpu7h04" path="res://revampedTDSection/exportagainagain.tscn" id="18_e0hyp"]
+[ext_resource type="PackedScene" uid="uid://bufak2eilqpsb" path="res://revampedTDSection/mobs/lvl2gorightrollerbot.tscn" id="18_nxek2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iri12"]
 resource_name = "updatedatlas"
@@ -122,10 +122,6 @@ autostart = true
 
 [node name="goleftlvl2path" parent="tdstuff/mobholder" instance=ExtResource("18_e0hyp")]
 position = Vector2(-230, 0)
-scale = Vector2(1.25, 1)
-
-[node name="goleftlvl2path3" parent="tdstuff/mobholder" instance=ExtResource("17_rhamr")]
-position = Vector2(648.75, 30)
 scale = Vector2(1.25, 1)
 
 [node name="towerholder" type="Node2D" parent="tdstuff"]
