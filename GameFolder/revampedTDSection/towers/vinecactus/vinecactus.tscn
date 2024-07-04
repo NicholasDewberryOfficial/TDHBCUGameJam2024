@@ -1,0 +1,103 @@
+[gd_scene load_steps=12 format=3 uid="uid://cvpbpnyjv725n"]
+
+[ext_resource type="Texture2D" uid="uid://bji6u8gle6hks" path="res://Assets/Towers/Vine Cactus Idle.png" id="1_5ymgd"]
+[ext_resource type="Texture2D" uid="uid://cwms20lh37s84" path="res://Assets/Towers/Vine Cactus Attack.png" id="2_kxysj"]
+[ext_resource type="Texture2D" uid="uid://bkk70peuabmjh" path="res://Assets/Towers/Hammer Cactus Wind-Up.png" id="3_4ebaq"]
+[ext_resource type="Script" path="res://revampedTDSection/towers/throwyguy/clickablebase.gd" id="4_mwd6q"]
+[ext_resource type="Script" path="res://revampedTDSection/towers/vinecactus/vineguyattackscript.gd" id="5_mabsn"]
+
+[sub_resource type="Animation" id="Animation_n34m8"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("towersprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_5ymgd")]
+}
+
+[sub_resource type="Animation" id="Animation_d7bsc"]
+resource_name = "slam"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("towersprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_kxysj"), ExtResource("1_5ymgd"), ExtResource("2_kxysj")]
+}
+
+[sub_resource type="Animation" id="Animation_4ig0k"]
+resource_name = "windup"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("towersprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_4ebaq")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4otht"]
+_data = {
+"idle": SubResource("Animation_n34m8"),
+"slam": SubResource("Animation_d7bsc"),
+"windup": SubResource("Animation_4ig0k")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b7edo"]
+size = Vector2(85, 76)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1nouk"]
+radius = 208.0
+
+[node name="vinecactus" type="Node2D"]
+top_level = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4otht")
+}
+
+[node name="towersprite" type="Sprite2D" parent="."]
+z_index = 1
+rotation = 1.57079
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_kxysj")
+flip_v = true
+
+[node name="hammergirlbase" type="Area2D" parent="." node_paths=PackedStringArray("mytowerattackvariables")]
+script = ExtResource("4_mwd6q")
+type = 1
+mytowerattackvariables = NodePath("../towerattack")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hammergirlbase"]
+shape = SubResource("RectangleShape2D_b7edo")
+
+[node name="towerattack" type="Area2D" parent="." node_paths=PackedStringArray("myanims")]
+script = ExtResource("5_mabsn")
+myanims = NodePath("../AnimationPlayer")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="towerattack"]
+shape = SubResource("CircleShape2D_1nouk")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="input_event" from="hammergirlbase" to="hammergirlbase" method="_on_input_event"]
+[connection signal="area_entered" from="towerattack" to="towerattack" method="_on_area_entered"]
+[connection signal="area_exited" from="towerattack" to="towerattack" method="_on_area_exited"]

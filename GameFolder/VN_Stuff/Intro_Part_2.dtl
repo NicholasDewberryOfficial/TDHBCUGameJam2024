@@ -18,6 +18,6 @@ Secretary_Domino: Commander, should we do a test run first? We still have time b
 - Sure, we can practice a bit. [if {Tuto_Choice} == true]
 	Commander_Wheel (Default): We should do some practice for now, since we got a little bit.
 	Myrtle: Alright! I guess I can give y'all a glimpse at my greatness.
-- No, let's head to the field. [if {Tuto_Choice} == false]
+- No, let's head to the field. [if {Tuto_Choice} == true]
 	Commander_Wheel (Default): We'll cover the important bits when the time comes. You ready, Myrtle?
 	Myrtle (Determined): Sir, yes, sir! Let's show these bots what we're made of!

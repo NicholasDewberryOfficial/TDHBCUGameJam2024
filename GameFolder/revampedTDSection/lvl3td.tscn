@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://b8n14occwfpcd"]
+[gd_scene load_steps=19 format=3 uid="uid://b8n14occwfpcd"]
 
 [ext_resource type="Texture2D" uid="uid://7ovcgq4il4ma" path="res://kenney_tower-defense-top-down/Tilesheet/towerDefense_tilesheet.png" id="1_q56v6"]
 [ext_resource type="Script" path="res://revampedTDSection/lvl3mobspawner.gd" id="2_k155o"]
-[ext_resource type="PackedScene" path="res://revampedTDSection/mobs/lvl3rollerbot.tscn" id="3_j7pgm"]
+[ext_resource type="PackedScene" uid="uid://b0tp4wo1yoail" path="res://revampedTDSection/mobs/lvl3rollerbot.tscn" id="3_j7pgm"]
+[ext_resource type="PackedScene" uid="uid://c0no2x3xl7ysp" path="res://revampedTDSection/mobs/propellerbot/propellerbotlvl3.tscn" id="4_svm23"]
 [ext_resource type="PackedScene" uid="uid://cjx6bvyfvupnl" path="res://revampedTDSection/towers/throwyguy/ThrowingBomber.tscn" id="5_epho7"]
 [ext_resource type="AudioStream" uid="uid://c0lhy886wshuo" path="res://Assets/music/laser.mp3" id="6_25t3w"]
 [ext_resource type="AudioStream" uid="uid://fh1ry7t52dro" path="res://Assets/music/rpgtheme.mp3" id="7_wy7u5"]
@@ -95,6 +96,7 @@ layer_1/tile_data = PackedInt32Array()
 script = ExtResource("2_k155o")
 mytimer = NodePath("mobspawnmobtimer")
 Rollerbot = ExtResource("3_j7pgm")
+Propellerbot = ExtResource("4_svm23")
 wavetext = NodePath("../gameui/Panel/wavestufftext")
 nextwavebuttonbutton = NodePath("../gameui/Panel/nextwavebutton")
 
@@ -102,9 +104,12 @@ nextwavebuttonbutton = NodePath("../gameui/Panel/nextwavebutton")
 wait_time = 10.0
 autostart = true
 
-[node name="lvl3rollerbot" parent="tdstuff/mobholder" instance=ExtResource("3_j7pgm")]
-position = Vector2(-228.75, -5)
-scale = Vector2(1.25, 1)
+[node name="propellerbotlvl3" parent="tdstuff/mobholder" instance=ExtResource("4_svm23")]
+position = Vector2(249.39, 621.577)
+
+[node name="PathFollow2D" parent="tdstuff/mobholder/propellerbotlvl3" index="0"]
+position = Vector2(-29.386, 219.938)
+progress = 185.141
 
 [node name="towerholder" type="Node2D" parent="tdstuff"]
 
@@ -328,3 +333,5 @@ visible = false
 [connection signal="pressed" from="tdstuff/gameui/uipanel/towerpart/currenttowerupgrades/currenttowerbgpanel/upgrade1" to="tdstuff/gameui/uipanel/towerpart/currenttowerupgrades" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="tdstuff/gameui/uipanel/towerpart/currenttowerupgrades/currenttowerbgpanel/upgrade2" to="tdstuff/gameui/uipanel/towerpart/currenttowerupgrades" method="_on_upgrade_2_pressed"]
 [connection signal="pressed" from="tdstuff/gameui/Panel/nextwavebutton" to="tdstuff/mobholder" method="_on_nextwavebutton_pressed"]
+
+[editable path="tdstuff/mobholder/propellerbotlvl3"]

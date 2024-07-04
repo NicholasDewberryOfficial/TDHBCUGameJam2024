@@ -9,6 +9,8 @@ var longarmladyprefab = load("res://revampedTDSection/towers/LongarmLady/longarm
 @export var transpbomberguy: PackedScene
 @export var bomberprefab: PackedScene
 @export var transplongarmlady: PackedScene
+@export var transpvinetowerprefab: PackedScene
+@export var vinetowerprefab: PackedScene
 var placeme = null
 
 @export var totowerholder: Node
@@ -23,6 +25,8 @@ var tdata: TileSet
 @export var bomberguybutton: Button
 
 @export var longarmLadybutton: Button
+
+@export var slowingcactusbutton: Button 
 
 @export var page1holder: Control
 @export var page2holder: Control
@@ -60,6 +64,9 @@ func _process(_delta):
 				add_child(placeme)
 			3: 
 				placeme = transplongarmlady.instantiate()
+				add_child(placeme)
+			4:
+				placeme = transpvinetowerprefab.instantiate()
 				add_child(placeme)
 	pass
 
@@ -102,7 +109,18 @@ func _input(event):
 				currtower=null
 				placeme.queue_free()
 				placeme=null
-
+			4:
+				if(Globalvars.pp < 300):
+					#logic saying youre poor and cant afford this 
+					return 
+				Globalvars.pp -= 300
+				var thisham = vinetowerprefab.instantiate()
+				thisham.position = get_viewport().get_mouse_position()
+				totowerholder.add_child(thisham)
+			#	print("PLACED BOMBERMAN")
+				currtower=null
+				placeme.queue_free()
+				placeme=null
 
 func _on_hammergirlpanel_pressed():
 	currtower = 1
@@ -134,4 +152,9 @@ func _on_menubutton_item_selected(index):
 
 func _on_longarm_lady_panel_pressed():
 	currtower=3
+	pass # Replace with function body.
+
+
+func _on_slowing_cactus_pressed():
+	currtower =4 
 	pass # Replace with function body.
