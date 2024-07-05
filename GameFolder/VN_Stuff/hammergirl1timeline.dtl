@@ -1,0 +1,38 @@
+# #this dialogue is once the player talks to her in the overworld section, after level 1 
+join Myrtle 1
+Myrtle: Man, im beat. We barely managed to fight against them.\
+
+Myrtle: It was a pretty big horde, and it all could’ve went down if anything went wrong. 
+Myrtle: I’ll have to check on everyone else.	
+Myrtle: Morale must be very low.
+As Myrtle walks across the camp, he sees a small tent with a bright light inside. 
+Myrtle: She must be feeling down. I'll go check on her. 
+Within seconds, he realizes the mistake he's made. 
+join Hammer_Cactus 2 [animation="Bounce In" length="0.3" wait="true"]
+[music path="res://VN_Stuff/audios/Fashion Saxophone Hip-Hop by Infraction [No Copyright Music]  Do It.mp3" fade="0.0" volume="0.0"]
+Hammer_Cactus: Howdy!!!! 
+Hammer_Cactus: HIIII!!!!
+Hammer_Cactus: Yoohoo Myrtle!!! Nice to see you! Nice work today!
+He thinks to himself\: why was I ever worried? Even for a second? 
+Myrtle: Someone's feeling good. I'll have to match your energy. 
+Myrtle (Determined): HEYY! WHAT'S UP POLEARM POLLY! 
+Hammer_Cactus (Default): It's POWERHOUSE Polly! 
+Myrtle: Oh! My bad! What have you been up to Penthouse Polly? 
+Hammer_Cactus: Nothing much Macaroni Myrtle. Just making some braclets to sell. 
+Machine parts cover the ground & tables. The metal pieces are utterly destroyed, and many of them have explosion marks. 
+There's some metal that can be turned to scrap, but the pieces that look nice are few and far between. 
+Myrtle: This... Is trash. Do you need Massive Myrtle to help you with cleanup? 
+Hammer_Cactus: No. I wouldn't want Mini Myrtle to hurt himself. This is ART, can't you see?	
+She holds up a necklace. The cord is made out of a soft bright-white fabric - while the embellishment is this extremely garish half-destroyed cog. 
+Hammer_Cactus: Do you comprehend the meaning of this piece? 
+# There should be text choice thingy here.
+Hammer_Cactus: Nice try. I call this, "BOLD AND BRASH!" 
+Instantly Myrtle's body erupts in a cold sweat. No. He must not. BUT HE CAN.
+He can se the funniest thing ever. but he shouldn't. 
+Hammer_Cactus: Everything alright? Are you in awe now? 
+His throat is even drier than usual. His cactus hairs are curling, bending into themselves as he loses his composure. 
+A normal visit to one of his companions almost turned into a fight to the death. 
+Myrtle: You win... This round. 
+With his head held high, he walks out of the tent as a new man. One who didn't say it. 
+Under his breath, he looks to the stars, and mutters the one thing on his mind. 
+Myrtle: Bold and brash. More like belongs in the trash.

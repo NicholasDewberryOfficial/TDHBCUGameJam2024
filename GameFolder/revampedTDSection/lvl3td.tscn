@@ -108,7 +108,7 @@ autostart = true
 position = Vector2(249.39, 621.577)
 
 [node name="PathFollow2D" parent="tdstuff/mobholder/propellerbotlvl3" index="0"]
-position = Vector2(-29.386, 219.938)
+position = Vector2(-29.3864, 219.938)
 progress = 185.141
 
 [node name="towerholder" type="Node2D" parent="tdstuff"]
