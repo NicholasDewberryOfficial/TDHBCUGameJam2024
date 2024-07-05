@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b656h5j0spuyi"
+path="res://.godot/imported/Fashion Saxophone Hip-Hop by Infraction [No Copyright Music]  Do It.mp3-d5c45b1083a9060b00d270fbbb51a45e.mp3str"
+
+[deps]
+
+source_file="res://VN_Stuff/audios/Fashion Saxophone Hip-Hop by Infraction [No Copyright Music]  Do It.mp3"
+dest_files=["res://.godot/imported/Fashion Saxophone Hip-Hop by Infraction [No Copyright Music]  Do It.mp3-d5c45b1083a9060b00d270fbbb51a45e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

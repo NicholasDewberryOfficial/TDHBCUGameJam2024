@@ -6,6 +6,7 @@ extends Area2D
 @export var points: int =10
 
 @export var myspeed: Node2D
+@export var damageanim: AnimationPlayer
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -22,6 +23,7 @@ func _process(delta):
 
 func takedamage(givendmg):
 	health -= givendmg
+	damageanim.play("damageanim")
 #	print(health)
 
 func modifyspeed(newspeedamt: float):

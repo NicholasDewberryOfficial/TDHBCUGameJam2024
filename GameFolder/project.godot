@@ -34,7 +34,8 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "Intro_Cutscene": "res://VN_Stuff/Intro_Cutscene.dtl",
-"Intro_Part_2": "res://VN_Stuff/Intro_Part_2.dtl"
+"Intro_Part_2": "res://VN_Stuff/Intro_Part_2.dtl",
+"hammergirl1timeline": "res://VN_Stuff/hammergirl1timeline.dtl"
 }
 layout/style_list=[]
 layout/default_style=""
