@@ -1,40 +1,42 @@
-[gd_scene load_steps=9 format=3 uid="uid://b0tp4wo1yoail"]
+[gd_scene load_steps=9 format=3 uid="uid://c0no2x3xl7ysp"]
 
-[ext_resource type="Curve2D" uid="uid://b6tdnjcpmq8gp" path="res://revampedTDSection/mobs/baseenemyrollerbot/lvl3normalcurve.tres" id="1_c6254"]
-[ext_resource type="Texture2D" uid="uid://biude6b6rkuyv" path="res://Assets/Roller_Overhead.png" id="1_i2x63"]
-[ext_resource type="Script" path="res://revampedTDSection/mobs/baseenemyrollerbot/baseenemyhealth.gd" id="2_htlfr"]
-[ext_resource type="Script" path="res://revampedTDSection/mobs/baseenemyrollerbot/baseenemymovement.gd" id="3_kg787"]
+[ext_resource type="Curve2D" uid="uid://6cor4538cxup" path="res://revampedTDSection/mobs/propellerbot/lvl3curvestraight.tres" id="1_kvqn0"]
+[ext_resource type="SpriteFrames" uid="uid://1qk568bbiarp" path="res://revampedTDSection/mobs/propellerbot/propellerframes.tres" id="1_nit0a"]
+[ext_resource type="Script" path="res://revampedTDSection/mobs/baseenemyrollerbot/baseenemyhealth.gd" id="2_s2ake"]
+[ext_resource type="Script" path="res://revampedTDSection/mobs/baseenemyrollerbot/baseenemymovement.gd" id="3_r8vkt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bt4vu"]
 radius = 64.0
 
-[sub_resource type="Gradient" id="Gradient_ytkht"]
+[sub_resource type="Gradient" id="Gradient_beamb"]
 offsets = PackedFloat32Array(0, 0.992958)
 colors = PackedColorArray(0.855105, 0.908, 0.696943, 1, 0.514134, 0.671704, 0.436907, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_0vfa8"]
-gradient = SubResource("Gradient_ytkht")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_v5xur"]
+gradient = SubResource("Gradient_beamb")
 width = 500
 
-[sub_resource type="Curve" id="Curve_vi47x"]
+[sub_resource type="Curve" id="Curve_lmu0o"]
 max_value = 2.0
 _data = [Vector2(0.0337079, 1.2967), 0.0, 0.0, 0, 0, Vector2(0.297753, 1.03297), 0.0, 0.0, 0, 0, Vector2(0.449438, 0.571429), 0.0, 0.0, 0, 0, Vector2(0.634831, 1.56044), 0.0, 0.0, 0, 0, Vector2(0.691011, 0.923077), 1.42258, 0.0, 0, 0]
 point_count = 5
 
-[node name="lvl3rollerbot" type="Path2D"]
-curve = ExtResource("1_c6254")
+[node name="propellerbotlvl3" type="Path2D"]
+scale = Vector2(1.25, 1.05937)
+curve = ExtResource("1_kvqn0")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(110.068, 864)
-rotation = 0.0137448
-skew = 0.00128508
+position = Vector2(-214.512, 222.229)
+rotation = -0.0123733
 
-[node name="baseenemyart" type="Sprite2D" parent="PathFollow2D"]
+[node name="baseenemyart" type="AnimatedSprite2D" parent="PathFollow2D"]
 scale = Vector2(0.719999, 0.640001)
-texture = ExtResource("1_i2x63")
+sprite_frames = ExtResource("1_nit0a")
+autoplay = "default"
+frame_progress = 0.328673
 
 [node name="baseenemyhitbox" type="Area2D" parent="PathFollow2D/baseenemyart" node_paths=PackedStringArray("myspeed") groups=["enemyhitboxgroup"]]
-script = ExtResource("2_htlfr")
+script = ExtResource("2_s2ake")
 health = 7.0
 myspeed = NodePath("../../movementholder")
 
@@ -47,7 +49,7 @@ emitting = false
 amount = 100
 explosiveness = 1.0
 local_coords = true
-texture = SubResource("GradientTexture1D_0vfa8")
+texture = SubResource("GradientTexture1D_v5xur")
 emission_shape = 1
 emission_sphere_radius = 5.63
 direction = Vector2(1, 1.75)
@@ -58,17 +60,9 @@ angle_min = -160.0
 angle_max = 173.6
 scale_amount_min = 0.3
 scale_amount_max = 0.3
-scale_amount_curve = SubResource("Curve_vi47x")
+scale_amount_curve = SubResource("Curve_lmu0o")
 
 [node name="movementholder" type="Node2D" parent="PathFollow2D" node_paths=PackedStringArray("myparticles")]
-script = ExtResource("3_kg787")
-speed = 100
+script = ExtResource("3_r8vkt")
+speed = 600
 myparticles = NodePath("../baseenemyart/baseenemyhitbox/slowdownparticles")
-
-[node name="movementtimer" type="Timer" parent="PathFollow2D"]
-wait_time = 0.2
-one_shot = true
-
-[node name="_Timer_51846" type="Timer" parent="PathFollow2D"]
-wait_time = 0.2
-one_shot = true

@@ -1,0 +1,32 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://1qk568bbiarp"]
+
+[ext_resource type="Texture2D" uid="uid://buesgfl8w42w0" path="res://Assets/Propeller_Overhead.png" id="1_skfc5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fv8rr"]
+atlas = ExtResource("1_skfc5")
+region = Rect2(30, 0, 151, 149)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqsta"]
+atlas = ExtResource("1_skfc5")
+region = Rect2(181, 0, 151, 149)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvuhr"]
+atlas = ExtResource("1_skfc5")
+region = Rect2(332, 0, 151, 149)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fv8rr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqsta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvuhr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]

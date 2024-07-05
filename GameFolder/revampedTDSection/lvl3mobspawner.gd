@@ -3,6 +3,7 @@ extends Node
 @export var mytimer: Timer
 
 @export var Rollerbot: PackedScene
+@export var Propellerbot: PackedScene
 
 @export var wavetext: RichTextLabel
 
@@ -74,11 +75,18 @@ func _on_mobspawnmobtimer_timeout():
 	if(midstagetimer):
 		changetimerphase()
 		midstagetimer=false
-	var mybot = Rollerbot.instantiate()
-	mybot.position = Vector2(-231,0)
-	mybot.scale  = Vector2(1.25,1)
-	add_child(mybot)
-	timestogo -=1 
+	if(phase > 1 and timestogo%3 == 0 ):
+		var mybot = Propellerbot.instantiate()
+		mybot.position = Vector2(249.39,621.577)
+		mybot.scale  = Vector2(1.25,1)
+		add_child(mybot)
+		timestogo-=1
+	else:
+		var mybot = Rollerbot.instantiate()
+		mybot.position = Vector2(-231,0)
+		mybot.scale  = Vector2(1.25,1)
+		add_child(mybot)
+		timestogo -=1 
 	pass # Replace with function body.
 
 func changetimerphase():
@@ -109,11 +117,18 @@ func _on_nextwavebutton_pressed():
 		while(timestogo != 1):
 			mytimer.autostart =false
 			mytimer.stop()
-			var mybot = Rollerbot.instantiate()
-			mybot.position = Vector2(-231,0)
-			mybot.scale  = Vector2(1.25,1)
-			add_child(mybot)
-			timestogo -=1 
+			if(phase > 1 and timestogo%3 == 0 ):
+				var mybot = Propellerbot.instantiate()
+				mybot.position = Vector2(249.39,621.577)
+				mybot.scale  = Vector2(1.25,1)
+				add_child(mybot)
+				timestogo -=1
+			else:
+				var mybot = Rollerbot.instantiate()
+				mybot.position = Vector2(-231,0)
+				mybot.scale  = Vector2(1.25,1)
+				add_child(mybot)
+				timestogo -=1 
 			await get_tree().create_timer(.2).timeout
 		mytimer.autostart = true
 		mytimer.start(.1)

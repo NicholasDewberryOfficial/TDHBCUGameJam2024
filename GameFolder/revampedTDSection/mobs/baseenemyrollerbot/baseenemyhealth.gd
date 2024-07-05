@@ -4,6 +4,8 @@ extends Area2D
 #note: base enemy = rollerbot
 @export var health: float = 10
 @export var points: int =10
+
+@export var myspeed: Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -22,3 +24,6 @@ func takedamage(givendmg):
 	health -= givendmg
 #	print(health)
 
+func modifyspeed(newspeedamt: float):
+	myspeed.slowdownmod = newspeedamt 
+	
