@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bufak2eilqpsb"]
 
-[ext_resource type="Curve2D" path="res://revampedTDSection/mobs/baseenemyrollerbot/right2rightcurve.tres" id="1_5ewb4"]
+[ext_resource type="Curve2D" uid="uid://bb47psnaayedm" path="res://revampedTDSection/mobs/baseenemyrollerbot/right2rightcurve.tres" id="1_5ewb4"]
 [ext_resource type="Texture2D" uid="uid://biude6b6rkuyv" path="res://Assets/Roller_Overhead.png" id="1_uvjm2"]
 [ext_resource type="Script" path="res://revampedTDSection/mobs/baseenemyrollerbot/baseenemyhealth.gd" id="2_71gcr"]
 [ext_resource type="Script" path="res://revampedTDSection/mobs/baseenemyrollerbot/baseenemymovement.gd" id="3_ed2yi"]

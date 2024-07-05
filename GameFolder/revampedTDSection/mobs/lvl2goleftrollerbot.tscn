@@ -13,7 +13,7 @@ curve = ExtResource("1_kimck")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 position = Vector2(910, -26)
-rotation = 1.75001
+rotation = 1.8309
 skew = 0.00128508
 
 [node name="baseenemyart" type="Sprite2D" parent="PathFollow2D"]
