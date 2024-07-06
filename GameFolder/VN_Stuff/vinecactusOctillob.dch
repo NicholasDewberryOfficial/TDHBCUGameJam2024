@@ -1,0 +1,146 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(1, 1, 1, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+"default_portrait": "placeholder",
+"description": "",
+"display_name": "Octillob",
+"mirror": false,
+"nicknames": [""],
+"offset": Vector2(0, 0),
+"portraits": {
+"Cactus_Commander_Idle": {
+"export_overrides": {
+"image": "\"res://Assets/Talk_Sprites/Cactus_Commander_Idle.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Cactus_Commander_Idle_Smirk": {
+"export_overrides": {
+"image": "\"res://Assets/Talk_Sprites/Cactus_Commander_Idle_Smirk.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Cactus_Commander_Ponder": {
+"export_overrides": {
+"image": "\"res://Assets/Talk_Sprites/Cactus_Commander_Ponder.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Cactus_Commander_Ponder_Smile": {
+"export_overrides": {
+"image": "\"res://Assets/Talk_Sprites/Cactus_Commander_Ponder_Smile.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Cactus_Placeholder": {
+"export_overrides": {
+"image": "\"res://Assets/Talk_Sprites/Cactus_Placeholder.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Cactus_Player_Determined": {
+"export_overrides": {
+"image": "\"res://Assets/Talk_Sprites/Cactus_Player_Determined.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Cactus_Player_Determined(2)": {
+"export_overrides": {
+"image": "\"res://Assets/Talk_Sprites/Cactus_Player_Determined(2).png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Cactus_Player_Happy": {
+"export_overrides": {
+"image": "\"res://Assets/Talk_Sprites/Cactus_Player_Happy.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Cactus_Player_Happy(2)": {
+"export_overrides": {
+"image": "\"res://Assets/Talk_Sprites/Cactus_Player_Happy(2).png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Cactus_Secretary_Idle": {
+"export_overrides": {
+"image": "\"res://Assets/Talk_Sprites/Cactus_Secretary_Idle.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Cactus_Secretary_Idle(2)": {
+"export_overrides": {
+"image": "\"res://Assets/Talk_Sprites/Cactus_Secretary_Idle(2).png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Cactus_Secretary_Worried": {
+"export_overrides": {
+"image": "\"res://Assets/Talk_Sprites/Cactus_Secretary_Worried.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Cactus_Secretary_Worried(2)": {
+"export_overrides": {
+"image": "\"res://Assets/Talk_Sprites/Cactus_Secretary_Worried(2).png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"placeholder": {
+"export_overrides": {
+"image": ""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+"scale": 1.0
+}

@@ -30,12 +30,14 @@ directories/dch_directory={
 "Music_Cactus": "res://VN_Stuff/Music_Cactus.dch",
 "Myrtle": "res://VN_Stuff/Myrtle.dch",
 "Secretary_Domino": "res://VN_Stuff/Secretary_Domino.dch",
-"Throw_Cactus": "res://VN_Stuff/Throw_Cactus.dch"
+"Throw_Cactus": "res://VN_Stuff/Throw_Cactus.dch",
+"vinecactusOctillob": "res://VN_Stuff/vinecactusOctillob.dch"
 }
 directories/dtl_directory={
 "Intro_Cutscene": "res://VN_Stuff/Intro_Cutscene.dtl",
 "Intro_Part_2": "res://VN_Stuff/Intro_Part_2.dtl",
-"hammergirl1timeline": "res://VN_Stuff/hammergirl1timeline.dtl"
+"hammergirl1timeline": "res://VN_Stuff/interactions/hammergirl1timeline.dtl",
+"slowervine1timeline": "res://VN_Stuff/interactions/slowervine1timeline.dtl"
 }
 layout/style_list=[]
 layout/default_style=""
@@ -60,6 +62,7 @@ variables={
 "Tuto_Choice": 0
 }
 glossary/default_case_sensitive=true
+history/simple_history_enabled=true
 
 [display]
 

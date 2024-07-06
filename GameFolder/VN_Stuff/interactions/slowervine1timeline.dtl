@@ -1,0 +1,92 @@
+[background fade="0.0"]
+join Myrtle 1
+join Commander_Wheel 3
+It has been 3 hours since Domino has left to get some supplies.
+A short amount of time for sure, but enough to put the leadership into absolute chaos.
+Battle plans need to be drafted for tomorrow, food for tonight needs to be decided, equipment needs to be tracked - theres a million logistical things to do.
+A call for help was sent out, and Myrtle arrived on scene.
+Myrtle: WAIT! Stop. This is supposed to be YOUR job right? Why the hell am I helping?
+Commander_Wheel: ...
+Myrtle: Commander!
+His eyes are dead, glazed over. He moves like a zombie. All this came from looking at papers for a few minutes.
+Commander_Wheel: ..What? Oh yes. I lived a good life indeed. Goodbye cruel world.
+Myrtle: You ain't getting away from me that easily!
+Myrtle hits his commander with a drop kick. The commander doesn't move, while Myrtle is flung across the room, making a huge hole in the wall.
+Myrtle: Dammit!
+[background arg="res://VN_Stuff/blackbg.jpg" fade="0.0"]
+It was chaos. Hell on earth. But still, as a testament to the power of cactuskind, the papers were done. Finished.
+join Secretary_Domino 2
+Domino comes back to a destroyed office. Papers are scattered, the drawers are on fire, and all manner of cooking ingredients are on the ground. On a table, sits a shambolic dessert.
+Myrtle and Wheel created a cake for Domino. "This is for all the work that you do for us" - an epithet written in ugly red frositng.
+Secretary_Domino: Huh? I dont do any of this paperwork myself. I use CactusGPT. *Munch* The cake tastes nice though.
+With that. Myrtle is freed.
+leave Commander_Wheel
+leave Secretary_Domino
+leave Myrtle
+It's late at night, and everyone's asleep.
+Myrtle walks slowly. He's not usually up this late.
+He sees a light in the distance and some movement. One person is up. What could they be doing at this hour?
+join Myrtle 1
+Myrtle: Hmm. It's the vine guy. Octillob right? I didn't speak to him just yet.
+Myrtle mosies on over... But as he gets closer, he hears chanting
+vinecactusOctillob: Ommonoma... Ommonoma...Ommonoma...Ommonoma...
+Around a bonfire, Octillob is dancing and spilling water. Myrtle stands in awkward disbelief at what he's seeing.
+Dozens of binders chock-full of papers are being destroyed. Some are torn in half, some are dunked in buckets, some are thrown into into water - many of them get all three treatments.
+But none of them will ever be read again.
+Myrtle: Hey! Wait! What the hell are you doing!
+Myrtle jumps down, and tries to put out the fire.
+join vinecactusOctillob 2
+Myrtle: I caught you red-handed! You trying to destroy evidence or something bub? You don't need to go this far.
+vinecactusOctillob: Why, yea, 'tis true! Thou hast indeed ensnared me. I am guilty as charged. Yet, I doubt thou canst mete out justice upon me. Nay, naught save a bolt of Jove's own lightning can cleanse my soul.
+Myrtle: ...
+Myrtle: On second thought, continue.
+Myrtle turns to leave.
+Myrtle: (I dont want to get involved with this)
+However, fate would not be so kind to him
+update vinecactusOctillob [animation="Bounce"]
+vinecactusOctillob: Thou mustest be the one I was waiting for. Myrtle, my dear friend. This mortal soul admires your bravery in the face of danger. What did you do to be so skilled and smart?
+Myrtle: I'm Just built different.
+vinecactusOctillob: Say it isn't not so. Verily well, I shall keep you no longer. Continue on thou way.
+Myrtle: (On second thought...)
+Myrtle: Before I leave, what the hell have you been doing?
+vinecactusOctillob: For years I've been writing down whatever comes to my mind. Today is the day I kill my past and destroy my works.
+Myrtle: Mind if I see one?
+vinecactusOctillob: Verily.
+Octollib grabs a small binder and gives it to Myrtle. He opens it, and his jaw goes WIDE
+The first page he looks at is covered in blue ink, pencil and highlighter. The handwriting varies a lot - going from incomprehensible to neat and tidy.
+"Chaos" Is the first word that comes to mind. He doesn't know where to begin. Some things are drawn in landscape, while other things are writtin in portrait. In the corner there's a large circular coil of words. They make a ring.
+After a minute, a pattern emerges. Myrtle looks onto the other pages.
+Every page is meticulously filled in. Large, beautiful diagrams are mixed in with ugly run-on sentences and poetic paragraphs.
+At first glance, it's the ramblings of a madman just scrib bling for fun. But Octollib knows a LOT about his subject matter. A page catches his eye for the creation of an armored bicycle.
+It's an interesting proof of concept. Instead of having Myrtle fight his way through waves of enemies, he can simply just rush straight to the end, using the forward facing armor of the bicycle to dodge off attacks.
+Theres a lot of information, but a red "X" blocks the entire page. "Trash" is written in the top right.
+vinecactusOctillob: See? It's just trash. None of my works can help anyone. That binder I gave you was something I made in a few minutes, just spitting out ideas.
+Myrtle: Whaddya mean? This seems super useful! You mean to tell me that all of these binders... are full of ideas like this?
+vinecactusOctillob: Indeed. You're the first person I've showed my work to. Embarrassing right?
+Myrtle (Happy): Hey! Stop destroying your works! All of this... is great!
+vinecactusOctillob: You flatter me a lot. But I know you're just doing it to make me feel better. Do you honestly think the armored bike is a good idea?
+# this is where myrtle can speak
+vinecactusOctillob: The downsides are numerous. For one, we don't have the industrial capability to create the small parts needed for the suspension and gear system. Secondly, the armor restricts visibility. Especially if you're moving quickly. You could use glass - but you sacrifice strength. The visibility gains also aren't good long-term because you'll run into a lot of bugs.
+vinecactusOctillob: Thirdly and most importantly, the weight is massive. You're gonna need a lot of strength to get it moving -defeating the purpose of an agile vehiclular system in the first place.
+vinecactusOctillob: Now tell me. HOW IS THIS USEFUL?
+....
+Myrtle is stunned. He smiles awkwardly.
+vinecactusOctillob: I hate showing my work to others. Now leave me be!
+Silence hangs over the air. Octillob looks over at Myrtle, expecting a response.
+He knows this work is useless. Why did he even bother making it? It's all just a big waste of time. Why did he even bother speaking to anyone else? He should just do everything on his own.
+Myrtle: Man... All that doesn't matter!
+Now it's Octolliob's turn to be confused.
+Myrtle: You know, even if YOU can't do anything with it on your own, other people can still find it useful.
+Myrtle: Who's to say someone else won't read this and be inspired to fix up the problems you've identified? It's a shame that you've spent so much work on the hard parts, but gave up once you found something outside of your skillset.
+Myrtle: No matter what.... You should share this. Even if it's a .01 percent chance of making the world a better place - you should do it.
+Myrtle: After all, you did all the hard parts already!
+Myrtle: Now\: Stop destroying your work!
+It's all wishful thinking. People are gonna take one look at his work and laugh at him. What's the point?
+But still.... That .01% chance...
+vinecactusOctillob: Fine. I'll stop. I've already memoried all of my papers, but I'll keep them - just in case.
+Myrtle: Thanks! Goodnight bro!
+vinecactusOctillob: You too...
+Myrtle mosies on out, and the bonfire Octillob made starts to dwindle.
+...
+He stares at the embers in deep thought.
+[end_timeline]
