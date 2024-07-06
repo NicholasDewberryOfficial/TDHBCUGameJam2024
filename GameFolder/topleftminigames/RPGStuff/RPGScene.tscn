@@ -1,0 +1,369 @@
+[gd_scene load_steps=16 format=3 uid="uid://gtgyi7vell0"]
+
+[ext_resource type="Script" path="res://topleftminigames/RPGStuff/RPGSceneController.gd" id="1_gwgac"]
+[ext_resource type="Texture2D" uid="uid://484vs5nlws8k" path="res://Assets/Roller.png" id="2_vewef"]
+[ext_resource type="AudioStream" uid="uid://vl8p1x61woxv" path="res://Assets/music/mechanical_explosion.wav" id="3_y36oi"]
+[ext_resource type="AudioStream" uid="uid://biaur5hw87qt1" path="res://Assets/music/vine3.ogg" id="4_02beb"]
+
+[sub_resource type="Animation" id="Animation_jf5fl"]
+resource_name = "CritDamage"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("emydmgpopup/textbg/emydmgtext:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("emydmgpopup/textbg/emydmgtext:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.941),
+"transitions": PackedFloat32Array(1, 0.00164238),
+"update": 0,
+"values": [Color(0.745098, 0.203922, 0.258824, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("emydmgpopup/textbg:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_bras8"]
+resource_name = "DefendedDamage"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("emydmgpopup/textbg/emydmgtext:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("emydmgpopup/textbg/emydmgtext:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.686275, 0.780392, 1, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("emydmgpopup/textbg:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Gradient" id="Gradient_ewups"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kphuu"]
+gradient = SubResource("Gradient_ewups")
+
+[sub_resource type="Animation" id="Animation_34b6g"]
+resource_name = "EmyChange"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("EnemySprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(0.116629),
+"update": 1,
+"values": [SubResource("GradientTexture2D_kphuu")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EnemySprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EnemySprite:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("emydmgpopup/textbg/CPUParticles2D:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_uejgp"]
+resource_name = "NormDamage"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("emydmgpopup/textbg/emydmgtext:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("emydmgpopup/textbg:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("emydmgpopup/textbg/emydmgtext:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_dnbd2"]
+resource_name = "deathanim"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.415686, 0, 0.105882, 1), Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6mklk"]
+resource_name = "transferphase"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ueyvf"]
+_data = {
+"CritDamage": SubResource("Animation_jf5fl"),
+"DefendedDamage": SubResource("Animation_bras8"),
+"EmyChange": SubResource("Animation_34b6g"),
+"NormDamage": SubResource("Animation_uejgp"),
+"deathanim": SubResource("Animation_dnbd2"),
+"transferphase": SubResource("Animation_6mklk")
+}
+
+[sub_resource type="Gradient" id="Gradient_02eud"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_257db"]
+gradient = SubResource("Gradient_02eud")
+width = 5
+height = 5
+
+[node name="RPGBattle" type="Node2D" node_paths=PackedStringArray("explosionsound", "playeryelp")]
+script = ExtResource("1_gwgac")
+SkillList_path = NodePath("bgpanel/PlayerPanel/OverallContainer/LeftSideContainer/SkillList")
+explosionsound = NodePath("bgpanel/EnemyPanel/rpgemydeath")
+playeryelp = NodePath("bgpanel/EnemyPanel/playeryelp")
+
+[node name="bgpanel" type="Panel" parent="."]
+offset_right = 192.0
+offset_bottom = 648.0
+
+[node name="EnemyPanel" type="Panel" parent="bgpanel"]
+self_modulate = Color(1, 0.109804, 0.0901961, 1)
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 312.0
+
+[node name="EnemyHP" type="RichTextLabel" parent="bgpanel/EnemyPanel"]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 8.0
+text = "Enemy HP:
+"
+fit_content = true
+
+[node name="EnemySprite" type="TextureRect" parent="bgpanel/EnemyPanel"]
+layout_mode = 0
+offset_top = 24.0
+offset_right = 192.0
+offset_bottom = 312.0
+texture = ExtResource("2_vewef")
+expand_mode = 4
+
+[node name="rpgemydeath" type="AudioStreamPlayer2D" parent="bgpanel/EnemyPanel"]
+position = Vector2(0, 24)
+stream = ExtResource("3_y36oi")
+
+[node name="playeryelp" type="AudioStreamPlayer2D" parent="bgpanel/EnemyPanel"]
+stream = ExtResource("4_02beb")
+
+[node name="emydmgpopup" type="AnimationPlayer" parent="bgpanel/EnemyPanel"]
+libraries = {
+"": SubResource("AnimationLibrary_ueyvf")
+}
+
+[node name="textbg" type="Panel" parent="bgpanel/EnemyPanel/emydmgpopup"]
+offset_top = 32.0
+offset_right = 88.0
+offset_bottom = 72.0
+
+[node name="emydmgtext" type="RichTextLabel" parent="bgpanel/EnemyPanel/emydmgpopup/textbg"]
+self_modulate = Color(0.745098, 0.203922, 0.258824, 1)
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 80.0
+bbcode_enabled = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="bgpanel/EnemyPanel/emydmgpopup/textbg"]
+position = Vector2(80, 96)
+emitting = false
+amount = 300
+one_shot = true
+preprocess = 1.0
+explosiveness = 0.42
+orbit_velocity_min = -927.72
+orbit_velocity_max = 566.27
+scale_amount_max = 4.0
+color = Color(0.682353, 0.235294, 0.027451, 1)
+
+[node name="TextureRect" type="TextureRect" parent="bgpanel/EnemyPanel/emydmgpopup"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Divider" type="TextureRect" parent="bgpanel"]
+layout_mode = 0
+offset_top = 312.0
+offset_right = 192.0
+offset_bottom = 320.0
+texture = SubResource("GradientTexture2D_257db")
+
+[node name="PlayerPanel" type="Panel" parent="bgpanel"]
+layout_mode = 0
+offset_top = 320.0
+offset_right = 192.0
+offset_bottom = 648.0
+
+[node name="PlayerHP" type="RichTextLabel" parent="bgpanel/PlayerPanel"]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 8.0
+text = "Player HP: "
+fit_content = true
+
+[node name="PlayerPP" type="RichTextLabel" parent="bgpanel/PlayerPanel"]
+layout_mode = 0
+offset_top = 23.0
+offset_right = 191.0
+offset_bottom = 49.0
+
+[node name="Movement" type="Panel" parent="bgpanel/PlayerPanel"]
+visible = false
+layout_mode = 0
+offset_top = 24.0
+offset_right = 192.0
+offset_bottom = 104.0
+
+[node name="OverallContainer" type="HBoxContainer" parent="bgpanel/PlayerPanel"]
+layout_mode = 0
+offset_top = 49.0
+offset_right = 192.0
+offset_bottom = 328.0
+
+[node name="LeftSideContainer" type="VBoxContainer" parent="bgpanel/PlayerPanel/OverallContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BashButton" type="Button" parent="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer"]
+layout_mode = 2
+tooltip_text = "Punches the enemy."
+text = "Bash
+"
+
+[node name="PokeButton" type="Button" parent="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer"]
+layout_mode = 2
+tooltip_text = "Shoots a thorn at an enemy like a bullet. Strong against flying enemies.."
+text = "Shoot
+"
+
+[node name="Sunbathe" type="Button" parent="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer"]
+layout_mode = 2
+tooltip_text = "Soak up energy from the sun. Gain PP, but leaves yourself vulnerable."
+text = "Sunbathe"
+
+[node name="SkillList" type="OptionButton" parent="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer"]
+layout_mode = 2
+allow_reselect = true
+
+[connection signal="pressed" from="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer/BashButton" to="." method="_on_bash_button_pressed"]
+[connection signal="pressed" from="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer/PokeButton" to="." method="_on_poke_button_pressed"]
+[connection signal="pressed" from="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer/Sunbathe" to="." method="_on_sunbathe_pressed"]
+[connection signal="item_selected" from="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer/SkillList" to="." method="_on_skill_list_item_selected"]
+[connection signal="pressed" from="bgpanel/PlayerPanel/OverallContainer/LeftSideContainer/SkillList" to="." method="_on_skill_list_pressed"]

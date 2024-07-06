@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjbuvvvyqsux4"]
+
+[ext_resource type="Script" path="res://VN_Stuff/Main Menu/main_menu.gd" id="1_6ffg3"]
+[ext_resource type="Texture2D" uid="uid://dx4f3v5bd3r5y" path="res://Assets/oasisbackground.jpg" id="2_43j1l"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6ffg3")
+
+[node name="OasisStockArt" type="Sprite2D" parent="."]
+position = Vector2(1118.06, 607.843)
+scale = Vector2(1.5663, 1.22958)
+texture = ExtResource("2_43j1l")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="OasisStockArt"]
+offset_left = -56.4263
+offset_top = -197.835
+offset_right = 245.574
+offset_bottom = -65.8349
+theme_override_font_sizes/normal_font_size = 80
+text = "Cavalry"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="OasisStockArt"]
+offset_left = -290.752
+offset_top = -310.746
+offset_right = 11.2477
+offset_bottom = -187.746
+theme_override_font_sizes/normal_font_size = 80
+text = "Cactus"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 609.0
+offset_top = 612.0
+offset_right = 871.0
+offset_bottom = 713.0
+scale = Vector2(2.60978, 3.01451)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Start" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Start"
+
+[node name="Tutorial" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Options"
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Exit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

@@ -1,0 +1,85 @@
+[gd_scene load_steps=6 format=3 uid="uid://cb1u6bnhv8a7w"]
+
+[ext_resource type="Script" path="res://topleftminigames/LeftSideTypingSTuff/leftsidetyping.gd" id="1_mveuh"]
+[ext_resource type="Texture2D" uid="uid://vl8l74rsy6pf" path="res://Assets/Chomper.png" id="2_5g22h"]
+
+[sub_resource type="Gradient" id="Gradient_r1tc5"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ydit8"]
+gradient = SubResource("Gradient_r1tc5")
+width = 5
+height = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5p3i5"]
+bg_color = Color(0.14902, 0.12549, 0.0313726, 1)
+
+[node name="Leftsidetyping" type="Node2D"]
+script = ExtResource("1_mveuh")
+
+[node name="bgpanel" type="Panel" parent="."]
+offset_right = 192.0
+offset_bottom = 648.0
+metadata/_edit_use_anchors_ = true
+
+[node name="EnemySprite" type="TextureRect" parent="bgpanel"]
+visible = false
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 288.0
+texture = ExtResource("2_5g22h")
+expand_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="EnemyPanel" type="Panel" parent="bgpanel"]
+self_modulate = Color(0.721569, 0.482353, 0.0196078, 1)
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 312.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Divider" type="TextureRect" parent="bgpanel"]
+layout_mode = 0
+offset_top = 304.0
+offset_right = 192.0
+offset_bottom = 312.0
+texture = SubResource("GradientTexture2D_ydit8")
+metadata/_edit_use_anchors_ = true
+
+[node name="TypingChallengeLabel" type="RichTextLabel" parent="bgpanel"]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 64.0
+text = "Typing challenge! Type as fast as you can! "
+metadata/_edit_use_anchors_ = true
+
+[node name="StringtoType" type="RichTextLabel" parent="bgpanel"]
+layout_mode = 0
+offset_top = 64.0
+offset_right = 192.0
+offset_bottom = 152.0
+text = "qaqaqq"
+metadata/_edit_use_anchors_ = true
+
+[node name="playerInput" type="RichTextLabel" parent="bgpanel"]
+layout_mode = 0
+offset_top = 320.0
+offset_right = 192.0
+offset_bottom = 400.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_top = 320.0
+offset_right = 192.0
+offset_bottom = 392.0
+max_value = 4.0
+metadata/_edit_use_anchors_ = true
+
+[node name="reset" type="Button" parent="."]
+offset_top = 408.0
+offset_right = 192.0
+offset_bottom = 496.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_5p3i5")
+text = "MANUAL RESET"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="reset" to="." method="_on_reset_pressed"]

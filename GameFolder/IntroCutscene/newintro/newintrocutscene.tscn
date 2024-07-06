@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bn5xprot2r3dm"]
-
-[ext_resource type="Script" path="res://IntroCutscene/newintro/newintrocutscene.gd" id="1_x3tif"]
-
-[node name="Newintrocutscene" type="Node2D"]
-script = ExtResource("1_x3tif")
