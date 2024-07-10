@@ -26,7 +26,7 @@ var nextstage = 10
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	rng = RandomNumberGenerator.new()
-	currenemy = ResourceLoader.load("res://RPGStuff/eresources/rollerbot.tres")
+	currenemy = ResourceLoader.load("res://topleftminigames/RPGStuff/eresources/rollerbot.tres")
 	ehealth = currenemy.health
 	edamage = currenemy.damage
 	add_items()
@@ -80,13 +80,13 @@ func InitializeEnemy():
 		var newEM = rng.randi_range(0,2)
 		match newEM:
 			0:
-				currenemy = ResourceLoader.load("res://RPGStuff/eresources/rollerbot.tres")
+				currenemy = ResourceLoader.load("res://topleftminigames/RPGStuff/eresources/rollerbot.tres")
 				givethesepoints= 10
 			1:
-				currenemy = ResourceLoader.load("res://RPGStuff/eresources/propeller.tres")
+				currenemy = ResourceLoader.load("res://topleftminigames/RPGStuff/eresources/propeller.tres")
 				givethesepoints=10
 			2:
-				currenemy = ResourceLoader.load("res://RPGStuff/eresources/Chomper.tres")
+				currenemy = ResourceLoader.load("res://topleftminigames/RPGStuff/eresources/Chomper.tres")
 				givethesepoints=100
 		$bgpanel/EnemyPanel/EnemySprite.texture = (currenemy.picture)
 		ehealth = currenemy.health

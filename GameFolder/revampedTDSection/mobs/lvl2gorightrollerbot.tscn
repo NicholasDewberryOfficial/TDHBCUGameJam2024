@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bufak2eilqpsb"]
+[gd_scene load_steps=11 format=3 uid="uid://bufak2eilqpsb"]
 
 [ext_resource type="Curve2D" uid="uid://bb47psnaayedm" path="res://revampedTDSection/mobs/baseenemyrollerbot/right2rightcurve.tres" id="1_5ewb4"]
 [ext_resource type="Texture2D" uid="uid://biude6b6rkuyv" path="res://Assets/Roller_Overhead.png" id="1_uvjm2"]
@@ -8,28 +8,90 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_bt4vu"]
 radius = 64.0
 
+[sub_resource type="Gradient" id="Gradient_ytkht"]
+offsets = PackedFloat32Array(0, 0.992958)
+colors = PackedColorArray(0.855105, 0.908, 0.696943, 1, 0.514134, 0.671704, 0.436907, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wcs1u"]
+gradient = SubResource("Gradient_ytkht")
+width = 500
+
+[sub_resource type="Curve" id="Curve_4wxd1"]
+max_value = 2.0
+_data = [Vector2(0.0337079, 1.2967), 0.0, 0.0, 0, 0, Vector2(0.297753, 1.03297), 0.0, 0.0, 0, 0, Vector2(0.449438, 0.571429), 0.0, 0.0, 0, 0, Vector2(0.634831, 1.56044), 0.0, 0.0, 0, 0, Vector2(0.691011, 0.923077), 1.42258, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="Animation" id="Animation_yrx66"]
+resource_name = "damageanim"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.843194, 0.412613, 0.445713, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h5ci7"]
+_data = {
+"damageanim": SubResource("Animation_yrx66")
+}
+
 [node name="gorightlvl2path" type="Path2D"]
 curve = ExtResource("1_5ewb4")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-position = Vector2(1010, 0)
-rotation = 0.774163
+position = Vector2(1057.5, -27)
+rotation = 1.13036
 skew = 0.00128508
 
 [node name="baseenemyart" type="Sprite2D" parent="PathFollow2D"]
 scale = Vector2(0.719999, 0.640001)
 texture = ExtResource("1_uvjm2")
 
-[node name="baseenemyhitbox" type="Area2D" parent="PathFollow2D/baseenemyart" groups=["enemyhitboxgroup"]]
+[node name="baseenemyhitbox" type="Area2D" parent="PathFollow2D/baseenemyart" node_paths=PackedStringArray("myspeed", "damageanim") groups=["enemyhitboxgroup"]]
+self_modulate = Color(0.843194, 0.412613, 0.445713, 1)
 script = ExtResource("2_71gcr")
 health = 7.0
+myspeed = NodePath("../../movementholder")
+damageanim = NodePath("mydamageanim")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/baseenemyart/baseenemyhitbox"]
 shape = SubResource("CircleShape2D_bt4vu")
 
-[node name="movementholder" type="Node2D" parent="PathFollow2D"]
+[node name="slowdownparticles" type="CPUParticles2D" parent="PathFollow2D/baseenemyart/baseenemyhitbox"]
+scale = Vector2(1.38889, 1.5625)
+emitting = false
+amount = 100
+explosiveness = 1.0
+local_coords = true
+texture = SubResource("GradientTexture1D_wcs1u")
+emission_shape = 1
+emission_sphere_radius = 5.63
+direction = Vector2(1, 1.75)
+spread = 170.45
+gravity = Vector2(0, 0)
+initial_velocity_max = 20.21
+angle_min = -160.0
+angle_max = 173.6
+scale_amount_min = 0.3
+scale_amount_max = 0.3
+scale_amount_curve = SubResource("Curve_4wxd1")
+
+[node name="mydamageanim" type="AnimationPlayer" parent="PathFollow2D/baseenemyart/baseenemyhitbox"]
+libraries = {
+"": SubResource("AnimationLibrary_h5ci7")
+}
+
+[node name="movementholder" type="Node2D" parent="PathFollow2D" node_paths=PackedStringArray("myparticles")]
 script = ExtResource("3_ed2yi")
 speed = 100
+myparticles = NodePath("../baseenemyart/baseenemyhitbox/slowdownparticles")
 
 [node name="movementtimer" type="Timer" parent="PathFollow2D"]
 wait_time = 0.2

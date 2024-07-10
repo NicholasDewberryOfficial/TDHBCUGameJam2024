@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://topleftminigames/RPGStuff/emyres.gd" id="1_nhsuy"]
 [ext_resource type="Texture2D" uid="uid://bs3i3cyoap4t4" path="res://Assets/Propeller.png" id="2_mokru"]
 
-
 [resource]
 script = ExtResource("1_nhsuy")
 name = "propeller"
 picture = ExtResource("2_mokru")
 damage = 2
 health = 5
+points = 4
 defences = Array[int]([2, 1, 1, 2])

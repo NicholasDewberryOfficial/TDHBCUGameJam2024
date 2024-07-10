@@ -54,19 +54,12 @@ func _physics_process(delta):
 		return
 	var angle_to_target = direction.angle()
 	var angle_diff = angle_to_target - get_parent().rotation
-	#if angle_diff > PI:
-		#angle_diff -= TAU
-	#elif angle_diff < -PI:
-		#angle_diff += TAU
 	var rotation_amount = rotspeed * delta
 	if abs(angle_diff) > rotation_amount:
 		get_parent().rotation += rotation_amount * sign(angle_diff)
 	else:
 			# If the angle difference is smaller than the rotation amount, rotate directly to the target
 		get_parent().rotation = angle_to_target
-
-	
-
 	get_parent().rotation += (rotvector) * rotspeed * delta 
 
 

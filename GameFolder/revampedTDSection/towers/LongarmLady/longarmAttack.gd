@@ -4,9 +4,8 @@ extends Node
 var currenemyarr = []
 
 @export var atktimer: Timer
-@export var dmgdealt: float 
-#var atktime: Float = 
-#var curtarget: Node2D
+var dmgdealt: float =10 
+
 var ap: AnimationPlayer
 
 var rotvector = 0.0

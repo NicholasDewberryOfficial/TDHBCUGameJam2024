@@ -7,6 +7,7 @@ class_name emyres
 @export var picture: Texture2D
 @export var damage: int
 @export var health: int 
+@export var points: int 
 #defences [0] = bash attack
 #[1] = poke attack 
 #[2] and on are left open

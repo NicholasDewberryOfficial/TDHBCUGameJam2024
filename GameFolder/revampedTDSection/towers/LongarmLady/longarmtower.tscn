@@ -93,7 +93,6 @@ shape = SubResource("RectangleShape2D_xc8aw")
 [node name="longarmAttack" type="Area2D" parent="." node_paths=PackedStringArray("atktimer")]
 script = ExtResource("5_5dvym")
 atktimer = NodePath("../Timer")
-dmgdealt = 5.0
 dmghitbox = ExtResource("6_a2voo")
 dmghitbox2 = ExtResource("7_xenje")
 

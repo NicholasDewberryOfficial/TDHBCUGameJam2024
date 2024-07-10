@@ -8,12 +8,12 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_bt4vu"]
 radius = 64.0
 
-[sub_resource type="Gradient" id="Gradient_ytkht"]
+[sub_resource type="Gradient" id="Gradient_i8jrp"]
 offsets = PackedFloat32Array(0, 0.992958)
 colors = PackedColorArray(0.855105, 0.908, 0.696943, 1, 0.514134, 0.671704, 0.436907, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_0vfa8"]
-gradient = SubResource("Gradient_ytkht")
+gradient = SubResource("Gradient_i8jrp")
 width = 500
 
 [sub_resource type="Curve" id="Curve_vi47x"]
@@ -55,7 +55,7 @@ scale = Vector2(0.719999, 0.640001)
 texture = ExtResource("1_i2x63")
 
 [node name="baseenemyhitbox" type="Area2D" parent="PathFollow2D/baseenemyart" node_paths=PackedStringArray("myspeed", "damageanim") groups=["enemyhitboxgroup"]]
-self_modulate = Color(0.844523, 0.417592, 0.450412, 1)
+self_modulate = Color(0.843194, 0.412613, 0.445713, 1)
 script = ExtResource("2_htlfr")
 health = 7.0
 myspeed = NodePath("../../movementholder")

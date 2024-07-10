@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://topleftminigames/RPGStuff/emyres.gd" id="1_5many"]
 [ext_resource type="Texture2D" uid="uid://biude6b6rkuyv" path="res://Assets/Roller_Overhead.png" id="1_k6ofc"]
 
-
 [resource]
 script = ExtResource("1_5many")
 name = "rollerbot"
 picture = ExtResource("1_k6ofc")
 damage = 1
 health = 5
+points = 4
 defences = Array[int]([1, 2, 1])

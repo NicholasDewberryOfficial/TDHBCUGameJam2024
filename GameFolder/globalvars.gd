@@ -15,6 +15,8 @@ extends Node
 
 @export var checkbool: bool = false
 
+@export var beeper: AudioStreamPlayer2D
+
 #placements: 0=hammergirl, 1 =throwerguy, 2=sniperlady
 #values: 1 = unlocked. 0 means locked. 
 @export var unlockedTowers = [1,1,1]
@@ -25,7 +27,8 @@ func _ready():
 func enemykilled(points):
 	pp += points 
 	enemiesdefeated +=1 
-	get_tree().get_root().get_node("Lvl1Td/tdstuff/utilityorganizer/beepplayer").play()
+	if(beeper != null):
+		get_tree().get_root().get_node("Lvl1Td/tdstuff/utilityorganizer/beepplayer").play()
 	
 	
 func enemypassed():

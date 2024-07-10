@@ -1,13 +1,15 @@
-[gd_scene load_steps=26 format=3 uid="uid://b1bqxrdvle0ci"]
+[gd_scene load_steps=28 format=3 uid="uid://b1bqxrdvle0ci"]
 
 [ext_resource type="Script" path="res://topleftminigames/RPGStuff/actionbattlecontroller.gd" id="1_5ho28"]
-[ext_resource type="Texture2D" uid="uid://484vs5nlws8k" path="res://Assets/Roller.png" id="1_6ycaj"]
 [ext_resource type="Resource" uid="uid://b1v2ordluly2n" path="res://topleftminigames/RPGStuff/eresources/Chomper.tres" id="2_5rc1y"]
 [ext_resource type="AudioStream" uid="uid://vl8p1x61woxv" path="res://Assets/music/mechanical_explosion.wav" id="2_bbqeh"]
 [ext_resource type="AudioStream" uid="uid://biaur5hw87qt1" path="res://Assets/music/vine3.ogg" id="3_acq3w"]
+[ext_resource type="Resource" uid="uid://b2hpe4eih0xqf" path="res://topleftminigames/RPGStuff/eresources/rollerbot.tres" id="3_nufcx"]
 [ext_resource type="Texture2D" uid="uid://byjdihsfi0v37" path="res://Assets/Towers/se2.png" id="4_4gi1x"]
 [ext_resource type="Script" path="res://topleftminigames/RPGStuff/movingballmovement.gd" id="4_37gqc"]
-[ext_resource type="Texture2D" uid="uid://cjot2ap8wg0ey" path="res://Assets/Towers/spiked-ball.png" id="5_a2nqw"]
+[ext_resource type="Resource" uid="uid://chadwhabpmhr0" path="res://topleftminigames/RPGStuff/eresources/propeller.tres" id="4_y73bv"]
+[ext_resource type="Texture2D" uid="uid://dq48n2018jonn" path="res://topleftminigames/RPGStuff/defendiconrpg.png" id="6_7aw11"]
+[ext_resource type="Texture2D" uid="uid://c8nvhnwq2b8to" path="res://topleftminigames/RPGStuff/attackiconrpg.png" id="9_fyf2a"]
 
 [sub_resource type="Animation" id="Animation_jf5fl"]
 resource_name = "CritDamage"
@@ -250,11 +252,20 @@ size = Vector2(10, 298)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jbjfm"]
 size = Vector2(32, 32)
 
-[node name="Actionrpgbattle" type="Node" node_paths=PackedStringArray("goalball", "movingball")]
+[node name="Actionrpgbattle" type="Node" node_paths=PackedStringArray("goalball", "movingball", "playerhptext", "enemyhptext", "enemytexture", "goaltexture")]
 script = ExtResource("1_5ho28")
-goalball = NodePath("bgpanel/PlayerPanel/Panel/goalball")
+goalball = NodePath("bgpanel/PlayerPanel/Panel/goaltext")
 movingball = NodePath("bgpanel/PlayerPanel/Panel/movingball2")
-curremy = ExtResource("2_5rc1y")
+curremy = ExtResource("3_nufcx")
+playerhptext = NodePath("bgpanel/PlayerPanel/PlayerHP")
+enemyhptext = NodePath("bgpanel/EnemyPanel/EnemyHP")
+enemytexture = NodePath("bgpanel/EnemyPanel/EnemySprite")
+chomperres = ExtResource("2_5rc1y")
+rollerres = ExtResource("3_nufcx")
+propellerres = ExtResource("4_y73bv")
+goaltexture = NodePath("bgpanel/PlayerPanel/Panel/goaltext")
+atktexture = ExtResource("9_fyf2a")
+dfdtexture = ExtResource("6_7aw11")
 
 [node name="bgpanel" type="Panel" parent="."]
 offset_right = 192.0
@@ -279,7 +290,6 @@ layout_mode = 0
 offset_top = 24.0
 offset_right = 192.0
 offset_bottom = 312.0
-texture = ExtResource("1_6ycaj")
 expand_mode = 4
 
 [node name="rpgemydeath" type="AudioStreamPlayer2D" parent="bgpanel/EnemyPanel"]
@@ -394,15 +404,15 @@ script = ExtResource("4_37gqc")
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_jbjfm")
 
-[node name="Sprite2D" type="Sprite2D" parent="bgpanel/PlayerPanel/Panel/movingball2"]
+[node name="ballsprite" type="Sprite2D" parent="bgpanel/PlayerPanel/Panel/movingball2"]
 position = Vector2(0, -1.00001)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("4_4gi1x")
 
-[node name="goalball" type="Sprite2D" parent="bgpanel/PlayerPanel/Panel"]
+[node name="goaltext" type="Sprite2D" parent="bgpanel/PlayerPanel/Panel"]
 position = Vector2(96, 140)
-scale = Vector2(0.251969, 0.244094)
-texture = ExtResource("5_a2nqw")
+scale = Vector2(0.07, 0.068)
+texture = ExtResource("9_fyf2a")
 
 [node name="Panel" type="Panel" parent="bgpanel/PlayerPanel/Panel"]
 layout_mode = 0
@@ -415,3 +425,5 @@ layout_mode = 0
 offset_right = 61.0
 offset_bottom = 64.0
 text = "Attack!"
+
+[node name="stresstimer" type="Timer" parent="."]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://gtgyi7vell0"]
+[gd_scene load_steps=17 format=3 uid="uid://gtgyi7vell0"]
 
 [ext_resource type="Script" path="res://topleftminigames/RPGStuff/RPGSceneController.gd" id="1_gwgac"]
+[ext_resource type="Resource" uid="uid://chadwhabpmhr0" path="res://topleftminigames/RPGStuff/eresources/propeller.tres" id="2_lxwmt"]
 [ext_resource type="Texture2D" uid="uid://484vs5nlws8k" path="res://Assets/Roller.png" id="2_vewef"]
 [ext_resource type="AudioStream" uid="uid://vl8p1x61woxv" path="res://Assets/music/mechanical_explosion.wav" id="3_y36oi"]
 [ext_resource type="AudioStream" uid="uid://biaur5hw87qt1" path="res://Assets/music/vine3.ogg" id="4_02beb"]
@@ -227,7 +228,10 @@ width = 5
 height = 5
 
 [node name="RPGBattle" type="Node2D" node_paths=PackedStringArray("explosionsound", "playeryelp")]
+process_mode = 4
+modulate = Color(1, 1, 1, 0.485254)
 script = ExtResource("1_gwgac")
+currenemy = ExtResource("2_lxwmt")
 SkillList_path = NodePath("bgpanel/PlayerPanel/OverallContainer/LeftSideContainer/SkillList")
 explosionsound = NodePath("bgpanel/EnemyPanel/rpgemydeath")
 playeryelp = NodePath("bgpanel/EnemyPanel/playeryelp")
@@ -271,11 +275,13 @@ libraries = {
 }
 
 [node name="textbg" type="Panel" parent="bgpanel/EnemyPanel/emydmgpopup"]
+visible = false
 offset_top = 32.0
 offset_right = 88.0
 offset_bottom = 72.0
 
 [node name="emydmgtext" type="RichTextLabel" parent="bgpanel/EnemyPanel/emydmgpopup/textbg"]
+visible = false
 self_modulate = Color(0.745098, 0.203922, 0.258824, 1)
 layout_mode = 0
 offset_right = 96.0
@@ -284,7 +290,6 @@ bbcode_enabled = true
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="bgpanel/EnemyPanel/emydmgpopup/textbg"]
 position = Vector2(80, 96)
-emitting = false
 amount = 300
 one_shot = true
 preprocess = 1.0

@@ -5,7 +5,7 @@ var currenemyarr = []
 #This is basically a direct copy. With the attacks changed
 @export var atktimer: Timer
 var atktime: float = 1
-@export var dmgdealt: float =3
+var dmgdealt: float = 4
 @export var shootfromehere: Node2D 
 var curtarget: Node2D
 @export var ap: AnimationPlayer

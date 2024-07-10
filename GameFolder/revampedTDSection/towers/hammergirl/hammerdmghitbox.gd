@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var damage: float  =3
+var damage: float  = 2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
