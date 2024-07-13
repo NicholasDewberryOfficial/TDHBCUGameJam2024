@@ -13,8 +13,8 @@ grow_vertical = 2
 script = ExtResource("1_6ffg3")
 
 [node name="OasisStockArt" type="Sprite2D" parent="."]
-position = Vector2(1118.06, 607.843)
-scale = Vector2(1.5663, 1.22958)
+position = Vector2(959.027, 531.921)
+scale = Vector2(1.8769, 1.40646)
 texture = ExtResource("2_43j1l")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="OasisStockArt"]
@@ -44,18 +44,26 @@ scale = Vector2(2.60978, 3.01451)
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="Start" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Load" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Start"
+text = "Load
+"
 
-[node name="Tutorial" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Options"
+
+[node name="Start" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = " New Game"
 
 [node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Exit"
 
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Load" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

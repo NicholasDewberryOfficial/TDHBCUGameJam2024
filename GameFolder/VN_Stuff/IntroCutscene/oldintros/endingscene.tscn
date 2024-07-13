@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dl2lwq4gfugvx"]
 
-[ext_resource type="Script" path="res://VN_Stuff/IntroCutscene/endingscene.gd" id="1_jkyue"]
+[ext_resource type="Script" path="res://VN_Stuff/IntroCutscene/oldintros/endingscene.gd" id="1_jkyue"]
 [ext_resource type="Texture2D" uid="uid://cn1o0o07dtpih" path="res://Assets/Cactus_End_Screen.png" id="2_4hfua"]
 
 

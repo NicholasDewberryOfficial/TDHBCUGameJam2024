@@ -1,5 +1,9 @@
+[music path="res://Assets/music/everyday80s.mp3" fade="0.0" volume="0.0"]
 [background arg="res://VN_Stuff/blackbg.jpg" fade="1.5"]
 A couple of hours later...
+do DialogicSceneChanger.okswitchscene("res://revampedTDSection/lvl1td.tscn")
+[music fade="0.0" volume="0.0"]
+[end_timeline]
 [wait_input]
 [background fade="1.5"]
 [wait_input hide_text="false"]
@@ -14,10 +18,7 @@ Myrtle (Determined): You betcha! I'll turn those buckets o' bolts inta scrap hea
 Commander_Wheel (Smirk): That's the spirit. Now before you do that, take this.
 Myrtle (Happy): Oho, sparkly! What does it do?
 Commander_Wheel: This will allow you to absorb the plant power from the robots you defeat, and will be shared with the rest of us.
-Secretary_Domino: Commander, should we do a test run first? We still have time before the groups arrive.
-- Sure, we can practice a bit. [if {Tuto_Choice} == true]
-	Commander_Wheel (Default): We should do some practice for now, since we got a little bit.
-	Myrtle: Alright! I guess I can give y'all a glimpse at my greatness.
-- No, let's head to the field. [if {Tuto_Choice} == true]
-	Commander_Wheel (Default): We'll cover the important bits when the time comes. You ready, Myrtle?
-	Myrtle (Determined): Sir, yes, sir! Let's show these bots what we're made of!
+Myrtle (Determined): Sir, yes, sir! Let's show these bots what we're made of!
+And thus, the tutorial was skipped. The game went straight to lvl1td.tscn. \
+
+[end_timeline]

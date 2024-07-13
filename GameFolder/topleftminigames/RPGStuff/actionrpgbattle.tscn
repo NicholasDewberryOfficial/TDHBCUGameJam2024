@@ -399,6 +399,7 @@ shape = SubResource("RectangleShape2D_3mrbj")
 [node name="movingball2" type="CharacterBody2D" parent="bgpanel/PlayerPanel/Panel"]
 position = Vector2(96, 46)
 script = ExtResource("4_37gqc")
+bounce_speed = 1000.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bgpanel/PlayerPanel/Panel/movingball2"]
 position = Vector2(0, -1)
@@ -417,13 +418,13 @@ texture = ExtResource("9_fyf2a")
 [node name="Panel" type="Panel" parent="bgpanel/PlayerPanel/Panel"]
 layout_mode = 0
 offset_top = 10.0
-offset_right = 61.0
-offset_bottom = 74.0
+offset_right = 18.0
+offset_bottom = 36.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="bgpanel/PlayerPanel/Panel/Panel"]
 layout_mode = 0
 offset_right = 61.0
 offset_bottom = 64.0
-text = "Attack!"
+text = "Q"
 
 [node name="stresstimer" type="Timer" parent="."]

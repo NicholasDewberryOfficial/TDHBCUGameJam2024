@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Globalvars="*res://globalvars.gd"
+DialogicSceneChanger="*res://dialogicSceneChanger.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
@@ -44,7 +45,7 @@ layout/style_list=[]
 layout/default_style=""
 text/letter_speed=0.004
 text/initial_text_reveal_skippable=true
-text/text_reveal_skip_delay=0.1
+text/text_reveal_skip_delay=0.0
 text/advance_delay=0.1
 text/autoadvance_per_character_delay=0.1
 text/autoadvance_ignored_characters_enabled=true
