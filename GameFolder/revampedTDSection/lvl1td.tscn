@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://2crcixuke4eg"]
+[gd_scene load_steps=23 format=3 uid="uid://2crcixuke4eg"]
 
 [ext_resource type="Texture2D" uid="uid://7ovcgq4il4ma" path="res://Assets/kenney_tower-defense-top-down/Tilesheet/towerDefense_tilesheet.png" id="1_pkvm2"]
 [ext_resource type="Script" path="res://revampedTDSection/lvl1mobspawner.gd" id="2_0xv6w"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bji6u8gle6hks" path="res://Assets/Towers/Vine Cactus Idle.png" id="14_4kc0r"]
 [ext_resource type="Script" path="res://revampedTDSection/currenttowerupgrades.gd" id="14_ckdg3"]
 [ext_resource type="Texture2D" uid="uid://ck6dw1e0tdc7b" path="res://Assets/Towers/Longarm Cactus Idle.png" id="14_tnwrq"]
+[ext_resource type="Script" path="res://revampedTDSection/pausebutton.gd" id="20_lear6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iri12"]
 resource_name = "updatedatlas"
@@ -325,6 +326,14 @@ text = "NEXT WAVE"
 [node name="Leftsidetyping" parent="." instance=ExtResource("9_s4qsx")]
 visible = false
 
+[node name="pausebutton" type="Button" parent="."]
+offset_left = 1504.0
+offset_right = 1712.0
+offset_bottom = 80.0
+text = "PAUSE
+"
+script = ExtResource("20_lear6")
+
 [connection signal="timeout" from="tdstuff/mobholder/mobspawnmobtimer" to="tdstuff/mobholder" method="_on_mobspawnmobtimer_timeout"]
 [connection signal="pressed" from="tdstuff/gameui/uipanel/towerpart/page1holder/hammergirlpanel" to="tdstuff/gameui/uipanel/towerpart" method="_on_hammergirlpanel_pressed"]
 [connection signal="pressed" from="tdstuff/gameui/uipanel/towerpart/page1holder/bomberpanel" to="tdstuff/gameui/uipanel/towerpart" method="_on_bomberpanel_pressed"]
@@ -334,3 +343,4 @@ visible = false
 [connection signal="pressed" from="tdstuff/gameui/uipanel/towerpart/currenttowerupgrades/currenttowerbgpanel/upgrade1" to="tdstuff/gameui/uipanel/towerpart/currenttowerupgrades" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="tdstuff/gameui/uipanel/towerpart/currenttowerupgrades/currenttowerbgpanel/upgrade2" to="tdstuff/gameui/uipanel/towerpart/currenttowerupgrades" method="_on_upgrade_2_pressed"]
 [connection signal="pressed" from="tdstuff/gameui/Panel/nextwavebutton" to="tdstuff/mobholder" method="_on_nextwavebutton_pressed"]
+[connection signal="pressed" from="pausebutton" to="pausebutton" method="_on_pressed"]

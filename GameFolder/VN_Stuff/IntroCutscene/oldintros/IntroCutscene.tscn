@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cimvgvor1meow"]
 
 [ext_resource type="Texture2D" uid="uid://qj1ho33xbufm" path="res://VN_Stuff/IntroCutscene/bgimgs/startbg.png" id="1_elgby"]
-[ext_resource type="Script" path="res://VN_Stuff/IntroCutscene/IntroCutscene.gd" id="1_v1rg6"]
+[ext_resource type="Script" path="res://VN_Stuff/IntroCutscene/oldintros/IntroCutscene.gd" id="1_v1rg6"]
 [ext_resource type="AudioStream" uid="uid://bmkhr4fpr64ll" path="res://Assets/music/everyday80s.mp3" id="3_x5nk7"]
 
 [node name="IntroCutscene" type="Node2D"]

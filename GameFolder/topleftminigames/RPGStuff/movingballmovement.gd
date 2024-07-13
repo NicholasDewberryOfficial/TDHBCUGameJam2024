@@ -4,7 +4,7 @@ extends CharacterBody2D
 # Called when the node enters the scene tree for the first time.
 
 # Gravity and speed variables
-@export var gravity: float = 600.0
+#@export var gravity: float = 600.0
 @export var fall_speed: float = 1000.0
 @export var bounce_speed: float = 600.0
 
@@ -15,7 +15,7 @@ func _ready():
 
 func _physics_process(delta):
 	# Apply gravity
-	velocity.y += gravity * delta
+	#velocity.y += gravity * delta
 
 	# Move the object
 	move_and_slide()
@@ -26,5 +26,5 @@ func _physics_process(delta):
 
 func _switch_direction():
 	# Reverse the vertical direction
-	velocity.y = -bounce_speed
+	velocity.y = -velocity.y * 2 
 
