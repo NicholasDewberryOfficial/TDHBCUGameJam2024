@@ -6,7 +6,7 @@ var pcdefensemod: float = 1
 var state: int =0 
 #TODO, add timer function to force player to attack/defend 
 @export var goalball: Sprite2D
-@export var movingball: CharacterBody2D
+@export var movingball: PathFollow2D
 @export var curremy: emyres
 #change a pointer to enemy health, not the hunderlying hp resource 
 #seet when we load in enemy 
@@ -29,8 +29,8 @@ func _physics_process(delta):
 	if(Input.is_action_just_pressed("Q")):
 		attackfunction()
 		pass
-	playerhptext.text = str("Player Health: " + str(pchealth))
-	enemyhptext.text = str("Enemy Health: " + str(thisemyhealth))
+	playerhptext.text = str("Player Health: " + str(snapped(pchealth,1)))
+	enemyhptext.text = str("Enemy Health: " + str(snapped(thisemyhealth,1)))
 	if(thisemyhealth <=0):
 		deademy()
 	pass

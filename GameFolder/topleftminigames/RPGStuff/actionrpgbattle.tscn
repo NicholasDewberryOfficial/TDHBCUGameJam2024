@@ -1,15 +1,15 @@
-[gd_scene load_steps=28 format=3 uid="uid://b1bqxrdvle0ci"]
+[gd_scene load_steps=26 format=3 uid="uid://b1bqxrdvle0ci"]
 
 [ext_resource type="Script" path="res://topleftminigames/RPGStuff/actionbattlecontroller.gd" id="1_5ho28"]
 [ext_resource type="Resource" uid="uid://b1v2ordluly2n" path="res://topleftminigames/RPGStuff/eresources/Chomper.tres" id="2_5rc1y"]
 [ext_resource type="AudioStream" uid="uid://vl8p1x61woxv" path="res://Assets/music/mechanical_explosion.wav" id="2_bbqeh"]
 [ext_resource type="AudioStream" uid="uid://biaur5hw87qt1" path="res://Assets/music/vine3.ogg" id="3_acq3w"]
 [ext_resource type="Resource" uid="uid://b2hpe4eih0xqf" path="res://topleftminigames/RPGStuff/eresources/rollerbot.tres" id="3_nufcx"]
-[ext_resource type="Texture2D" uid="uid://byjdihsfi0v37" path="res://Assets/Towers/se2.png" id="4_4gi1x"]
-[ext_resource type="Script" path="res://topleftminigames/RPGStuff/movingballmovement.gd" id="4_37gqc"]
 [ext_resource type="Resource" uid="uid://chadwhabpmhr0" path="res://topleftminigames/RPGStuff/eresources/propeller.tres" id="4_y73bv"]
 [ext_resource type="Texture2D" uid="uid://dq48n2018jonn" path="res://topleftminigames/RPGStuff/defendiconrpg.png" id="6_7aw11"]
 [ext_resource type="Texture2D" uid="uid://c8nvhnwq2b8to" path="res://topleftminigames/RPGStuff/attackiconrpg.png" id="9_fyf2a"]
+[ext_resource type="Script" path="res://topleftminigames/RPGStuff/ballpath.gd" id="9_x6eqr"]
+[ext_resource type="Script" path="res://topleftminigames/RPGStuff/combologic.gd" id="10_sdful"]
 
 [sub_resource type="Animation" id="Animation_jf5fl"]
 resource_name = "CritDamage"
@@ -235,27 +235,22 @@ height = 5
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wg5f8"]
 bg_color = Color(0.77084, 0.770839, 0.770839, 1)
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kd4mm"]
-friction = 0.0
-bounce = 1.0
+[sub_resource type="Curve2D" id="Curve2D_3ikug"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 95, 279, 0, 0, 0, 0, 95, 0, 0, 0, 0, 0, 95, 279)
+}
+point_count = 3
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tkhxn"]
-size = Vector2(218, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_od3sx"]
+size = Vector2(26, 10)
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nns7p"]
-friction = 0.0
-bounce = 1.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3mrbj"]
-size = Vector2(10, 298)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbjfm"]
-size = Vector2(32, 32)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0pfux"]
+size = Vector2(192.5, 6)
 
 [node name="Actionrpgbattle" type="Node" node_paths=PackedStringArray("goalball", "movingball", "playerhptext", "enemyhptext", "enemytexture", "goaltexture")]
 script = ExtResource("1_5ho28")
 goalball = NodePath("bgpanel/PlayerPanel/Panel/goaltext")
-movingball = NodePath("bgpanel/PlayerPanel/Panel/movingball2")
+movingball = NodePath("bgpanel/PlayerPanel/Panel/ballpath/PathFollow2D")
 curremy = ExtResource("3_nufcx")
 playerhptext = NodePath("bgpanel/PlayerPanel/PlayerHP")
 enemyhptext = NodePath("bgpanel/EnemyPanel/EnemyHP")
@@ -366,65 +361,76 @@ offset_right = 192.0
 offset_bottom = 328.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_wg5f8")
 
-[node name="bottomwall" type="StaticBody2D" parent="bgpanel/PlayerPanel/Panel"]
-position = Vector2(0, 287)
-physics_material_override = SubResource("PhysicsMaterial_kd4mm")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bgpanel/PlayerPanel/Panel/bottomwall"]
-position = Vector2(99, -1)
-shape = SubResource("RectangleShape2D_tkhxn")
-
-[node name="topwall" type="StaticBody2D" parent="bgpanel/PlayerPanel/Panel"]
-physics_material_override = SubResource("PhysicsMaterial_nns7p")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bgpanel/PlayerPanel/Panel/topwall"]
-position = Vector2(99, -1)
-shape = SubResource("RectangleShape2D_tkhxn")
-
-[node name="leftwall" type="StaticBody2D" parent="bgpanel/PlayerPanel/Panel"]
-physics_material_override = SubResource("PhysicsMaterial_nns7p")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bgpanel/PlayerPanel/Panel/leftwall"]
-position = Vector2(-5, 138)
-shape = SubResource("RectangleShape2D_3mrbj")
-
-[node name="rightwall" type="StaticBody2D" parent="bgpanel/PlayerPanel/Panel"]
-position = Vector2(203, 0)
-physics_material_override = SubResource("PhysicsMaterial_nns7p")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bgpanel/PlayerPanel/Panel/rightwall"]
-position = Vector2(-5, 138)
-shape = SubResource("RectangleShape2D_3mrbj")
-
-[node name="movingball2" type="CharacterBody2D" parent="bgpanel/PlayerPanel/Panel"]
-position = Vector2(96, 46)
-script = ExtResource("4_37gqc")
-bounce_speed = 1000.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bgpanel/PlayerPanel/Panel/movingball2"]
-position = Vector2(0, -1)
-shape = SubResource("RectangleShape2D_jbjfm")
-
-[node name="ballsprite" type="Sprite2D" parent="bgpanel/PlayerPanel/Panel/movingball2"]
-position = Vector2(0, -1.00001)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("4_4gi1x")
-
 [node name="goaltext" type="Sprite2D" parent="bgpanel/PlayerPanel/Panel"]
 position = Vector2(96, 140)
 scale = Vector2(0.07, 0.068)
 texture = ExtResource("9_fyf2a")
 
-[node name="Panel" type="Panel" parent="bgpanel/PlayerPanel/Panel"]
-layout_mode = 0
-offset_top = 10.0
-offset_right = 18.0
-offset_bottom = 36.0
+[node name="ballpath" type="Path2D" parent="bgpanel/PlayerPanel/Panel" node_paths=PackedStringArray("myfollow")]
+curve = SubResource("Curve2D_3ikug")
+script = ExtResource("9_x6eqr")
+myfollow = NodePath("PathFollow2D")
+speed = 300
 
-[node name="RichTextLabel" type="RichTextLabel" parent="bgpanel/PlayerPanel/Panel/Panel"]
+[node name="PathFollow2D" type="PathFollow2D" parent="bgpanel/PlayerPanel/Panel/ballpath"]
+position = Vector2(95, 279)
+rotation = 1.5708
+progress = 558.0
+
+[node name="Sprite2D" type="Sprite2D" parent="bgpanel/PlayerPanel/Panel/ballpath/PathFollow2D"]
+rotation = 1.5708
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("9_fyf2a")
+
+[node name="Area2D" type="Area2D" parent="bgpanel/PlayerPanel/Panel/ballpath/PathFollow2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bgpanel/PlayerPanel/Panel/ballpath/PathFollow2D/Area2D"]
+shape = SubResource("RectangleShape2D_od3sx")
+
+[node name="CheckButton" type="CheckButton" parent="bgpanel/PlayerPanel/Panel"]
 layout_mode = 0
-offset_right = 61.0
-offset_bottom = 64.0
-text = "Q"
+offset_right = 44.0
+offset_bottom = 24.0
+
+[node name="topsidearea" type="Area2D" parent="bgpanel/PlayerPanel/Panel"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bgpanel/PlayerPanel/Panel/topsidearea"]
+position = Vector2(96.75, 3)
+shape = SubResource("RectangleShape2D_0pfux")
+
+[node name="bottomsidearea" type="Area2D" parent="bgpanel/PlayerPanel/Panel"]
+position = Vector2(0, 278)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bgpanel/PlayerPanel/Panel/bottomsidearea"]
+position = Vector2(96.75, 3)
+shape = SubResource("RectangleShape2D_0pfux")
+
+[node name="combobar" type="ProgressBar" parent="bgpanel/PlayerPanel" node_paths=PackedStringArray("movingfollownode", "checkbutton", "combocountnumber", "combobar")]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 51.0
+offset_right = 192.0
+offset_bottom = 78.0
+max_value = 3.0
+step = 1.0
+value = 1.0
+rounded = true
+show_percentage = false
+script = ExtResource("10_sdful")
+movingfollownode = NodePath("../Panel/ballpath/PathFollow2D")
+checkbutton = NodePath("../Panel/CheckButton")
+combocountnumber = NodePath("comboamt")
+combobar = NodePath(".")
+
+[node name="comboamt" type="RichTextLabel" parent="bgpanel/PlayerPanel/combobar"]
+layout_mode = 0
+offset_left = 83.0
+offset_top = -1.0
+offset_right = 103.0
+offset_bottom = 22.0
+text = "1x"
 
 [node name="stresstimer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="bgpanel/PlayerPanel/Panel/topsidearea" to="bgpanel/PlayerPanel/combobar" method="_on_topsidearea_area_entered"]
+[connection signal="area_entered" from="bgpanel/PlayerPanel/Panel/bottomsidearea" to="bgpanel/PlayerPanel/combobar" method="_on_bottomsidearea_area_entered"]
