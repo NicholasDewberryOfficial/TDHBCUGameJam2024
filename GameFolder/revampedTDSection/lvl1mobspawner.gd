@@ -9,6 +9,8 @@ extends Node
 @export var nextwavebuttonbutton: Button
 
 var nextexecuting: bool = false
+
+signal reachedthiswave(currentwave) 
 #It's gonna have 3 phases. 
 #Phase 1 = 1 second gap 
 #Phase 2 = .3 second gap
@@ -41,6 +43,7 @@ func _process(_delta):
 	if(timestogo <=0 and !midstagetimer):
 		#timestogo = 20
 		phase += 1 
+		reachedthiswave.emit(phase)
 		match (phase):
 			0:
 				pass

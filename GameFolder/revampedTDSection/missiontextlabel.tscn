@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3kg1trfmogmc"]
+
+[ext_resource type="Theme" uid="uid://dhdo2jxun7o24" path="res://mainUItheme.tres" id="1_tusrv"]
+
+[node name="RichTextLabel" type="RichTextLabel"]
+size_flags_vertical = 3
+theme = ExtResource("1_tusrv")
+bbcode_enabled = true
+text = "Reach Phase 4!"
