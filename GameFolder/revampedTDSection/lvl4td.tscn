@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://gtgyi7vell0" path="res://topleftminigames/RPGStuff/RPGScene.tscn" id="14_rm033"]
 [ext_resource type="PackedScene" uid="uid://cb1u6bnhv8a7w" path="res://topleftminigames/LeftSideTypingSTuff/leftsidetyping.tscn" id="15_e72g1"]
 
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iri12"]
 resource_name = "updatedatlas"
 texture = ExtResource("1_qm1rf")

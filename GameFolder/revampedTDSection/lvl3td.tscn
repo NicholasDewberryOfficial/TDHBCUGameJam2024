@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://b8n14occwfpcd"]
+[gd_scene load_steps=21 format=3 uid="uid://b8n14occwfpcd"]
 
 [ext_resource type="Texture2D" uid="uid://7ovcgq4il4ma" path="res://Assets/kenney_tower-defense-top-down/Tilesheet/towerDefense_tilesheet.png" id="1_q56v6"]
 [ext_resource type="Script" path="res://revampedTDSection/lvl3mobspawner.gd" id="2_k155o"]
+[ext_resource type="Texture2D" uid="uid://wa8kodm0pygc" path="res://Assets/CC_Level_3_Background_Bottom.png" id="2_qxcr1"]
 [ext_resource type="PackedScene" uid="uid://b0tp4wo1yoail" path="res://revampedTDSection/mobs/lvl3rollerbot.tscn" id="3_j7pgm"]
 [ext_resource type="PackedScene" uid="uid://c0no2x3xl7ysp" path="res://revampedTDSection/mobs/propellerbot/propellerbotlvl3.tscn" id="4_svm23"]
 [ext_resource type="PackedScene" uid="uid://cjx6bvyfvupnl" path="res://revampedTDSection/towers/throwyguy/ThrowingBomber.tscn" id="5_epho7"]
@@ -16,6 +17,7 @@
 [ext_resource type="Script" path="res://revampedTDSection/currenttowerupgrades.gd" id="14_co1ey"]
 [ext_resource type="PackedScene" uid="uid://gtgyi7vell0" path="res://topleftminigames/RPGStuff/RPGScene.tscn" id="15_1l521"]
 [ext_resource type="PackedScene" uid="uid://cb1u6bnhv8a7w" path="res://topleftminigames/LeftSideTypingSTuff/leftsidetyping.tscn" id="16_wc77q"]
+[ext_resource type="Texture2D" uid="uid://bb8n60jbfqwr5" path="res://Assets/CC_Level_3_Background_Top.png" id="18_ia43d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iri12"]
 resource_name = "updatedatlas"
@@ -92,6 +94,11 @@ layer_0/tile_data = PackedInt32Array(30, 720897, 7, 31, 720897, 7, 65568, 720897
 layer_1/name = "Unplacable"
 layer_1/tile_data = PackedInt32Array()
 
+[node name="CcLevel3BackgroundBottom" type="Sprite2D" parent="tdstuff"]
+position = Vector2(968.75, 538)
+scale = Vector2(1.27019, 1.03901)
+texture = ExtResource("2_qxcr1")
+
 [node name="mobholder" type="Node2D" parent="tdstuff" node_paths=PackedStringArray("mytimer", "wavetext", "nextwavebuttonbutton")]
 script = ExtResource("2_k155o")
 mytimer = NodePath("mobspawnmobtimer")
@@ -108,7 +115,8 @@ autostart = true
 position = Vector2(249.39, 621.577)
 
 [node name="PathFollow2D" parent="tdstuff/mobholder/propellerbotlvl3" index="0"]
-position = Vector2(-29.3864, 219.938)
+position = Vector2(-32.4003, 230.05)
+rotation = 0.0218474
 progress = 185.141
 
 [node name="towerholder" type="Node2D" parent="tdstuff"]
@@ -324,6 +332,11 @@ text = "NEXT WAVE"
 
 [node name="Leftsidetyping" parent="." instance=ExtResource("16_wc77q")]
 visible = false
+
+[node name="CcLevel3BackgroundTop" type="Sprite2D" parent="."]
+position = Vector2(955.5, 541)
+scale = Vector2(1.01459, 1.0295)
+texture = ExtResource("18_ia43d")
 
 [connection signal="timeout" from="tdstuff/mobholder/mobspawnmobtimer" to="tdstuff/mobholder" method="_on_mobspawnmobtimer_timeout"]
 [connection signal="pressed" from="tdstuff/gameui/uipanel/towerpart/page1holder/hammergirlpanel" to="tdstuff/gameui/uipanel/towerpart" method="_on_hammergirlpanel_pressed"]
