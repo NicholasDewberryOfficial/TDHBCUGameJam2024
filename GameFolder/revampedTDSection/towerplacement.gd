@@ -8,9 +8,13 @@ var hammgirlprefab = load("res://revampedTDSection/towers/hammergirl/hammergirl.
 var longarmladyprefab = load("res://revampedTDSection/towers/LongarmLady/longarmtower.tscn")
 @export var transpbomberguy: PackedScene
 @export var bomberprefab: PackedScene
+@export var aoedamageprefab: PackedScene
+
 @export var transplongarmlady: PackedScene
 @export var transpvinetowerprefab: PackedScene
+@export var transpaoecactusprefab: PackedScene
 @export var vinetowerprefab: PackedScene
+
 var placeme = null
 
 @export var totowerholder: Node
@@ -68,6 +72,9 @@ func _process(_delta):
 			4:
 				placeme = transpvinetowerprefab.instantiate()
 				add_child(placeme)
+			5: 
+				placeme = transpaoecactusprefab.instantiate()
+				add_child(placeme)
 	pass
 
 func _input(event):
@@ -121,6 +128,18 @@ func _input(event):
 				currtower=null
 				placeme.queue_free()
 				placeme=null
+			5: 
+				if(Globalvars.pp < 300):
+					#logic saying youre poor and cant afford this 
+					return 
+				Globalvars.pp -= 300
+				var thisham = aoedamageprefab.instantiate()
+				thisham.position = get_viewport().get_mouse_position()
+				totowerholder.add_child(thisham)
+			#	print("PLACED BOMBERMAN")
+				currtower=null
+				placeme.queue_free()
+				placeme=null
 
 func _on_hammergirlpanel_pressed():
 	currtower = 1
@@ -157,4 +176,9 @@ func _on_longarm_lady_panel_pressed():
 
 func _on_slowing_cactus_pressed():
 	currtower =4 
+	pass # Replace with function body.
+
+
+func _on_aoedamagecactus_pressed():
+	currtower=5
 	pass # Replace with function body.

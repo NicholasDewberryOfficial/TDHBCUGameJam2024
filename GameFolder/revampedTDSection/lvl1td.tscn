@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://2crcixuke4eg"]
+[gd_scene load_steps=28 format=3 uid="uid://2crcixuke4eg"]
 
 [ext_resource type="Texture2D" uid="uid://7ovcgq4il4ma" path="res://Assets/kenney_tower-defense-top-down/Tilesheet/towerDefense_tilesheet.png" id="1_pkvm2"]
 [ext_resource type="Script" path="res://revampedTDSection/lvl1mobspawner.gd" id="2_0xv6w"]
@@ -15,9 +15,11 @@
 [ext_resource type="Theme" uid="uid://dhdo2jxun7o24" path="res://mainUItheme.tres" id="7_gbfl5"]
 [ext_resource type="PackedScene" uid="uid://cb1u6bnhv8a7w" path="res://topleftminigames/LeftSideTypingSTuff/leftsidetyping.tscn" id="9_s4qsx"]
 [ext_resource type="PackedScene" uid="uid://bfwmdg31a3jfp" path="res://revampedTDSection/towers/vinecactus/placevineguy.tscn" id="11_eu6la"]
+[ext_resource type="PackedScene" uid="uid://dh2ypce547e5q" path="res://revampedTDSection/towers/AOEdamcactus/aoedamcactus.tscn" id="11_m3hx4"]
 [ext_resource type="PackedScene" uid="uid://bnkyoc5c8glxv" path="res://revampedTDSection/towers/LongarmLady/placeLongarmLady.tscn" id="12_5dcju"]
 [ext_resource type="PackedScene" uid="uid://cvpbpnyjv725n" path="res://revampedTDSection/towers/vinecactus/vinecactus.tscn" id="12_gk4lm"]
 [ext_resource type="Texture2D" uid="uid://bji6u8gle6hks" path="res://Assets/Towers/Vine Cactus Idle.png" id="14_4kc0r"]
+[ext_resource type="PackedScene" uid="uid://7qqm8tvyr5um" path="res://revampedTDSection/towers/AOEdamcactus/placeaoecactus.tscn" id="14_ahcxi"]
 [ext_resource type="Script" path="res://revampedTDSection/currenttowerupgrades.gd" id="14_ckdg3"]
 [ext_resource type="Texture2D" uid="uid://ck6dw1e0tdc7b" path="res://Assets/Towers/Longarm Cactus Idle.png" id="14_tnwrq"]
 [ext_resource type="Script" path="res://revampedTDSection/pausebutton.gd" id="20_lear6"]
@@ -146,8 +148,10 @@ theme = ExtResource("7_gbfl5")
 script = ExtResource("4_lnnio")
 transpbomberguy = ExtResource("5_l1pkv")
 bomberprefab = ExtResource("6_owe0m")
+aoedamageprefab = ExtResource("11_m3hx4")
 transplongarmlady = ExtResource("12_5dcju")
 transpvinetowerprefab = ExtResource("11_eu6la")
+transpaoecactusprefab = ExtResource("14_ahcxi")
 vinetowerprefab = ExtResource("12_gk4lm")
 totowerholder = NodePath("../../../towerholder")
 tmap = NodePath("../../../tmap")
@@ -172,6 +176,7 @@ text = "PP: "
 fit_content = true
 
 [node name="page1holder" type="Control" parent="tdstuff/gameui/uipanel/towerpart"]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -237,7 +242,6 @@ theme_override_font_sizes/normal_font_size = 50
 text = "Costs: 300  pp"
 
 [node name="page2holdertest" type="Control" parent="tdstuff/gameui/uipanel/towerpart"]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -256,6 +260,27 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="slowingcactusText" type="RichTextLabel" parent="tdstuff/gameui/uipanel/towerpart/page2holdertest/slowingCactus"]
+layout_mode = 0
+offset_top = 232.0
+offset_right = 578.0
+offset_bottom = 356.0
+theme = ExtResource("7_gbfl5")
+theme_override_font_sizes/normal_font_size = 50
+text = "Costs: 300  pp"
+
+[node name="aoedamagecactus" type="Button" parent="tdstuff/gameui/uipanel/towerpart/page2holdertest"]
+layout_mode = 0
+offset_left = -3.99994
+offset_top = 240.0
+offset_right = 574.0
+offset_bottom = 469.0
+scale = Vector2(0.45, 0.45)
+theme = ExtResource("7_gbfl5")
+icon = ExtResource("14_4kc0r")
+icon_alignment = 1
+expand_icon = true
+
+[node name="slowingcactusText" type="RichTextLabel" parent="tdstuff/gameui/uipanel/towerpart/page2holdertest/aoedamagecactus"]
 layout_mode = 0
 offset_top = 232.0
 offset_right = 578.0
@@ -394,6 +419,7 @@ idealtextlabel = ExtResource("23_0cxp7")
 
 [node name="Panel" type="Panel" parent="tasklisttracker"]
 anchors_preset = -1
+anchor_left = -0.0125
 anchor_right = -0.0125
 anchor_bottom = 0.0824074
 offset_left = 16.0
@@ -404,6 +430,7 @@ theme = ExtResource("7_gbfl5")
 metadata/_edit_use_anchors_ = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="tasklisttracker/Panel"]
+layout_mode = 0
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 192.0
@@ -422,6 +449,7 @@ theme = ExtResource("7_gbfl5")
 [connection signal="pressed" from="tdstuff/gameui/uipanel/towerpart/page1holder/bomberpanel" to="tdstuff/gameui/uipanel/towerpart" method="_on_bomberpanel_pressed"]
 [connection signal="pressed" from="tdstuff/gameui/uipanel/towerpart/page1holder/longarmLadyPanel" to="tdstuff/gameui/uipanel/towerpart" method="_on_longarm_lady_panel_pressed"]
 [connection signal="pressed" from="tdstuff/gameui/uipanel/towerpart/page2holdertest/slowingCactus" to="tdstuff/gameui/uipanel/towerpart" method="_on_slowing_cactus_pressed"]
+[connection signal="pressed" from="tdstuff/gameui/uipanel/towerpart/page2holdertest/aoedamagecactus" to="tdstuff/gameui/uipanel/towerpart" method="_on_aoedamagecactus_pressed"]
 [connection signal="item_selected" from="tdstuff/gameui/uipanel/towerpart/menubutton" to="tdstuff/gameui/uipanel/towerpart" method="_on_menubutton_item_selected"]
 [connection signal="upgradecompleted" from="tdstuff/gameui/uipanel/towerpart/currenttowerupgrades" to="tasklisttracker" method="_on_currenttowerupgrades_upgradecompleted"]
 [connection signal="pressed" from="tdstuff/gameui/uipanel/towerpart/currenttowerupgrades/currenttowerbgpanel/upgrade1" to="tdstuff/gameui/uipanel/towerpart/currenttowerupgrades" method="_on_upgrade_1_pressed"]

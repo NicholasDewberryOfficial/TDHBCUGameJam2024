@@ -54,7 +54,8 @@ func _process(_delta):
 			3:
 				timestogo = 60
 			4:
-				get_tree().change_scene_to_file("res://3dsection/3dgridworld.tscn")
+				#get_tree().change_scene_to_file("res://3dsection/3dgridworld.tscn")
+				pass
 			_:
 				timestogo = 100
 		mytimer.autostart = false

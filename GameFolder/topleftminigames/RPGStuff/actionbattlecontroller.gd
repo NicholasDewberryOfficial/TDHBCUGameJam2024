@@ -1,7 +1,8 @@
 extends Node
-
+#look up how to normalize a set of values 
 var pchealth: int  = 10
-var pcdefensemod: float = 1
+var pcdefensemodstat: float = .03
+var pcdefensemodaction: float=1
 #0 = pc attacks. 1=pc defends 
 var state: int =0 
 #TODO, add timer function to force player to attack/defend 
@@ -32,6 +33,7 @@ func _physics_process(delta):
 		pass
 	if(Input.is_action_just_pressed("w")):
 		healfunction()
+		
 	playerhptext.text = str("Player Health: " + str(snapped(pchealth,1)))
 	enemyhptext.text = str("Enemy Health: " + str(snapped(thisemyhealth,1)))
 	if(thisemyhealth <=0):
@@ -56,7 +58,9 @@ func runplayerdamage():
 	
 	
 func runenemydamage(): 
-	pchealth -= curremy.damage * pcdefensemod 
+	pcdefensemodaction = 100 - 1/movingball.position.distance_to(goalball.position)
+	#print(pcdefensemodaction)
+	pchealth -= curremy.damage * pcdefensemodstat * pcdefensemodaction
 	swapstate()
 	pass
 
@@ -72,7 +76,6 @@ func swapstate():
 func deademy(): 
 	#give score 
 	Globalvars.pp += curremy.points
-	
 	loadenemy()
 	
 func loadenemy():

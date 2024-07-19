@@ -6,6 +6,8 @@ extends Node
 @export var idealtextlabel: PackedScene
 @export var activatedmissions: = []
 
+var nodesinmissiontrackergroup: Array[Node] = []
+
 var currphasetracker:int = 0
 var currcomboreference: int =0
 var currtoweramt: int=0
@@ -14,12 +16,14 @@ var amtofupgrades: int=0
 
 func _ready():
 	assignmissions()
-	
+	nodesinmissiontrackergroup = get_tree().get_nodes_in_group("missiontracker")
+
 func assignmissions():
 	if(missionarray[0] == 1):
 		#begin mission logic 
 		myvboxcontainer.add_child((addtextwiththistext("Reach phase 4")))
 		activatedmissions.push_front(0)
+		
 		#myvboxcontainer.add_child()
 	if(missionarray[1] == 1):
 		myvboxcontainer.add_child((addtextwiththistext("Reach Level 5 on the left side combo counter!")))
@@ -30,10 +34,11 @@ func assignmissions():
 	if(missionarray[3] == 1):
 		myvboxcontainer.add_child((addtextwiththistext("Make at least three upgrades!")))
 		activatedmissions.push_front(3)
-		
+	
 func addtextwiththistext(writethis) -> RichTextLabel:
 	var returnval = idealtextlabel.instantiate()
 	returnval.text = writethis
+	returnval.name = writethis
 	return returnval
 	
 func _process(delta): 
@@ -47,9 +52,8 @@ func _on_mobholder_reachedthiswave(currentwave):
 		missionarray[0]==2
 		print("mission1 accomplished")
 		activatedmissions.erase(0)
-	
-	
-		
+		var thistextlabel: RichTextLabel = getlabelwithname("Reach phase 4")
+		thistextlabel.text = "[b] Phase 4 reached! [/b]"
 	pass # Replace with function body.
 
 
@@ -60,3 +64,10 @@ func _on_currenttowerupgrades_upgradecompleted():
 		missionarray[3] = 2 
 		activatedmissions.erase(3)
 	pass # Replace with function body.
+	
+func getlabelwithname(name) -> Node:
+	#for nodesinmissiontrackergroup
+	#returns -1. needs to be fixed.
+	var pos: int = nodesinmissiontrackergroup.find(name)
+	print("Position is: " + str(pos))
+	return nodesinmissiontrackergroup[pos] 
