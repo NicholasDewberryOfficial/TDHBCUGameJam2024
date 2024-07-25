@@ -9,6 +9,8 @@ extends Node
 @export var nextwavebuttonbutton: Button
 
 var nextexecuting: bool = false
+
+signal reachedthiswave(currentwave) 
 #It's gonna have 3 phases. 
 #Phase 1 = 1 second gap 
 #Phase 2 = .3 second gap
@@ -41,6 +43,7 @@ func _process(_delta):
 	if(timestogo <=0 and !midstagetimer):
 		#timestogo = 20
 		phase += 1 
+		reachedthiswave.emit(phase)
 		match (phase):
 			0:
 				pass
@@ -51,7 +54,8 @@ func _process(_delta):
 			3:
 				timestogo = 60
 			4:
-				get_tree().change_scene_to_file("res://3dsection/3dgridworld.tscn")
+				#get_tree().change_scene_to_file("res://3dsection/3dgridworld.tscn")
+				pass
 			_:
 				timestogo = 100
 		mytimer.autostart = false

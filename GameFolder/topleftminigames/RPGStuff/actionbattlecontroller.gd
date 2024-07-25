@@ -1,7 +1,8 @@
 extends Node
-
+#look up how to normalize a set of values 
 var pchealth: int  = 10
-var pcdefensemod: float = 1
+var pcdefensemodstat: float = .03
+var pcdefensemodaction: float=1
 #0 = pc attacks. 1=pc defends 
 var state: int =0 
 #TODO, add timer function to force player to attack/defend 
@@ -11,7 +12,7 @@ var state: int =0
 #change a pointer to enemy health, not the hunderlying hp resource 
 #seet when we load in enemy 
 var thisemyhealth = 10 
-@export var basedamage: float = .07
+@export var basedamage: float = .03
 @export var playerhptext: RichTextLabel 
 @export var enemyhptext: RichTextLabel 
 @export var enemytexture: TextureRect
@@ -21,6 +22,7 @@ var thisemyhealth = 10
 @export var goaltexture: Sprite2D
 @export var atktexture: Texture2D
 @export var dfdtexture: Texture2D
+var emekilledinrpg: int =0
 
 func ready():
 	loadenemy()
@@ -29,6 +31,9 @@ func _physics_process(delta):
 	if(Input.is_action_just_pressed("Q")):
 		attackfunction()
 		pass
+	if(Input.is_action_just_pressed("w")):
+		healfunction()
+		
 	playerhptext.text = str("Player Health: " + str(snapped(pchealth,1)))
 	enemyhptext.text = str("Enemy Health: " + str(snapped(thisemyhealth,1)))
 	if(thisemyhealth <=0):
@@ -53,7 +58,9 @@ func runplayerdamage():
 	
 	
 func runenemydamage(): 
-	pchealth -= curremy.damage * pcdefensemod 
+	pcdefensemodaction = 100 - 1/movingball.position.distance_to(goalball.position)
+	#print(pcdefensemodaction)
+	pchealth -= curremy.damage * pcdefensemodstat * pcdefensemodaction
 	swapstate()
 	pass
 
@@ -69,10 +76,10 @@ func swapstate():
 func deademy(): 
 	#give score 
 	Globalvars.pp += curremy.points
-	$bgpanel/EnemyPanel/emydmgpopup.play("EmyChange")
 	loadenemy()
 	
 func loadenemy():
+	$bgpanel/EnemyPanel/emydmgpopup.play("EmyChange")
 	var rng =  randi_range(0,3)
 	match rng:
 		1:
@@ -83,3 +90,11 @@ func loadenemy():
 			curremy = chomperres
 	enemytexture.texture = curremy.picture
 	thisemyhealth = curremy.health
+
+func healfunction():
+	if(Globalvars.pp < 200):
+		pass
+		#UR TOO POOR
+	else:
+		Globalvars.pp -= 200 
+		pchealth += 10

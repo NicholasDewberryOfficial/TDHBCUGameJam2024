@@ -21,6 +21,8 @@ extends Node
 #values: 1 = unlocked. 0 means locked. 
 @export var unlockedTowers = [1,1,1]
 
+
+
 func _ready():
 	pass
 	

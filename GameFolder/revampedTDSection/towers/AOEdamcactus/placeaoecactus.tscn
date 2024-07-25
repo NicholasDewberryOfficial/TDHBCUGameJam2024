@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://7qqm8tvyr5um"]
+
+[ext_resource type="Script" path="res://revampedTDSection/towers/hammergirl/placetowergirl.gd" id="1_8kvg0"]
+[ext_resource type="Texture2D" uid="uid://ldo4v8ohqcxe" path="res://3dsection/Saloon/Saloon_BaseColor.png" id="2_ebe3i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gsg4h"]
+size = Vector2(200, 200)
+
+[sub_resource type="Gradient" id="Gradient_ayhtm"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1slwg"]
+gradient = SubResource("Gradient_ayhtm")
+width = 200
+height = 200
+
+[node name="placetowergirl" type="Node2D"]
+modulate = Color(1, 1, 1, 0.345098)
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_8kvg0")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 130
+collision_mask = 130
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_gsg4h")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("2_ebe3i")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Area2D"]
+texture = SubResource("GradientTexture2D_1slwg")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]

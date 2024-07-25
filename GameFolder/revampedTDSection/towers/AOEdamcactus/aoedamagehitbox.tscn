@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://ctg7rohgwcxeh"]
+
+[ext_resource type="Script" path="res://revampedTDSection/towers/hammergirl/hammerdmghitbox.gd" id="1_60315"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xkd4b"]
+radius = 112.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ni8vx"]
+
+[sub_resource type="Gradient" id="Gradient_b5omo"]
+offsets = PackedFloat32Array(0.013986, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_34jlh"]
+gradient = SubResource("Gradient_b5omo")
+width = 1
+
+[sub_resource type="Gradient" id="Gradient_kpxsp"]
+colors = PackedColorArray(1, 1, 1, 1, 0.876519, 0.711276, 0.922903, 1)
+
+[node name="hammerdmghitbox" type="Area2D"]
+script = ExtResource("1_60315")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xkd4b")
+debug_color = Color(0.930156, 0.202021, 0.255665, 0.42)
+
+[node name="dmgtimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_ni8vx")
+emitting = false
+amount = 300
+one_shot = true
+preprocess = 1.0
+local_coords = true
+texture = SubResource("GradientTexture1D_34jlh")
+emission_shape = 1
+emission_sphere_radius = 7.28
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 101.51
+initial_velocity_max = 101.51
+linear_accel_max = 0.9
+radial_accel_min = -15.56
+radial_accel_max = 22.82
+scale_amount_min = 3.0
+scale_amount_max = 3.0
+color_ramp = SubResource("Gradient_kpxsp")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

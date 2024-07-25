@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b1bqxrdvle0ci"]
+[gd_scene load_steps=27 format=3 uid="uid://b1bqxrdvle0ci"]
 
 [ext_resource type="Script" path="res://topleftminigames/RPGStuff/actionbattlecontroller.gd" id="1_5ho28"]
 [ext_resource type="Resource" uid="uid://b1v2ordluly2n" path="res://topleftminigames/RPGStuff/eresources/Chomper.tres" id="2_5rc1y"]
@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://b2hpe4eih0xqf" path="res://topleftminigames/RPGStuff/eresources/rollerbot.tres" id="3_nufcx"]
 [ext_resource type="Resource" uid="uid://chadwhabpmhr0" path="res://topleftminigames/RPGStuff/eresources/propeller.tres" id="4_y73bv"]
 [ext_resource type="Texture2D" uid="uid://dq48n2018jonn" path="res://topleftminigames/RPGStuff/defendiconrpg.png" id="6_7aw11"]
+[ext_resource type="Texture2D" uid="uid://484vs5nlws8k" path="res://Assets/Roller.png" id="7_7a3ep"]
 [ext_resource type="Texture2D" uid="uid://c8nvhnwq2b8to" path="res://topleftminigames/RPGStuff/attackiconrpg.png" id="9_fyf2a"]
 [ext_resource type="Script" path="res://topleftminigames/RPGStuff/ballpath.gd" id="9_x6eqr"]
 [ext_resource type="Script" path="res://topleftminigames/RPGStuff/combologic.gd" id="10_sdful"]
@@ -285,6 +286,7 @@ layout_mode = 0
 offset_top = 24.0
 offset_right = 192.0
 offset_bottom = 312.0
+texture = ExtResource("7_7a3ep")
 expand_mode = 4
 
 [node name="rpgemydeath" type="AudioStreamPlayer2D" parent="bgpanel/EnemyPanel"]
@@ -348,6 +350,7 @@ text = "Player HP: "
 fit_content = true
 
 [node name="PlayerPP" type="RichTextLabel" parent="bgpanel/PlayerPanel"]
+visible = false
 layout_mode = 0
 offset_top = 23.0
 offset_right = 191.0
@@ -424,11 +427,23 @@ combobar = NodePath(".")
 
 [node name="comboamt" type="RichTextLabel" parent="bgpanel/PlayerPanel/combobar"]
 layout_mode = 0
-offset_left = 83.0
-offset_top = -1.0
-offset_right = 103.0
-offset_bottom = 22.0
+offset_left = 63.0
+offset_top = -3.0
+offset_right = 127.0
+offset_bottom = 29.0
 text = "1x"
+
+[node name="Panel2" type="Panel" parent="bgpanel/PlayerPanel"]
+layout_mode = 0
+offset_top = 336.0
+offset_right = 198.0
+offset_bottom = 381.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="bgpanel/PlayerPanel/Panel2"]
+layout_mode = 0
+offset_right = 192.0
+offset_bottom = 40.0
+text = "Q=Attack. W=Heal"
 
 [node name="stresstimer" type="Timer" parent="."]
 

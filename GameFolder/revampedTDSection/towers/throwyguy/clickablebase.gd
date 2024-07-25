@@ -5,7 +5,8 @@ extends Area2D
 #we pass a reference to THE NODE2D ITSELF
 #then we modify the variable, so we don't go to the node directly, instead we have an intermedate.
 @export var mytowerattackvariables = Node2D
-# 1= ham girl, 2=throwguy 3 = longarm
+# 1= ham girl, 2=throwguy 3 = longarm #4 = slowing cactus =aoedamagecactus
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

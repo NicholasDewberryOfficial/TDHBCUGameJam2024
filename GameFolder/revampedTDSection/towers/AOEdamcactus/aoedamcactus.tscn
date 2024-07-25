@@ -1,0 +1,106 @@
+[gd_scene load_steps=13 format=3 uid="uid://dh2ypce547e5q"]
+
+[ext_resource type="Texture2D" uid="uid://ce4w3w10hhvxd" path="res://Assets/Towers/Hammer Cactus Idle.png" id="1_arwcs"]
+[ext_resource type="Texture2D" uid="uid://chp8pv6ljm3x8" path="res://Assets/Towers/Hammer Cactus Slam.png" id="2_itnmw"]
+[ext_resource type="Texture2D" uid="uid://bkk70peuabmjh" path="res://Assets/Towers/Hammer Cactus Wind-Up.png" id="3_ose3y"]
+[ext_resource type="Script" path="res://revampedTDSection/towers/throwyguy/clickablebase.gd" id="4_6nu4k"]
+[ext_resource type="Script" path="res://revampedTDSection/towers/AOEdamcactus/aoedamcactusattack.gd" id="5_shcyv"]
+[ext_resource type="PackedScene" uid="uid://ctg7rohgwcxeh" path="res://revampedTDSection/towers/AOEdamcactus/aoedamagehitbox.tscn" id="6_asef0"]
+
+[sub_resource type="Animation" id="Animation_n34m8"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("towersprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_arwcs")]
+}
+
+[sub_resource type="Animation" id="Animation_d7bsc"]
+resource_name = "slam"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("towersprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_itnmw")]
+}
+
+[sub_resource type="Animation" id="Animation_4ig0k"]
+resource_name = "windup"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("towersprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_ose3y")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4otht"]
+_data = {
+"idle": SubResource("Animation_n34m8"),
+"slam": SubResource("Animation_d7bsc"),
+"windup": SubResource("Animation_4ig0k")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b7edo"]
+size = Vector2(85, 76)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1nouk"]
+radius = 138.0
+
+[node name="aoedamcactus" type="Node2D"]
+top_level = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4otht")
+}
+
+[node name="towersprite" type="Sprite2D" parent="."]
+z_index = 1
+rotation = 1.57079
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_arwcs")
+flip_v = true
+
+[node name="aoedamcactusbase" type="Area2D" parent="." node_paths=PackedStringArray("mytowerattackvariables")]
+script = ExtResource("4_6nu4k")
+type = 5
+mytowerattackvariables = NodePath("../towerattack")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="aoedamcactusbase"]
+shape = SubResource("RectangleShape2D_b7edo")
+
+[node name="towerattack" type="Area2D" parent="." node_paths=PackedStringArray("atktimer")]
+script = ExtResource("5_shcyv")
+atktimer = NodePath("../Timer")
+dmgdealt = 1.0
+dmghitbox = ExtResource("6_asef0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="towerattack"]
+shape = SubResource("CircleShape2D_1nouk")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="input_event" from="aoedamcactusbase" to="aoedamcactusbase" method="_on_input_event"]
+[connection signal="area_entered" from="towerattack" to="towerattack" method="_on_area_entered"]
+[connection signal="area_exited" from="towerattack" to="towerattack" method="_on_area_exited"]

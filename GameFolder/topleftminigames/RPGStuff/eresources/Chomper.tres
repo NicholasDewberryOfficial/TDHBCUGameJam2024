@@ -8,6 +8,6 @@ script = ExtResource("1_fq88w")
 name = "chomper"
 picture = ExtResource("1_1s4ck")
 damage = 4
-health = 30
+health = 14
 points = 30
 defences = Array[int]([2, 2, 1])

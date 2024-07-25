@@ -12,6 +12,8 @@ var cost2: int
 #reference to the tower attaack script. 
 #we call a function called (upgrade1) or (upgrade2) that applies the upgrades. 
 var currentattackscript: Node2D
+
+signal upgradecompleted
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -61,7 +63,7 @@ func _on_upgrade_1_pressed():
 		2:
 			currentattackscript.upgrade1=true
 			currentattackscript.dmgdealt = 6
-		
+	upgradecompleted.emit()	
 	pass
 	pass # Replace with function body.
 
@@ -76,3 +78,4 @@ func _on_upgrade_2_pressed():
 		2:
 			currentattackscript.upgrade2=true
 			currentattackscript.atktime = .5
+	upgradecompleted.emit()
