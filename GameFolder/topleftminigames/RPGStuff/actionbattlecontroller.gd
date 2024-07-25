@@ -24,6 +24,8 @@ var thisemyhealth = 10
 @export var dfdtexture: Texture2D
 var emekilledinrpg: int =0
 
+signal combocounterreached(comboamt)
+
 func ready():
 	loadenemy()
 
