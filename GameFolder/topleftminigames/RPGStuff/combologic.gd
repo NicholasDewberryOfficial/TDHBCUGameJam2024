@@ -7,6 +7,9 @@ extends ProgressBar
 @export var combobar : ProgressBar
 @export var combocountnum: int
 
+#directly pass the combo value to the upper script, so it can be given to the task list
+#goes this node -> actionrpg battle -> task list through direct reference
+@export var mybase: Node
 func _ready():
 	pass
 
@@ -15,6 +18,7 @@ func _process(delta):
 		pressedbool =! pressedbool
 	combocountnumber.text = str(combocountnum)
 	checkbutton.button_pressed = pressedbool
+	mybase.parentcombocountershouldbequal = combocountnum
 	
 func runcombologic():
 	if(pressedbool):

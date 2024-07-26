@@ -35,7 +35,8 @@ var tdata: TileSet
 @export var page1holder: Control
 @export var page2holder: Control
 
-
+var currtoweramt: int =0 
+@export var thistasklist: Node
 
 func _ready():
 	if(Globalvars.unlockedTowers[0] ==0):
@@ -75,6 +76,8 @@ func _process(_delta):
 			5: 
 				placeme = transpaoecactusprefab.instantiate()
 				add_child(placeme)
+	if(currtoweramt == 5):
+		thistasklist.checkcurrtowermission()
 	pass
 
 func _input(event):
@@ -140,6 +143,7 @@ func _input(event):
 				currtower=null
 				placeme.queue_free()
 				placeme=null
+		currtoweramt = currtoweramt+1
 
 func _on_hammergirlpanel_pressed():
 	currtower = 1

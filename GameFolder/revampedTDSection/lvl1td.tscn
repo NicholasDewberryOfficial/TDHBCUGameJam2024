@@ -1,11 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://2crcixuke4eg"]
+[gd_scene load_steps=27 format=3 uid="uid://2crcixuke4eg"]
 
 [ext_resource type="Texture2D" uid="uid://7ovcgq4il4ma" path="res://Assets/kenney_tower-defense-top-down/Tilesheet/towerDefense_tilesheet.png" id="1_pkvm2"]
 [ext_resource type="Script" path="res://revampedTDSection/lvl1mobspawner.gd" id="2_0xv6w"]
 [ext_resource type="Texture2D" uid="uid://crc3m42g6efga" path="res://Assets/CC_Level_1_Background.png" id="2_usdoy"]
 [ext_resource type="Texture2D" uid="uid://ce4w3w10hhvxd" path="res://Assets/Towers/Hammer Cactus Idle.png" id="4_d0uiv"]
 [ext_resource type="Script" path="res://revampedTDSection/towerplacement.gd" id="4_lnnio"]
-[ext_resource type="PackedScene" uid="uid://gtgyi7vell0" path="res://topleftminigames/RPGStuff/RPGScene.tscn" id="4_nf1a1"]
 [ext_resource type="PackedScene" uid="uid://bl81amyfbvxmd" path="res://revampedTDSection/towers/throwyguy/placedownThrowingBomber.tscn" id="5_l1pkv"]
 [ext_resource type="AudioStream" uid="uid://c0lhy886wshuo" path="res://Assets/music/laser.mp3" id="6_jtm06"]
 [ext_resource type="Texture2D" uid="uid://cbsw78fmf262h" path="res://Assets/Towers/Bomber Cactus Idle.png" id="6_m1lt4"]
@@ -13,7 +12,6 @@
 [ext_resource type="AudioStream" uid="uid://fh1ry7t52dro" path="res://Assets/music/rpgtheme.mp3" id="7_83poq"]
 [ext_resource type="PackedScene" uid="uid://b68e52covf0" path="res://revampedTDSection/mobs/baseenemy.tscn" id="7_d6lsh"]
 [ext_resource type="Theme" uid="uid://dhdo2jxun7o24" path="res://mainUItheme.tres" id="7_gbfl5"]
-[ext_resource type="PackedScene" uid="uid://cb1u6bnhv8a7w" path="res://topleftminigames/LeftSideTypingSTuff/leftsidetyping.tscn" id="9_s4qsx"]
 [ext_resource type="PackedScene" uid="uid://bfwmdg31a3jfp" path="res://revampedTDSection/towers/vinecactus/placevineguy.tscn" id="11_eu6la"]
 [ext_resource type="PackedScene" uid="uid://dh2ypce547e5q" path="res://revampedTDSection/towers/AOEdamcactus/aoedamcactus.tscn" id="11_m3hx4"]
 [ext_resource type="PackedScene" uid="uid://bnkyoc5c8glxv" path="res://revampedTDSection/towers/LongarmLady/placeLongarmLady.tscn" id="12_5dcju"]
@@ -25,6 +23,7 @@
 [ext_resource type="Script" path="res://revampedTDSection/pausebutton.gd" id="20_lear6"]
 [ext_resource type="Script" path="res://revampedTDSection/tasklisttracker.gd" id="22_y4rvr"]
 [ext_resource type="PackedScene" uid="uid://d3kg1trfmogmc" path="res://revampedTDSection/missiontextlabel.tscn" id="23_0cxp7"]
+[ext_resource type="PackedScene" uid="uid://b1bqxrdvle0ci" path="res://topleftminigames/RPGStuff/actionrpgbattle.tscn" id="25_uy312"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iri12"]
 resource_name = "updatedatlas"
@@ -140,7 +139,7 @@ offset_right = 149.0
 offset_bottom = 1088.0
 theme = ExtResource("7_gbfl5")
 
-[node name="towerpart" type="Control" parent="tdstuff/gameui/uipanel" node_paths=PackedStringArray("totowerholder", "tmap", "pphpholder", "hammergirl1button", "bomberguybutton", "longarmLadybutton", "slowingcactusbutton", "page1holder", "page2holder")]
+[node name="towerpart" type="Control" parent="tdstuff/gameui/uipanel" node_paths=PackedStringArray("totowerholder", "tmap", "pphpholder", "hammergirl1button", "bomberguybutton", "longarmLadybutton", "slowingcactusbutton", "page1holder", "page2holder", "thistasklist")]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -162,6 +161,7 @@ longarmLadybutton = NodePath("page1holder/longarmLadyPanel")
 slowingcactusbutton = NodePath("page2holdertest/slowingCactus")
 page1holder = NodePath("page1holder")
 page2holder = NodePath("page2holdertest")
+thistasklist = NodePath("../../../../tasklisttracker")
 
 [node name="ppandhptext" type="RichTextLabel" parent="tdstuff/gameui/uipanel/towerpart"]
 layout_mode = 0
@@ -374,11 +374,6 @@ theme = ExtResource("7_gbfl5")
 text = "NEXT WAVE"
 metadata/_edit_use_anchors_ = true
 
-[node name="RPGBattle" parent="." instance=ExtResource("4_nf1a1")]
-
-[node name="Leftsidetyping" parent="." instance=ExtResource("9_s4qsx")]
-visible = false
-
 [node name="pausebutton" type="Button" parent="." node_paths=PackedStringArray("children")]
 process_mode = 3
 visible = false
@@ -411,7 +406,7 @@ theme_override_font_sizes/normal_font_size = 80
 theme_override_font_sizes/bold_font_size = 6
 text = "PAUSED"
 
-[node name="tasklisttracker" type="Node" parent="." node_paths=PackedStringArray("myvboxcontainer")]
+[node name="tasklisttracker" type="Node" parent="." node_paths=PackedStringArray("myvboxcontainer") groups=["tasklistnode"]]
 script = ExtResource("22_y4rvr")
 missionarray = [1, 1, 1, 0, 0, 0, 0]
 myvboxcontainer = NodePath("Panel/ScrollContainer/VBoxContainer")
@@ -420,6 +415,7 @@ idealtextlabel = ExtResource("23_0cxp7")
 [node name="Panel" type="Panel" parent="tasklisttracker"]
 anchors_preset = -1
 anchor_left = -0.0125
+anchor_top = 0.0518519
 anchor_right = -0.0125
 anchor_bottom = 0.0824074
 offset_left = 16.0
@@ -442,6 +438,9 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("7_gbfl5")
+
+[node name="Actionrpgbattle" parent="." node_paths=PackedStringArray("tasklistnode") instance=ExtResource("25_uy312")]
+tasklistnode = NodePath("../tasklisttracker")
 
 [connection signal="reachedthiswave" from="tdstuff/mobholder" to="tasklisttracker" method="_on_mobholder_reachedthiswave"]
 [connection signal="timeout" from="tdstuff/mobholder/mobspawnmobtimer" to="tdstuff/mobholder" method="_on_mobspawnmobtimer_timeout"]

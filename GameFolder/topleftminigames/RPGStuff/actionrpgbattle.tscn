@@ -408,7 +408,7 @@ position = Vector2(0, 278)
 position = Vector2(96.75, 3)
 shape = SubResource("RectangleShape2D_0pfux")
 
-[node name="combobar" type="ProgressBar" parent="bgpanel/PlayerPanel" node_paths=PackedStringArray("movingfollownode", "checkbutton", "combocountnumber", "combobar")]
+[node name="combobar" type="ProgressBar" parent="bgpanel/PlayerPanel" node_paths=PackedStringArray("movingfollownode", "checkbutton", "combocountnumber", "combobar", "mybase")]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 51.0
@@ -424,6 +424,7 @@ movingfollownode = NodePath("../Panel/ballpath/PathFollow2D")
 checkbutton = NodePath("../Panel/CheckButton")
 combocountnumber = NodePath("comboamt")
 combobar = NodePath(".")
+mybase = NodePath("../../..")
 
 [node name="comboamt" type="RichTextLabel" parent="bgpanel/PlayerPanel/combobar"]
 layout_mode = 0
@@ -434,6 +435,7 @@ offset_bottom = 29.0
 text = "1x"
 
 [node name="Panel2" type="Panel" parent="bgpanel/PlayerPanel"]
+visible = false
 layout_mode = 0
 offset_top = 336.0
 offset_right = 198.0

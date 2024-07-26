@@ -10,7 +10,6 @@ var nodesinmissiontrackergroup: Array[Node] = []
 
 var currphasetracker:int = 0
 var currcomboreference: int =0
-var currtoweramt: int=0
 var currupgradeamt: int=0
 var amtofupgrades: int=0
 
@@ -26,14 +25,17 @@ func assignmissions():
 		
 		#myvboxcontainer.add_child()
 	if(missionarray[1] == 1):
-		myvboxcontainer.add_child((addtextwiththistext("Reach Level 5 on the left side combo counter!")))
+		myvboxcontainer.add_child((addtextwiththistext("Reach Level 5 on the left side combo counter")))
 		activatedmissions.push_front(1)
 	if(missionarray[2] == 1):
-		myvboxcontainer.add_child((addtextwiththistext("Place at least three towers!")))
+		myvboxcontainer.add_child((addtextwiththistext("Place at least five towers!")))
 		activatedmissions.push_front(2)
 	if(missionarray[3] == 1):
 		myvboxcontainer.add_child((addtextwiththistext("Make at least three upgrades!")))
 		activatedmissions.push_front(3)
+	if(missionarray[4] == 1):
+		myvboxcontainer.add_child((addtextwiththistext("Destroy 10 RPG enemies!")))
+		activatedmissions.push_front(4)
 	
 func addtextwiththistext(writethis) -> RichTextLabel:
 	var returnval = idealtextlabel.instantiate()
@@ -42,6 +44,8 @@ func addtextwiththistext(writethis) -> RichTextLabel:
 	return returnval
 	
 func _process(delta): 
+	if(missionarray[1] == 1):
+		runmission1checker()
 	if(activatedmissions.is_empty()):
 		#begin scene transition 
 		#play animation then swap
@@ -65,9 +69,32 @@ func _on_currenttowerupgrades_upgradecompleted():
 		activatedmissions.erase(3)
 	pass # Replace with function body.
 	
-func getlabelwithname(name) -> Node:
+func getlabelwithname(thisname) -> Node:
 	#for nodesinmissiontrackergroup
 	#returns -1. needs to be fixed.
-	var pos: int = nodesinmissiontrackergroup.find(name)
-	print("Position is: " + str(pos))
-	return nodesinmissiontrackergroup[pos] 
+	var i = 0 
+	for x in nodesinmissiontrackergroup:
+		if x.name == thisname:
+			return nodesinmissiontrackergroup[i]
+		i  = i+1
+	#var pos: int = nodesinmissiontrackergroup.find(str(thisname))
+	
+#	print("Position is: " + str(pos))
+	print("PANIC IN GETTING LABEL NAME! NOT FOUND ! " + thisname)
+	return nodesinmissiontrackergroup[-1] 
+
+func runmission1checker():
+	if(currcomboreference >= 5 and missionarray[1] == 1):
+		missionarray[1] = 2
+		activatedmissions.erase(1)
+		var thistextlabel: RichTextLabel = getlabelwithname("Reach Level 5 on the left side combo counter")
+		thistextlabel.text = "[/b] Reached level 5 Combo! [/b]"
+		pass
+			
+func checkcurrtowermission():
+	if(missionarray[2] ==1 ):
+		missionarray[2] ==2
+		activatedmissions.erase(2)
+		var thistextlabel: RichTextLabel = getlabelwithname("Place at least five towers!")
+		thistextlabel.text = "[b] Placed 5 towers! [/b]"
+		pass

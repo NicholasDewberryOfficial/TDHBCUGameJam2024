@@ -24,7 +24,11 @@ var thisemyhealth = 10
 @export var dfdtexture: Texture2D
 var emekilledinrpg: int =0
 
-signal combocounterreached(comboamt)
+@export var tasklistnode: Node
+
+
+var parentcombocountershouldbequal: int = 0
+#signal combocounterreached(comboamt)
 
 func ready():
 	loadenemy()
@@ -35,11 +39,14 @@ func _physics_process(delta):
 		pass
 	if(Input.is_action_just_pressed("w")):
 		healfunction()
+	
 		
 	playerhptext.text = str("Player Health: " + str(snapped(pchealth,1)))
 	enemyhptext.text = str("Enemy Health: " + str(snapped(thisemyhealth,1)))
 	if(thisemyhealth <=0):
 		deademy()
+	if(parentcombocountershouldbequal >= 5):
+		tasklistnode.currcomboreference = parentcombocountershouldbequal
 	pass
 
 #Refactor guide: 
