@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://2crcixuke4eg"]
+[gd_scene load_steps=25 format=3 uid="uid://2crcixuke4eg"]
 
 [ext_resource type="Texture2D" uid="uid://7ovcgq4il4ma" path="res://Assets/kenney_tower-defense-top-down/Tilesheet/towerDefense_tilesheet.png" id="1_pkvm2"]
 [ext_resource type="Script" path="res://revampedTDSection/lvl1mobspawner.gd" id="2_0xv6w"]
@@ -11,18 +11,16 @@
 [ext_resource type="PackedScene" uid="uid://cjx6bvyfvupnl" path="res://revampedTDSection/towers/throwyguy/ThrowingBomber.tscn" id="6_owe0m"]
 [ext_resource type="AudioStream" uid="uid://fh1ry7t52dro" path="res://Assets/music/rpgtheme.mp3" id="7_83poq"]
 [ext_resource type="PackedScene" uid="uid://b68e52covf0" path="res://revampedTDSection/mobs/baseenemy.tscn" id="7_d6lsh"]
-[ext_resource type="Theme" uid="uid://dhdo2jxun7o24" path="res://mainUItheme.tres" id="7_gbfl5"]
+[ext_resource type="Theme" uid="uid://byeqr3fwtjuqj" path="res://mainUItheme.tres" id="7_gbfl5"]
 [ext_resource type="PackedScene" uid="uid://bfwmdg31a3jfp" path="res://revampedTDSection/towers/vinecactus/placevineguy.tscn" id="11_eu6la"]
-[ext_resource type="PackedScene" uid="uid://dh2ypce547e5q" path="res://revampedTDSection/towers/AOEdamcactus/aoedamcactus.tscn" id="11_m3hx4"]
 [ext_resource type="PackedScene" uid="uid://bnkyoc5c8glxv" path="res://revampedTDSection/towers/LongarmLady/placeLongarmLady.tscn" id="12_5dcju"]
 [ext_resource type="PackedScene" uid="uid://cvpbpnyjv725n" path="res://revampedTDSection/towers/vinecactus/vinecactus.tscn" id="12_gk4lm"]
 [ext_resource type="Texture2D" uid="uid://bji6u8gle6hks" path="res://Assets/Towers/Vine Cactus Idle.png" id="14_4kc0r"]
-[ext_resource type="PackedScene" uid="uid://7qqm8tvyr5um" path="res://revampedTDSection/towers/AOEdamcactus/placeaoecactus.tscn" id="14_ahcxi"]
 [ext_resource type="Script" path="res://revampedTDSection/currenttowerupgrades.gd" id="14_ckdg3"]
 [ext_resource type="Texture2D" uid="uid://ck6dw1e0tdc7b" path="res://Assets/Towers/Longarm Cactus Idle.png" id="14_tnwrq"]
 [ext_resource type="Script" path="res://revampedTDSection/pausebutton.gd" id="20_lear6"]
 [ext_resource type="Script" path="res://revampedTDSection/tasklisttracker.gd" id="22_y4rvr"]
-[ext_resource type="PackedScene" uid="uid://d3kg1trfmogmc" path="res://revampedTDSection/missiontextlabel.tscn" id="23_0cxp7"]
+[ext_resource type="PackedScene" path="res://revampedTDSection/missiontextlabel.tscn" id="23_0cxp7"]
 [ext_resource type="PackedScene" uid="uid://b1bqxrdvle0ci" path="res://topleftminigames/RPGStuff/actionrpgbattle.tscn" id="25_uy312"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iri12"]
@@ -85,7 +83,7 @@ custom_data_layer_0/name = "Placable"
 custom_data_layer_0/type = 1
 sources/1 = SubResource("TileSetAtlasSource_iri12")
 
-[node name="Lvl1Td" type="Node2D"]
+[node name="Lvl1Td2" type="Node2D"]
 process_mode = 1
 metadata/_edit_vertical_guides_ = [-176.0]
 
@@ -139,7 +137,7 @@ offset_right = 149.0
 offset_bottom = 1088.0
 theme = ExtResource("7_gbfl5")
 
-[node name="towerpart" type="Control" parent="tdstuff/gameui/uipanel" node_paths=PackedStringArray("totowerholder", "tmap", "pphpholder", "hammergirl1button", "bomberguybutton", "longarmLadybutton", "slowingcactusbutton", "page1holder", "page2holder", "thistasklist")]
+[node name="towerpart" type="Control" parent="tdstuff/gameui/uipanel" node_paths=PackedStringArray("totowerholder", "tmap", "pphpholder", "hammergirl1button", "bomberguybutton", "longarmLadybutton", "slowingcactusbutton", "page1holder", "page2holder")]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -147,10 +145,8 @@ theme = ExtResource("7_gbfl5")
 script = ExtResource("4_lnnio")
 transpbomberguy = ExtResource("5_l1pkv")
 bomberprefab = ExtResource("6_owe0m")
-aoedamageprefab = ExtResource("11_m3hx4")
 transplongarmlady = ExtResource("12_5dcju")
 transpvinetowerprefab = ExtResource("11_eu6la")
-transpaoecactusprefab = ExtResource("14_ahcxi")
 vinetowerprefab = ExtResource("12_gk4lm")
 totowerholder = NodePath("../../../towerholder")
 tmap = NodePath("../../../tmap")
@@ -161,7 +157,6 @@ longarmLadybutton = NodePath("page1holder/longarmLadyPanel")
 slowingcactusbutton = NodePath("page2holdertest/slowingCactus")
 page1holder = NodePath("page1holder")
 page2holder = NodePath("page2holdertest")
-thistasklist = NodePath("../../../../tasklisttracker")
 
 [node name="ppandhptext" type="RichTextLabel" parent="tdstuff/gameui/uipanel/towerpart"]
 layout_mode = 0
@@ -374,7 +369,7 @@ theme = ExtResource("7_gbfl5")
 text = "NEXT WAVE"
 metadata/_edit_use_anchors_ = true
 
-[node name="pausebutton" type="Button" parent="." node_paths=PackedStringArray("children")]
+[node name="pausebutton" type="Button" parent="."]
 process_mode = 3
 visible = false
 offset_left = 1504.0
@@ -384,7 +379,6 @@ theme = ExtResource("7_gbfl5")
 text = "PAUSE
 "
 script = ExtResource("20_lear6")
-children = NodePath("Panel")
 
 [node name="Panel" type="Panel" parent="pausebutton"]
 process_mode = 2
@@ -439,10 +433,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("7_gbfl5")
 
-[node name="Actionrpgbattle" parent="." node_paths=PackedStringArray("tasklistnode") instance=ExtResource("25_uy312")]
-tasklistnode = NodePath("../tasklisttracker")
+[node name="Actionrpgbattle" parent="." instance=ExtResource("25_uy312")]
 
-[connection signal="reachedthiswave" from="tdstuff/mobholder" to="tasklisttracker" method="_on_mobholder_reachedthiswave"]
 [connection signal="timeout" from="tdstuff/mobholder/mobspawnmobtimer" to="tdstuff/mobholder" method="_on_mobspawnmobtimer_timeout"]
 [connection signal="pressed" from="tdstuff/gameui/uipanel/towerpart/page1holder/hammergirlpanel" to="tdstuff/gameui/uipanel/towerpart" method="_on_hammergirlpanel_pressed"]
 [connection signal="pressed" from="tdstuff/gameui/uipanel/towerpart/page1holder/bomberpanel" to="tdstuff/gameui/uipanel/towerpart" method="_on_bomberpanel_pressed"]
@@ -450,7 +442,6 @@ tasklistnode = NodePath("../tasklisttracker")
 [connection signal="pressed" from="tdstuff/gameui/uipanel/towerpart/page2holdertest/slowingCactus" to="tdstuff/gameui/uipanel/towerpart" method="_on_slowing_cactus_pressed"]
 [connection signal="pressed" from="tdstuff/gameui/uipanel/towerpart/page2holdertest/aoedamagecactus" to="tdstuff/gameui/uipanel/towerpart" method="_on_aoedamagecactus_pressed"]
 [connection signal="item_selected" from="tdstuff/gameui/uipanel/towerpart/menubutton" to="tdstuff/gameui/uipanel/towerpart" method="_on_menubutton_item_selected"]
-[connection signal="upgradecompleted" from="tdstuff/gameui/uipanel/towerpart/currenttowerupgrades" to="tasklisttracker" method="_on_currenttowerupgrades_upgradecompleted"]
 [connection signal="pressed" from="tdstuff/gameui/uipanel/towerpart/currenttowerupgrades/currenttowerbgpanel/upgrade1" to="tdstuff/gameui/uipanel/towerpart/currenttowerupgrades" method="_on_upgrade_1_pressed"]
 [connection signal="pressed" from="tdstuff/gameui/uipanel/towerpart/currenttowerupgrades/currenttowerbgpanel/upgrade2" to="tdstuff/gameui/uipanel/towerpart/currenttowerupgrades" method="_on_upgrade_2_pressed"]
 [connection signal="pressed" from="tdstuff/gameui/Panel/nextwavebutton" to="tdstuff/mobholder" method="_on_nextwavebutton_pressed"]
