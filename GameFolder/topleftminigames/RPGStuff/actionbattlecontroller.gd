@@ -25,14 +25,17 @@ var thisemyhealth = 10
 var emekilledinrpg: int =0
 
 @export var tasklistnode: Node
-
+@export var buttonreference: Button
+@export var panelreference: Panel
 
 var parentcombocountershouldbequal: int = 0
 #signal combocounterreached(comboamt)
 
 func ready():
 	loadenemy()
-
+	panelreference.process_mode = Node.PROCESS_MODE_DISABLED
+	print("should be paused. ")
+	
 func _physics_process(delta):
 	if(Input.is_action_just_pressed("Q")):
 		attackfunction()
@@ -107,3 +110,12 @@ func healfunction():
 	else:
 		Globalvars.pp -= 200 
 		pchealth += 10
+
+
+func _on_lockedb_button_pressed():
+	if(Globalvars.pp >= 500):
+		Globalvars.pp = Globalvars.pp - 500
+		buttonreference.visible = false 
+		buttonreference.disabled = true
+		panelreference.process_mode = Node.PROCESS_MODE_INHERIT
+	pass # Replace with function body.

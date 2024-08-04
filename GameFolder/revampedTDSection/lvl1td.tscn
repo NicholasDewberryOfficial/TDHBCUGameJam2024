@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://2crcixuke4eg"]
+[gd_scene load_steps=27 format=3 uid="uid://2crcixuke4eg"]
 
 [ext_resource type="Texture2D" uid="uid://7ovcgq4il4ma" path="res://Assets/kenney_tower-defense-top-down/Tilesheet/towerDefense_tilesheet.png" id="1_pkvm2"]
 [ext_resource type="Script" path="res://revampedTDSection/lvl1mobspawner.gd" id="2_0xv6w"]
@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://ck6dw1e0tdc7b" path="res://Assets/Towers/Longarm Cactus Idle.png" id="14_tnwrq"]
 [ext_resource type="Script" path="res://revampedTDSection/pausebutton.gd" id="20_lear6"]
 [ext_resource type="Script" path="res://revampedTDSection/tasklisttracker.gd" id="22_y4rvr"]
-[ext_resource type="PackedScene" path="res://revampedTDSection/missiontextlabel.tscn" id="23_0cxp7"]
+[ext_resource type="PackedScene" uid="uid://d3kg1trfmogmc" path="res://revampedTDSection/missiontextlabel.tscn" id="23_0cxp7"]
 [ext_resource type="PackedScene" uid="uid://b1bqxrdvle0ci" path="res://topleftminigames/RPGStuff/actionrpgbattle.tscn" id="25_uy312"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iri12"]
@@ -171,7 +171,6 @@ text = "PP: "
 fit_content = true
 
 [node name="page1holder" type="Control" parent="tdstuff/gameui/uipanel/towerpart"]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -237,6 +236,7 @@ theme_override_font_sizes/normal_font_size = 50
 text = "Costs: 300  pp"
 
 [node name="page2holdertest" type="Control" parent="tdstuff/gameui/uipanel/towerpart"]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -292,6 +292,7 @@ offset_right = 256.0
 offset_bottom = 648.0
 theme = ExtResource("7_gbfl5")
 item_count = 3
+icon_mode = 0
 item_0/text = "Page1 "
 item_1/text = "Page 2 "
 item_2/text = "Page 3 "
@@ -369,7 +370,7 @@ theme = ExtResource("7_gbfl5")
 text = "NEXT WAVE"
 metadata/_edit_use_anchors_ = true
 
-[node name="pausebutton" type="Button" parent="."]
+[node name="pausebutton" type="Button" parent="." node_paths=PackedStringArray("children")]
 process_mode = 3
 visible = false
 offset_left = 1504.0
@@ -379,34 +380,18 @@ theme = ExtResource("7_gbfl5")
 text = "PAUSE
 "
 script = ExtResource("20_lear6")
-
-[node name="Panel" type="Panel" parent="pausebutton"]
-process_mode = 2
-layout_mode = 0
-offset_left = -1584.0
-offset_top = 80.0
-offset_right = 480.0
-offset_bottom = 1152.0
-theme = ExtResource("7_gbfl5")
-
-[node name="PAUSED" type="RichTextLabel" parent="pausebutton/Panel"]
-layout_mode = 0
-offset_left = 784.0
-offset_top = 64.0
-offset_right = 1264.0
-offset_bottom = 336.0
-theme = ExtResource("7_gbfl5")
-theme_override_font_sizes/normal_font_size = 80
-theme_override_font_sizes/bold_font_size = 6
-text = "PAUSED"
+children = NodePath("Panel")
 
 [node name="tasklisttracker" type="Node" parent="." node_paths=PackedStringArray("myvboxcontainer") groups=["tasklistnode"]]
+process_mode = 3
 script = ExtResource("22_y4rvr")
 missionarray = [1, 1, 1, 0, 0, 0, 0]
 myvboxcontainer = NodePath("Panel/ScrollContainer/VBoxContainer")
 idealtextlabel = ExtResource("23_0cxp7")
+transiitionanimplayer = ExtResource("24_rym5e")
 
 [node name="Panel" type="Panel" parent="tasklisttracker"]
+top_level = true
 anchors_preset = -1
 anchor_left = -0.0125
 anchor_top = 0.0518519
@@ -433,8 +418,10 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("7_gbfl5")
 
-[node name="Actionrpgbattle" parent="." instance=ExtResource("25_uy312")]
+[node name="Actionrpgbattle" parent="." node_paths=PackedStringArray("tasklistnode") instance=ExtResource("25_uy312")]
+tasklistnode = NodePath("../tasklisttracker")
 
+[connection signal="reachedthiswave" from="tdstuff/mobholder" to="tasklisttracker" method="_on_mobholder_reachedthiswave"]
 [connection signal="timeout" from="tdstuff/mobholder/mobspawnmobtimer" to="tdstuff/mobholder" method="_on_mobspawnmobtimer_timeout"]
 [connection signal="pressed" from="tdstuff/gameui/uipanel/towerpart/page1holder/hammergirlpanel" to="tdstuff/gameui/uipanel/towerpart" method="_on_hammergirlpanel_pressed"]
 [connection signal="pressed" from="tdstuff/gameui/uipanel/towerpart/page1holder/bomberpanel" to="tdstuff/gameui/uipanel/towerpart" method="_on_bomberpanel_pressed"]

@@ -12,7 +12,7 @@ config_version=5
 
 config/name="TDHBCUGameJam2024"
 config/tags=PackedStringArray("current")
-run/main_scene="res://VN_Stuff/Main Menu/oldmainmenu.tscn"
+run/main_scene="res://revampedTDSection/temporary tutorial scene.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 

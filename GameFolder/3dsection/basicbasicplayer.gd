@@ -16,6 +16,8 @@ func _physics_process(delta):
 	move_and_slide()
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
 		velocity.y = jump_speed
+	if(Input.is_action_just_pressed("lclick")):
+		get_tree().change_scene_to_file("res://VN_Stuff/interactions/interactionsbase.tscn")
 		
 func _input(event):
 	if event is InputEventMouseMotion:# and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:

@@ -6,6 +6,8 @@ extends Node
 @export var idealtextlabel: PackedScene
 @export var activatedmissions: = []
 
+@export var transiitionanimplayer: PackedScene
+
 var nodesinmissiontrackergroup: Array[Node] = []
 
 var currphasetracker:int = 0
@@ -48,6 +50,10 @@ func _process(delta):
 		runmission1checker()
 	if(activatedmissions.is_empty()):
 		#begin scene transition 
+		var thisanim = transiitionanimplayer.instantiate()
+		add_child(thisanim)
+		get_tree().paused = true
+		#self.paused = false
 		#play animation then swap
 		pass
 		
@@ -88,7 +94,7 @@ func runmission1checker():
 		missionarray[1] = 2
 		activatedmissions.erase(1)
 		var thistextlabel: RichTextLabel = getlabelwithname("Reach Level 5 on the left side combo counter")
-		thistextlabel.text = "[/b] Reached level 5 Combo! [/b]"
+		thistextlabel.text = "[b] Reached level 5 Combo! [/b]"
 		pass
 			
 func checkcurrtowermission():
@@ -98,3 +104,4 @@ func checkcurrtowermission():
 		var thistextlabel: RichTextLabel = getlabelwithname("Place at least five towers!")
 		thistextlabel.text = "[b] Placed 5 towers! [/b]"
 		pass
+
