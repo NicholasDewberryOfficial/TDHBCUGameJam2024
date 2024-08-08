@@ -7,11 +7,13 @@ extends Node2D
 #uses decimal. 1= normal. .5 = half. 
 @export var slowdownmod: float = 1
 @export var myparticles: CPUParticles2D 
-
+var dying = false
 func playparticles():
 	if(slowdownmod < 1):
 		myparticles.set_emitting(true)
 		#print("slowingparticles")
+	elif(slowdownmod == 0 || dying == true):
+		return
 	else:
 		if(myparticles.emitting == false):
 			pass

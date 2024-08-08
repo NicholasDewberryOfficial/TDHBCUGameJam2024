@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://fh1ry7t52dro" path="res://Assets/music/rpgtheme.mp3" id="7_83poq"]
 [ext_resource type="PackedScene" uid="uid://b68e52covf0" path="res://revampedTDSection/mobs/baseenemy.tscn" id="7_d6lsh"]
 [ext_resource type="Theme" uid="uid://byeqr3fwtjuqj" path="res://mainUItheme.tres" id="7_gbfl5"]
+[ext_resource type="PackedScene" uid="uid://7qqm8tvyr5um" path="res://revampedTDSection/towers/AOEdamcactus/placeaoecactus.tscn" id="11_734ew"]
 [ext_resource type="PackedScene" uid="uid://bfwmdg31a3jfp" path="res://revampedTDSection/towers/vinecactus/placevineguy.tscn" id="11_eu6la"]
 [ext_resource type="PackedScene" uid="uid://bnkyoc5c8glxv" path="res://revampedTDSection/towers/LongarmLady/placeLongarmLady.tscn" id="12_5dcju"]
 [ext_resource type="PackedScene" uid="uid://cvpbpnyjv725n" path="res://revampedTDSection/towers/vinecactus/vinecactus.tscn" id="12_gk4lm"]
@@ -83,6 +84,8 @@ custom_data_layer_0/name = "Placable"
 custom_data_layer_0/type = 1
 sources/1 = SubResource("TileSetAtlasSource_iri12")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hdyj1"]
+
 [node name="Lvl1Td2" type="Node2D"]
 process_mode = 1
 metadata/_edit_vertical_guides_ = [-176.0]
@@ -127,17 +130,19 @@ stream = ExtResource("7_83poq")
 autoplay = true
 
 [node name="AudioListener2D" type="AudioListener2D" parent="tdstuff/utilityorganizer"]
+current = true
 
 [node name="gameui" type="Node2D" parent="tdstuff"]
 position = Vector2(2030, 0)
 
 [node name="uipanel" type="Panel" parent="tdstuff/gameui"]
+material = SubResource("ShaderMaterial_hdyj1")
 offset_left = -111.0
 offset_right = 149.0
 offset_bottom = 1088.0
 theme = ExtResource("7_gbfl5")
 
-[node name="towerpart" type="Control" parent="tdstuff/gameui/uipanel" node_paths=PackedStringArray("totowerholder", "tmap", "pphpholder", "hammergirl1button", "bomberguybutton", "longarmLadybutton", "slowingcactusbutton", "page1holder", "page2holder")]
+[node name="towerpart" type="Control" parent="tdstuff/gameui/uipanel" node_paths=PackedStringArray("totowerholder", "tmap", "pphpholder", "hammergirl1button", "bomberguybutton", "longarmLadybutton", "slowingcactusbutton", "page1holder", "page2holder", "thistasklist")]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -145,8 +150,10 @@ theme = ExtResource("7_gbfl5")
 script = ExtResource("4_lnnio")
 transpbomberguy = ExtResource("5_l1pkv")
 bomberprefab = ExtResource("6_owe0m")
+aoedamageprefab = ExtResource("11_734ew")
 transplongarmlady = ExtResource("12_5dcju")
 transpvinetowerprefab = ExtResource("11_eu6la")
+transpaoecactusprefab = ExtResource("11_734ew")
 vinetowerprefab = ExtResource("12_gk4lm")
 totowerholder = NodePath("../../../towerholder")
 tmap = NodePath("../../../tmap")
@@ -157,12 +164,13 @@ longarmLadybutton = NodePath("page1holder/longarmLadyPanel")
 slowingcactusbutton = NodePath("page2holdertest/slowingCactus")
 page1holder = NodePath("page1holder")
 page2holder = NodePath("page2holdertest")
+thistasklist = NodePath("../../../../tasklisttracker")
 
 [node name="ppandhptext" type="RichTextLabel" parent="tdstuff/gameui/uipanel/towerpart"]
 layout_mode = 0
 offset_left = 20.0
-offset_right = 260.0
-offset_bottom = 96.0
+offset_right = 231.0
+offset_bottom = 64.0
 theme = ExtResource("7_gbfl5")
 theme_override_font_sizes/normal_font_size = 21
 theme_override_font_sizes/bold_font_size = 21
@@ -178,8 +186,9 @@ theme = ExtResource("7_gbfl5")
 
 [node name="hammergirlpanel" type="Button" parent="tdstuff/gameui/uipanel/towerpart/page1holder"]
 layout_mode = 0
+offset_left = 3.50006
 offset_top = 96.0
-offset_right = 547.0
+offset_right = 550.5
 offset_bottom = 328.0
 scale = Vector2(0.45, 0.45)
 theme = ExtResource("7_gbfl5")
@@ -196,8 +205,9 @@ text = "Costs: 100 pp"
 
 [node name="bomberpanel" type="Button" parent="tdstuff/gameui/uipanel/towerpart/page1holder"]
 layout_mode = 0
+offset_left = 3.50006
 offset_top = 233.0
-offset_right = 578.0
+offset_right = 581.5
 offset_bottom = 462.0
 scale = Vector2(0.45, 0.45)
 theme = ExtResource("7_gbfl5")
@@ -216,9 +226,9 @@ text = "Costs: 150 pp"
 
 [node name="longarmLadyPanel" type="Button" parent="tdstuff/gameui/uipanel/towerpart/page1holder"]
 layout_mode = 0
-offset_left = -3.99994
+offset_left = 3.50006
 offset_top = 401.0
-offset_right = 574.0
+offset_right = 581.5
 offset_bottom = 630.0
 scale = Vector2(0.45, 0.45)
 theme = ExtResource("7_gbfl5")
@@ -286,9 +296,9 @@ text = "Costs: 300  pp"
 
 [node name="menubutton" type="ItemList" parent="tdstuff/gameui/uipanel/towerpart"]
 layout_mode = 0
-offset_left = 4.0
+offset_left = 3.50012
 offset_top = 560.0
-offset_right = 256.0
+offset_right = 255.5
 offset_bottom = 648.0
 theme = ExtResource("7_gbfl5")
 item_count = 3
@@ -326,19 +336,19 @@ expand_mode = 1
 
 [node name="upgrade1" type="Button" parent="tdstuff/gameui/uipanel/towerpart/currenttowerupgrades/currenttowerbgpanel"]
 layout_mode = 0
-offset_left = -5.0
-offset_top = 301.0
-offset_right = 240.0
-offset_bottom = 354.0
+offset_left = -0.499878
+offset_top = 312.0
+offset_right = 244.5
+offset_bottom = 365.0
 theme = ExtResource("7_gbfl5")
 text = "Click a tower to upgrade!"
 
 [node name="upgrade2" type="Button" parent="tdstuff/gameui/uipanel/towerpart/currenttowerupgrades/currenttowerbgpanel"]
 layout_mode = 0
 offset_left = -0.499878
-offset_top = 359.0
+offset_top = 376.0
 offset_right = 244.5
-offset_bottom = 412.0
+offset_bottom = 429.0
 theme = ExtResource("7_gbfl5")
 
 [node name="Panel" type="Panel" parent="tdstuff/gameui"]
@@ -370,7 +380,7 @@ theme = ExtResource("7_gbfl5")
 text = "NEXT WAVE"
 metadata/_edit_use_anchors_ = true
 
-[node name="pausebutton" type="Button" parent="." node_paths=PackedStringArray("children")]
+[node name="pausebutton" type="Button" parent="."]
 process_mode = 3
 visible = false
 offset_left = 1504.0
@@ -380,7 +390,6 @@ theme = ExtResource("7_gbfl5")
 text = "PAUSE
 "
 script = ExtResource("20_lear6")
-children = NodePath("Panel")
 
 [node name="tasklisttracker" type="Node" parent="." node_paths=PackedStringArray("myvboxcontainer") groups=["tasklistnode"]]
 process_mode = 3
@@ -388,7 +397,6 @@ script = ExtResource("22_y4rvr")
 missionarray = [1, 1, 1, 0, 0, 0, 0]
 myvboxcontainer = NodePath("Panel/ScrollContainer/VBoxContainer")
 idealtextlabel = ExtResource("23_0cxp7")
-transiitionanimplayer = ExtResource("24_rym5e")
 
 [node name="Panel" type="Panel" parent="tasklisttracker"]
 top_level = true

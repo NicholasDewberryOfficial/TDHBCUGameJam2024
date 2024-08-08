@@ -2,7 +2,7 @@ extends Area2D
 
 #NO
 @export var damage: float 
-var speed = 300
+var speed = 500
 
 
 # Called when the node enters the scene tree for the first time.

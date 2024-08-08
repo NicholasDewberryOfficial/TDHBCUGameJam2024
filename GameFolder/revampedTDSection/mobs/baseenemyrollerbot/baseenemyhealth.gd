@@ -7,6 +7,8 @@ extends Area2D
 
 @export var myspeed: Node2D
 @export var damageanim: AnimationPlayer
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -16,8 +18,8 @@ func _ready():
 func _process(delta):
 	
 	if health <= 0:
-		Globalvars.enemykilled(points)
-		get_parent().get_parent().queue_free()
+		deathcycle()
+
 		
 	pass
 
@@ -28,4 +30,16 @@ func takedamage(givendmg):
 
 func modifyspeed(newspeedamt: float):
 	myspeed.slowdownmod = newspeedamt 
-	
+
+func deathcycle(): 
+	#TODO MAYBE?
+	#Enemies should have 
+	Globalvars.enemykilled(points)
+	damageanim.play("deathanim")
+	self.collision_layer = 9
+	self.collision_mask = 9
+	self.global_position = Vector2(1900,1900)
+	myspeed.slowdownmod = 0
+	myspeed.dying = true
+	await get_tree().create_timer(1).timeout 
+	get_parent().get_parent().queue_free()
