@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dv122qmgxlt38"]
+
+[ext_resource type="AudioStream" uid="uid://ymghndivrtfo" path="res://Assets/music/soundeffects/vinethrowerhit.wav" id="1_6fsk2"]
+[ext_resource type="Script" path="res://Assets/music/soundeffects/hitprojectilesound.gd" id="2_6ljex"]
+
+[node name="hitprojectilesound" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_6fsk2")
+autoplay = true
+script = ExtResource("2_6ljex")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

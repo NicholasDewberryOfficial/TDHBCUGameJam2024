@@ -7,7 +7,7 @@ extends Area2D
 
 @export var myspeed: Node2D
 @export var damageanim: AnimationPlayer
-
+@export var deathsound: AudioStreamPlayer2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,6 +17,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
+	if(deathsound.playing == true):
+		"WHERES THE DEATHSOUND"
 	if health <= 0:
 		deathcycle()
 
@@ -36,6 +38,7 @@ func deathcycle():
 	#Enemies should have 
 	Globalvars.enemykilled(points)
 	damageanim.play("deathanim")
+	deathsound.play()
 	self.collision_layer = 9
 	self.collision_mask = 9
 	self.global_position = Vector2(1900,1900)

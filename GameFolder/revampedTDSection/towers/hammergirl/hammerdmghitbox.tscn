@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cpjlcyrseb7ye"]
+[gd_scene load_steps=8 format=3 uid="uid://cpjlcyrseb7ye"]
 
 [ext_resource type="Script" path="res://revampedTDSection/towers/hammergirl/hammerdmghitbox.gd" id="1_wowbp"]
+[ext_resource type="AudioStream" uid="uid://bqpewdsbq6qf1" path="res://Assets/music/soundeffects/updatedslam.mp3" id="2_c6qv2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xkd4b"]
 radius = 112.0
@@ -46,5 +47,9 @@ linear_accel_max = 0.9
 scale_amount_min = 3.0
 scale_amount_max = 3.0
 color_ramp = SubResource("Gradient_kpxsp")
+
+[node name="slamnoise" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_c6qv2")
+autoplay = true
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

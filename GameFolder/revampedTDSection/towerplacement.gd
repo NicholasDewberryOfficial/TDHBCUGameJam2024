@@ -38,6 +38,8 @@ var tdata: TileSet
 var currtoweramt: int =0 
 @export var thistasklist: Node
 
+@export var plantsoundeffect: AudioStreamPlayer2D = null
+@export var plantingtowerparticles :PackedScene = null
 func _ready():
 	if(Globalvars.unlockedTowers[0] ==0):
 		hammergirl1button.disabled = true 
@@ -144,6 +146,10 @@ func _input(event):
 				placeme.queue_free()
 				placeme=null
 		currtoweramt = currtoweramt+1
+		plantsoundeffect.play()
+		var curparticles = plantingtowerparticles.instantiate()
+		curparticles.position = get_viewport().get_mouse_position()
+		totowerholder.add_child(curparticles)
 
 func _on_hammergirlpanel_pressed():
 	currtower = 1

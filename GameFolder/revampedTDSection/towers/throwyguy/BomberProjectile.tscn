@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dd2j0bh7imgx5"]
+[gd_scene load_steps=6 format=3 uid="uid://dd2j0bh7imgx5"]
 
 [ext_resource type="Script" path="res://revampedTDSection/towers/throwyguy/ThrownObjectBaseBehavior.gd" id="1_hwr8i"]
 [ext_resource type="Texture2D" uid="uid://byjdihsfi0v37" path="res://Assets/Towers/se2.png" id="2_r4emu"]
+[ext_resource type="PackedScene" uid="uid://dv122qmgxlt38" path="res://Assets/music/soundeffects/hitprojectilesound.tscn" id="3_2tbuy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xkd4b"]
 radius = 32.0
@@ -10,6 +11,7 @@ radius = 32.0
 
 [node name="BomberProjectile" type="Area2D"]
 script = ExtResource("1_hwr8i")
+thissound = ExtResource("3_2tbuy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_xkd4b")
