@@ -10,9 +10,9 @@
 },
 "default_portrait": "Default",
 "description": "",
-"display_name": "Commander_Wheel",
+"display_name": "Commander Wheel",
 "mirror": false,
-"nicknames": [""],
+"nicknames": ["Commander", "Wheel"],
 "offset": Vector2(0, 0),
 "portraits": {
 "Default": {

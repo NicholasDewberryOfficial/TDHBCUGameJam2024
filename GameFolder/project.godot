@@ -25,6 +25,7 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"BearCharacter": "res://VN_Stuff/BearCharacter.dch",
 "Commander_Wheel": "res://VN_Stuff/Commander_Wheel.dch",
 "Engineer_Cactus": "res://Assets/Talk_Sprites/Engineer_Cactus.dch",
 "Hammer_Cactus": "res://VN_Stuff/Hammer_Cactus.dch",
@@ -38,6 +39,7 @@ directories/dtl_directory={
 "Intro_Cutscene": "res://VN_Stuff/Intro_Cutscene.dtl",
 "Intro_Part_2": "res://VN_Stuff/Intro_Part_2.dtl",
 "VN_Stuff/hammergirl1timeline": "res://VN_Stuff/hammergirl1timeline.dtl",
+"bombthrowertimeline": "res://VN_Stuff/interactions/bombthrowertimeline.dtl",
 "hammergirl1timeline": "res://VN_Stuff/interactions/hammergirl1timeline.dtl",
 "slowervine1timeline": "res://VN_Stuff/interactions/slowervine1timeline.dtl"
 }

@@ -1,0 +1,106 @@
+The time\: 4pm
+The context\: One day, for no reason at all, a group of people started arguing about something utterly inconsequental. It's one of those good days where no one has anything better to do.
+And as we all know, idle hands cause problems.
+join Commander_Wheel 1
+join Throw_Cactus 4
+Commander_Wheel: We can't keep him! ARE YOU CRAZY?
+Throw_Cactus: But - He's so cute! And I already named him!
+Commander_Wheel: That doesn't - look. Okay.
+Commander_Wheel: (Deep breaths Commander. Just relax before you catch a cramp.)
+Commander_Wheel (Default): Uh...
+Throw_Cactus: My name's not Commander.
+Commander_Wheel: I KNOW! I'M TALKING TO MYSELF!
+Commander_Wheel: HOW DID YOU EVEN HEAR THAT??
+Commander_Wheel: Oh man... Domino's gonna kill me if she sees this. We can't keep him.
+Throw_Cactus: I don't care about Domino! She's in administration, we can replace her easily. My friend is much more important!
+Commander_Wheel: ...
+Commander_Wheel: I'm not even gonna touch that can of worms.
+Commander_Wheel: And Domino's an important member of our team! She does all of the planning and paperwork while I play- I mean.... Plan
+Commander_Wheel: Your friend on the other hand....
+Wheel trails off as he look at... the friend that Tim brought over to the camp.
+join BearCharacter 2 [ z_index="1"]
+A great black bear looked back at him.
+Easily crossing 6 feet tall and 300 pounds, the massive bear had a heavy presence.
+Despite Wheel's height and Opuntim's... mass (for a lack of a better term), the bear could easily overpower both of them.
+Wheel had to treat this with the upmost concern.
+Indeed, he had to put his thinking cap on, and decide on an intelligent course of action.
+leave BearCharacter
+Commander_Wheel: Yo Domino -
+Oh right. She's off today. Guess it's plan B time.
+Commander_Wheel: *AHEM* I mean... MYRTLE!
+join Myrtle 0
+Myrtle: Hey! I was just doing some laps as a warmup. What's u- AHHH
+The bear didn't react to Myrtle's suprise. He was just chilling, as bears are wont to do.
+Myrtle: I can't belive what I'm seeing!
+Commander_Wheel: Exactly! So -
+Myrtle: It's so cool!
+Myrtle: I love bears! How did we get one in our camp?
+Throw_Cactus: I just found him, and we started hanging out.
+Myrtle: Nice!
+The plan backfired. The reinforcements turned traitor.
+Commander_Wheel: ..Anyway, as I was saying - we can't keep him.
+Commander_Wheel: This isn't exactly a safe spot, and we've got a lot of responsibilities too.
+Commander_Wheel: The fight against the machines is intense. We don't have time to...
+He trails off. "Hang on. I actually play a ton of video games. I should rephrase"
+Commander_Wheel: We can't find food for this bear. We have food reserves, but these animals are carnivores. We can't feed them meat, as we don't have any.
+Throw_Cactus: Bears being carnivores is actually a common misconception.
+Throw_Cactus: Bears are omnivores first and foremost. They're able to adapt to a wide variety of environments and find food. They usually prefer easy-to-get food like berries. 
+Throw_Cactus: Did you know that plants make up 3/4ths of a bears diet? And insects are around 20% of their diet.
+Throw_Cactus: Meat, such as fish, birds or humans, only accounts for 5%.
+Throw_Cactus: Ain't that cool!
+Commander_Wheel: Look around you! WE ARE IN THE DESERT! None of those things exist here!
+Commander_Wheel: What are they going to eat? Rocks? Well that's what they're gonna get!
+Commander_Wheel: Your friend cannot stay with us. They have to leave. End of story.
+Myrtle: Cmon... Please?
+Throw_Cactus: Yea! Please?
+Commander_Wheel: I'm not budging on this. This is ridiculous.
+Myrtle: Ugh. This is stupid. He's cool, so he should stay with us.
+The stalemate continues.
+[background arg="res://VN_Stuff/blackbg.jpg" fade="0.0"]
+[background fade="0.0"]
+join Secretary_Domino 1
+Secretary_Domino (Default): Oh my god! Is that a bear! He's soooo cute!
+Commander_Wheel: Not you too...
+Secretary_Domino (Default): It's going to be very difficult, but we can keep him. I just have to change our budget quite a bit.
+Commander_Wheel (Ponder): Don't we have better things to worry about?
+Secretary_Domino (Worried): Well....
+Commander_Wheel (Ponder): We have to be responsible. He can't stay with us for years.
+Commander_Wheel: He's got his own plans. Ain't that right?
+The bear can't speak, so it just looks at Wheel.
+BearCharacter (bearpicture): You know.... It is quite perplexing that no one's asked my opinion yet.
+join BearCharacter 1 [ z_index="1"]
+IT CAN TALK?
+Myrtle: WHAT?
+Throw_Cactus: No way!??!
+Secretary_Domino: That's so cool!
+Commander_Wheel: Wha- oh I mean *Ahem*. Yes. I knew all along.
+Commander_Wheel: Totally.
+Commander_Wheel: What's your thoughts?
+BearCharacter: I've had a lot of time being around all of you.
+BearCharacter: And I enjoyed that time. A lot in fact.
+BearCharacter: All of you are magical, and possess qualities I deeply respect.
+Throw_Cactus: Thanks!
+BearCharacter: Not you.
+BearCharacter: Just kidding. You were my favorite person to know out of everyone here.
+BearCharacter: I know we haven't known each other for a long time, but I really enjoyed our adventures.
+[background fade="0.0"]
+BearCharacter: Swimming up that waterfall before the sun came up -
+[background fade="0.0"]
+BearCharacter: Defeating that Machine Titan that was invlunerable to all conventional weaponry in the morning -
+[background fade="0.0"]
+BearCharacter: Punching bullets out of the air in the afternooon -
+BearCharacter: To relaxing in this quaint little camp.
+BearCharacter: Thank all of you.
+The bear started glowing white, and started lifting up.
+Throw_Cactus: NO! It can't be! Don't leave us.
+BearCharacter: Farewell my friend.
+BearCharacter: Please... Never change.
+The Bear dissapeared in a pillar of light as the the rest of the cactuses started sobbing.
+Myrtle: Good bye.... Brother bear.
+Secretary_Domino: He was too good for this world.
+Commander_Wheel: Wait... Tim - did you do all of that?
+Throw_Cactus: Yep! Sure did!
+Commander_Wheel: (WOW, I shouldnt mess with this guy.) 
+Myrtle (Happy): Well all's well that ends well! 
+Myrtle (Determined): Now, Time to get another bear!
+Commander_Wheel (Ponder): WAIT - NO!

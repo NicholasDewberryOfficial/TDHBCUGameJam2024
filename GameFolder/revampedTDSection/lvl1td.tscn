@@ -1,6 +1,5 @@
-[gd_scene load_steps=29 format=3 uid="uid://2crcixuke4eg"]
+[gd_scene load_steps=27 format=3 uid="uid://2crcixuke4eg"]
 
-[ext_resource type="Texture2D" uid="uid://7ovcgq4il4ma" path="res://Assets/kenney_tower-defense-top-down/Tilesheet/towerDefense_tilesheet.png" id="1_pkvm2"]
 [ext_resource type="Script" path="res://revampedTDSection/lvl1mobspawner.gd" id="2_0xv6w"]
 [ext_resource type="Texture2D" uid="uid://crc3m42g6efga" path="res://Assets/CC_Level_1_Background.png" id="2_usdoy"]
 [ext_resource type="Texture2D" uid="uid://ce4w3w10hhvxd" path="res://Assets/Towers/Hammer Cactus Idle.png" id="4_d0uiv"]
@@ -26,49 +25,6 @@
 [ext_resource type="PackedScene" uid="uid://d3kg1trfmogmc" path="res://revampedTDSection/missiontextlabel.tscn" id="23_0cxp7"]
 [ext_resource type="PackedScene" uid="uid://b1bqxrdvle0ci" path="res://topleftminigames/RPGStuff/actionrpgbattle.tscn" id="25_uy312"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iri12"]
-resource_name = "updatedatlas"
-texture = ExtResource("1_pkvm2")
-texture_region_size = Vector2i(64, 64)
-11:1/0 = 0
-11:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-11:1/0/physics_layer_0/angular_velocity = 0.0
-11:1/0/physics_layer_1/linear_velocity = Vector2(0, 0)
-11:1/0/physics_layer_1/angular_velocity = 0.0
-11:10/0 = 0
-11:10/0/terrain_set = 0
-11:10/0/terrain = 0
-11:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-11:10/0/physics_layer_0/angular_velocity = 0.0
-11:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
-11:10/0/physics_layer_1/linear_velocity = Vector2(0, 0)
-11:10/0/physics_layer_1/angular_velocity = 0.0
-11:10/0/terrains_peering_bit/right_side = 0
-11:10/0/terrains_peering_bit/bottom_right_corner = 0
-11:10/0/terrains_peering_bit/bottom_side = 0
-11:10/0/terrains_peering_bit/bottom_left_corner = 0
-11:10/0/terrains_peering_bit/left_side = 0
-11:10/0/terrains_peering_bit/top_left_corner = 0
-11:10/0/terrains_peering_bit/top_side = 0
-11:10/0/terrains_peering_bit/top_right_corner = 0
-11:10/0/custom_data_0 = true
-11:7/0 = 0
-11:7/0/terrain_set = 1
-11:7/0/terrain = 0
-11:7/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-11:7/0/physics_layer_0/angular_velocity = 0.0
-11:7/0/physics_layer_1/linear_velocity = Vector2(0, 0)
-11:7/0/physics_layer_1/angular_velocity = 0.0
-11:7/0/physics_layer_1/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
-11:7/0/terrains_peering_bit/right_side = 0
-11:7/0/terrains_peering_bit/bottom_right_corner = 0
-11:7/0/terrains_peering_bit/bottom_side = 0
-11:7/0/terrains_peering_bit/bottom_left_corner = 0
-11:7/0/terrains_peering_bit/left_side = 0
-11:7/0/terrains_peering_bit/top_left_corner = 0
-11:7/0/terrains_peering_bit/top_side = 0
-11:7/0/terrains_peering_bit/top_right_corner = 0
-
 [sub_resource type="TileSet" id="TileSet_mb2gr"]
 tile_size = Vector2i(64, 64)
 uv_clipping = true
@@ -84,7 +40,6 @@ terrain_set_1/terrain_0/name = "Gravel"
 terrain_set_1/terrain_0/color = Color(0.537255, 0.643137, 0.65098, 1)
 custom_data_layer_0/name = "Placable"
 custom_data_layer_0/type = 1
-sources/1 = SubResource("TileSetAtlasSource_iri12")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hdyj1"]
 
