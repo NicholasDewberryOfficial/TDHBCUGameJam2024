@@ -15,12 +15,12 @@ point_count = 13
 [sub_resource type="CircleShape2D" id="CircleShape2D_bt4vu"]
 radius = 64.0
 
-[sub_resource type="Gradient" id="Gradient_p54y0"]
+[sub_resource type="Gradient" id="Gradient_e5foi"]
 offsets = PackedFloat32Array(0, 0.992958)
 colors = PackedColorArray(0.855105, 0.908, 0.696943, 1, 0.514134, 0.671704, 0.436907, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_hnn8q"]
-gradient = SubResource("Gradient_p54y0")
+gradient = SubResource("Gradient_e5foi")
 width = 500
 
 [sub_resource type="Curve" id="Curve_fwuss"]
@@ -124,6 +124,7 @@ position = Vector2(-220, -14.1593)
 rotation = 0.00386547
 
 [node name="baseenemyart" type="Sprite2D" parent="PathFollow2D"]
+self_modulate = Color(0.843194, 0.412613, 0.445713, 1)
 scale = Vector2(0.719999, 0.640001)
 texture = ExtResource("1_jqs21")
 

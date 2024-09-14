@@ -83,6 +83,10 @@ func _process(_delta):
 	pass
 
 func _input(event):
+	if(event.is_action("rclick")):
+		currtower = null
+		placeme = null
+		return
 	if (event.is_action("lclick") and placeme!=null and placeme.placable ==true):
 		match(currtower):
 			1:
@@ -148,7 +152,7 @@ func _input(event):
 		currtoweramt = currtoweramt+1
 		plantsoundeffect.play()
 		var curparticles = plantingtowerparticles.instantiate()
-		curparticles.position = get_viewport().get_mouse_position()
+		curparticles.position = get_viewport().get_mouse_position() + Vector2(30,0)
 		totowerholder.add_child(curparticles)
 
 func _on_hammergirlpanel_pressed():

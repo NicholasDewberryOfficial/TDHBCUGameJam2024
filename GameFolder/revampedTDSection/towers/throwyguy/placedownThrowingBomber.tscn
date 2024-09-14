@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://revampedTDSection/towers/hammergirl/placetowergirl.gd" id="1_nlau4"]
 [ext_resource type="Texture2D" uid="uid://cbsw78fmf262h" path="res://Assets/Towers/Bomber Cactus Idle.png" id="2_hesjg"]
-[ext_resource type="Texture2D" uid="uid://bg047vmkd8bkr" path="res://Assets/120pxcircle.png" id="3_7yssv"]
+[ext_resource type="Texture2D" uid="uid://bq332hdur6wce" path="res://Assets/Towers/pope-crown (1).png" id="4_hh7dr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gsg4h"]
-size = Vector2(200, 200)
+size = Vector2(663.097, 818.777)
 
 [sub_resource type="Gradient" id="Gradient_r3r8o"]
 
@@ -16,26 +16,28 @@ height = 200
 
 [node name="placedownthrowingbomber" type="Node2D"]
 modulate = Color(1, 1, 1, 0.345098)
-scale = Vector2(0.3, 0.3)
 script = ExtResource("1_nlau4")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("2_hesjg")
+
 [node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(0.13, 0.13)
 collision_layer = 130
 collision_mask = 130
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(0.965168, 0.781654)
 shape = SubResource("RectangleShape2D_gsg4h")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-texture = ExtResource("2_hesjg")
+[node name="Sprite2D3" type="Sprite2D" parent="Area2D"]
+scale = Vector2(3.33333, 3.33333)
+texture = SubResource("GradientTexture2D_1slwg")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(7.99997, -7.99998)
-scale = Vector2(6.8, 6.8)
-texture = ExtResource("3_7yssv")
-
-[node name="Sprite2D3" type="Sprite2D" parent="."]
-texture = SubResource("GradientTexture2D_1slwg")
+scale = Vector2(1.95, 1.56)
+texture = ExtResource("4_hh7dr")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
