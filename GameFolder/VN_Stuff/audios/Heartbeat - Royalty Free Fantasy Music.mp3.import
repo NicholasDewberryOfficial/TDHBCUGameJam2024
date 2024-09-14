@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dofq0ieltuyq3"
+path="res://.godot/imported/Heartbeat - Royalty Free Fantasy Music.mp3-3a9aa80fb63a239a86d7d12d19f64380.mp3str"
+
+[deps]
+
+source_file="res://VN_Stuff/audios/Heartbeat - Royalty Free Fantasy Music.mp3"
+dest_files=["res://.godot/imported/Heartbeat - Royalty Free Fantasy Music.mp3-3a9aa80fb63a239a86d7d12d19f64380.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

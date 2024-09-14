@@ -1,0 +1,46 @@
+*this plays after the first level of the game*
+*Narratively, the cactusfolk are celebrating their victory, while their enemy is making plans*
+Also, this background is AI generated. We will not use AI in our final game. This is a concept art placeholder.
+[background arg="res://VN_Stuff/bgs/warehouse.jpg" fade="0.0"]
+[music path="res://VN_Stuff/audios/dark factory.ogg" fade="0.0" volume="0.0"]
+(Story starts now)
+
+Despite all odds, the cactusfolk have finally delivered their counterattack.
+To call this unthinkable would be an understatement.
+It have visited this exact area because of our certainty. 
+<Empty Text Event>
+The victory of the machines is not one of those divergent values.
+In all of the systemic predictions, in all of the simulations, the robots win.
+There will be hard fighting, and the robots will take some losses - but their victory is all but assured.
+Now, for the first time, the models are showing a .000001% chance of failure.
+What once was considered mathematically impossible is now real.
+
+This error, this failure, MUST BE REMIDIED.
+[sound path="res://VN_Stuff/audios/explosion1.wav" volume="0.0"]
+*Rumble*
+A deep rumbling went out across the land.
+It did not care, but the outside ground fractured.
+Trees fell, and far away ocean waves tripled in size.
+...
+[sound path="res://VN_Stuff/audios/weaponfire11.wav" volume="0.0"]
+RECONFIGURE\:
+BEGIN ANALYSIS\:
+FAILURE
+TOO NUMEROUS TO LIST
+PROBABLE CAUSE\: NUMBERS?
+PROBLEM\: THERE WEREN'T ENOUGH ROBOTS TO ATTACK
+SOLUTION\: ADD MORE ROBOTS
+PROBLEM\: TAKES TIME TO CREATE BATCHES
+SOLUTION\: DIVERT RESOURCES FROM RESEARCHING NEW MACHINES INTO PRODUCTION
+....
+PROBABLE CAUSE\: LACK OF BATTLE PLANS
+NO CENTRALIZED LEADERSHIP AS THE ROBOTS ATTACKED IN WAVES
+...
+The ground rumbled again.
+[sound path="res://VN_Stuff/audios/explosion1.wav" volume="0.0"]
+Even the dim emergency lights of the factory, tiny electrodes with high fault tolerance failed.
+It was all plunged into darkness.
+[background arg="res://VN_Stuff/blackbg.jpg" fade="0.0"]
+[sound path="res://VN_Stuff/audios/weaponfire11.wav" volume="0.0"]
+ACTIVATE TEMPORARY LEADER \: V4319084
+"I SHALL OBEY."

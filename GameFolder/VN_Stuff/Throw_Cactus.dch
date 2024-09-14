@@ -10,9 +10,9 @@
 },
 "default_portrait": "Default",
 "description": "",
-"display_name": "Throw_Cactus",
+"display_name": "Opuntim",
 "mirror": false,
-"nicknames": [""],
+"nicknames": ["Opuntim"],
 "offset": Vector2(0, 0),
 "portraits": {
 "Default": {

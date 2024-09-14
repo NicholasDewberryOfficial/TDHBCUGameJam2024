@@ -1,12 +1,27 @@
-[gd_scene load_steps=11 format=3 uid="uid://f8ovslaskeih"]
+[gd_scene load_steps=17 format=3 uid="uid://f8ovslaskeih"]
 
 [ext_resource type="Texture2D" uid="uid://biude6b6rkuyv" path="res://Assets/Roller_Overhead.png" id="1_716go"]
 [ext_resource type="Curve2D" uid="uid://cd2dahi0fnpbb" path="res://revampedTDSection/mobs/baseenemyrollerbot/left2leftcurve.tres" id="1_kimck"]
 [ext_resource type="Script" path="res://revampedTDSection/mobs/baseenemyrollerbot/baseenemyhealth.gd" id="2_m6igh"]
 [ext_resource type="Script" path="res://revampedTDSection/mobs/baseenemyrollerbot/baseenemymovement.gd" id="3_ivvtv"]
+[ext_resource type="AudioStream" uid="uid://dcb15e3vo7iwv" path="res://Assets/music/soundeffects/mixkit-metallic-sword-strike-2160.wav" id="4_n1510"]
+[ext_resource type="AudioStream" uid="uid://vl8p1x61woxv" path="res://Assets/music/mechanical_explosion.wav" id="5_jl4qh"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_bt4vu"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_16tt0"]
 radius = 64.0
+
+[sub_resource type="Gradient" id="Gradient_c4e7t"]
+offsets = PackedFloat32Array(0, 0.992958)
+colors = PackedColorArray(0.855105, 0.908, 0.696943, 1, 0.514134, 0.671704, 0.436907, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6i0rk"]
+gradient = SubResource("Gradient_c4e7t")
+width = 500
+
+[sub_resource type="Curve" id="Curve_pp451"]
+max_value = 2.0
+_data = [Vector2(0.0337079, 1.2967), 0.0, 0.0, 0, 0, Vector2(0.297753, 1.03297), 0.0, 0.0, 0, 0, Vector2(0.449438, 0.571429), 0.0, 0.0, 0, 0, Vector2(0.634831, 1.56044), 0.0, 0.0, 0, 0, Vector2(0.691011, 0.923077), 1.42258, 0.0, 0, 0]
+point_count = 5
 
 [sub_resource type="Animation" id="Animation_yrx66"]
 resource_name = "damageanim"
@@ -23,26 +38,79 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0.843194, 0.412613, 0.445713, 1), Color(1, 1, 1, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("baseenemyhitbox/bonksound:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_sbi0n"]
+resource_name = "deathanim"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.47698, 0.396812, 0.144935, 1), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("deathparticles:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_i1udn"]
+resource_name = "normm"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h5ci7"]
 _data = {
-"damageanim": SubResource("Animation_yrx66")
+"damageanim": SubResource("Animation_yrx66"),
+"deathanim": SubResource("Animation_sbi0n"),
+"normm": SubResource("Animation_i1udn")
 }
 
-[sub_resource type="Gradient" id="Gradient_k7yaa"]
-offsets = PackedFloat32Array(0, 0.992958)
-colors = PackedColorArray(0.855105, 0.908, 0.696943, 1, 0.514134, 0.671704, 0.436907, 1)
+[sub_resource type="Curve" id="Curve_sa42d"]
+max_value = 4.9
+_data = [Vector2(0, 4.68462), 0.0, 0.0, 0, 0, Vector2(0.646067, 3.28462), 0.0, 0.0, 0, 0, Vector2(0.97191, 1.18462), 0.0, 0.0, 0, 0]
+point_count = 3
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_d8erh"]
-gradient = SubResource("Gradient_k7yaa")
-width = 500
-
-[sub_resource type="Curve" id="Curve_nvrdt"]
-max_value = 2.0
-_data = [Vector2(0.0337079, 1.2967), 0.0, 0.0, 0, 0, Vector2(0.297753, 1.03297), 0.0, 0.0, 0, 0, Vector2(0.449438, 0.571429), 0.0, 0.0, 0, 0, Vector2(0.634831, 1.56044), 0.0, 0.0, 0, 0, Vector2(0.691011, 0.923077), 1.42258, 0.0, 0, 0]
-point_count = 5
+[sub_resource type="Gradient" id="Gradient_kxa4d"]
+offsets = PackedFloat32Array(0, 0.0133333, 0.36, 0.74)
+colors = PackedColorArray(1, 1, 1, 1, 0.734169, 0.535109, 0.340469, 1, 0.601693, 0.120727, 0, 1, 0.0295066, 0.0295066, 0.0295066, 1)
 
 [node name="goleftlvl2path" type="Path2D"]
+self_modulate = Color(0.843194, 0.412613, 0.445713, 1)
 curve = ExtResource("1_kimck")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
@@ -54,20 +122,16 @@ skew = 0.00128508
 scale = Vector2(0.719999, 0.640001)
 texture = ExtResource("1_716go")
 
-[node name="baseenemyhitbox" type="Area2D" parent="PathFollow2D/baseenemyart" node_paths=PackedStringArray("myspeed", "damageanim") groups=["enemyhitboxgroup"]]
+[node name="baseenemyhitbox" type="Area2D" parent="PathFollow2D/baseenemyart" node_paths=PackedStringArray("myspeed", "damageanim", "deathsound") groups=["enemyhitboxgroup"]]
 self_modulate = Color(0.843194, 0.412613, 0.445713, 1)
 script = ExtResource("2_m6igh")
 health = 7.0
 myspeed = NodePath("../../movementholder")
-damageanim = NodePath("mydamageanim")
+damageanim = NodePath("../mydamageanim")
+deathsound = NodePath("deathsound")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/baseenemyart/baseenemyhitbox"]
-shape = SubResource("CircleShape2D_bt4vu")
-
-[node name="mydamageanim" type="AnimationPlayer" parent="PathFollow2D/baseenemyart/baseenemyhitbox"]
-libraries = {
-"": SubResource("AnimationLibrary_h5ci7")
-}
+shape = SubResource("CircleShape2D_16tt0")
 
 [node name="slowdownparticles" type="CPUParticles2D" parent="PathFollow2D/baseenemyart/baseenemyhitbox"]
 scale = Vector2(1.38889, 1.5625)
@@ -75,7 +139,7 @@ emitting = false
 amount = 100
 explosiveness = 1.0
 local_coords = true
-texture = SubResource("GradientTexture1D_d8erh")
+texture = SubResource("GradientTexture1D_6i0rk")
 emission_shape = 1
 emission_sphere_radius = 5.63
 direction = Vector2(1, 1.75)
@@ -86,17 +150,44 @@ angle_min = -160.0
 angle_max = 173.6
 scale_amount_min = 0.3
 scale_amount_max = 0.3
-scale_amount_curve = SubResource("Curve_nvrdt")
+scale_amount_curve = SubResource("Curve_pp451")
+
+[node name="bonksound" type="AudioStreamPlayer2D" parent="PathFollow2D/baseenemyart/baseenemyhitbox"]
+stream = ExtResource("4_n1510")
+
+[node name="deathsound" type="AudioStreamPlayer2D" parent="PathFollow2D/baseenemyart/baseenemyhitbox"]
+stream = ExtResource("5_jl4qh")
+
+[node name="mydamageanim" type="AnimationPlayer" parent="PathFollow2D/baseenemyart"]
+root_node = NodePath("../../..")
+libraries = {
+"": SubResource("AnimationLibrary_h5ci7")
+}
+
+[node name="deathparticles" type="CPUParticles2D" parent="PathFollow2D/baseenemyart"]
+position = Vector2(741.664, 1191.54)
+rotation = -2.10351
+scale = Vector2(1.51247, 1.44306)
+skew = -0.106858
+emitting = false
+amount = 300
+preprocess = 1.0
+explosiveness = 1.0
+randomness = 0.67
+emission_shape = 1
+emission_sphere_radius = 52.95
+particle_flag_align_y = true
+spread = 144.76
+gravity = Vector2(0, 0)
+initial_velocity_min = 72.35
+initial_velocity_max = 72.35
+scale_amount_curve = SubResource("Curve_sa42d")
+color_ramp = SubResource("Gradient_kxa4d")
 
 [node name="movementholder" type="Node2D" parent="PathFollow2D" node_paths=PackedStringArray("myparticles")]
+position = Vector2(521.707, 746.726)
+rotation = -2.15209
+scale = Vector2(1.00059, 0.999411)
+skew = 0.000510693
 script = ExtResource("3_ivvtv")
-speed = 100
 myparticles = NodePath("../baseenemyart/baseenemyhitbox/slowdownparticles")
-
-[node name="movementtimer" type="Timer" parent="PathFollow2D"]
-wait_time = 0.2
-one_shot = true
-
-[node name="_Timer_51846" type="Timer" parent="PathFollow2D"]
-wait_time = 0.2
-one_shot = true

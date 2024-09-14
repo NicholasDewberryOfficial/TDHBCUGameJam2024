@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cjx6bvyfvupnl"]
+[gd_scene load_steps=14 format=3 uid="uid://cjx6bvyfvupnl"]
 
 [ext_resource type="Texture2D" uid="uid://cpy6me3l3p8p1" path="res://Assets/Towers/Bomber Cactus Fire.png" id="2_0cr1v"]
 [ext_resource type="Texture2D" uid="uid://cdajg34am2lnw" path="res://Assets/Towers/Bomber Cactus Aim.png" id="4_b32pc"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://revampedTDSection/towers/throwyguy/throwingGuyAttack.gd" id="4_uwcca"]
 [ext_resource type="Texture2D" uid="uid://cbsw78fmf262h" path="res://Assets/Towers/Bomber Cactus Idle.png" id="4_v2mof"]
 [ext_resource type="PackedScene" uid="uid://dd2j0bh7imgx5" path="res://revampedTDSection/towers/throwyguy/BomberProjectile.tscn" id="5_3euwb"]
+[ext_resource type="Texture2D" uid="uid://bq332hdur6wce" path="res://Assets/Towers/pope-crown (1).png" id="7_78tja"]
 
 [sub_resource type="Animation" id="Animation_n34m8"]
 resource_name = "idle"
@@ -93,12 +94,13 @@ mytowerattackvariables = NodePath("../towerattack")
 position = Vector2(16, 0)
 shape = SubResource("RectangleShape2D_b7edo")
 
-[node name="towerattack" type="Area2D" parent="." node_paths=PackedStringArray("atktimer", "shootfromehere", "ap")]
+[node name="towerattack" type="Area2D" parent="." node_paths=PackedStringArray("atktimer", "shootfromehere", "ap", "attackDistance")]
 script = ExtResource("4_uwcca")
 atktimer = NodePath("../atkTimer")
 shootfromehere = NodePath("../shootfromheretransform")
 ap = NodePath("../AnimationPlayer")
 dmghitbox = ExtResource("5_3euwb")
+attackDistance = NodePath("../SpriteAttackDistance")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="towerattack"]
 shape = SubResource("CircleShape2D_1nouk")
@@ -108,6 +110,12 @@ one_shot = true
 
 [node name="shootfromheretransform" type="Marker2D" parent="."]
 position = Vector2(64, 0)
+
+[node name="SpriteAttackDistance" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(0.827451, 0, 0, 0.411765)
+scale = Vector2(1.56, 1.56)
+texture = ExtResource("7_78tja")
 
 [connection signal="input_event" from="throwbomberbase" to="throwbomberbase" method="_on_input_event"]
 [connection signal="area_entered" from="towerattack" to="towerattack" method="_on_area_entered"]

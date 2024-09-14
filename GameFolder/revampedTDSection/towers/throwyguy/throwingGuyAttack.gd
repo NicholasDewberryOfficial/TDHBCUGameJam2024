@@ -104,4 +104,9 @@ func rotateTowards():
 		rotvector = self.global_position.angle_to(currenemyarr[0].get_parent().position)
 	else:
 		rotvector = 0.0     
-
+		
+@export var attackDistance: Sprite2D
+func showAttackDistance(): 
+	attackDistance.visible = true
+func hideAttackDistance():
+	attackDistance.visible = false
