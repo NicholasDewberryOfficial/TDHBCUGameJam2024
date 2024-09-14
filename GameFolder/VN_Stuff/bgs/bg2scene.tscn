@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbs5w2sh5007n"]
+
+[ext_resource type="Texture2D" uid="uid://uiwgmp4uaevu" path="res://VN_Stuff/bgs/bg2.png" id="1_7x13e"]
+[ext_resource type="Script" path="res://VN_Stuff/bgs/bg1scene.gd" id="1_seuml"]
+
+[node name="Bg1Scene" type="Node2D"]
+script = ExtResource("1_seuml")
+
+[node name="Bg2" type="Sprite2D" parent="."]
+position = Vector2(960, 513)
+scale = Vector2(2.01709, 2.01181)
+texture = ExtResource("1_7x13e")

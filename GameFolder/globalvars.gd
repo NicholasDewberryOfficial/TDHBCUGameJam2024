@@ -34,7 +34,7 @@ func enemykilled(points):
 	
 	
 func enemypassed():
-	print("enemypassed")
+	#print("enemypassed")
 	corehp -=1 
 
 func goNext(): 

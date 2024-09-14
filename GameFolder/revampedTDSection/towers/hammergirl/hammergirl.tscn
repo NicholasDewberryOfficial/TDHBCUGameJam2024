@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bgrritp410nyc"]
+[gd_scene load_steps=14 format=3 uid="uid://bgrritp410nyc"]
 
 [ext_resource type="Texture2D" uid="uid://ce4w3w10hhvxd" path="res://Assets/Towers/Hammer Cactus Idle.png" id="1_6kqy5"]
 [ext_resource type="Script" path="res://revampedTDSection/towers/hammergirl/hammergirlattack.gd" id="2_3pybe"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bkk70peuabmjh" path="res://Assets/Towers/Hammer Cactus Wind-Up.png" id="3_8fd8h"]
 [ext_resource type="Script" path="res://revampedTDSection/towers/throwyguy/clickablebase.gd" id="4_5e5hc"]
 [ext_resource type="PackedScene" uid="uid://cpjlcyrseb7ye" path="res://revampedTDSection/towers/hammergirl/hammerdmghitbox.tscn" id="5_y6tel"]
+[ext_resource type="Texture2D" uid="uid://bq332hdur6wce" path="res://Assets/Towers/pope-crown (1).png" id="7_4ln22"]
 
 [sub_resource type="Animation" id="Animation_n34m8"]
 resource_name = "idle"
@@ -88,11 +89,12 @@ mytowerattackvariables = NodePath("../towerattack")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hammergirlbase"]
 shape = SubResource("RectangleShape2D_b7edo")
 
-[node name="towerattack" type="Area2D" parent="." node_paths=PackedStringArray("atktimer")]
+[node name="towerattack" type="Area2D" parent="." node_paths=PackedStringArray("atktimer", "attackDistance")]
 script = ExtResource("2_3pybe")
 atktimer = NodePath("../Timer")
 dmgdealt = 1.0
 dmghitbox = ExtResource("5_y6tel")
+attackDistance = NodePath("../SpriteAttackDistance")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="towerattack"]
 shape = SubResource("CircleShape2D_1nouk")
@@ -100,6 +102,12 @@ shape = SubResource("CircleShape2D_1nouk")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="SpriteAttackDistance" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(0.827451, 0, 0, 0.411765)
+scale = Vector2(0.54, 0.54)
+texture = ExtResource("7_4ln22")
 
 [connection signal="input_event" from="hammergirlbase" to="hammergirlbase" method="_on_input_event"]
 [connection signal="area_entered" from="towerattack" to="towerattack" method="_on_area_entered"]

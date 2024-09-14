@@ -11,6 +11,7 @@ var cost1: int
 var cost2: int 
 #reference to the tower attaack script. 
 #we call a function called (upgrade1) or (upgrade2) that applies the upgrades. 
+#can al
 var currentattackscript: Node2D
 
 signal upgradecompleted
@@ -20,14 +21,24 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	#seeIfWeClickGround()
 	changevalstoType()
 	if(currentattackscript ==null):
 		return
 	if(currentattackscript.upgrade1 == true):
 		up1.disabled = true
-		pass
+		pass 
+	else:
+		up1.disabled = false
 	if(currentattackscript.upgrade2 == true):
 		up2.disabled = true
+	else:
+		up2.disabled = false
+		
+	if(currentattackscript.has_method("showAttackDistance")):
+		currentattackscript.showAttackDistance()
+	
+	
 func changevalstoType():
 	match(currentlyselectedType):
 		0:
@@ -50,7 +61,7 @@ func changevalstoType():
 			up2.text = "2X atk Speed: 200PP"
 			cost2=200
 			pass
-
+	
 
 func _on_upgrade_1_pressed():
 	if(Globalvars.pp < cost1):
@@ -79,3 +90,17 @@ func _on_upgrade_2_pressed():
 			currentattackscript.upgrade2=true
 			currentattackscript.atktime = .5
 	upgradecompleted.emit()
+
+
+func hideTheAttackArt(): 
+	currentattackscript.hideAttackDistance()
+
+func _unhandled_input(event):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			if(currentattackscript and currentattackscript.has_method("hideAttackDistance")):
+				currentattackscript.hideAttackDistance()
+				up1.text = ""
+				up2.text = ""
+				artholder.texture = null
+				currentattackscript = null

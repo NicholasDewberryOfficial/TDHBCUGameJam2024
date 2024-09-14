@@ -24,4 +24,5 @@ func _on_input_event(viewport, event, shape_idx):
 		var thisnode: Control = get_tree().get_first_node_in_group("towerupgradesnodegroup")
 		thisnode.currentlyselectedType = type
 		thisnode.currentattackscript = mytowerattackvariables
+	
 	pass # Replace with function body.

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dpmnkggv1vuuk"]
+[gd_scene load_steps=7 format=3 uid="uid://dpmnkggv1vuuk"]
 
 [ext_resource type="Texture2D" uid="uid://ce4w3w10hhvxd" path="res://Assets/Towers/Hammer Cactus Idle.png" id="1_fhtct"]
 [ext_resource type="Script" path="res://revampedTDSection/towers/hammergirl/placetowergirl.gd" id="1_nmp1n"]
+[ext_resource type="Texture2D" uid="uid://bq332hdur6wce" path="res://Assets/Towers/pope-crown (1).png" id="3_lnq1m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gsg4h"]
 size = Vector2(200, 200)
@@ -15,21 +16,28 @@ height = 200
 
 [node name="placetowergirl" type="Node2D"]
 modulate = Color(1, 1, 1, 0.345098)
-scale = Vector2(0.3, 0.3)
 script = ExtResource("1_nmp1n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_fhtct")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 130
 collision_mask = 130
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(0.3, 0.3)
 shape = SubResource("RectangleShape2D_gsg4h")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-texture = ExtResource("1_fhtct")
-
 [node name="Sprite2D2" type="Sprite2D" parent="Area2D"]
+scale = Vector2(0.3, 0.3)
 texture = SubResource("GradientTexture2D_1slwg")
+
+[node name="SpriteAttackDistance" type="Sprite2D" parent="."]
+self_modulate = Color(0.827451, 0, 0, 0.411765)
+scale = Vector2(0.7, 0.54)
+texture = ExtResource("3_lnq1m")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

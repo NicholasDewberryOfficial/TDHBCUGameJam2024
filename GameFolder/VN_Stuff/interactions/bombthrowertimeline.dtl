@@ -1,73 +1,94 @@
+(This dialogue is for the vine throwing cactus tower)
+(Like the others, the player could enter this after a mission is finished)
+[background arg="res://VN_Stuff/bgs/outsidesaloon.png" fade="0.5"]
 The time\: 4pm
 The context\: One day, for no reason at all, a group of people started arguing about something utterly inconsequental. It's one of those good days where no one has anything better to do.
 And as we all know, idle hands cause problems.
-join Commander_Wheel 1
+join Commander_Wheel (Ponder) 1
 join Throw_Cactus 4
+[music path="res://Assets/music/everyday80s.mp3" fade="0.0" volume="0.0"]
 Commander_Wheel: We can't keep him! ARE YOU CRAZY?
 Throw_Cactus: But - He's so cute! And I already named him!
 Commander_Wheel: That doesn't - look. Okay.
 Commander_Wheel: (Deep breaths Commander. Just relax before you catch a cramp.)
-Commander_Wheel (Default): Uh...
 Throw_Cactus: My name's not Commander.
-Commander_Wheel: I KNOW! I'M TALKING TO MYSELF!
-Commander_Wheel: HOW DID YOU EVEN HEAR THAT??
+Commander_Wheel (Ponder): I KNOW! I'm talking to myself.
+Commander_Wheel: Sorry for yelling... This is just very stressful.
 Commander_Wheel: Oh man... Domino's gonna kill me if she sees this. We can't keep him.
 Throw_Cactus: I don't care about Domino! She's in administration, we can replace her easily. My friend is much more important!
 Commander_Wheel: ...
 Commander_Wheel: I'm not even gonna touch that can of worms.
-Commander_Wheel: And Domino's an important member of our team! She does all of the planning and paperwork while I play- I mean.... Plan
+Commander_Wheel: And Domino's an important member of our team! She does all of the logistics and paperwork while I play- I mean.... Plan
 Commander_Wheel: Your friend on the other hand....
 Wheel trails off as he look at... the friend that Tim brought over to the camp.
+leave Commander_Wheel
+leave Throw_Cactus
 join BearCharacter 2 [ z_index="1"]
 A great black bear looked back at him.
 Easily crossing 6 feet tall and 300 pounds, the massive bear had a heavy presence.
-Despite Wheel's height and Opuntim's... mass (for a lack of a better term), the bear could easily overpower both of them.
+Despite Wheel's height and Opuntim's muscle, the bear could easily overpower both of them.
+In fact, if it was provoked, this bear could destroy everyone here without batting an eye.
 Wheel had to treat this with the upmost concern.
 Indeed, he had to put his thinking cap on, and decide on an intelligent course of action.
 leave BearCharacter
+join Commander_Wheel (Ponder) 1
+join Throw_Cactus 4
 Commander_Wheel: Yo Domino -
 Oh right. She's off today. Guess it's plan B time.
 Commander_Wheel: *AHEM* I mean... MYRTLE!
-join Myrtle 0
-Myrtle: Hey! I was just doing some laps as a warmup. What's u- AHHH
+join Myrtle (Happy) 0 [animation="Slide In Right" length="0.3" wait="true"]
+Myrtle (Happy): Hey! I was just doing some laps as a warmup. What's u-
+Myrtle (Determined): AHHH
+update Myrtle [animation="Shake X" length="0.2" wait="true"]
 The bear didn't react to Myrtle's suprise. He was just chilling, as bears are wont to do.
 Myrtle: I can't belive what I'm seeing!
-Commander_Wheel: Exactly! So -
-Myrtle: It's so cool!
+Commander_Wheel (Smirk): Exactly! So -
+Myrtle (Happy): It's so cool!
 Myrtle: I love bears! How did we get one in our camp?
 Throw_Cactus: I just found him, and we started hanging out.
 Myrtle: Nice!
 The plan backfired. The reinforcements turned traitor.
-Commander_Wheel: ..Anyway, as I was saying - we can't keep him.
+Commander_Wheel (Ponder): ..Anyway, as I was saying - we can't keep him.
 Commander_Wheel: This isn't exactly a safe spot, and we've got a lot of responsibilities too.
 Commander_Wheel: The fight against the machines is intense. We don't have time to...
-He trails off. "Hang on. I actually play a ton of video games. I should rephrase"
+He trails off.
 Commander_Wheel: We can't find food for this bear. We have food reserves, but these animals are carnivores. We can't feed them meat, as we don't have any.
 Throw_Cactus: Bears being carnivores is actually a common misconception.
-Throw_Cactus: Bears are omnivores first and foremost. They're able to adapt to a wide variety of environments and find food. They usually prefer easy-to-get food like berries. 
+Throw_Cactus: Bears are omnivores first and foremost. They're able to adapt to a wide variety of environments and find food. They usually prefer easy-to-get food like berries.
 Throw_Cactus: Did you know that plants make up 3/4ths of a bears diet? And insects are around 20% of their diet.
 Throw_Cactus: Meat, such as fish, birds or humans, only accounts for 5%.
 Throw_Cactus: Ain't that cool!
 Commander_Wheel: Look around you! WE ARE IN THE DESERT! None of those things exist here!
 Commander_Wheel: What are they going to eat? Rocks? Well that's what they're gonna get!
-Commander_Wheel: Your friend cannot stay with us. They have to leave. End of story.
-Myrtle: Cmon... Please?
+Commander_Wheel (Smirk): Also, bears attack if they sense fear right? All it just takes is one of us to slip up - then BAM!
+update Commander_Wheel [animation="Tada" length="0.1"]
+Commander_Wheel (Ponder_Smirk): It's dangerous, I'm telling you!
+Throw_Cactus (Default): That's another misconception, and a pretty harmful one at that!
+Throw_Cactus: Animals in general don't seek out others to hunt.
+Throw_Cactus: They just want to be left alone and live happy lives. I think we can all relate to that.
+Throw_Cactus: Vigilance is fine, but treating others like they're one step from attacking is dangerous!
+Throw_Cactus: After all - "He who expects violence will be the first to commit it."
+Myrtle (Determined): Yea! That's messed up!
+Commander_Wheel: That's a pretty profound quote.
+Myrtle (Happy): So he can live here, right?
+Commander_Wheel (Ponder): You're persuasive... But still no.
+Myrtle (Determined): Cmon... Please?
 Throw_Cactus: Yea! Please?
-Commander_Wheel: I'm not budging on this. This is ridiculous.
-Myrtle: Ugh. This is stupid. He's cool, so he should stay with us.
+Commander_Wheel: I'm not budging on this. (Well, it's more like I can't)
 The stalemate continues.
-[background arg="res://VN_Stuff/blackbg.jpg" fade="0.0"]
-[background fade="0.0"]
-join Secretary_Domino 1
+[background arg="res://VN_Stuff/blackbg.jpg" fade="0.5" transition="Push Left"]
+[background arg="res://VN_Stuff/bgs/outsidesaloon.png" fade="0.5" transition="Push Right"]
 Secretary_Domino (Default): Oh my god! Is that a bear! He's soooo cute!
+join Secretary_Domino (Default) 3 [animation="Zoom In" length="0.2" wait="true"]
 Commander_Wheel: Not you too...
 Secretary_Domino (Default): It's going to be very difficult, but we can keep him. I just have to change our budget quite a bit.
 Commander_Wheel (Ponder): Don't we have better things to worry about?
 Secretary_Domino (Worried): Well....
-Commander_Wheel (Ponder): We have to be responsible. He can't stay with us for years.
-Commander_Wheel: He's got his own plans. Ain't that right?
-The bear can't speak, so it just looks at Wheel.
+Commander_Wheel (Ponder): We have to be responsible. He can't stay with us for long.
+Commander_Wheel (Smirk): He's got his own plans. Ain't that right?
+The bear can't speak, so it just looks at the commander.
 BearCharacter (bearpicture): You know.... It is quite perplexing that no one's asked my opinion yet.
+leave --All-- [animation="Bounce Out" length="3.5" wait="true"]
 join BearCharacter 1 [ z_index="1"]
 IT CAN TALK?
 Myrtle: WHAT?
@@ -77,30 +98,37 @@ Commander_Wheel: Wha- oh I mean *Ahem*. Yes. I knew all along.
 Commander_Wheel: Totally.
 Commander_Wheel: What's your thoughts?
 BearCharacter: I've had a lot of time being around all of you.
+[music fade="0.1" volume="0.0"]
+[music path="res://VN_Stuff/audios/Cinematic Violin Background Music  No Copyright.mp3" fade="0.0" volume="0.0"]
 BearCharacter: And I enjoyed that time. A lot in fact.
 BearCharacter: All of you are magical, and possess qualities I deeply respect.
 Throw_Cactus: Thanks!
 BearCharacter: Not you.
 BearCharacter: Just kidding. You were my favorite person to know out of everyone here.
 BearCharacter: I know we haven't known each other for a long time, but I really enjoyed our adventures.
-[background fade="0.0"]
+leave BearCharacter
+[background scene="res://VN_Stuff/bgs/bg1scene.tscn" fade="0.0"]
 BearCharacter: Swimming up that waterfall before the sun came up -
-[background fade="0.0"]
+[background scene="res://VN_Stuff/bgs/bg2scene.tscn" fade="0.0"]
 BearCharacter: Defeating that Machine Titan that was invlunerable to all conventional weaponry in the morning -
-[background fade="0.0"]
+[background scene="res://VN_Stuff/bgs/bg3scene.tscn" fade="0.0"]
 BearCharacter: Punching bullets out of the air in the afternooon -
+[background arg="res://VN_Stuff/bgs/outsidesaloon.png" fade="0.0"]
 BearCharacter: To relaxing in this quaint little camp.
 BearCharacter: Thank all of you.
-The bear started glowing white, and started lifting up.
+The bear started glowing white, and started flying upwards.
+[background scene="res://VN_Stuff/bgs/bg4scene.tscn" fade="0.0"]
 Throw_Cactus: NO! It can't be! Don't leave us.
 BearCharacter: Farewell my friend.
 BearCharacter: Please... Never change.
-The Bear dissapeared in a pillar of light as the the rest of the cactuses started sobbing.
+The Bear dissapeared in a pillar of light as the the rest of the cactuses stood, dumbfounded.
+[background arg="res://VN_Stuff/bgs/outsidesaloon.png" fade="0.0"]
 Myrtle: Good bye.... Brother bear.
 Secretary_Domino: He was too good for this world.
 Commander_Wheel: Wait... Tim - did you do all of that?
 Throw_Cactus: Yep! Sure did!
-Commander_Wheel: (WOW, I shouldnt mess with this guy.) 
-Myrtle (Happy): Well all's well that ends well! 
+Commander_Wheel: (WOW, I shouldnt mess with this guy.)
+[music fade="0.1" volume="0.0"]
+Myrtle (Happy): Well all's well that ends well!
 Myrtle (Determined): Now, Time to get another bear!
 Commander_Wheel (Ponder): WAIT - NO!

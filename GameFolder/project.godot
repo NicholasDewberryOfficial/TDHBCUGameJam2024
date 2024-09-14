@@ -33,13 +33,18 @@ directories/dch_directory={
 "Myrtle": "res://VN_Stuff/Myrtle.dch",
 "Secretary_Domino": "res://VN_Stuff/Secretary_Domino.dch",
 "Throw_Cactus": "res://VN_Stuff/Throw_Cactus.dch",
+"snipercharacter": "res://VN_Stuff/snipercharacter.dch",
 "vinecactusOctillob": "res://VN_Stuff/vinecactusOctillob.dch"
 }
 directories/dtl_directory={
+"BossRobot1": "res://VN_Stuff/interactions/BossRobot1.dtl",
+"BossRobot2": "res://VN_Stuff/interactions/BossRobot2.dtl",
 "Intro_Cutscene": "res://VN_Stuff/Intro_Cutscene.dtl",
 "Intro_Part_2": "res://VN_Stuff/Intro_Part_2.dtl",
+"NewIntro": "res://VN_Stuff/NewIntro.dtl",
 "VN_Stuff/hammergirl1timeline": "res://VN_Stuff/hammergirl1timeline.dtl",
 "bombthrowertimeline": "res://VN_Stuff/interactions/bombthrowertimeline.dtl",
+"cactussniper1": "res://VN_Stuff/interactions/cactussniper1.dtl",
 "hammergirl1timeline": "res://VN_Stuff/interactions/hammergirl1timeline.dtl",
 "slowervine1timeline": "res://VN_Stuff/interactions/slowervine1timeline.dtl"
 }
@@ -67,6 +72,7 @@ variables={
 }
 glossary/default_case_sensitive=true
 history/simple_history_enabled=true
+text/autocolor_names=true
 
 [display]
 
@@ -138,6 +144,16 @@ backward={
 jump={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"echo":false,"script":null)
+]
+}
+rclick={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":2,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
+dialogic_auto_skip={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":67,"key_label":0,"unicode":99,"echo":false,"script":null)
 ]
 }
 

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://daud22ogmvkjj"
+path="res://.godot/imported/Chill Synthwave - Arcadia  Royalty Free No Copyright Music.mp3-cb94a823c662a372e1014bcdbc586733.mp3str"
+
+[deps]
+
+source_file="res://VN_Stuff/audios/Chill Synthwave - Arcadia  Royalty Free No Copyright Music.mp3"
+dest_files=["res://.godot/imported/Chill Synthwave - Arcadia  Royalty Free No Copyright Music.mp3-cb94a823c662a372e1014bcdbc586733.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

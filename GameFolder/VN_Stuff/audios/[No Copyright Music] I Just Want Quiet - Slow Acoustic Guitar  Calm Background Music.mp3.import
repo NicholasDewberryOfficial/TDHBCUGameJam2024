@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://61ys6t1klfaq"
+path="res://.godot/imported/[No Copyright Music] I Just Want Quiet - Slow Acoustic Guitar  Calm Background Music.mp3-d26087fc9c28ccd6bcc6a76da9dce0cb.mp3str"
+
+[deps]
+
+source_file="res://VN_Stuff/audios/[No Copyright Music] I Just Want Quiet - Slow Acoustic Guitar  Calm Background Music.mp3"
+dest_files=["res://.godot/imported/[No Copyright Music] I Just Want Quiet - Slow Acoustic Guitar  Calm Background Music.mp3-d26087fc9c28ccd6bcc6a76da9dce0cb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

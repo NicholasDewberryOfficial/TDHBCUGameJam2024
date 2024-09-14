@@ -108,3 +108,8 @@ func rotateTowards():
 	
 	#var rotatiton = Vector2.from_angle()
 
+@export var attackDistance: Sprite2D
+func showAttackDistance(): 
+	attackDistance.show()
+func hideAttackDistance():
+	attackDistance.hide()

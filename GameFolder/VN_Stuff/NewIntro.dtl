@@ -1,0 +1,168 @@
+The world was once at peace.
+[background arg="res://VN_Stuff/bgs/bgAgain/Ardentryst-Altar_Entarya.png" fade="0.6"]
+[music path="res://VN_Stuff/audios/Heartbeat - Royalty Free Fantasy Music.mp3" fade="0.0" volume="0.0"]
+Cactusfolk, Treefolk, and Fungusfolk all lived in harmony.
+The folk all believed in giving back to nature, living peacefully, and creating artistic works..
+However, the world is a big place.
+Very big, and unexplored.
+Strange machines started appearing on the coast of the desert.
+During their investigations, none of the folk could find out why they were here.
+Sightings of small robotic machines occured across the land, but no communication was possible with them.
+The prevaling theory was that these machines were lost or scared, and they needed help.
+They did not know how wrong they were.
+
+All at once, a vicious snow storm spread across the land, disconnecting all of the folk from one another.
+[background arg="res://VN_Stuff/bgs/bgAgain/Ardentryst-Altar_Snodom.png" fade="0.5"]
+Earthquakes occured all across the land - rapturing and rearranging the very ground.
+This troubled the now isolated cactusfolk, but they managed to reorient themselves quickly.
+30 of the smartest elders organized the cactusfolk and created plans.
+Little did they know, the worst was yet to come.
+A massive invasion force appeared. With robotic precsision, the robots have plunged the desert into chaos.
+[background arg="res://VN_Stuff/bgs/bgAgain/Ardentryst-redbg.png" fade="0.0"]
+Homes were destroyed, nature was destroyed, and the cactusfolk had to run for their lives.
+The only consolation was that losses were minimial.
+Minimal with one exception\:
+Over the course of the invsasion, all thirty elders have gone missing.
+Some have been kidnapped in broad daylight, while others dissapered in the middle of the night - without a word.
+...
+[background arg="res://VN_Stuff/bgs/desert2.jpg" fade="0.0"]
+Days after the initial invasion, the robotic advance has been significantly slowed.
+The harsh desert climate, with its hot sun and dust was a natural enemy for the robots.
+Scouting robots tied to advance, but their wheels always got stuck
+Despite the strength of the robotic force - the war has grinded to a stalemate.
+...
+[background arg="res://VN_Stuff/bgs/outsidesaloon.png" fade="0.0"]
+[music fade="0.1" volume="0.0"]
+[music path="res://VN_Stuff/audios/[No Copyright Music] I Just Want Quiet - Slow Acoustic Guitar  Calm Background Music.mp3" fade="0.0" volume="0.0"]
+Right next to the front lines, a saloon stands in the desert. It's surrounded by small camps, tents and shops.
+It's atop a mesa, a flat hill with steep sides, and is incredibly hard to place under siege.
+[background arg="res://VN_Stuff/bgs/parlorinsideagane.png" fade="0.3"]
+At the top of the saloon, two people pace around in their office.
+join Commander_Wheel 1 [animation="Zoom In Center" length="0.3" wait="true"]
+The taller figure, Commander Wheel, is taking over as the leader of the cactuses.
+Despite his background in traditional portrait painting, he's entrusted with strategy.
+Commander_Wheel: What's the the scouting report from Saguara say?
+join Secretary_Domino (Worried) 2 [animation="Zoom In" length="0.4" wait="true"]
+Secretary_Domino (Default): The HQ of the enemy has to be around this area.
+Secretary_Domino (Default): Our search range is pretty wide, and visibility is pretty low - but she has high confidence in this prediction.
+Secretary_Domino (Default): We can reasonably assume that our elders are there.
+The smaller cactus gives Wheel a map and a set of notes.
+Her name is Domino, and she deals with the logistical planning of the cactusfolk now.
+Her experience is in managing artists for art galleries and residencies. Her foresight is unparalleled.
+Together the both of them face a dangerous dillemma.
+Surrounded by enemies on all sides, seperated from their allies and elders  and inexperienced with battle - the cactusfolk face extinction.
+Commander_Wheel (Ponder_Smirk): The people are okay. I held a meeting a while ago, they don't seem to be that worried.
+Even though he doesn't include how he's been lying to them about the state of the battle, Domino understands that he's leaving something out.
+There is no way they could know what is happening out there without being terrified.
+And once morale breaks, it's all over.
+Commander Wheel takes a long puff out of his pipe.
+update Commander_Wheel (Ponder) 4 [animation="Bounce"]
+Domino looks down, silently.
+Something needs to be done... But what?
+The clock on the wall ticks to 6\:05pm. Even though the meeting has just started, they have nothing else to talk about.
+It wasn't like this at first. However, as time went on, their conversations grew shorter and shorter.
+They need nothing short of a miracle to turn this around.
+...
+Domino, being closer to the ground hears it first. A figure running quickly across the sandy dunes.
+The saloon door is thrown open as a high pitched voice yells "Howdy!" downstairs.
+Another voice responds to the runner by saying "You can't come up here!"
+The runner laughs and says "Outta the way! TOOOOH!"
+The saloon rumbles as the other voice gets thrown to the wall.
+This young and energetic runner speeds up the stairs, making stompy noises as he ascends.
+Only now does the Commander notice.
+Commander_Wheel (Smirk): Oh, Myrtles coming!
+The door is pushed open so hard it hits the wall. A dull THUD shakes the room.
+join Myrtle 1 [animation="Bounce In" wait="true"]
+[sound path="res://VN_Stuff/audios/explosion1.wav" volume="0.0"]
+Myrtle (Determined): *Huff* *Huff*
+Myrtle (Happy): HOWDY! I got some news!
+Domino sighs, and her eyes go back to commander Wheel.
+He exhudes confidence now. He's really good at pretending everythings alright.
+Myrtle (Happy): The robots are splitting up!
+Wheels mouth goes open wide for a second, while fear shows on Dominos face.
+Commander_Wheel (Ponder_Smirk): What do you mean by that?
+He asked innocently.
+Myrtle: I was out with Saguara, she noticed that the robots are moving to circle around us, as well as the trails surrounding the saloon.
+Myrtle: They're mobilizing, and quite quickly too.
+Wheel adjusts his hat and sighs. Domino is the first to respond.
+Secretary_Domino (Worried): Firstly - You are not allowed to run around.
+Myrtle: Bu-
+Secretary_Domino (Default): No buts! You are young, Saguara has much more experience in patrolling than you.
+Secretary_Domino (Worried): I know she has a lot of confidence in you, but it's not enough. It's dangerous out there!
+Myrtle (Determined): Oh phooey.
+Myrtle: Someone needs to do something!
+Myrtle: Right now, all of the robots are moving!
+Secretary_Domino: Are you out of your mind?? What if they found you?
+Myrtle: They did. But it's okay! They're stupid, they can't do anything.
+Domino and Myrtle bickered for a bit longer.
+Wheel sighed hard, then spoke up.
+Commander_Wheel (Ponder): Myrtle. You don't understand this...
+Commander_Wheel: We are... in a precarious position.
+Commander_Wheel: It's very dangerous outside and-
+Myrtle (Happy): Oh I know!
+Myrtle exclaimed proudly. Wheel and Domino were quite confused.
+Myrtle: I've been scouting for quite a while.
+Myrtle: I can pick up on a few things, y'know!
+Commander_Wheel: Okay...
+Myrtle: That's right!
+Commander_Wheel: You don't get the gravity of the situation.
+Commander_Wheel: In a few minutes, all hands will be on deck.
+Commander_Wheel: If they are moving the way you say they are -
+Wheel gulps. He doesn't want to say it.
+Commander_Wheel: That means they are moving to attack us.
+Commander_Wheel: To destroy us like they destroyed our homes.
+Commander_Wheel (Ponder): Or to kidnap us like they kidnapped our elders.
+Secretary_Domino: We will make our last stand here.
+Secretary_Domino (Worried): We can't fail.
+The two of them became extremely sullen and serious. Myrtle, picking up on this, became serious too.
+The air became intense. Everyone was serious.
+Myrtle walked across the room, and looked out the window.
+ALl three of them were staring at the robots moving.
+A small squadron of robots were walking slowly, single file down a trail they have made.
+Their moods were low.
+Until Myrtle started laughing.
+Myrtle (Happy): Pfft! Hahaha!
+[music fade="0.2" volume="0.0"]
+[music path="res://VN_Stuff/audios/Retro Synth RPG Battle Theme Upbeat Battle Theme Royalty Free Music.mp3" fade="0.0" volume="0.0"]
+Myrtle: See you outside!
+Secretary_Domino (Worried): Hey! Wait!
+Myrtle started running down the stairs.
+leave Myrtle [animation="Bounce Out" length="0.4" wait="true"]
+Myrtle: "HEY GUYS! FOLLOW ME!"
+Myrtle: LETS TURN THOSE SCRAP HEAPS INTO BUCKETS O' BOLTS!
+Secretary_Domino: What the -
+For the life of her, she could not figure out what made Myrtle so happy.
+What was the good news he brought up?
+Commander_Wheel (Ponder_Smirk): OH MY THORN!
+Commander_Wheel (Smirk): WOW!
+He started belly laughing.
+Commander_Wheel: Domino... Things were never that serious.
+He began moving outside of the room.
+Commander_Wheel: This'll be easy.
+leave Commander_Wheel [animation="Slide Out Left" length="0.4" wait="true"]
+Secretary_Domino: Hey! Wait!
+Secretary_Domino: Ugh... This is stupid.
+She looked out the window once again.
+She didn't get it.
+She looked at the map, then outside.
+Wait a second...
+In Sagura's estimations, there could not have been more than 300 robots outside.
+A large number, sure, but nothing compared to what they had to face in the past.
+Sure, they were all uniform, tiny and moving in a straight line
+Wait. What are they actually doing?
+Before they blitzed down and exploded themselves onto buildings - but the terrain has changed.
+They can no longer move in a singular direction as the ground is far too tough to cross.
+They barely managed to make their own trails.
+Hang on... Isn't this really good?
+Domino ran to the window.
+She cursed the fact that she has been looking at paper in dark rooms for the past few years, and squinted hard.
+Secretary_Domino: Haha! wow!
+All of the paths the robots have made - they are perfect for the cactusfol to get right on top of the hills next to them.
+Then, any one of the cactusfolk can throw things down on the robots as they approach.
+That also means that none of the robots can fight back!
+They just have to get hit by the cactuses, and hope they can reach the end.
+Just like sitting ducks!
+She looked down the stairs to join them, then figured "Eh, they'll be alright" and sat back down.
+The counterattack has begun!
+[music fade="0.1" volume="0.0"]
+do DialogicSceneChanger.okswitchscene("res://VN_Stuff/VNSceneSelection.tscn")

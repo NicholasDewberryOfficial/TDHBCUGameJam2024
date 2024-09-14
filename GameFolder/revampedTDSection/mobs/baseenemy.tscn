@@ -159,7 +159,6 @@ scale_amount_curve = SubResource("Curve_fwuss")
 
 [node name="bonksound" type="AudioStreamPlayer2D" parent="PathFollow2D/baseenemyart/baseenemyhitbox"]
 stream = ExtResource("4_w5hcw")
-stream_paused = true
 
 [node name="deathsound" type="AudioStreamPlayer2D" parent="PathFollow2D/baseenemyart/baseenemyhitbox"]
 stream = ExtResource("3_n2n2m")
