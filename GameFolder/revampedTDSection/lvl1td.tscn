@@ -23,7 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://csaf54e1ljpfa" path="res://revampedTDSection/towers/plantingtowerparticles.tscn" id="16_2hm5o"]
 [ext_resource type="Script" path="res://revampedTDSection/pausebutton.gd" id="20_lear6"]
 [ext_resource type="Script" path="res://revampedTDSection/tasklisttracker.gd" id="22_y4rvr"]
-[ext_resource type="PackedScene" uid="uid://d3kg1trfmogmc" path="res://revampedTDSection/missiontextlabel.tscn" id="23_0cxp7"]
+[ext_resource type="PackedScene" path="res://revampedTDSection/missiontextlabel.tscn" id="23_0cxp7"]
 [ext_resource type="PackedScene" uid="uid://b1bqxrdvle0ci" path="res://topleftminigames/RPGStuff/actionrpgbattle.tscn" id="25_uy312"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iri12"]

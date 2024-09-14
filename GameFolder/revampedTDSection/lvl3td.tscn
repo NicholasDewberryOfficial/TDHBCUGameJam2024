@@ -116,7 +116,7 @@ position = Vector2(249.39, 621.577)
 
 [node name="PathFollow2D" parent="tdstuff/mobholder/propellerbotlvl3" index="0"]
 position = Vector2(-32.4003, 230.05)
-rotation = 0.0218474
+rotation = 0.0218484
 progress = 185.141
 
 [node name="towerholder" type="Node2D" parent="tdstuff"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://nvppu7du44if"]
+[gd_scene load_steps=10 format=3 uid="uid://nvppu7du44if"]
 
 [ext_resource type="Script" path="res://Overworld_Stuff/level_select.gd" id="1_uvg21"]
 [ext_resource type="PackedScene" uid="uid://d31v6hktvr3dj" path="res://Overworld_Stuff/level_icon.tscn" id="2_js67h"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b625i3hlarqr3" path="res://Assets/CC_Level_2_Node.png" id="4_u1sg7"]
 [ext_resource type="Texture2D" uid="uid://b0i5621nrkrw6" path="res://Assets/CC_Level_3_Node.png" id="5_wkoqu"]
 [ext_resource type="Texture2D" uid="uid://bo4kr77j8743g" path="res://Assets/CC_Level_4_Node.png" id="6_xckxf"]
+[ext_resource type="Texture2D" uid="uid://cjhny03ljouxq" path="res://Assets/CC_Red_Pin.png" id="9_mmkrp"]
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
@@ -107,3 +108,8 @@ next_level_left = NodePath("../1-C")
 layout_mode = 0
 offset_top = 8.0
 offset_bottom = 72.0
+
+[node name="CcRedPin" type="Sprite2D" parent="."]
+position = Vector2(162.75, 134.5)
+scale = Vector2(0.51699, 0.5)
+texture = ExtResource("9_mmkrp")
