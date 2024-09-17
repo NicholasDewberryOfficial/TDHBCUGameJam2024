@@ -12,7 +12,7 @@ config_version=5
 
 config/name="TDHBCUGameJam2024"
 config/tags=PackedStringArray("current")
-run/main_scene="res://revampedTDSection/temporary tutorial scene.tscn"
+run/main_scene="res://VN_Stuff/VNSceneSelection.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -26,24 +26,32 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "AOE_Cactus": "res://Assets/Talk_Sprites/AOE_Cactus.dch",
+"BearCharacter": "res://VN_Stuff/BearCharacter.dch",
 "Commander_Wheel": "res://VN_Stuff/Commander_Wheel.dch",
+"DimsumCharacter": "res://VN_Stuff/DimsumCharacter.dch",
 "Engineer_Cactus": "res://Assets/Talk_Sprites/Engineer_Cactus.dch",
 "Hammer_Cactus": "res://VN_Stuff/Hammer_Cactus.dch",
 "Music_Cactus": "res://VN_Stuff/Music_Cactus.dch",
 "Myrtle": "res://VN_Stuff/Myrtle.dch",
 "Secretary_Domino": "res://VN_Stuff/Secretary_Domino.dch",
 "Throw_Cactus": "res://VN_Stuff/Throw_Cactus.dch",
+"snipercharacter": "res://VN_Stuff/snipercharacter.dch",
 "vinecactusOctillob": "res://VN_Stuff/vinecactusOctillob.dch"
 }
 directories/dtl_directory={
+"BossRobot1": "res://VN_Stuff/interactions/BossRobot1.dtl",
+"BossRobot2": "res://VN_Stuff/interactions/BossRobot2.dtl",
+"BossRobot3": "res://VN_Stuff/interactions/BossRobot3.dtl",
 "Intro_Cutscene": "res://VN_Stuff/Intro_Cutscene.dtl",
 "Intro_Part_2": "res://VN_Stuff/Intro_Part_2.dtl",
-"VN_Stuff/hammergirl1timeline": "res://VN_Stuff/hammergirl1timeline.dtl",
+"NewIntro": "res://VN_Stuff/NewIntro.dtl",
+"bombthrowertimeline": "res://VN_Stuff/interactions/bombthrowertimeline.dtl",
+"cactussniper1": "res://VN_Stuff/interactions/cactussniper1.dtl",
 "hammergirl1timeline": "res://VN_Stuff/interactions/hammergirl1timeline.dtl",
 "slowervine1timeline": "res://VN_Stuff/interactions/slowervine1timeline.dtl"
 }
-layout/style_list=[]
-layout/default_style=""
+layout/style_list=["res://VN_Stuff/styles/dewstyle1.tres"]
+layout/default_style="res://VN_Stuff/styles/dewstyle1.tres"
 text/letter_speed=0.004
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.0
@@ -66,6 +74,7 @@ variables={
 }
 glossary/default_case_sensitive=true
 history/simple_history_enabled=true
+text/autocolor_names=true
 
 [display]
 
@@ -137,6 +146,16 @@ backward={
 jump={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"echo":false,"script":null)
+]
+}
+rclick={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":2,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
+dialogic_auto_skip={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":67,"key_label":0,"unicode":99,"echo":false,"script":null)
 ]
 }
 

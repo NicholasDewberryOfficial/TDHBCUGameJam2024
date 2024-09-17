@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=13 format=3 uid="uid://cgptvgsmuxhkw"]
+
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="1_08cfq"]
+[ext_resource type="PackedScene" uid="uid://bquja8jyk8kbr" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_layer.tscn" id="1_u7gsg"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_48rqw"]
+[ext_resource type="PackedScene" uid="uid://cy1y14inwkplb" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Portraits/vn_portrait_layer.tscn" id="3_8jmif"]
+[ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="4_y8g7p"]
+[ext_resource type="PackedScene" uid="uid://lx24i8fl6uo" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn" id="5_v8wko"]
+[ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="6_1l31m"]
+
+[sub_resource type="Resource" id="Resource_yqqmb"]
+script = ExtResource("2_48rqw")
+scene = ExtResource("4_y8g7p")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_tnpjw"]
+script = ExtResource("2_48rqw")
+scene = ExtResource("3_8jmif")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_vl44h"]
+script = ExtResource("2_48rqw")
+scene = ExtResource("1_u7gsg")
+overrides = {
+"box_margin_bottom": "50.0",
+"box_size": "Vector2(600.999, 200)",
+"text_size": "25.0"
+}
+
+[sub_resource type="Resource" id="Resource_yvyrf"]
+script = ExtResource("2_48rqw")
+scene = ExtResource("5_v8wko")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_xguva"]
+script = ExtResource("2_48rqw")
+scene = ExtResource("6_1l31m")
+overrides = {}
+
+[resource]
+script = ExtResource("1_08cfq")
+name = "dewstyle1"
+base_overrides = {}
+layers = Array[ExtResource("2_48rqw")]([SubResource("Resource_yqqmb"), SubResource("Resource_tnpjw"), SubResource("Resource_vl44h"), SubResource("Resource_yvyrf"), SubResource("Resource_xguva")])
+metadata/_latest_layer = 2

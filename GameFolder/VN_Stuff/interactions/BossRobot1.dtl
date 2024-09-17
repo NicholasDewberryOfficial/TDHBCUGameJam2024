@@ -44,3 +44,4 @@ It was all plunged into darkness.
 [sound path="res://VN_Stuff/audios/weaponfire11.wav" volume="0.0"]
 ACTIVATE TEMPORARY LEADER \: V4319084
 "I SHALL OBEY."
+do DialogicSceneChanger.okswitchscene("res://VN_Stuff/VNSceneSelection.tscn")

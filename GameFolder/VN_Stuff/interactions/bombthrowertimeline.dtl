@@ -132,3 +132,4 @@ Commander_Wheel: (WOW, I shouldnt mess with this guy.)
 Myrtle (Happy): Well all's well that ends well!
 Myrtle (Determined): Now, Time to get another bear!
 Commander_Wheel (Ponder): WAIT - NO!
+do DialogicSceneChanger.okswitchscene("res://VN_Stuff/VNSceneSelection.tscn")

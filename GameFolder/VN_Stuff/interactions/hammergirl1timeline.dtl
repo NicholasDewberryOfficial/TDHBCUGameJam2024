@@ -1,13 +1,16 @@
 # #this dialogue is once the player talks to her in the overworld section, after level 1 
-join Myrtle 1
+\#this dialogue is once the player talks to her in the overworld section, after level 1
+[background arg="res://VN_Stuff/bgs/outsidesaloon.png" fade="0.3"]
+join Myrtle (Determined) 1
 Myrtle: Man, I'm beat. We barely managed to fight against 'em.
 Myrtle: It was a pretty big horde, and it all could’ve went down if anything went wrong.
 Myrtle: I’ll have to check on everyone else. I hope the morale ain't too low.
 As Myrtle walks across the camp, he sees a small tent with a bright light inside.
-Myrtle: She must be feeling down. I'll go check on her.
+Myrtle (Happy): She must be feeling down. I'll go check on her.
 Within seconds, he realizes the mistake he's made.
-join Hammer_Cactus 2 [animation="Bounce In" length="0.3" wait="true"]
-[music path="Fashion Saxophone Hip-Hop by Infraction [No Copyright Music]  Do It.mp3" fade="0.0" volume="0.0"]
+join Hammer_Cactus 3 [animation="Bounce In" length="0.3" wait="true"]
+[music path="res://VN_Stuff/audios/Fashion Saxophone Hip-Hop by Infraction [No Copyright Music]  Do It.mp3" fade="0.0" volume="0.0"]
+[background arg="res://VN_Stuff/bgs/ishvz3ta0810mr0000000000.webp" fade="0.0"]
 Hammer_Cactus: Howdy!!!!
 Hammer_Cactus: HIIII!!!!
 Hammer_Cactus: Yoohoo Myrtle!!! Nice to see you! Nice work today!
@@ -23,14 +26,82 @@ Myrtle: There's... a lotta junk here. Need me to help you with cleanup?
 Hammer_Cactus: No. I wouldn't want Mini Myrtle to hurt himself. This is ART, can't you see?
 She holds up a necklace. The cord is made out of a soft bright-white fabric - while the embellishment is this extremely garish half-destroyed cog.
 Hammer_Cactus: Do you comprehend the meaning of this piece?
+Myrtle stares blankly.
+Myrtle (Happy): Yes!
+Myrtle (Determined): It's a recycling thing, right? The ropes are made out of dead plants, and the cog can be considered "dead" in the same way.
+Myrtle (Happy): It's no longer usable by the machines - however we are able to find new use for it. 
+Hammer_Cactus: Very nice Myrtle! How about... this?
+She points to a massive piece of scrap metal. It's a huge square, and its so heavy that its sinking into the floor.
+The room is unbalanced by this piece of steel - and Myrtle has no idea how she got it in here.
+On top of the metal, Polly has thrown a bunch of abstract paint onto it. The colors are chaotic and random.
+There is no cohesion or vision, that Myrtle can notice.
+Myrtle: Okay. I'm impressed. Not with the art, but with how you managed to get this metal in here.
+Myrtle: What's the name of this piece?
 # There should be text choice thingy here.
-Hammer_Cactus: Nice try. I call this, "BOLD AND BRASH!"
-Instantly Myrtle's body erupts in a cold sweat. No. He must not. BUT HE CAN.
-He can se the funniest thing ever. but he shouldn't.
-Hammer_Cactus: Everything alright? Are you in awe now?
-His throat is even drier than usual. His cactus hairs are curling, bending into themselves as he loses his composure.
-A normal visit to one of his companions almost turned into a fight to the death.
-Myrtle: You win... This round.
-With his head held high, he walks out of the tent as a new man. One who didn't say it.
-Under his breath, he looks to the stars, and mutters the one thing on his mind.
-Myrtle: Bold and brash. More like belongs in the trash.
+Hammer_Cactus: I call this, "BOLD AND BRASH!"
+Myrtle: Bold and brash? More like belongs in the -
+All at once he catches himself.
+He looks around the room some more.
+Only now does Myrtle notice how [b] heavy [/b] most of the objects that surround him are.
+Massive steel beams. Rusted metal submarines. A massive robotic arm that's thrice the size of Polly.
+Myrtle (Happy): Actually Polly, how did you get these large items in here?
+Hammer_Cactus: Oh, I just carried them.
+To demonstrate this, she drops her club and walks over to a metal submarine.
+The club drops, and shakes the entire room. It sounds like an explosion.
+[sound path="res://VN_Stuff/audios/explosion1.wav" volume="0.0"]
+Like it's made out of air, Polly easily picks up the submarine.
+Myrtle (Determined): HEY! Watch where you're moving that thing!
+update Myrtle (Determined) 1 [animation="Shake X" length="0.2"]
+Polly airheadedly moved around the massive submarine. It didn't hit anything in the cramped room.
+But that was mostly because Myrtle jumped out of the way.
+Hammer_Cactus: I like this one! It's named "An eagle in the sea, but just a fish on land"
+Hammer_Cactus: What do you think?
+Polly gets closer to Myrtle, as he slowly backs away from her.
+Myrtle: Uh... It's great Polly! Just superb. I like the title as well.. Very creative!
+Hammer_Cactus: I know right!
+Myrtle thought to himself "There must be a trick to this or something"
+Myrtle: Do you mind if I pick up your club?
+Hammer_Cactus: Sure!
+Myrtle mosies on over, and tries to lift it.
+After about two seconds of struggle, he realizes the disparity between him and Polly.
+Looking at her body, she's not exactly... muscular.
+Where does she get her power from?
+Myrtle: Hey Polly? How did you get so strong?
+Myrtle: Like what's your training routine?
+Hammer_Cactus: Oh, I don't train at all.
+Hammer_Cactus: I think of myself like a lion, y'know? You don't see lions running around as they practice to get prey.
+Hammer_Cactus: They just do.
+Myrtle: If you did train, you'd be unstoppable. You should consider it!
+Hammer_Cactus: Nah, I'd be too powerful.
+Hammer_Cactus: Even now, I've got to keep my power under control. I could easily explode this submarine with just my grip strength.
+Myrtle: Uh... Really?
+Myrtle: You're exaggerating... Right?
+[music fade="0.2" volume="0.0"]
+[music path="res://VN_Stuff/audios/Cinematic Violin Background Music  No Copyright.mp3" fade="0.0" volume="0.0"]
+Hammer_Cactus: ...
+[background arg="res://VN_Stuff/blackbg.jpg" fade="0.5"]
+Hammer_Cactus: All intelligent life understands the value of fear. It's an important primal emotion.
+Hammer_Cactus: Must more important than joy or hunger.
+Hammer_Cactus: It overrides everything else. Vultures would rather let delicious meals rot under the hot sun rather than risk disease.
+Hammer_Cactus: An aura of death surrounds everything I do. All animals run from me the moment I enter any area.
+Hammer_Cactus: They can see me approach from miles away, and they abandon their young as they run for their lives.
+Hammer_Cactus: It's hard to get inspiration from living things, especially when my mere existence inspires them to run.
+Hammer_Cactus: Only the folk and non-intelligent life are able to tolerate my presence.
+Hammer_Cactus: But why is that? Is it that the plants and grass are much smarter than we think, or is it that the folk are much stupider than we expected?
+Hammer_Cactus: I think that's only because they don't notice the danger my existence puts them in.
+Hammer_Cactus: But I know, I'm not alone.
+Hammer_Cactus: There are others that bear my curse currently. And there will be more in the future.
+Hammer_Cactus: For our sake, I hope they choose the right path.
+...
+Myrtle is stunned.
+Myrtle: So... Uh...
+[music fade="0.0" volume="0.0"]
+Myrtle (Happy): Would you mind if we moved some of your artwork to the saloon! I think they might appreciate it!
+Hammer_Cactus: Sure! Make sure to bring Domino here, I spoke to her a while ago, but we've been busy lolol.
+leave --All-- [animation="Bounce Out" length="0.4" wait="true"]
+...
+[background arg="res://VN_Stuff/bgs/outsidesaloon.png" fade="0.5" transition="Simple Fade"]
+A short while later, the Saloon gets an art exhibit.
+join Commander_Wheel (Ponder) 1
+Commander_Wheel: I don't get it.
+do DialogicSceneChanger.okswitchscene("res://VN_Stuff/VNSceneSelection.tscn")

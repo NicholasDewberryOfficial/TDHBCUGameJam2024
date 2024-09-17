@@ -10,9 +10,9 @@
 },
 "default_portrait": "Default",
 "description": "",
-"display_name": "Hammer_Cactus",
+"display_name": "Polly",
 "mirror": false,
-"nicknames": [""],
+"nicknames": ["Polly"],
 "offset": Vector2(0, 0),
 "portraits": {
 "Default": {

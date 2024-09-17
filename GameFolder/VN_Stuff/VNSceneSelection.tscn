@@ -2,10 +2,18 @@
 
 [ext_resource type="Script" path="res://VN_Stuff/VNSceneSelection.gd" id="1_7hdeu"]
 
-[node name="VnSceneSelection" type="Node2D"]
+[node name="VnSceneSelection" type="Node2D" node_paths=PackedStringArray("initialconotrol", "secondarycontrol")]
 script = ExtResource("1_7hdeu")
+initialconotrol = NodePath("Control")
+secondarycontrol = NodePath("Control2")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
 offset_left = 592.0
 offset_right = 1056.0
 offset_bottom = 144.0
@@ -13,23 +21,23 @@ text = "Hello! I am Nicholas Dewberry, the lead game designer, programmer and wr
 
 Click any button to see the dialogue scene! "
 
-[node name="Button" type="Button" parent="."]
+[node name="morecactuscalvary" type="Button" parent="Control"]
 offset_left = 640.0
 offset_top = 112.0
 offset_right = 928.0
 offset_bottom = 208.0
 text = "MORE ABOUT CACTUS CALVARY"
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="Control"]
 offset_right = 528.0
 offset_bottom = 1072.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel"]
 layout_mode = 0
 offset_right = 528.0
 offset_bottom = 1072.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Panel/VBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Lighthearted Character interaction. 
@@ -40,44 +48,44 @@ Goals:
 -Give characters depth 
 -Develop Myrtle's character "
 
-[node name="Button5" type="Button" parent="Panel/VBoxContainer"]
+[node name="gameintrocutscene" type="Button" parent="Control/Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Game Intro Cutscene (Start Here)"
+text = "Game Intro Cutscene (Start Here) (6-8 mins)"
 
-[node name="Button" type="Button" parent="Panel/VBoxContainer"]
+[node name="snipercactusscene" type="Button" parent="Control/Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Sniper Cactus Scene "
+text = "Saguara (Sniper Cactus) Scene (4-6 mins)"
 
-[node name="Button2" type="Button" parent="Panel/VBoxContainer"]
+[node name="aoeslowcactusscene" type="Button" parent="Control/Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "AOE Slow Cactus Scene
+text = "Octollib (AOE Slow Cactus) Scene (4-7 mins)
 "
 
-[node name="Button3" type="Button" parent="Panel/VBoxContainer"]
+[node name="hammergiirlscene" type="Button" parent="Control/Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Hammer Girl Scene"
+text = "Polly (Hammer attacker) Scene (3-5 mins)"
 
-[node name="Button4" type="Button" parent="Panel/VBoxContainer"]
+[node name="bombthrowercactusscene" type="Button" parent="Control/Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Bomb Thrower Cactus Scene"
+text = "Opuntim  (cactus thrower) Scene (4-6 mins)"
 
-[node name="ScenesForPlot" type="Panel" parent="Panel"]
+[node name="ScenesForPlot" type="Panel" parent="Control/Panel"]
 layout_mode = 0
 offset_left = 1072.0
 offset_right = 1600.0
 offset_bottom = 1072.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScenesForPlot"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel/ScenesForPlot"]
 layout_mode = 0
 offset_right = 528.0
 offset_bottom = 1072.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Panel/ScenesForPlot/VBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Panel/ScenesForPlot/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Scenes for plot. 
@@ -87,38 +95,77 @@ Goals:
 -Move the plot forward
 -Raise the stakes"
 
-[node name="Button5" type="Button" parent="Panel/ScenesForPlot/VBoxContainer"]
+[node name="Boss encounter 1" type="Button" parent="Control/Panel/ScenesForPlot/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Game Intro Cutscene (Start Here)"
-
-[node name="Button" type="Button" parent="Panel/ScenesForPlot/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "Sniper Cactus Scene "
-
-[node name="Button2" type="Button" parent="Panel/ScenesForPlot/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "AOE Slow Cactus Scene
+text = "Boss encounter 1 (1-2 mins)
 "
 
-[node name="Button3" type="Button" parent="Panel/ScenesForPlot/VBoxContainer"]
+[node name="Boss Encounter 2" type="Button" parent="Control/Panel/ScenesForPlot/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Hammer Girl Scene"
+text = "Boss encounter 2 (5-7 mins)"
 
-[node name="Button4" type="Button" parent="Panel/ScenesForPlot/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "Bomb Thrower Cactus Scene"
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control"]
 offset_left = 544.0
 offset_top = 208.0
-offset_right = 1088.0
-offset_bottom = 432.0
+offset_right = 1040.0
+offset_bottom = 592.0
 text = "Story flow for finished game: 
 
 -Game intro cutscene is first
--Afterward, the short "
+-Afterward, there's going to be some short inter-level dialogue (NOT INCLUDED IN THIS PASS) 
+-After the missions, there's going to be a reaction from the enemy robots (listed on the right side) 
+
+-In the middle of all that, the player will have fun VN scenes with the playable cast of cactuses (listed on the left)"
+
+[node name="Control2" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="Control2"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 832.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control2/Panel"]
+layout_mode = 0
+offset_right = 1904.0
+offset_bottom = 816.0
+bbcode_enabled = true
+text = "Cactus Calvary is a video game developed by a team of 3 during the HBCU 2024 GAME JAM.
+
+Our game didn't win for some reason, so  we decided to build upon it during summer 2024. Even though we first thought the game was gonna just take a week of work, it's been stretched to over 5 months of high-quality teamwork. 
+
+We're proud of what we've made! Now all that's left is some polishing and writing. 
+
+You can play our demo here: [url] https://drdewby.itch.io/cactus-calvary [/url]
+
+This is just for the writing!  
+
+Thanks for reading our game!
+
+Tyesir Sykes: Art 
+Nicholas Dewberry: Writing,Game design  & Technical Implmentation
+Jakobe McPhail: QA "
+
+[node name="backtomainmenu" type="Button" parent="Control2"]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 496.0
+offset_right = 1344.0
+offset_bottom = 624.0
+text = "Back to the main menu"
+
+[connection signal="pressed" from="Control/morecactuscalvary" to="." method="_on_morecactuscalvary_pressed"]
+[connection signal="pressed" from="Control/Panel/VBoxContainer/gameintrocutscene" to="." method="_on_gameintrocutscene_pressed"]
+[connection signal="pressed" from="Control/Panel/VBoxContainer/snipercactusscene" to="." method="_on_snipercactusscene_pressed"]
+[connection signal="pressed" from="Control/Panel/VBoxContainer/aoeslowcactusscene" to="." method="_on_aoeslowcactusscene_pressed"]
+[connection signal="pressed" from="Control/Panel/VBoxContainer/hammergiirlscene" to="." method="_on_hammergiirlscene_pressed"]
+[connection signal="pressed" from="Control/Panel/VBoxContainer/bombthrowercactusscene" to="." method="_on_bombthrowercactusscene_pressed"]
+[connection signal="pressed" from="Control/Panel/ScenesForPlot/VBoxContainer/Boss encounter 1" to="." method="_on_boss_encounter_1_pressed"]
+[connection signal="pressed" from="Control/Panel/ScenesForPlot/VBoxContainer/Boss Encounter 2" to="." method="_on_boss_encounter_2_pressed"]
+[connection signal="pressed" from="Control2/backtomainmenu" to="." method="_on_backtomainmenu_pressed"]

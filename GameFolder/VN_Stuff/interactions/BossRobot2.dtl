@@ -1,6 +1,8 @@
+[music path="res://VN_Stuff/audios/Retro Synth RPG Battle Theme Upbeat Battle Theme Royalty Free Music.mp3" fade="0.0" volume="-8.0"]
+[background arg="res://VN_Stuff/bgs/desert2.jpg" fade="0.0"]
 ...
 Myrtle was running behind the enemy lines on a scouting mission, as he's done multiple times.
-join Myrtle (Determined) 1 [animation="Bounce In" length="0.3" wait="true"]
+join Myrtle (Determined) 0 [animation="Bounce In" length="0.3" wait="true"]
 The long, flat sandy dunes of the desert are typically seen as horrible for defense.
 Traditionally, the long sight lines and lack of cover means that many traditional defensive plans do not work.
 Dust storms and tempature shifts also prevent cohesive defensive structures from being consistently built and protected.
@@ -16,9 +18,10 @@ If one wasn't familar with the severity of the situation, it may have seemed lik
 Myrtle: Alright! Time to finish this up!
 Myrtle began moving.
 He spotted something strange during the last fight.
-The battle plans of the robots changed significantly. Now they are adjusting to the terrain, and moving around in a unique manner. 
+The battle plans of the robots changed significantly. Now they are adjusting to the terrain, and moving around in a unique manner.
 In fact, the robots seemed to be protecting something, a construct that just sat back.
-Myrtle was able to deal a hefty blow to it, however his opponent was able to escape. His retinue of robots took him away.
+During the initial skirmish, Myrtle was able to deal a hefty blow to it, however his opponent was able to escape. His retinue of robots took him away.
+This caused the entire robot detachment to retreat from the battle field.
 On the chase, Myrtle sped past the robots.
 Myrtle: Where... ARE YOU!
 Myrtle: Aha! There we go.
@@ -31,10 +34,122 @@ For a second Myrtles mind thought "what if it's a trap"?
 But his body moved too fast. The entrance of the storage container was easily pulled open.
 It was an iron bar covering a door.
 After pulling he saw -
+[music fade="0.1" volume="0.0"]
+update Myrtle (Determined) [animation="Shake X" length="0.3"]
+[music path="res://VN_Stuff/audios/dark factory.ogg" fade="0.0" volume="0.0"]
+[background arg="res://VN_Stuff/bgs/sci_fi_bg1.jpg" fade="0.0"]
+join DimsumCharacter 3 [animation="Fade In Up" length="0.3" z_index="2"]
 ...
-[music path="res://VN_Stuff/audios/Heartbeat - Royalty Free Fantasy Music.mp3" fade="0.0" volume="0.0"]
 INITIAL MISSION STATUS\: FAILURE
 SECONDARY OBJECTIVE STATUS\: SUCCESS
 The machines reward function activated as its plan was set into motion.
 Myrtle gulped. The machine in front of him is unmistakably the same one he saw outside - but it's disassembled now.
-Wires, 
+Wires, bolts and screws were strewn about as the machine was dissected.
+There were also tools, such as screwdrivers and hammers on the ground.
+It's internals were exposed.
+And yet - it still recieved power.
+Myrtle shuddered. He should not be seeing this.
+He turned behind him to escape, but it's too late.
+The storage container was locked from the outside. His hands stumbled across the locks on the door - but none of them responded to his prodding.
+Myrtle's shock turned to panic.
+Myrtle: HEY! LET ME OUT!
+*Buzz*
+At the center of the room, a buzzing sound began to poison the air.
+Myrtle's blood ran hot. He KNEW he needs to get out.
+SELF DESTRUCTION SEQUENCE\: ACTIVATED
+leave --All--
+[music path="res://Assets/music/slowScifiHorror.ogg" fade="0.0" volume="0.0"]
+IT'S OVER
+A small circular ball rose up from the center of the robots chest.
+It was raised higher and higher, until it started glowing red.
+It [i] pulsed [/i] with power.
+The abberations in all of the simulations could be traced to this singular creature.
+Despire his small stature, he delivers powerful blows.
+Despite his short legs, he moves quickly.
+Despite losing everything, he won't stop.
+How could this be understood?
+He must be eliminated - at any cost.
+He will only get stronger with time.
+The room began to rumble, as a timer started counting down in the center of the room.
+[music path="res://VN_Stuff/audios/bell_ding3.wav" fade="0.0" volume="0.0"]
+15.
+Myrtle looked around. The door is a no-go. The walls are sturdy.
+14. 13.
+The floor of the container is also sturdy. No cracks, or gaps could be found.
+12.
+Maybe he could hide from the explosion? Yes! He could use the metal parts around to shield himself.
+11. 12.
+There's only some boxes and parts that came from the machine. He had to work fast.
+10. 9. 8.
+[sound path="res://VN_Stuff/audios/bell_ding3.wav" volume="0.0"]
+7.
+[sound path="res://VN_Stuff/audios/bell_ding3.wav" volume="0.0"]
+Myrtle held the bomb in his hands, and looked around.
+5.
+He ran to the corner of the room, far away from his little fort.
+4.
+Myrtle: HAUUUGH!
+Myrtle Picked up a hammer from the ground and in an instant found a good spot to start pounding.
+The Hinges! Polly always said that the hinges are the most malleable spots. Her art experience came in handy!
+Myrtle began pounding the hinges from the inside.
+He chose the hinges on the ground, the ones right next to the floor.
+3.
+The hinges bent, cracked and splintered under the hammer.
+MORE!
+2.
+[music path="res://VN_Stuff/audios/bell_ding3.wav" fade="0.0" volume="0.0"]
+Fingers of light came in from the outside - but there's no time!
+Only a small amount of the outside world was visible.
+Myrtle shoved the bomb in the small cavity - but the bomb was stuck! He couldn't throw it outside!
+1.
+[sound path="res://VN_Stuff/audios/bell_ding3.wav" volume="0.0"]
+In the fastest sprint of his life, he ran to the other side of the container.
+He barely managed to dive and cover his head before the explosion.
+In under a second, he relaxed all of the muscles in his body - and let himself go limp.
+[sound path="res://VN_Stuff/audios/bell_ding3.wav" volume="0.0"]
+0.
+*BOOM*
+[sound path="res://VN_Stuff/audios/explosion1.wav" volume="0.0"]
+[music fade="0.2" volume="0.0"]
+...
+...
+Myrtle was disoriented. He stood up and put his hands on the side of the container in front of him.
+He was hit by something.
+Touching his sore body, he could tell that a few things hit him.
+The gears that were in the center of the room were lodged into his skin. Not too deeply, but he wasn't in any shape to remove them.
+He tried to make a mental map of the room.
+[background arg="res://VN_Stuff/bgs/pt/pt1.png" fade="0.0"]
+In the far left corner, the bomb was placed. He ran to the far right.
+Using what was left of the robot as cover, he hid in the other corner.
+How would the force be dispersed?
+He thought about it for a bit.
+Well, the ground, would absorb a lot of it. That arrow would point downwards.
+[background arg="res://VN_Stuff/bgs/pt/pt2.png" fade="0.0"]
+
+The shockwaves would also travel left, opening the left side of the door.
+We can also count the up direction as being accounted for.
+[background arg="res://VN_Stuff/bgs/pt/pt3.png" fade="0.0"]
+Myrtle confirmed this by looking.
+The left container was cleanly blown off.
+Okay, that's two directions down.
+The top left of the container was also blown away.
+Thinking logically, Myrtle noticed that the force must have bounced off and reverberated.
+The force from the top must have bounced downards, then back up, then down again. It would have done this repeatedly.
+Okay... How about the right force vector?
+It went all the way across, probably getting weaker, then bouncing backwards.
+[background arg="res://VN_Stuff/bgs/pt/pt4.png" fade="0.0"]
+Myrtle looked at the wall he was wedged up against.
+It wasn't dented.
+However, the boxes that he covered himself with in the corner were extremely bad for wear.
+Myrtle shuttered at the thought - "That could've been me".
+Myrtle's quick descision making saved his life.
+Realizing that he's in a dangerous spot, he ran outside the container.
+[background arg="res://VN_Stuff/bgs/desert2.jpg" fade="0.1"]
+All of the bots that were standing guard dissapeared.
+He wondered why that is.
+Oh. He wasn't expected to survive at all.
+That's probably why.
+They underestimated him.
+...
+Myrtle brought his battered body back to base.
+do DialogicSceneChanger.okswitchscene("res://VN_Stuff/VNSceneSelection.tscn")
