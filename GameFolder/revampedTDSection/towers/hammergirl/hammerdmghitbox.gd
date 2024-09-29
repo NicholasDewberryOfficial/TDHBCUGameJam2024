@@ -1,12 +1,16 @@
 extends Area2D
 
 var damage: float  = 2
+@export var newcurve = Gradient
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#$CPUParticles2D.restart()
 	#print(str($CPUParticles2D.emitting))
+	if(damage == 3):
+		$CPUParticles2D.color_ramp = newcurve
 	$CPUParticles2D.emitting = true
+	
 	pass
 
 

@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cpjlcyrseb7ye"]
+[gd_scene load_steps=9 format=3 uid="uid://cpjlcyrseb7ye"]
 
 [ext_resource type="Script" path="res://revampedTDSection/towers/hammergirl/hammerdmghitbox.gd" id="1_wowbp"]
 [ext_resource type="AudioStream" uid="uid://bqpewdsbq6qf1" path="res://Assets/music/soundeffects/updatedslam.mp3" id="2_c6qv2"]
+[ext_resource type="Gradient" uid="uid://d4ngv4ddxl4dc" path="res://revampedTDSection/towers/hammergirl/UpdatedColorRampGradient.tres" id="2_dmhod"]
+[ext_resource type="Gradient" uid="uid://bsmleppfth0kl" path="res://revampedTDSection/towers/hammergirl/basecolorrampgradient.tres" id="2_l07wb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xkd4b"]
 radius = 112.0
@@ -16,12 +18,10 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
 gradient = SubResource("Gradient_b5omo")
 width = 1
 
-[sub_resource type="Gradient" id="Gradient_kpxsp"]
-colors = PackedColorArray(1, 1, 1, 1, 0.876519, 0.711276, 0.922903, 1)
-
 [node name="hammerdmghitbox" type="Area2D"]
 position = Vector2(80, 0)
 script = ExtResource("1_wowbp")
+newcurve = ExtResource("2_dmhod")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_xkd4b")
@@ -46,7 +46,7 @@ orbit_velocity_max = 3.0
 linear_accel_max = 0.9
 scale_amount_min = 3.0
 scale_amount_max = 3.0
-color_ramp = SubResource("Gradient_kpxsp")
+color_ramp = ExtResource("2_l07wb")
 
 [node name="slamnoise" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_c6qv2")

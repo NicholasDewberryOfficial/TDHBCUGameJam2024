@@ -17,6 +17,7 @@ var upgrade1: bool = false
 var upgrade2: bool= false
 @export var dmghitbox: PackedScene
 @export var dmghitbox2: PackedScene
+
 func checkupgrades():
 	if(upgrade1 == true):
 		dmgdealt = 40

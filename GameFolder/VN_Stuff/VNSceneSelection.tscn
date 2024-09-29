@@ -14,6 +14,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+layout_mode = 0
 offset_left = 592.0
 offset_right = 1056.0
 offset_bottom = 144.0
@@ -22,6 +23,7 @@ text = "Hello! I am Nicholas Dewberry, the lead game designer, programmer and wr
 Click any button to see the dialogue scene! "
 
 [node name="morecactuscalvary" type="Button" parent="Control"]
+layout_mode = 0
 offset_left = 640.0
 offset_top = 112.0
 offset_right = 928.0
@@ -29,6 +31,7 @@ offset_bottom = 208.0
 text = "MORE ABOUT CACTUS CALVARY"
 
 [node name="Panel" type="Panel" parent="Control"]
+layout_mode = 0
 offset_right = 528.0
 offset_bottom = 1072.0
 
@@ -107,6 +110,7 @@ size_flags_vertical = 3
 text = "Boss encounter 2 (5-7 mins)"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Control"]
+layout_mode = 0
 offset_left = 544.0
 offset_top = 208.0
 offset_right = 1040.0
