@@ -109,4 +109,3 @@ func rotateTowards():
 		rotvector = 0.0     
 	
 	#var rotatiton = Vector2.from_angle()
-

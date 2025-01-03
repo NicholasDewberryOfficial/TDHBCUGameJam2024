@@ -32,4 +32,3 @@ func _on_area_entered(area):
 		get_tree().root.add_child(thesesounds)
 		queue_free()
 	pass # Replace with function body.
-

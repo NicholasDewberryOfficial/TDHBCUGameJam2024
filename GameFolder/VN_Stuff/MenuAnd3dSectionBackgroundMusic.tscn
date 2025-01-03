@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2q1jxye45tn0"]
+
+[ext_resource type="AudioStream" uid="uid://b656h5j0spuyi" path="res://VN_Stuff/audios/Fashion Saxophone Hip-Hop by Infraction [No Copyright Music]  Do It.mp3" id="1_q0drb"]
+
+[node name="MenuAnd3DBackgroundMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_q0drb")
+autoplay = true

@@ -8,6 +8,8 @@ var move_tween: Tween
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$PlayerIcon.global_position = current_level.global_position
+	if(MenuAnd3dSectionBackgroundMusic.playing == false):
+		MenuAnd3dSectionBackgroundMusic.play()
 
 func _input(event):
 	if move_tween and move_tween.is_running():
@@ -37,3 +39,8 @@ func _input(event):
 func tween_icon():
 	move_tween = get_tree().create_tween()
 	move_tween.tween_property($PlayerIcon, "global_position", current_level.global_position, 0.5).set_trans(Tween.TRANS_SINE)
+
+
+func _on_return_to_base_pressed() -> void:
+	get_tree().change_scene_to_file("res://3dsection/3dgridworld.tscn")
+	pass # Replace with function body.

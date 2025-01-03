@@ -27,4 +27,3 @@ func _physics_process(delta):
 func _switch_direction():
 	# Reverse the vertical direction
 	velocity.y = -velocity.y * 2 
-

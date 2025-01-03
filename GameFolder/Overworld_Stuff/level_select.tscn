@@ -51,7 +51,7 @@ offset_left = 173.0
 offset_top = 189.0
 offset_right = 237.0
 offset_bottom = 253.0
-level_name = "1-A"
+level_name = "Level 1"
 next_level_down = NodePath("../1-B")
 next_level_right = NodePath("../1-B")
 
@@ -113,3 +113,15 @@ offset_bottom = 72.0
 position = Vector2(162.75, 134.5)
 scale = Vector2(0.51699, 0.5)
 texture = ExtResource("9_mmkrp")
+
+[node name="ReturnToBase" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1070.0
+offset_top = 57.0
+offset_right = 1537.0
+offset_bottom = 265.0
+text = "Return to base
+
+(Space)"
+
+[connection signal="pressed" from="ReturnToBase" to="." method="_on_return_to_base_pressed"]

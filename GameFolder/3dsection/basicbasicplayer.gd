@@ -17,6 +17,7 @@ func _physics_process(delta):
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
 		velocity.y = jump_speed
 	if(Input.is_action_just_pressed("lclick")):
+		MenuAnd3dSectionBackgroundMusic.stop()
 		get_tree().change_scene_to_file("res://VN_Stuff/interactions/interactionsbase.tscn")
 		
 func _input(event):

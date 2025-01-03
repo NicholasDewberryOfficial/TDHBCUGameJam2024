@@ -104,4 +104,3 @@ func checkcurrtowermission():
 		var thistextlabel: RichTextLabel = getlabelwithname("Place at least five towers!")
 		thistextlabel.text = "[b] Placed 5 towers! [/b]"
 		pass
-

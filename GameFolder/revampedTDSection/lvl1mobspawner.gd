@@ -120,4 +120,3 @@ func _on_nextwavebutton_pressed():
 		mytimer.autostart = true
 		mytimer.start(.1)
 	nextexecuting=false
-

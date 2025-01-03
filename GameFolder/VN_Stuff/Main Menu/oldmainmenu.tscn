@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://VN_Stuff/Main Menu/main_menu.gd" id="1_6ffg3"]
 [ext_resource type="Texture2D" uid="uid://dx4f3v5bd3r5y" path="res://Assets/oasisbackground.jpg" id="2_43j1l"]
 
-[node name="Main Menu" type="Control"]
+[node name="Main Menu" type="Control" node_paths=PackedStringArray("mainbuttonpanel", "aboutusbutton", "aboutuspanel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,6 +11,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6ffg3")
+mainbuttonpanel = NodePath("MarginContainer")
+aboutusbutton = NodePath("About US")
+aboutuspanel = NodePath("Panel")
 
 [node name="OasisStockArt" type="Sprite2D" parent="."]
 position = Vector2(959.027, 531.921)
@@ -23,7 +26,8 @@ offset_top = -197.835
 offset_right = 245.574
 offset_bottom = -65.8349
 theme_override_font_sizes/normal_font_size = 80
-text = "Cavalry"
+text = "Cavalry
+"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="OasisStockArt"]
 offset_left = -290.752
@@ -33,7 +37,20 @@ offset_bottom = -187.746
 theme_override_font_sizes/normal_font_size = 80
 text = "Cactus"
 
+[node name="RichTextLabel3" type="RichTextLabel" parent="OasisStockArt"]
+self_modulate = Color(1, 1, 0, 1)
+offset_left = 128.389
+offset_top = -82.4204
+offset_right = 430.389
+offset_bottom = 40.5796
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 80
+text = "Demo 2"
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 609.0
 offset_top = 612.0
@@ -46,11 +63,13 @@ layout_mode = 2
 
 [node name="Load" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+disabled = true
 text = "Load
 "
 
 [node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+disabled = true
 text = "Options"
 
 [node name="Start" type="Button" parent="MarginContainer/VBoxContainer"]
@@ -61,9 +80,42 @@ text = " New Game"
 layout_mode = 2
 text = "Exit"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Load" to="." method="_on_load_pressed"]
+[node name="About US" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 32.0
+offset_top = 288.0
+offset_right = 512.0
+offset_bottom = 800.0
+text = "ABOUT US (Read Me)"
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 560.0
+offset_right = 1824.0
+offset_bottom = 1072.0
+
+[node name="BackToMain" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = -304.0
+offset_top = -368.0
+offset_right = -40.0
+offset_bottom = 112.0
+text = "Back to the main menu"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_right = 1456.0
+offset_bottom = 512.0
+text = "Hello! This is a second demo for our video game: Cactus Calvary. We're trying to add some more polish to our game. 
+"
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Load" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="About US" to="." method="_on_about_us_pressed"]
+[connection signal="pressed" from="Panel/BackToMain" to="." method="_on_back_to_main_pressed"]
