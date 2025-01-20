@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7h67ideyt64c"]
+
+[ext_resource type="Texture2D" uid="uid://cwkbn2jg0vhxu" path="res://Assets/levelbackgrounds/CC_Level_Select_Background.png" id="1_m7puu"]
+[ext_resource type="Script" path="res://Overworld_Stuff/newlevelselect/levelselect.gd" id="1_xtvk8"]
+
+[node name="Levelselect" type="Node2D"]
+visible = false
+script = ExtResource("1_xtvk8")
+
+[node name="CcLevelSelectBackground" type="Sprite2D" parent="."]
+position = Vector2(960.5, 546.5)
+scale = Vector2(2.13106, 2.13894)
+texture = ExtResource("1_m7puu")

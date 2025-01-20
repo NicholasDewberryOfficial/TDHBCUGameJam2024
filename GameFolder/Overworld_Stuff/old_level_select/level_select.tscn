@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://nvppu7du44if"]
 
-[ext_resource type="Script" path="res://Overworld_Stuff/level_select.gd" id="1_uvg21"]
-[ext_resource type="PackedScene" uid="uid://d31v6hktvr3dj" path="res://Overworld_Stuff/level_icon.tscn" id="2_js67h"]
+[ext_resource type="Script" path="res://Overworld_Stuff/old_level_select/level_select.gd" id="1_uvg21"]
+[ext_resource type="PackedScene" uid="uid://d31v6hktvr3dj" path="res://Overworld_Stuff/old_level_select/level_icon.tscn" id="2_js67h"]
 [ext_resource type="Texture2D" uid="uid://dfmvc525rc250" path="res://Assets/CC_Level_Select_Background.png" id="2_qur8n"]
-[ext_resource type="PackedScene" uid="uid://cs1tkbqflyosk" path="res://Overworld_Stuff/PlayerIcon.tscn" id="3_33b1g"]
+[ext_resource type="PackedScene" uid="uid://cs1tkbqflyosk" path="res://Overworld_Stuff/old_level_select/PlayerIcon.tscn" id="3_33b1g"]
 [ext_resource type="Texture2D" uid="uid://b7il764wix7k4" path="res://Assets/CC_Level_1_Node.png" id="3_na6il"]
 [ext_resource type="Texture2D" uid="uid://b625i3hlarqr3" path="res://Assets/CC_Level_2_Node.png" id="4_u1sg7"]
 [ext_resource type="Texture2D" uid="uid://b0i5621nrkrw6" path="res://Assets/CC_Level_3_Node.png" id="5_wkoqu"]

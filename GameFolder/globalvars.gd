@@ -21,6 +21,9 @@ extends Node
 #values: 1 = unlocked. 0 means locked. 
 @export var unlockedTowers = [1,1,1]
 
+#start at 0, go onto 1,2,3,4,5
+@export var unlocked_levels: int=0
+
 var loadthisdialogicscene: String = ""
  
 func _ready():

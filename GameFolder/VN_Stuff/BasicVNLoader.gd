@@ -6,6 +6,7 @@ func _ready():
 	Dialogic.start(Globalvars.loadthisdialogicscene)
 	#Dialogic.Inputs.auto_skip.enabled = !Dialogic.Inputs.auto_skip.enabled
 	Dialogic.Inputs.auto_skip.disable_on_unread_text = false
+	Dialogic.Inputs.auto_skip.enabled = true
 
 	pass # Replace with function body.
 
@@ -21,11 +22,18 @@ func _input(event:InputEvent) -> void:
 		DialogicUtil.autoload().paused = !DialogicUtil.autoload().paused
 		$PauseIndictator.visible = DialogicUtil.autoload().paused
 
-	if (event is InputEventMouseButton
-	and event.is_pressed()
-	and event.button_index == MOUSE_BUTTON_MIDDLE):
+	if (event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_MIDDLE):
 		var auto_skip: DialogicAutoSkip = DialogicUtil.autoload().Inputs.auto_skip
 		var is_auto_skip_enabled := auto_skip.enabled
-
 		auto_skip.disable_on_unread_text = false
 		auto_skip.enabled = !is_auto_skip_enabled
+	
+	if(event.is_pressed() and Input.is_action_pressed("skipaction")):
+		var auto_skip: DialogicAutoSkip = DialogicUtil.autoload().Inputs.auto_skip
+		auto_skip.enabled = true
+		auto_skip.disable_on_unread_text = false
+		
+	if(!Input.is_action_pressed("skipaction")):
+		var auto_skip: DialogicAutoSkip = DialogicUtil.autoload().Inputs.auto_skip
+		auto_skip.enabled = false
+		auto_skip.disable_on_unread_text = false

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://h7dycqsxwoo8"]
+
+[node name="skipbutton" type="Button"]
+offset_left = 1728.0
+offset_top = 144.0
+offset_right = 1920.0
+offset_bottom = 176.0
+text = "skip here (or hold C)"
