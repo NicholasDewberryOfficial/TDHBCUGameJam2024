@@ -20,8 +20,8 @@ config/icon="res://icon.svg"
 
 Globalvars="*res://globalvars.gd"
 DialogicSceneChanger="*res://dialogicSceneChanger.gd"
-MenuAnd3dSectionBackgroundMusic="*res://VN_Stuff/MenuAnd3dSectionBackgroundMusic.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+MenuAnd3dSectionBackgroundMusic="*res://VN_Stuff/MenuAnd3dSectionBackgroundMusic.tscn"
 
 [dialogic]
 
