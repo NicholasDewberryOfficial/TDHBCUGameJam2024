@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cbvqobl8a5wd"]
 
-[ext_resource type="Script" path="res://Overworld_Stuff/world_select.gd" id="1_iyor0"]
-[ext_resource type="PackedScene" uid="uid://do0xqe1swewjh" path="res://Overworld_Stuff/world_icon.tscn" id="2_v5rxn"]
-[ext_resource type="PackedScene" uid="uid://cs1tkbqflyosk" path="res://Overworld_Stuff/PlayerIcon.tscn" id="3_lwfjo"]
+[ext_resource type="Script" path="res://Overworld_Stuff/old_level_select/world_select.gd" id="1_iyor0"]
+[ext_resource type="PackedScene" uid="uid://do0xqe1swewjh" path="res://Overworld_Stuff/old_level_select/world_icon.tscn" id="2_v5rxn"]
+[ext_resource type="PackedScene" uid="uid://cs1tkbqflyosk" path="res://Overworld_Stuff/old_level_select/PlayerIcon.tscn" id="3_lwfjo"]
 
 [node name="WorldSelect" type="Control"]
 layout_mode = 3

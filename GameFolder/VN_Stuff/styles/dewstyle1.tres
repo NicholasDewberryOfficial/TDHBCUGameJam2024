@@ -42,4 +42,4 @@ script = ExtResource("1_08cfq")
 name = "dewstyle1"
 base_overrides = {}
 layers = Array[ExtResource("2_48rqw")]([SubResource("Resource_yqqmb"), SubResource("Resource_tnpjw"), SubResource("Resource_vl44h"), SubResource("Resource_yvyrf"), SubResource("Resource_xguva")])
-metadata/_latest_layer = 2
+metadata/_latest_layer = -1

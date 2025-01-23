@@ -4,4 +4,3 @@
 
 [node name="MenuAnd3DBackgroundMusic" type="AudioStreamPlayer"]
 stream = ExtResource("1_q0drb")
-autoplay = true

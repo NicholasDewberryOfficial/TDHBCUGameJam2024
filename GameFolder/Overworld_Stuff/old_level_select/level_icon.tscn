@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://do0xqe1swewjh"]
+[gd_scene load_steps=4 format=3 uid="uid://d31v6hktvr3dj"]
 
-[ext_resource type="Script" path="res://Overworld_Stuff/world_icon.gd" id="1_bhiya"]
-[ext_resource type="PackedScene" uid="uid://nvppu7du44if" path="res://Overworld_Stuff/level_select.tscn" id="2_ksgvy"]
+[ext_resource type="Script" path="res://Overworld_Stuff/old_level_select/level_icon.gd" id="1_3ka3i"]
+
 
 [sub_resource type="Gradient" id="Gradient_x1667"]
 offsets = PackedFloat32Array(0)
@@ -11,21 +11,20 @@ colors = PackedColorArray(0, 0, 0, 1)
 gradient = SubResource("Gradient_x1667")
 width = 64
 
-[node name="WorldIcon" type="Control"]
+[node name="LevelIcon" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 64.0
 offset_bottom = 64.0
 pivot_offset = Vector2(32, 0)
-script = ExtResource("1_bhiya")
-level_select_packed = ExtResource("2_ksgvy")
+script = ExtResource("1_3ka3i")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_top = -24.0
 offset_right = 60.0
 offset_bottom = -1.0
-text = "World 1"
+text = "1"
 horizontal_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
