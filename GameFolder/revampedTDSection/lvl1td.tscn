@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=3 uid="uid://2crcixuke4eg"]
 
 [ext_resource type="Script" path="res://revampedTDSection/lvl1mobspawner.gd" id="2_0xv6w"]
-[ext_resource type="Texture2D" uid="uid://crc3m42g6efga" path="res://Assets/CC_Level_1_Background.png" id="2_usdoy"]
+[ext_resource type="Texture2D" uid="uid://buwl8pmfq0i5l" path="res://Assets/levelbackgrounds/CC_Level_1_Background.png" id="2_usdoy"]
 [ext_resource type="Texture2D" uid="uid://ce4w3w10hhvxd" path="res://Assets/Towers/Hammer Cactus Idle.png" id="4_d0uiv"]
 [ext_resource type="Script" path="res://revampedTDSection/towerplacement.gd" id="4_lnnio"]
 [ext_resource type="PackedScene" uid="uid://bl81amyfbvxmd" path="res://revampedTDSection/towers/throwyguy/placedownThrowingBomber.tscn" id="5_l1pkv"]

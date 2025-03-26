@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://topleftminigames/RPGStuff/RPGSceneController.gd" id="1_gwgac"]
 [ext_resource type="Resource" uid="uid://chadwhabpmhr0" path="res://topleftminigames/RPGStuff/eresources/propeller.tres" id="2_lxwmt"]
-[ext_resource type="Texture2D" uid="uid://484vs5nlws8k" path="res://Assets/Roller.png" id="2_vewef"]
+[ext_resource type="Texture2D" uid="uid://cow1upm72ue46" path="res://Assets/mobart/Roller.png" id="2_vewef"]
 [ext_resource type="AudioStream" uid="uid://vl8p1x61woxv" path="res://Assets/music/mechanical_explosion.wav" id="3_y36oi"]
 [ext_resource type="AudioStream" uid="uid://biaur5hw87qt1" path="res://Assets/music/vine3.ogg" id="4_02beb"]
 
